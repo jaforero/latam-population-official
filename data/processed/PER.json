@@ -4,8 +4,8 @@
  "name_es": "Perú",
  "name_en": "Peru",
  "status": {
-  "historical": "ok",
-  "projection": "ok"
+  "historical": "stale",
+  "projection": "stale"
  },
  "reasons": {},
  "segments": [

@@ -4,6 +4,16 @@
    "iso3": "HND",
    "series": "projection",
    "error": "HTTP 403 en https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf"
+  },
+  {
+   "iso3": "PER",
+   "series": "historical",
+   "error": "ConnectionError: HTTPSConnectionPool(host='www.inei.gob.pe', port=443): Max retries exceeded with url: /media/principales_indicadores/libro_bol_esp_24_4.pdf (Caused by NewConnec en https://www.inei.gob.pe/media/principales_indicadores/libro_bol_esp_24_4.pdf"
+  },
+  {
+   "iso3": "PER",
+   "series": "projection",
+   "error": "ConnectionError: HTTPSConnectionPool(host='www.inei.gob.pe', port=443): Max retries exceeded with url: /media/principales_indicadores/libro_bol_esp_24_4.pdf (Caused by NewConnec en https://www.inei.gob.pe/media/principales_indicadores/libro_bol_esp_24_4.pdf"
   }
  ],
  "alerts": [

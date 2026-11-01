@@ -1,0 +1,30 @@
+{
+ "schema_version": "1.0",
+ "iso3": "CHL",
+ "name_es": "Chile",
+ "name_en": "Chile",
+ "status": {
+  "historical": "pendiente",
+  "projection": "pendiente"
+ },
+ "reasons": {
+  "historical": {
+   "es": "INE Chile publicó la base 2024 (1992-2070), pero solo se halló un PDF sin cuadro anual.",
+   "en": "INE Chile released base 2024 (1992-2070), but only a PDF without an annual table was found."
+  },
+  "projection": {
+   "es": "INE Chile publicó la base 2024 (1992-2070), pero solo se halló un PDF sin cuadro anual.",
+   "en": "INE Chile released base 2024 (1992-2070), but only a PDF without an annual table was found."
+  }
+ },
+ "segments": [],
+ "breaks": [],
+ "peak": {
+  "status": "no_projection",
+  "year": null,
+  "population": null,
+  "source_id": null,
+  "horizon_end": null
+ },
+ "records": []
+}

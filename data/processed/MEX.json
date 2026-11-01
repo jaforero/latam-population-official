@@ -1,0 +1,30 @@
+{
+ "schema_version": "1.0",
+ "iso3": "MEX",
+ "name_es": "México",
+ "name_en": "Mexico",
+ "status": {
+  "historical": "manual_pendiente",
+  "projection": "manual_pendiente"
+ },
+ "reasons": {
+  "historical": {
+   "es": "datos.gob.mx rechaza un agente identificado: falta que una persona deje el archivo.",
+   "en": "datos.gob.mx rejects an identified agent: a person must add the file."
+  },
+  "projection": {
+   "es": "datos.gob.mx rechaza un agente identificado: falta que una persona deje el archivo.",
+   "en": "datos.gob.mx rejects an identified agent: a person must add the file."
+  }
+ },
+ "segments": [],
+ "breaks": [],
+ "peak": {
+  "status": "no_projection",
+  "year": null,
+  "population": null,
+  "source_id": null,
+  "horizon_end": null
+ },
+ "records": []
+}

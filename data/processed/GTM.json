@@ -1,0 +1,30 @@
+{
+ "schema_version": "1.0",
+ "iso3": "GTM",
+ "name_es": "Guatemala",
+ "name_en": "Guatemala",
+ "status": {
+  "historical": "pendiente",
+  "projection": "pendiente"
+ },
+ "reasons": {
+  "historical": {
+   "es": "ine.gob.gt exige captcha; requiere descarga manual.",
+   "en": "ine.gob.gt requires a captcha; manual download required."
+  },
+  "projection": {
+   "es": "ine.gob.gt exige captcha; requiere descarga manual.",
+   "en": "ine.gob.gt requires a captcha; manual download required."
+  }
+ },
+ "segments": [],
+ "breaks": [],
+ "peak": {
+  "status": "no_projection",
+  "year": null,
+  "population": null,
+  "source_id": null,
+  "horizon_end": null
+ },
+ "records": []
+}

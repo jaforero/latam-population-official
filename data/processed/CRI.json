@@ -1,0 +1,30 @@
+{
+ "schema_version": "1.0",
+ "iso3": "CRI",
+ "name_es": "Costa Rica",
+ "name_en": "Costa Rica",
+ "status": {
+  "historical": "manual_pendiente",
+  "projection": "manual_pendiente"
+ },
+ "reasons": {
+  "historical": {
+   "es": "El servidor rechaza scripts: falta que una persona deje el archivo.",
+   "en": "The server rejects scripts: a person must add the file."
+  },
+  "projection": {
+   "es": "El servidor rechaza scripts: falta que una persona deje el archivo.",
+   "en": "The server rejects scripts: a person must add the file."
+  }
+ },
+ "segments": [],
+ "breaks": [],
+ "peak": {
+  "status": "no_projection",
+  "year": null,
+  "population": null,
+  "source_id": null,
+  "horizon_end": null
+ },
+ "records": []
+}

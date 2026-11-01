@@ -1,0 +1,47 @@
+name: Actualizar datos
+
+on:
+  schedule:
+    - cron: "17 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Pruebas previas
+        run: python -m pytest -q
+      - name: Ejecutar pipeline
+        run: python -m latam_pop run
+      - name: Pruebas del contrato sobre las salidas nuevas
+        run: python -m pytest -q tests/test_contract.py
+      - name: Commit solo si cambian los datos
+        run: |
+          git add data
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los datos."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Actualiza datos de población $(date -u +%F)"
+            git push
+          fi
+      - name: Abrir issues con fallas y alertas nuevas
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/open_issues.py

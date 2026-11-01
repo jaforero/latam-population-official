@@ -1,0 +1,30 @@
+{
+ "schema_version": "1.0",
+ "iso3": "BOL",
+ "name_es": "Bolivia",
+ "name_en": "Bolivia",
+ "status": {
+  "historical": "manual_pendiente",
+  "projection": "manual_pendiente"
+ },
+ "reasons": {
+  "historical": {
+   "es": "robots.txt prohíbe la descarga automática: falta que una persona deje el archivo.",
+   "en": "robots.txt forbids automated download: a person must add the file."
+  },
+  "projection": {
+   "es": "robots.txt prohíbe la descarga automática: falta que una persona deje el archivo.",
+   "en": "robots.txt forbids automated download: a person must add the file."
+  }
+ },
+ "segments": [],
+ "breaks": [],
+ "peak": {
+  "status": "no_projection",
+  "year": null,
+  "population": null,
+  "source_id": null,
+  "horizon_end": null
+ },
+ "records": []
+}

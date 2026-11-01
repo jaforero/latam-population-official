@@ -1,0 +1,797 @@
+{
+ "schema_version": "1.0",
+ "generated_at": "2026-11-01T14:10:00+00:00",
+ "last_data_update": "2026-11-01",
+ "countries": {
+  "ARG": {
+   "name_es": "Argentina",
+   "name_en": "Argentina",
+   "series": {
+    "historical": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INDEC",
+     "source_id": "arg_indec_censo2010",
+     "vintage": "Censo 2010",
+     "url": "https://www.indec.gob.ar/ftp/cuadros/poblacion/c1_proyecciones_nac_2010_2040.xls",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/ARG/arg_indec_2010/2026-11-01_61d36046a63c_c1_proyecciones_nac_2010_2040.xls",
+     "raw_sha256": "61d36046a63c14253554ca98d98f29df46fc022e3b3fac15f8a7c22c0e5f4565",
+     "retrieved_by": "script"
+    },
+    "projection": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INDEC",
+     "source_id": "arg_indec_censo2022",
+     "vintage": "Censo 2022",
+     "url": "https://www.indec.gob.ar/ftp/cuadros/poblacion/proyecciones_jurisdicciones_2022_2040_c1.xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": {
+      "es": "Ruptura en 2022: la vintage Censo 2010 daba 1,09 M más para 2025.",
+      "en": "Break in 2022: the Census 2010 vintage gave 1.09 M more for 2025."
+     },
+     "raw_file": "data/raw/ARG/arg_indec_2022/2026-11-01_7dd84165fe90_proyecciones_jurisdicciones_2022_2040_c1.xlsx",
+     "raw_sha256": "7dd84165fe90415793f6788338ed3273ed1d2fe9ea25cbe355110805e1cc89f3",
+     "retrieved_by": "script"
+    }
+   }
+  },
+  "BOL": {
+   "name_es": "Bolivia",
+   "name_en": "Bolivia",
+   "series": {
+    "historical": {
+     "status": "manual_pendiente",
+     "source_tier": "national",
+     "institution": "INE Bolivia",
+     "source_id": "bol_ine_rev2025",
+     "vintage": "Rev. 2025",
+     "url": "https://nimbus.ine.gob.bo/index.php/s/kdz7ktspssFz6C4/download",
+     "last_success": null,
+     "retrieved_at": null,
+     "error": "Fuente manual sin archivo en data/raw/",
+     "reason": {
+      "es": "robots.txt prohíbe la descarga automática: falta que una persona deje el archivo.",
+      "en": "robots.txt forbids automated download: a person must add the file."
+     },
+     "note": null
+    },
+    "projection": {
+     "status": "manual_pendiente",
+     "source_tier": "national",
+     "institution": "INE Bolivia",
+     "source_id": "bol_ine_rev2025",
+     "vintage": "Rev. 2025",
+     "url": "https://nimbus.ine.gob.bo/index.php/s/kdz7ktspssFz6C4/download",
+     "last_success": null,
+     "retrieved_at": null,
+     "error": "Fuente manual sin archivo en data/raw/",
+     "reason": {
+      "es": "robots.txt prohíbe la descarga automática: falta que una persona deje el archivo.",
+      "en": "robots.txt forbids automated download: a person must add the file."
+     },
+     "note": {
+      "es": "Cifras al 1 de enero, no a mitad de año.",
+      "en": "Figures as of January 1, not mid-year."
+     }
+    }
+   }
+  },
+  "BRA": {
+   "name_es": "Brasil",
+   "name_en": "Brazil",
+   "series": {
+    "historical": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "IBGE",
+     "source_id": "bra_ibge_rev2024",
+     "vintage": "Rev. 2024",
+     "url": "https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab4_indicadores.xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/BRA/bra_ibge/2026-11-01_0169644992d1_projecoes_2024_tab4_indicadores.xlsx",
+     "raw_sha256": "0169644992d15a122bc14e42b07d40a3e01fe27303ed2d87cf54fa1f64f00fbc",
+     "retrieved_by": "script"
+    },
+    "projection": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "IBGE",
+     "source_id": "bra_ibge_rev2024",
+     "vintage": "Rev. 2024",
+     "url": "https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab4_indicadores.xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/BRA/bra_ibge/2026-11-01_0169644992d1_projecoes_2024_tab4_indicadores.xlsx",
+     "raw_sha256": "0169644992d15a122bc14e42b07d40a3e01fe27303ed2d87cf54fa1f64f00fbc",
+     "retrieved_by": "script"
+    }
+   }
+  },
+  "CHL": {
+   "name_es": "Chile",
+   "name_en": "Chile",
+   "series": {
+    "historical": {
+     "status": "pendiente",
+     "source_tier": "national",
+     "institution": "INE Chile",
+     "source_id": null,
+     "vintage": null,
+     "url": "https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/publicaciones-y-anuarios/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_presentaci%C3%B3n-de-resultados.pdf?sfvrsn=41adcf84_5",
+     "last_success": null,
+     "retrieved_at": null,
+     "error": "INE Chile publicó la base 2024 (1992-2070) el 2026-01-28, pero solo se localizó el PDF de resultados, con gráfico y cifras sueltas. No se encontró el cuadro anual; la página de proyecciones solo enlaza la base 2017.",
+     "reason": {
+      "es": "INE Chile publicó la base 2024 (1992-2070), pero solo se halló un PDF sin cuadro anual.",
+      "en": "INE Chile released base 2024 (1992-2070), but only a PDF without an annual table was found."
+     },
+     "note": null
+    },
+    "projection": {
+     "status": "pendiente",
+     "source_tier": "national",
+     "institution": "INE Chile",
+     "source_id": null,
+     "vintage": null,
+     "url": "https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/publicaciones-y-anuarios/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_presentaci%C3%B3n-de-resultados.pdf?sfvrsn=41adcf84_5",
+     "last_success": null,
+     "retrieved_at": null,
+     "error": "INE Chile publicó la base 2024 (1992-2070) el 2026-01-28, pero solo se localizó el PDF de resultados, con gráfico y cifras sueltas. No se encontró el cuadro anual; la página de proyecciones solo enlaza la base 2017.",
+     "reason": {
+      "es": "INE Chile publicó la base 2024 (1992-2070), pero solo se halló un PDF sin cuadro anual.",
+      "en": "INE Chile released base 2024 (1992-2070), but only a PDF without an annual table was found."
+     },
+     "note": null
+    }
+   }
+  },
+  "COL": {
+   "name_es": "Colombia",
+   "name_en": "Colombia",
+   "series": {
+    "historical": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "DANE",
+     "source_id": "col_dane_pped2025",
+     "vintage": "PPED 2025",
+     "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Nacional/PPED-AreaNac-1950-2017.xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/COL/col_dane_hist/2026-11-01_43cccbd8c33e_PPED-AreaNac-1950-2017.xlsx",
+     "raw_sha256": "43cccbd8c33e3085b5d52fa9cd5da3706c1e9c1ed42eefb905d2e99b27f7b76b",
+     "retrieved_by": "script"
+    },
+    "projection": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "DANE",
+     "source_id": "col_dane_pped2025",
+     "vintage": "PPED 2025",
+     "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Nacional/PPED-AreaNac-2018-2070.xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/COL/col_dane_proj/2026-11-01_957239f522f7_PPED-AreaNac-2018-2070.xlsx",
+     "raw_sha256": "957239f522f79adaf49a2106d620b0083292297949a637aa2d4a82f4cc05bc60",
+     "retrieved_by": "script"
+    }
+   }
+  },
+  "CRI": {
+   "name_es": "Costa Rica",
+   "name_en": "Costa Rica",
+   "series": {
+    "historical": {
+     "status": "manual_pendiente",
+     "source_tier": "national",
+     "institution": "INEC Costa Rica",
+     "source_id": "cri_inec_1950_2100",
+     "vintage": "1950-2100",
+     "url": "https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx",
+     "last_success": null,
+     "retrieved_at": null,
+     "error": "Fuente manual sin archivo en data/raw/",
+     "reason": {
+      "es": "El servidor rechaza scripts: falta que una persona deje el archivo.",
+      "en": "The server rejects scripts: a person must add the file."
+     },
+     "note": null
+    },
+    "projection": {
+     "status": "manual_pendiente",
+     "source_tier": "national",
+     "institution": "INEC Costa Rica",
+     "source_id": "cri_inec_1950_2100",
+     "vintage": "1950-2100",
+     "url": "https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx",
+     "last_success": null,
+     "retrieved_at": null,
+     "error": "Fuente manual sin archivo en data/raw/",
+     "reason": {
+      "es": "El servidor rechaza scripts: falta que una persona deje el archivo.",
+      "en": "The server rejects scripts: a person must add the file."
+     },
+     "note": null
+    }
+   }
+  },
+  "CUB": {
+   "name_es": "Cuba",
+   "name_en": "Cuba",
+   "series": {
+    "historical": {
+     "status": "pendiente",
+     "source_tier": "national",
+     "institution": "ONEI / CEPDE",
+     "source_id": null,
+     "vintage": null,
+     "url": "https://www.onei.gob.cu/",
+     "last_success": null,
+     "retrieved_at": null,
+     "error": "El certificado TLS de www.onei.gob.cu venció el 2026-09-02: el sitio no se pudo abrir ni se desactivó la comprobación. Por tanto no se verificó ningún archivo. Las copias en terceros (oncubanews) no son fuente válida.",
+     "reason": {
+      "es": "El certificado TLS de ONEI venció el 2026-09-02; no se pudo verificar ningún archivo.",
+      "en": "ONEI's TLS certificate expired on 2026-09-02; no file could be verified."
+     },
+     "note": null
+    },
+    "projection": {
+     "status": "pendiente",
+     "source_tier": "national",
+     "institution": "ONEI / CEPDE",
+     "source_id": null,
+     "vintage": null,
+     "url": "https://www.onei.gob.cu/",
+     "last_success": null,
+     "retrieved_at": null,
+     "error": "El certificado TLS de www.onei.gob.cu venció el 2026-09-02: el sitio no se pudo abrir ni se desactivó la comprobación. Por tanto no se verificó ningún archivo. Las copias en terceros (oncubanews) no son fuente válida.",
+     "reason": {
+      "es": "El certificado TLS de ONEI venció el 2026-09-02; no se pudo verificar ningún archivo.",
+      "en": "ONEI's TLS certificate expired on 2026-09-02; no file could be verified."
+     },
+     "note": null
+    }
+   }
+  },
+  "DOM": {
+   "name_es": "República Dominicana",
+   "name_en": "Dominican Republic",
+   "series": {
+    "historical": {
+     "status": "pendiente",
+     "source_tier": "national",
+     "institution": "ONE",
+     "source_id": null,
+     "vintage": null,
+     "url": "https://www.one.gob.do/datos-y-estadisticas/temas/estadisticas-demograficas/estimaciones-y-proyecciones-demograficas/",
+     "last_success": null,
+     "retrieved_at": null,
+     "error": "one.gob.do responde 403 a scripts y muestra un bloqueo de Cloudflare en navegador: página no abierta ni archivo verificado. Según buscador y prensa, la ONE publicó en junio de 2026 nuevas estimaciones 1950-2100 con el censo 2022. No se elude; requiere descarga manual.",
+     "reason": {
+      "es": "one.gob.do bloquea el acceso automatizado (Cloudflare); requiere descarga manual.",
+      "en": "one.gob.do blocks automated access (Cloudflare); manual download required."
+     },
+     "note": null
+    },
+    "projection": {
+     "status": "pendiente",
+     "source_tier": "national",
+     "institution": "ONE",
+     "source_id": null,
+     "vintage": null,
+     "url": "https://www.one.gob.do/datos-y-estadisticas/temas/estadisticas-demograficas/estimaciones-y-proyecciones-demograficas/",
+     "last_success": null,
+     "retrieved_at": null,
+     "error": "one.gob.do responde 403 a scripts y muestra un bloqueo de Cloudflare en navegador: página no abierta ni archivo verificado. Según buscador y prensa, la ONE publicó en junio de 2026 nuevas estimaciones 1950-2100 con el censo 2022. No se elude; requiere descarga manual.",
+     "reason": {
+      "es": "one.gob.do bloquea el acceso automatizado (Cloudflare); requiere descarga manual.",
+      "en": "one.gob.do blocks automated access (Cloudflare); manual download required."
+     },
+     "note": null
+    }
+   }
+  },
+  "ECU": {
+   "name_es": "Ecuador",
+   "name_en": "Ecuador",
+   "series": {
+    "historical": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INEC Ecuador",
+     "source_id": "ecu_inec_rev2024",
+     "vintage": "Rev. 2024",
+     "url": "https://www.ecuadorencifras.gob.ec/documentos/web-inec/Poblacion_y_Demografia/Proyecciones_Poblacionales/censo_2022/revision_2024_areas/Tabulados_Estimacion_Proyeccion_v2.xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/ECU/ecu_inec/2026-11-01_35dba440e116_Tabulados_Estimacion_Proyeccion_v2.xlsx",
+     "raw_sha256": "35dba440e116cad9e606d58960c1c27affc690392f6a29eacf651309bc5e01cd",
+     "retrieved_by": "script"
+    },
+    "projection": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INEC Ecuador",
+     "source_id": "ecu_inec_rev2024",
+     "vintage": "Rev. 2024",
+     "url": "https://www.ecuadorencifras.gob.ec/documentos/web-inec/Poblacion_y_Demografia/Proyecciones_Poblacionales/censo_2022/revision_2024_areas/Tabulados_Estimacion_Proyeccion_v2.xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/ECU/ecu_inec/2026-11-01_35dba440e116_Tabulados_Estimacion_Proyeccion_v2.xlsx",
+     "raw_sha256": "35dba440e116cad9e606d58960c1c27affc690392f6a29eacf651309bc5e01cd",
+     "retrieved_by": "script"
+    }
+   }
+  },
+  "GTM": {
+   "name_es": "Guatemala",
+   "name_en": "Guatemala",
+   "series": {
+    "historical": {
+     "status": "pendiente",
+     "source_tier": "national",
+     "institution": "INE Guatemala",
+     "source_id": null,
+     "vintage": null,
+     "url": "https://www.ine.gob.gt/proyecciones/",
+     "last_success": null,
+     "retrieved_at": null,
+     "error": "La página abrió una vez en navegador y mostró 'Proyecciones Nacionales 1950-2050' con botón Descargar; al volver apareció un captcha de Radware, también ante scripts. No se elude ni se obtuvo el archivo. Requiere descarga manual.",
+     "reason": {
+      "es": "ine.gob.gt exige captcha; requiere descarga manual.",
+      "en": "ine.gob.gt requires a captcha; manual download required."
+     },
+     "note": null
+    },
+    "projection": {
+     "status": "pendiente",
+     "source_tier": "national",
+     "institution": "INE Guatemala",
+     "source_id": null,
+     "vintage": null,
+     "url": "https://www.ine.gob.gt/proyecciones/",
+     "last_success": null,
+     "retrieved_at": null,
+     "error": "La página abrió una vez en navegador y mostró 'Proyecciones Nacionales 1950-2050' con botón Descargar; al volver apareció un captcha de Radware, también ante scripts. No se elude ni se obtuvo el archivo. Requiere descarga manual.",
+     "reason": {
+      "es": "ine.gob.gt exige captcha; requiere descarga manual.",
+      "en": "ine.gob.gt requires a captcha; manual download required."
+     },
+     "note": null
+    }
+   }
+  },
+  "HND": {
+   "name_es": "Honduras",
+   "name_en": "Honduras",
+   "series": {
+    "historical": {
+     "status": "ok",
+     "source_tier": "regional_fallback",
+     "institution": "CEPAL/CELADE (CEPALSTAT, indicador 1)",
+     "source_id": "cepal_celade_rev2022",
+     "vintage": "CEPAL Rev. 2022",
+     "url": "https://api-cepalstat.cepal.org/cepalstat/api/v1/indicator/1/data?lang=es&format=json&members=146,239",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/HND/cepal_hnd/2026-11-01_6b878e2531d2_cepalstat_indicador1_miembro239.json",
+     "raw_sha256": "6b878e2531d2f6b54f0730ae78ec1e87d85a71eafdbf6d214259bc759af5a0d9",
+     "retrieved_by": "script"
+    },
+    "projection": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INE Honduras",
+     "source_id": "hnd_ine_censo2013",
+     "vintage": "Censo 2013",
+     "url": "https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": {
+      "es": "Proyección basada en el censo 2013; desde 2030 solo quinquenal.",
+      "en": "Projection based on the 2013 census; five-yearly from 2030."
+     },
+     "raw_file": "data/raw/HND/hnd_ine/2026-11-01_53eb3d72c9ce_Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
+     "raw_sha256": "53eb3d72c9ce9b09095b5f3d7854845303cf1197d5fa223c6c5e1bd43c5858a6",
+     "retrieved_by": "script"
+    }
+   }
+  },
+  "HTI": {
+   "name_es": "Haití",
+   "name_en": "Haiti",
+   "series": {
+    "historical": {
+     "status": "ok",
+     "source_tier": "regional_fallback",
+     "institution": "CEPAL/CELADE (CEPALSTAT, indicador 1)",
+     "source_id": "cepal_celade_rev2022",
+     "vintage": "CEPAL Rev. 2022",
+     "url": "https://api-cepalstat.cepal.org/cepalstat/api/v1/indicator/1/data?lang=es&format=json&members=146,238",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/HTI/cepal_hti/2026-11-01_0f1735422031_cepalstat_indicador1_miembro238.json",
+     "raw_sha256": "0f17354220313b0cce1bed5684e8269e97ce8c0b96d507fab6bc33fd3d2edae6",
+     "retrieved_by": "script"
+    },
+    "projection": {
+     "status": "ok",
+     "source_tier": "regional_fallback",
+     "institution": "CEPAL/CELADE (CEPALSTAT, indicador 1)",
+     "source_id": "cepal_celade_rev2022",
+     "vintage": "CEPAL Rev. 2022",
+     "url": "https://api-cepalstat.cepal.org/cepalstat/api/v1/indicator/1/data?lang=es&format=json&members=146,238",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": {
+      "es": "IHSI solo publica cifras puntuales (2024: 11.867.032).",
+      "en": "IHSI publishes single-year figures only (2024: 11,867,032)."
+     },
+     "raw_file": "data/raw/HTI/cepal_hti/2026-11-01_0f1735422031_cepalstat_indicador1_miembro238.json",
+     "raw_sha256": "0f17354220313b0cce1bed5684e8269e97ce8c0b96d507fab6bc33fd3d2edae6",
+     "retrieved_by": "script"
+    }
+   }
+  },
+  "MEX": {
+   "name_es": "México",
+   "name_en": "Mexico",
+   "series": {
+    "historical": {
+     "status": "manual_pendiente",
+     "source_tier": "national",
+     "institution": "CONAPO",
+     "source_id": "mex_conapo_2023",
+     "vintage": "Conciliación 2023",
+     "url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/b4fe49a8-c86a-4c32-8450-8f3c4cc83125/download/05_indicadores_demograficos_proyecciones.csv",
+     "last_success": null,
+     "retrieved_at": null,
+     "error": "Fuente manual sin archivo en data/raw/",
+     "reason": {
+      "es": "datos.gob.mx rechaza un agente identificado: falta que una persona deje el archivo.",
+      "en": "datos.gob.mx rejects an identified agent: a person must add the file."
+     },
+     "note": null
+    },
+    "projection": {
+     "status": "manual_pendiente",
+     "source_tier": "national",
+     "institution": "CONAPO",
+     "source_id": "mex_conapo_2023",
+     "vintage": "Conciliación 2023",
+     "url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/b4fe49a8-c86a-4c32-8450-8f3c4cc83125/download/05_indicadores_demograficos_proyecciones.csv",
+     "last_success": null,
+     "retrieved_at": null,
+     "error": "Fuente manual sin archivo en data/raw/",
+     "reason": {
+      "es": "datos.gob.mx rechaza un agente identificado: falta que una persona deje el archivo.",
+      "en": "datos.gob.mx rejects an identified agent: a person must add the file."
+     },
+     "note": null
+    }
+   }
+  },
+  "NIC": {
+   "name_es": "Nicaragua",
+   "name_en": "Nicaragua",
+   "series": {
+    "historical": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INIDE",
+     "source_id": "nic_inide_rev2012",
+     "vintage": "Rev. 2012",
+     "url": "https://www.inide.gob.ni/docs/Anuarios/Anuario2023/Anuario_Estadistico_2023.pdf",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": {
+      "es": "INIDE une tres revisiones en un cuadro: rupturas en 2006 y 2011.",
+      "en": "INIDE joins three revisions in one table: breaks in 2006 and 2011."
+     },
+     "raw_file": "data/raw/NIC/nic_inide/2026-11-01_47c54be057f9_Anuario_Estadistico_2023.pdf",
+     "raw_sha256": "47c54be057f94b2a75329c652d7cb7ade630754cd0422cc18e320399c1bcbf7b",
+     "retrieved_by": "script"
+    },
+    "projection": {
+     "status": "ok",
+     "source_tier": "regional_fallback",
+     "institution": "CEPAL/CELADE (CEPALSTAT, indicador 1)",
+     "source_id": "cepal_celade_rev2022",
+     "vintage": "CEPAL Rev. 2022",
+     "url": "https://api-cepalstat.cepal.org/cepalstat/api/v1/indicator/1/data?lang=es&format=json&members=146,240",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": {
+      "es": "INIDE no publica proyección descargable. Salto al pasar a CEPAL: 6,87 M (INIDE 2024) y 7,24 M (CEPAL 2025).",
+      "en": "INIDE publishes no downloadable projection. Jump on switching to CEPAL: 6.87 M (INIDE 2024) and 7.24 M (CEPAL 2025)."
+     },
+     "raw_file": "data/raw/NIC/cepal_nic/2026-11-01_bbe47207835b_cepalstat_indicador1_miembro240.json",
+     "raw_sha256": "bbe47207835bd6fab8421bbe67c9fc0b4ae20dbe77a90f37c09bd685b3d5ca13",
+     "retrieved_by": "script"
+    }
+   }
+  },
+  "PAN": {
+   "name_es": "Panamá",
+   "name_en": "Panama",
+   "series": {
+    "historical": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INEC Panamá",
+     "source_id": "pan_inec_censo2023",
+     "vintage": "Censo 2023",
+     "url": "https://www.inec.gob.pa/archivos/P0705547520260126142400Cuadro 1.xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/PAN/pan_inec/2026-11-01_1c832db124d7_P0705547520260126142400Cuadro_1.xlsx",
+     "raw_sha256": "1c832db124d7ac1eab011f0d0830d696570d2414068be929debc391749b492b2",
+     "retrieved_by": "script"
+    },
+    "projection": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INEC Panamá",
+     "source_id": "pan_inec_censo2023",
+     "vintage": "Censo 2023",
+     "url": "https://www.inec.gob.pa/archivos/P0705547520260126142400Cuadro 1.xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/PAN/pan_inec/2026-11-01_1c832db124d7_P0705547520260126142400Cuadro_1.xlsx",
+     "raw_sha256": "1c832db124d7ac1eab011f0d0830d696570d2414068be929debc391749b492b2",
+     "retrieved_by": "script"
+    }
+   }
+  },
+  "PER": {
+   "name_es": "Perú",
+   "name_en": "Peru",
+   "series": {
+    "historical": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INEI",
+     "source_id": "per_inei_be24",
+     "vintage": "Boletín Especial 24",
+     "url": "https://www.inei.gob.pe/media/principales_indicadores/libro_bol_esp_24_4.pdf",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/PER/per_inei/2026-11-01_50671ed79533_libro_bol_esp_24_4.pdf",
+     "raw_sha256": "50671ed795339fcf63c0e577c0725a7222df6619a87d7947fb4f2e493817f87f",
+     "retrieved_by": "script"
+    },
+    "projection": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INEI",
+     "source_id": "per_inei_be24",
+     "vintage": "Boletín Especial 24",
+     "url": "https://www.inei.gob.pe/media/principales_indicadores/libro_bol_esp_24_4.pdf",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": {
+      "es": "INEI declara provisional la proyección tras el censo 2025 (primer resultado: 34.157.732).",
+      "en": "INEI declares the projection provisional after the 2025 census (first result: 34,157,732)."
+     },
+     "raw_file": "data/raw/PER/per_inei/2026-11-01_50671ed79533_libro_bol_esp_24_4.pdf",
+     "raw_sha256": "50671ed795339fcf63c0e577c0725a7222df6619a87d7947fb4f2e493817f87f",
+     "retrieved_by": "script"
+    }
+   }
+  },
+  "PRY": {
+   "name_es": "Paraguay",
+   "name_en": "Paraguay",
+   "series": {
+    "historical": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INE Paraguay",
+     "source_id": "pry_ine_rev2024",
+     "vintage": "Rev. 2024",
+     "url": "https://www.ine.gov.py/Publicaciones/Biblioteca/documento/266/Estimaciones y Proyecciones Nacional por año 1950-2050. Revisión 2024.xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/PRY/pry_ine/2026-11-01_342c4f661760_Estimaciones_y_Proyecciones_Nacional_por_a_o_1950-2050._Revisi_n_2024.xlsx",
+     "raw_sha256": "342c4f6617602cb190b0681a07af24f1215e34976d5eba09a14a0f27216235ce",
+     "retrieved_by": "script"
+    },
+    "projection": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INE Paraguay",
+     "source_id": "pry_ine_rev2024",
+     "vintage": "Rev. 2024",
+     "url": "https://www.ine.gov.py/Publicaciones/Biblioteca/documento/266/Estimaciones y Proyecciones Nacional por año 1950-2050. Revisión 2024.xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/PRY/pry_ine/2026-11-01_342c4f661760_Estimaciones_y_Proyecciones_Nacional_por_a_o_1950-2050._Revisi_n_2024.xlsx",
+     "raw_sha256": "342c4f6617602cb190b0681a07af24f1215e34976d5eba09a14a0f27216235ce",
+     "retrieved_by": "script"
+    }
+   }
+  },
+  "SLV": {
+   "name_es": "El Salvador",
+   "name_en": "El Salvador",
+   "series": {
+    "historical": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "ONEC / BCR (antes DIGESTYC)",
+     "source_id": "slv_onec_rev2021",
+     "vintage": "Rev. 2021",
+     "url": "https://www.bcr.gob.sv/documental/Inicio/descarga/El_Salvador_Estimaciones_y_Proyecciones_de_Poblacion_Nacional_2005-2050(rev2021).xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/SLV/slv_onec/2026-11-01_2c419f432e9d_El_Salvador_Poblacion_Nacional_2005-2050_rev2021.xlsx",
+     "raw_sha256": "2c419f432e9d3024ee2e37e97267bbde080bb6c8edcacaa9a98c90eb6050ebf2",
+     "retrieved_by": "script"
+    },
+    "projection": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "ONEC / BCR (antes DIGESTYC)",
+     "source_id": "slv_onec_rev2021",
+     "vintage": "Rev. 2021",
+     "url": "https://www.bcr.gob.sv/documental/Inicio/descarga/El_Salvador_Estimaciones_y_Proyecciones_de_Poblacion_Nacional_2005-2050(rev2021).xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": {
+      "es": "Vintage superada: ONEC cita una revisión 2025 que no está disponible para descargar.",
+      "en": "Superseded vintage: ONEC cites a 2025 revision that is not available for download."
+     },
+     "raw_file": "data/raw/SLV/slv_onec/2026-11-01_2c419f432e9d_El_Salvador_Poblacion_Nacional_2005-2050_rev2021.xlsx",
+     "raw_sha256": "2c419f432e9d3024ee2e37e97267bbde080bb6c8edcacaa9a98c90eb6050ebf2",
+     "retrieved_by": "script"
+    }
+   }
+  },
+  "URY": {
+   "name_es": "Uruguay",
+   "name_en": "Uruguay",
+   "series": {
+    "historical": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INE Uruguay",
+     "source_id": "ury_ine_rev2025",
+     "vintage": "Rev. 2025",
+     "url": "https://www5.ine.gub.uy/documents/DemografíayEESS/SERIES%20Y%20OTROS/Estimaciones%20y%20proyecciones/Revisión%202025/A.1.1%20Uruguay.xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/URY/ury_ine_hist/2026-11-01_4460b64d0d32_A.1.1_Uruguay.xlsx",
+     "raw_sha256": "4460b64d0d3283a520b6a9d3ca8bc601f30b39b5417e5e955902213cf2a81452",
+     "retrieved_by": "script"
+    },
+    "projection": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INE Uruguay",
+     "source_id": "ury_ine_rev2025",
+     "vintage": "Rev. 2025",
+     "url": "https://www5.ine.gub.uy/documents/DemografíayEESS/SERIES%20Y%20OTROS/Estimaciones%20y%20proyecciones/Revisión%202025/B.1.1%20Uruguay%20(100ymas)2024-2070.xlsx",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/URY/ury_ine_proj/2026-11-01_def36b35c130_B.1.1_Uruguay__100ymas_2024-2070.xlsx",
+     "raw_sha256": "def36b35c130a86c2591c74d2443078b172d903fca582f292d06a6472d0274df",
+     "retrieved_by": "script"
+    }
+   }
+  },
+  "VEN": {
+   "name_es": "Venezuela",
+   "name_en": "Venezuela",
+   "series": {
+    "historical": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INE Venezuela",
+     "source_id": "ven_ine_censo2001",
+     "vintage": "Censo 2001",
+     "url": "https://ine.gob.ve/wp-content/uploads/2026/03/1950-2050-REP.-BOL.-VENEZUELA-PROYECCION-POBLACION.pdf",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": {
+      "es": "Tabla escaneada, transcrita a mano y verificada por suma.",
+      "en": "Scanned table, hand-transcribed and sum-checked."
+     },
+     "raw_file": "data/raw/VEN/ven_ine_2001/2026-11-01_d912ae93e91c_1950-2050-REP.-BOL.-VENEZUELA-PROYECCION-POBLACION.pdf",
+     "raw_sha256": "d912ae93e91c279ffd73b7ea4ea6f6fbf5d6548ea16429e55a7fc053f9dba74f",
+     "retrieved_by": "script"
+    },
+    "projection": {
+     "status": "ok",
+     "source_tier": "national",
+     "institution": "INE Venezuela",
+     "source_id": "ven_ine_censo2011",
+     "vintage": "Censo 2011",
+     "url": "https://ine.gob.ve/wp-content/uploads/2026/09/PROYECCION-POBLACION-PARROQUIAS.xls",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": {
+      "es": "Calculada en 2013, antes de la emigración masiva. CEPAL da 29,9 M para 2025 frente a 34,4 M. Lectura con cautela. Solo quinquenal.",
+      "en": "Computed in 2013, before mass emigration. CEPAL gives 29.9 M for 2025 against 34.4 M. Read with caution. Five-yearly only."
+     },
+     "raw_file": "data/raw/VEN/ven_ine_2011/2026-11-01_f515cc5f0b06_PROYECCION-POBLACION-PARROQUIAS.xls",
+     "raw_sha256": "f515cc5f0b0651d234bca9a3e0496cf09f6063a964bcceb9d2350deb1f0de450",
+     "retrieved_by": "script"
+    }
+   }
+  }
+ }
+}

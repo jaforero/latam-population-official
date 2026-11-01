@@ -1,0 +1,30 @@
+{
+ "schema_version": "1.0",
+ "iso3": "DOM",
+ "name_es": "República Dominicana",
+ "name_en": "Dominican Republic",
+ "status": {
+  "historical": "pendiente",
+  "projection": "pendiente"
+ },
+ "reasons": {
+  "historical": {
+   "es": "one.gob.do bloquea el acceso automatizado (Cloudflare); requiere descarga manual.",
+   "en": "one.gob.do blocks automated access (Cloudflare); manual download required."
+  },
+  "projection": {
+   "es": "one.gob.do bloquea el acceso automatizado (Cloudflare); requiere descarga manual.",
+   "en": "one.gob.do blocks automated access (Cloudflare); manual download required."
+  }
+ },
+ "segments": [],
+ "breaks": [],
+ "peak": {
+  "status": "no_projection",
+  "year": null,
+  "population": null,
+  "source_id": null,
+  "horizon_end": null
+ },
+ "records": []
+}

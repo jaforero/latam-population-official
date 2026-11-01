@@ -1,0 +1,30 @@
+{
+ "schema_version": "1.0",
+ "iso3": "CUB",
+ "name_es": "Cuba",
+ "name_en": "Cuba",
+ "status": {
+  "historical": "pendiente",
+  "projection": "pendiente"
+ },
+ "reasons": {
+  "historical": {
+   "es": "El certificado TLS de ONEI venció el 2026-09-02; no se pudo verificar ningún archivo.",
+   "en": "ONEI's TLS certificate expired on 2026-09-02; no file could be verified."
+  },
+  "projection": {
+   "es": "El certificado TLS de ONEI venció el 2026-09-02; no se pudo verificar ningún archivo.",
+   "en": "ONEI's TLS certificate expired on 2026-09-02; no file could be verified."
+  }
+ },
+ "segments": [],
+ "breaks": [],
+ "peak": {
+  "status": "no_projection",
+  "year": null,
+  "population": null,
+  "source_id": null,
+  "horizon_end": null
+ },
+ "records": []
+}

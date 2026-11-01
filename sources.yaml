@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 verified_at: '2026-11-01'
 verification_method: Cada URL se abrió con comprobación TLS activa y agente identificado. Los bloqueos se registran
   y no se eluden. Las cifras de control se leyeron en el archivo o, si se indica, en navegador.
@@ -8,12 +8,6 @@ status_values:
   ok: descargable por script y cifra de control leída
   manual: dato existe pero la descarga automática no procede; un humano deja el archivo en data/raw/
   pendiente: sin archivo verificado; nunca se rellena
-open_decisions:
-  D1: CEPALSTAT cita a WPP como coproductor y la API (Revisión 2022) no coincide con la página de Excel (Revisión
-    2024). ¿Se acepta como respaldo CEPAL?
-  D2: 'Cuba, sin sitio oficial accesible: ¿pendiente o CEPAL provisional?'
-  D3: 'Años anteriores a la serie nacional y puntos sueltos: ¿completar con CEPAL o dejar null?'
-  D4: 'México: ¿manual o agente de navegador en datos.gob.mx?'
 sources:
   ARG:
     historical:
@@ -41,6 +35,14 @@ sources:
       flags:
       - 'Ruptura de serie en 2022 por cambio de vintage: 2021 y 2022 no son comparables.'
       - No se localizó serie anual nacional descargable anterior a 2010.
+      source_id: arg_indec_censo2010
+      adapter: arg_indec_2010
+      raw_key: arg_indec_2010
+      year_from: 2010
+      year_to: 2021
+      reference_code: 07-01
+      scenario_code: single
+      vintage_label: Censo 2010
     projection:
       source_tier: national
       status: ok
@@ -67,6 +69,18 @@ sources:
       flags:
       - 'La vintage anterior daba 47.473.760 para 2025: 1,09 millones más.'
       - 'El horizonte termina en 2040: el indicador de máximo será ''no alcanza máximo en el horizonte''.'
+      source_id: arg_indec_censo2022
+      adapter: arg_indec_2022
+      raw_key: arg_indec_2022
+      year_from: 2022
+      year_to: 2040
+      reference_code: 07-01
+      scenario_code: single
+      vintage_label: Censo 2022
+      estimate_until: 2022
+      public_note:
+        es: 'Ruptura en 2022: la vintage Censo 2010 daba 1,09 M más para 2025.'
+        en: 'Break in 2022: the Census 2010 vintage gave 1.09 M more for 2025.'
   BOL:
     historical:
       source_tier: national
@@ -94,6 +108,17 @@ sources:
       - 'robots.txt de nimbus.ine.gob.bo declara ''Disallow: /'': descarga automática no permitida; método manual.'
       - El corte histórico/proyección (2023/2024) se infiere del censo 2024; el cuadro no lo marca.
       - Referencia al 1 de enero, distinta de la mayoría de países.
+      source_id: bol_ine_rev2025
+      adapter: bol_ine
+      raw_key: bol_ine
+      year_from: 2000
+      year_to: 2023
+      reference_code: 01-01
+      scenario_code: single
+      vintage_label: Rev. 2025
+      public_reason:
+        es: 'robots.txt prohíbe la descarga automática: falta que una persona deje el archivo.'
+        en: 'robots.txt forbids automated download: a person must add the file.'
     projection:
       source_tier: national
       status: manual
@@ -120,6 +145,20 @@ sources:
       - 'robots.txt de nimbus.ine.gob.bo declara ''Disallow: /'': descarga automática no permitida; método manual.'
       - El corte histórico/proyección (2023/2024) se infiere del censo 2024; el cuadro no lo marca.
       - Referencia al 1 de enero, distinta de la mayoría de países.
+      source_id: bol_ine_rev2025
+      adapter: bol_ine
+      raw_key: bol_ine
+      year_from: 2024
+      year_to: 2050
+      reference_code: 01-01
+      scenario_code: single
+      vintage_label: Rev. 2025
+      public_note:
+        es: Cifras al 1 de enero, no a mitad de año.
+        en: Figures as of January 1, not mid-year.
+      public_reason:
+        es: 'robots.txt prohíbe la descarga automática: falta que una persona deje el archivo.'
+        en: 'robots.txt forbids automated download: a person must add the file.'
   BRA:
     historical:
       source_tier: national
@@ -147,6 +186,14 @@ sources:
       - Corte 2023/2024 inferido; confirmar en la metodología.
       - La tabla SIDRA 7358 sigue en la Revisión 2018; no se usa.
       - Referencia al 1 de julio tomada de la práctica del IBGE; confirmar en la metodología.
+      source_id: bra_ibge_rev2024
+      adapter: bra_ibge
+      raw_key: bra_ibge
+      year_from: 2000
+      year_to: 2023
+      reference_code: 07-01
+      scenario_code: single
+      vintage_label: Rev. 2024
     projection:
       source_tier: national
       status: ok
@@ -173,6 +220,14 @@ sources:
       - Corte 2023/2024 inferido; confirmar en la metodología.
       - La tabla SIDRA 7358 sigue en la Revisión 2018; no se usa.
       - Referencia al 1 de julio tomada de la práctica del IBGE; confirmar en la metodología.
+      source_id: bra_ibge_rev2024
+      adapter: bra_ibge
+      raw_key: bra_ibge
+      year_from: 2024
+      year_to: 2070
+      reference_code: 07-01
+      scenario_code: single
+      vintage_label: Rev. 2024
   CHL:
     historical:
       source_tier: national
@@ -187,6 +242,10 @@ sources:
         enlaza la base 2017.
       flags:
       - 'Existe serie nacional: CEPAL no se usa mientras se busca el cuadro.'
+      source_id: null
+      public_reason:
+        es: INE Chile publicó la base 2024 (1992-2070), pero solo se halló un PDF sin cuadro anual.
+        en: INE Chile released base 2024 (1992-2070), but only a PDF without an annual table was found.
     projection:
       source_tier: national
       status: pendiente
@@ -205,6 +264,10 @@ sources:
         value: 20150948
         unit: personas
         location: PDF de resultados, p. 16
+      source_id: null
+      public_reason:
+        es: INE Chile publicó la base 2024 (1992-2070), pero solo se halló un PDF sin cuadro anual.
+        en: INE Chile released base 2024 (1992-2070), but only a PDF without an annual table was found.
   COL:
     historical:
       source_tier: national
@@ -228,6 +291,14 @@ sources:
         value: 47419200
         unit: personas
         location: Hoja 'Nacional_1950_2017', 2017, Total
+      source_id: col_dane_pped2025
+      adapter: col_dane
+      raw_key: col_dane_hist
+      year_from: 1950
+      year_to: 2017
+      reference_code: 06-30
+      scenario_code: single
+      vintage_label: PPED 2025
     projection:
       source_tier: national
       status: ok
@@ -250,6 +321,14 @@ sources:
         value: 53057212
         unit: personas
         location: Hoja 'PobNacionalxÁrea', 2025, Total
+      source_id: col_dane_pped2025
+      adapter: col_dane
+      raw_key: col_dane_proj
+      year_from: 2018
+      year_to: 2070
+      reference_code: 06-30
+      scenario_code: single
+      vintage_label: PPED 2025
   CRI:
     historical:
       source_tier: national
@@ -276,6 +355,17 @@ sources:
       flags:
       - El servidor responde 403 a scripts y a robots.txt; solo abre en navegador. Método manual; no se elude.
       - El publicador lo llama 'kit de cuadros'; archivo republicado en 2026-06, metodología de 2024-07.
+      source_id: cri_inec_1950_2100
+      adapter: cri_inec
+      raw_key: cri_inec
+      year_from: 1950
+      year_to: 2022
+      reference_code: 06-30
+      scenario_code: single
+      vintage_label: 1950-2100
+      public_reason:
+        es: 'El servidor rechaza scripts: falta que una persona deje el archivo.'
+        en: 'The server rejects scripts: a person must add the file.'
     projection:
       source_tier: national
       status: manual
@@ -301,6 +391,17 @@ sources:
       flags:
       - El servidor responde 403 a scripts y a robots.txt; solo abre en navegador. Método manual; no se elude.
       - El publicador lo llama 'kit de cuadros'; archivo republicado en 2026-06, metodología de 2024-07.
+      source_id: cri_inec_1950_2100
+      adapter: cri_inec
+      raw_key: cri_inec
+      year_from: 2023
+      year_to: 2100
+      reference_code: 06-30
+      scenario_code: medium
+      vintage_label: 1950-2100
+      public_reason:
+        es: 'El servidor rechaza scripts: falta que una persona deje el archivo.'
+        en: 'The server rejects scripts: a person must add the file.'
   CUB:
     historical:
       source_tier: national
@@ -317,6 +418,10 @@ sources:
       - 'La ONEI cambió a ''población efectiva'' desde 2021: hay ruptura conceptual frente a la población residente.'
       - Según prensa, proyección CEPDE 2015-2050 sin actualización tras la caída de población. Sin verificar.
       - Decisión D2 pendiente.
+      source_id: null
+      public_reason:
+        es: El certificado TLS de ONEI venció el 2026-09-02; no se pudo verificar ningún archivo.
+        en: ONEI's TLS certificate expired on 2026-09-02; no file could be verified.
     projection:
       source_tier: national
       status: pendiente
@@ -332,6 +437,10 @@ sources:
       - 'La ONEI cambió a ''población efectiva'' desde 2021: hay ruptura conceptual frente a la población residente.'
       - Según prensa, proyección CEPDE 2015-2050 sin actualización tras la caída de población. Sin verificar.
       - Decisión D2 pendiente.
+      source_id: null
+      public_reason:
+        es: El certificado TLS de ONEI venció el 2026-09-02; no se pudo verificar ningún archivo.
+        en: ONEI's TLS certificate expired on 2026-09-02; no file could be verified.
   DOM:
     historical:
       source_tier: national
@@ -346,6 +455,10 @@ sources:
         1950-2100 con el censo 2022. No se elude; requiere descarga manual.'
       flags:
       - 'Existe serie nacional: CEPAL no se usa.'
+      source_id: null
+      public_reason:
+        es: one.gob.do bloquea el acceso automatizado (Cloudflare); requiere descarga manual.
+        en: one.gob.do blocks automated access (Cloudflare); manual download required.
     projection:
       source_tier: national
       status: pendiente
@@ -359,6 +472,10 @@ sources:
         1950-2100 con el censo 2022. No se elude; requiere descarga manual.'
       flags:
       - 'Existe serie nacional: CEPAL no se usa.'
+      source_id: null
+      public_reason:
+        es: one.gob.do bloquea el acceso automatizado (Cloudflare); requiere descarga manual.
+        en: one.gob.do blocks automated access (Cloudflare); manual download required.
   ECU:
     historical:
       source_tier: national
@@ -385,6 +502,14 @@ sources:
         location: Hoja '1.1', fila Total Nacional, 2022, Total
       flags:
       - 'Archivo de 56 MB, modificado el 2026-10-16: vigilar nuevas versiones v2/v3.'
+      source_id: ecu_inec_rev2024
+      adapter: ecu_inec
+      raw_key: ecu_inec
+      year_from: 1950
+      year_to: 2022
+      reference_code: 06-30
+      scenario_code: single
+      vintage_label: Rev. 2024
     projection:
       source_tier: national
       status: ok
@@ -410,6 +535,14 @@ sources:
         location: Hoja '1.1', fila Total Nacional, 2025, Total
       flags:
       - 'Archivo de 56 MB, modificado el 2026-10-16: vigilar nuevas versiones v2/v3.'
+      source_id: ecu_inec_rev2024
+      adapter: ecu_inec
+      raw_key: ecu_inec
+      year_from: 2023
+      year_to: 2050
+      reference_code: 06-30
+      scenario_code: single
+      vintage_label: Rev. 2024
   GTM:
     historical:
       source_tier: national
@@ -424,6 +557,10 @@ sources:
         Requiere descarga manual.
       flags:
       - 'Existe serie nacional: CEPAL no se usa.'
+      source_id: null
+      public_reason:
+        es: ine.gob.gt exige captcha; requiere descarga manual.
+        en: ine.gob.gt requires a captcha; manual download required.
     projection:
       source_tier: national
       status: pendiente
@@ -437,6 +574,10 @@ sources:
         Requiere descarga manual.
       flags:
       - 'Existe serie nacional: CEPAL no se usa.'
+      source_id: null
+      public_reason:
+        es: ine.gob.gt exige captcha; requiere descarga manual.
+        en: ine.gob.gt requires a captcha; manual download required.
   HND:
     historical:
       source_tier: regional_fallback
@@ -466,6 +607,15 @@ sources:
         location: campo value de la API
       flags:
       - CEPALSTAT cita a Naciones Unidas (WPP) como coproductor; véase la nota de decisión D1.
+      source_id: cepal_celade_rev2022
+      adapter: cepal
+      raw_key: cepal_hnd
+      year_from: 1950
+      year_to: 2012
+      reference_code: mid-year
+      scenario_code: medium
+      vintage_label: CEPAL Rev. 2022
+      cepal_member: 239
     projection:
       source_tier: national
       status: ok
@@ -491,6 +641,20 @@ sources:
       flags:
       - Vintage antigua; el censo 2025 está en curso. Se espera sustitución.
       - 'Desde 2030 quinquenal: los años intermedios quedan null.'
+      source_id: hnd_ine_censo2013
+      adapter: hnd_ine
+      raw_key: hnd_ine
+      year_from: 2013
+      year_to: 2050
+      reference_code: 07-01
+      scenario_code: single
+      vintage_label: Censo 2013
+      annual_until: 2030
+      step_after: 5
+      estimate_until: 2013
+      public_note:
+        es: Proyección basada en el censo 2013; desde 2030 solo quinquenal.
+        en: Projection based on the 2013 census; five-yearly from 2030.
   HTI:
     historical:
       source_tier: regional_fallback
@@ -524,6 +688,15 @@ sources:
       - CEPALSTAT cita a Naciones Unidas (WPP) como coproductor; véase la nota de decisión D1.
       - 'Punto nacional IHSI 2024: 11.867.032; CEPAL da 11.867 mil. Sirve de contraste; podría prevalecer para ese
         año (decisión D3).'
+      source_id: cepal_celade_rev2022
+      adapter: cepal
+      raw_key: cepal_hti
+      year_from: 1950
+      year_to: 2023
+      reference_code: mid-year
+      scenario_code: medium
+      vintage_label: CEPAL Rev. 2022
+      cepal_member: 238
     projection:
       source_tier: regional_fallback
       status: ok
@@ -552,6 +725,18 @@ sources:
         location: campo value de la API
       flags:
       - CEPALSTAT cita a Naciones Unidas (WPP) como coproductor; véase la nota de decisión D1.
+      source_id: cepal_celade_rev2022
+      adapter: cepal
+      raw_key: cepal_hti
+      year_from: 2024
+      year_to: 2100
+      reference_code: mid-year
+      scenario_code: medium
+      vintage_label: CEPAL Rev. 2022
+      cepal_member: 238
+      public_note:
+        es: 'IHSI solo publica cifras puntuales (2024: 11.867.032).'
+        en: 'IHSI publishes single-year figures only (2024: 11,867,032).'
   MEX:
     historical:
       source_tier: national
@@ -580,6 +765,17 @@ sources:
         manual salvo decisión D4.'
       - Dato verificado el 2026-11-01 con agente de navegador durante la investigación.
       - 'Pico en el archivo: 147.022.927 en 2052.'
+      source_id: mex_conapo_2023
+      adapter: mex_conapo
+      raw_key: mex_conapo
+      year_from: 1950
+      year_to: 2019
+      reference_code: 07-01
+      scenario_code: single
+      vintage_label: Conciliación 2023
+      public_reason:
+        es: 'datos.gob.mx rechaza un agente identificado: falta que una persona deje el archivo.'
+        en: 'datos.gob.mx rejects an identified agent: a person must add the file.'
     projection:
       source_tier: national
       status: manual
@@ -607,6 +803,17 @@ sources:
         manual salvo decisión D4.'
       - Dato verificado el 2026-11-01 con agente de navegador durante la investigación.
       - 'Pico en el archivo: 147.022.927 en 2052.'
+      source_id: mex_conapo_2023
+      adapter: mex_conapo
+      raw_key: mex_conapo
+      year_from: 2020
+      year_to: 2070
+      reference_code: 07-01
+      scenario_code: single
+      vintage_label: Conciliación 2023
+      public_reason:
+        es: 'datos.gob.mx rechaza un agente identificado: falta que una persona deje el archivo.'
+        en: 'datos.gob.mx rejects an identified agent: a person must add the file.'
   NIC:
     historical:
       source_tier: national
@@ -632,6 +839,30 @@ sources:
         location: Anuario 2023, cuadro II.1.4, p. 47, La República
       flags:
       - 'El cuadro II.1.2 une tres revisiones: rupturas de serie en 2006 y 2011.'
+      source_id: nic_inide_rev2012
+      adapter: nic_inide
+      raw_key: nic_inide
+      year_from: 1990
+      year_to: 2024
+      reference_code: 06-30
+      scenario_code: single
+      vintage_label: Rev. 2012
+      segments:
+      - year_from: 1990
+        year_to: 2005
+        source_id: nic_inide_rev2004
+        label: Rev. 2004
+      - year_from: 2006
+        year_to: 2010
+        source_id: nic_inide_rev2007
+        label: Rev. 2007
+      - year_from: 2011
+        year_to: 2024
+        source_id: nic_inide_rev2012
+        label: Rev. 2012
+      public_note:
+        es: 'INIDE une tres revisiones en un cuadro: rupturas en 2006 y 2011.'
+        en: 'INIDE joins three revisions in one table: breaks in 2006 and 2011.'
     projection:
       source_tier: regional_fallback
       status: ok
@@ -662,6 +893,20 @@ sources:
       flags:
       - CEPALSTAT cita a Naciones Unidas (WPP) como coproductor; véase la nota de decisión D1.
       - 'Salto entre fuentes: INIDE 2024 = 6.874.748; CEPAL 2024 = 7.142,5 mil. Se registra ruptura, sin ajuste.'
+      source_id: cepal_celade_rev2022
+      adapter: cepal
+      raw_key: cepal_nic
+      year_from: 2025
+      year_to: 2100
+      reference_code: mid-year
+      scenario_code: medium
+      vintage_label: CEPAL Rev. 2022
+      cepal_member: 240
+      public_note:
+        es: 'INIDE no publica proyección descargable. Salto al pasar a CEPAL: 6,87 M (INIDE 2024) y 7,24 M (CEPAL
+          2025).'
+        en: 'INIDE publishes no downloadable projection. Jump on switching to CEPAL: 6.87 M (INIDE 2024) and 7.24
+          M (CEPAL 2025).'
   PAN:
     historical:
       source_tier: national
@@ -688,6 +933,14 @@ sources:
       flags:
       - Datos repartidos en 11 hojas.
       - 'URL con espacios y marca de tiempo en el nombre: cambiará con cada republicación.'
+      source_id: pan_inec_censo2023
+      adapter: pan_inec
+      raw_key: pan_inec
+      year_from: 1950
+      year_to: 2023
+      reference_code: 07-01
+      scenario_code: single
+      vintage_label: Censo 2023
     projection:
       source_tier: national
       status: ok
@@ -710,13 +963,21 @@ sources:
         value: 4598365
         unit: personas
         location: Hoja '2022-30', fila TOTAL, 2025
+      source_id: pan_inec_censo2023
+      adapter: pan_inec
+      raw_key: pan_inec
+      year_from: 2024
+      year_to: 2050
+      reference_code: 07-01
+      scenario_code: single
+      vintage_label: Censo 2023
   PER:
     historical:
       source_tier: national
       status: ok
       institution: INEI
-      url: https://www.inei.gob.pe/media/MenuRecursivo/indices_tematicos/proy_01_3.xlsx
-      access_method: XLSX
+      url: https://www.inei.gob.pe/media/principales_indicadores/libro_bol_esp_24_4.pdf
+      access_method: PDF
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
       vintage:
@@ -726,16 +987,25 @@ sources:
         revision: Boletín Especial N.° 24
       scenario: 'No aplica: serie única'
       reference_date: 30 de junio
-      years_covered: 1980-2017
+      years_covered: 1950-2017
       update_frequency: Anual (índice temático)
       control:
         year: 2017
         value: 30973992
         unit: personas
-        location: Hoja 'Hoja', segundo bloque, 2017, Total
+        location: Boletín Especial 24, cuadro 1, 2017
       flags:
-      - 'TRAMPA: la hoja trae dos bloques con valores distintos para 1990-1999 (p. ej., 1990: 21.764.515 y 22.031.627).
-        Debe usarse el bloque 1980-2026; el primero queda sin explicar.'
+      - 'Se eligió el PDF: la serie 1980-2026 coincide cifra a cifra con el XLSX del INEI, que además trae un bloque
+        duplicado con otros valores para 1990-1999.'
+      source_id: per_inei_be24
+      adapter: per_inei
+      raw_key: per_inei
+      year_from: 1950
+      year_to: 2017
+      reference_code: 06-30
+      scenario_code: single
+      vintage_label: Boletín Especial 24
+      location_in_file: Cuadro N.° 1, pp. 15-16
     projection:
       source_tier: national
       status: ok
@@ -762,6 +1032,18 @@ sources:
       - 'INEI declara provisional la proyección 2026 hasta el censo 2025; primer resultado censal: 34.157.732. Cambio
         de vintage inminente.'
       - El Boletín 38 llega a 2070, pero solo quinquenal.
+      source_id: per_inei_be24
+      adapter: per_inei
+      raw_key: per_inei
+      year_from: 2018
+      year_to: 2050
+      reference_code: 06-30
+      scenario_code: recommended
+      vintage_label: Boletín Especial 24
+      location_in_file: Cuadro N.° 1, pp. 15-16
+      public_note:
+        es: 'INEI declara provisional la proyección tras el censo 2025 (primer resultado: 34.157.732).'
+        en: 'INEI declares the projection provisional after the 2025 census (first result: 34,157,732).'
   PRY:
     historical:
       source_tier: national
@@ -790,6 +1072,14 @@ sources:
       - Corte 2022/2023 inferido del censo; confirmar en el Índice del archivo.
       - El archivo se llama 'Revisión 2024', se modificó en 2025-11-27 y la prensa cita 'Revisión 2025'. Confirmar
         nombre.
+      source_id: pry_ine_rev2024
+      adapter: pry_ine
+      raw_key: pry_ine
+      year_from: 1950
+      year_to: 2022
+      reference_code: 06-30
+      scenario_code: single
+      vintage_label: Rev. 2024
     projection:
       source_tier: national
       status: ok
@@ -817,6 +1107,14 @@ sources:
       - Corte 2022/2023 inferido del censo; confirmar en el Índice del archivo.
       - El archivo se llama 'Revisión 2024', se modificó en 2025-11-27 y la prensa cita 'Revisión 2025'. Confirmar
         nombre.
+      source_id: pry_ine_rev2024
+      adapter: pry_ine
+      raw_key: pry_ine
+      year_from: 2023
+      year_to: 2050
+      reference_code: 06-30
+      scenario_code: single
+      vintage_label: Rev. 2024
   SLV:
     historical:
       source_tier: national
@@ -844,6 +1142,14 @@ sources:
       - 'VINTAGE SUPERADA: ONEC/BCR citan una revisión 2025 (1950-2050, Censo 2024) con 6.147.648 para 2024 según
         prensa, pero el repositorio solo ofrece la Revisión 2021. Se sustituirá al localizarla.'
       - 'El corte 2020/2021 es una inferencia: no está marcado en el archivo.'
+      source_id: slv_onec_rev2021
+      adapter: slv_onec
+      raw_key: slv_onec
+      year_from: 2005
+      year_to: 2020
+      reference_code: null
+      scenario_code: single
+      vintage_label: Rev. 2021
     projection:
       source_tier: national
       status: ok
@@ -870,6 +1176,17 @@ sources:
       - 'VINTAGE SUPERADA: ONEC/BCR citan una revisión 2025 (1950-2050, Censo 2024) con 6.147.648 para 2024 según
         prensa, pero el repositorio solo ofrece la Revisión 2021. Se sustituirá al localizarla.'
       - 'El corte 2020/2021 es una inferencia: no está marcado en el archivo.'
+      source_id: slv_onec_rev2021
+      adapter: slv_onec
+      raw_key: slv_onec
+      year_from: 2021
+      year_to: 2050
+      reference_code: null
+      scenario_code: single
+      vintage_label: Rev. 2021
+      public_note:
+        es: 'Vintage superada: ONEC cita una revisión 2025 que no está disponible para descargar.'
+        en: 'Superseded vintage: ONEC cites a 2025 revision that is not available for download.'
   URY:
     historical:
       source_tier: national
@@ -893,6 +1210,14 @@ sources:
         value: 3496400.0266143307
         unit: personas
         location: Hoja 'Uruguay', Ambos sexos, 2023
+      source_id: ury_ine_rev2025
+      adapter: ury_ine
+      raw_key: ury_ine_hist
+      year_from: 1996
+      year_to: 2023
+      reference_code: 06-30
+      scenario_code: single
+      vintage_label: Rev. 2025
     projection:
       source_tier: national
       status: ok
@@ -917,6 +1242,14 @@ sources:
         location: Hoja 'Uruguay', Ambos sexos, 2025
       flags:
       - 'Valores con decimales en el original: se conservan sin redondear.'
+      source_id: ury_ine_rev2025
+      adapter: ury_ine
+      raw_key: ury_ine_proj
+      year_from: 2024
+      year_to: 2070
+      reference_code: 06-30
+      scenario_code: single
+      vintage_label: Rev. 2025
   VEN:
     historical:
       source_tier: national
@@ -933,16 +1266,27 @@ sources:
         revision: Estimaciones y Proyecciones 1950-2050
       scenario: Hipótesis recomendada
       reference_date: Año calendario (por confirmar)
-      years_covered: 1950-2000
+      years_covered: 1950-1999 (2000 lo aporta la vintage Censo 2011)
       update_frequency: Sin actualizaciones
       control:
-        year: 2001
-        value: 24765581
+        year: 1950
+        value: 5093708
         unit: personas
-        location: Cuadro 1, p. 31 del PDF (lectura visual; OCR no fiable)
+        location: Cuadro 1, p. 30 del PDF (transcripción verificada)
       flags:
-      - 'PDF escaneado: extracción manual con doble verificación.'
-      - Año 2001 fuera del rango usado; sirve solo como control de lectura.
+      - 'PDF escaneado: transcrito a mano en data/manual/; cada fila cumple hombres + mujeres = total.'
+      source_id: ven_ine_censo2001
+      adapter: ven_ine_2001
+      raw_key: ven_ine_2001
+      year_from: 1950
+      year_to: 1999
+      reference_code: null
+      scenario_code: recommended
+      vintage_label: Censo 2001
+      transcription: data/manual/ven_ine_censo2001_cuadro1.csv
+      public_note:
+        es: Tabla escaneada, transcrita a mano y verificada por suma.
+        en: Scanned table, hand-transcribed and sum-checked.
     projection:
       source_tier: national
       status: ok
@@ -969,3 +1313,55 @@ sources:
       - 'DUDOSO: calculada en 2013, previa a la emigración masiva. CEPAL da 29926.4 mil para 2025. La regla obliga
         a usar la nacional; la página debe advertirlo.'
       - 'Datos quinquenales: años intermedios null, sin interpolar.'
+      source_id: ven_ine_censo2011
+      adapter: ven_ine_2011
+      raw_key: ven_ine_2011
+      year_from: 2000
+      year_to: 2050
+      reference_code: 06-30
+      scenario_code: single
+      vintage_label: Censo 2011
+      annual_until: 1999
+      step_after: 5
+      estimate_until: 2010
+      public_note:
+        es: Calculada en 2013, antes de la emigración masiva. CEPAL da 29,9 M para 2025 frente a 34,4 M. Lectura
+          con cautela. Solo quinquenal.
+        en: Computed in 2013, before mass emigration. CEPAL gives 29.9 M for 2025 against 34.4 M. Read with caution.
+          Five-yearly only.
+decisions:
+  D1: 'Aprobado 2026-11-01: CEPAL/CELADE se acepta como respaldo, citando la vintage que declara la API (Revisión
+    2022) y su coproducción con ONU/WPP.'
+  D2: 'Aprobado 2026-11-01: Cuba queda pendiente; no se usa CEPAL provisional porque existe serie nacional.'
+  D3: 'Aprobado 2026-11-01: los años previos a la serie nacional quedan null, salvo Honduras (sin ninguna serie
+    nacional antes de 2013). La cifra IHSI 2024 de Haití es contraste, no se mezcla.'
+  D4: 'Aprobado 2026-11-01: México queda manual; no se falsea el agente de usuario.'
+watch:
+- iso3: HTI
+  url: https://ihsi.gouv.ht/statistiques/statistiques_demographiques_et_sociales/projections_et_estimations_de_la_population
+  pattern: projection|estimation
+  reason: Fuente nacional posible donde se usa CEPAL
+- iso3: NIC
+  url: https://www.inide.gob.ni/
+  pattern: proyecc|estimac
+  reason: Fuente nacional posible donde se usa CEPAL
+- iso3: HND
+  url: https://ine.gob.hn/
+  pattern: proyecc
+  reason: Fuente nacional posible donde se usa CEPAL; censo 2025 en curso
+- iso3: SLV
+  url: https://www.bcr.gob.sv/documental/Inicio/busqueda/192
+  pattern: estimaci|proyecci|rev20
+  reason: Se espera la revisión 2025
+- iso3: PER
+  url: https://www.inei.gob.pe/estadisticas/indice-tematico/population-estimates-and-projections/
+  pattern: proy_|proyecc
+  reason: Se espera vintage con censo 2025
+- iso3: CHL
+  url: https://www.ine.gob.cl/estadisticas-por-tema/demografia-y-poblacion/estimaciones-y-proyecciones-de-poblacion
+  pattern: base-?.?2024|xlsx?
+  reason: Se espera el cuadro anual base 2024
+- iso3: VEN
+  url: https://ine.gob.ve/
+  pattern: PROYECCION
+  reason: Se espera proyección actualizada

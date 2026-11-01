@@ -1,0 +1,45 @@
+{
+ "failures": [],
+ "alerts": [
+  {
+   "code": "annual_change",
+   "iso3": "VEN",
+   "message": "Variación anual de +4.46% en 1951 (ven_ine_censo2001)",
+   "fingerprint": "annual_change:VEN:ven_ine_censo2001:1951",
+   "year": 1951,
+   "source": "ven_ine_censo2001"
+  },
+  {
+   "code": "annual_change",
+   "iso3": "VEN",
+   "message": "Variación anual de +4.27% en 1952 (ven_ine_censo2001)",
+   "fingerprint": "annual_change:VEN:ven_ine_censo2001:1952",
+   "year": 1952,
+   "source": "ven_ine_censo2001"
+  },
+  {
+   "code": "annual_change",
+   "iso3": "VEN",
+   "message": "Variación anual de +4.09% en 1953 (ven_ine_censo2001)",
+   "fingerprint": "annual_change:VEN:ven_ine_censo2001:1953",
+   "year": 1953,
+   "source": "ven_ine_censo2001"
+  },
+  {
+   "code": "annual_change",
+   "iso3": "VEN",
+   "message": "Variación anual de +4.33% en 1956 (ven_ine_censo2001)",
+   "fingerprint": "annual_change:VEN:ven_ine_censo2001:1956",
+   "year": 1956,
+   "source": "ven_ine_censo2001"
+  },
+  {
+   "code": "annual_change",
+   "iso3": "VEN",
+   "message": "Variación anual de +4.15% en 1957 (ven_ine_censo2001)",
+   "fingerprint": "annual_change:VEN:ven_ine_censo2001:1957",
+   "year": 1957,
+   "source": "ven_ine_censo2001"
+  }
+ ]
+}

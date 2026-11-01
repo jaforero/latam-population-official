@@ -58,5 +58,17 @@
   "iso3": "CRI",
   "code": "source_added",
   "message": "projection: manual_pendiente → INEC, serie 1950-2100 aportada a mano"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "MEX",
+  "code": "source_added",
+  "message": "Archivo municipal 1990-2040 → base por edad y sexo 1970-2070, sumada por entidad; misma vintage CONAPO, cifras iguales en los años comunes"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "BOL",
+  "code": "source_added",
+  "message": "Se agrega Revisión 2014 solo para 2000-2011; sus años posteriores no se usan"
  }
 ]

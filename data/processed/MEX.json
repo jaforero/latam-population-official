@@ -14,23 +14,23 @@
    "series": "historical",
    "source_tier": "national",
    "institution": "CONAPO",
-   "source_url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/e9160552-769b-41ee-88d1-afc765552608/download/pobproy_inddemo.csv",
+   "source_url": "https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv",
    "vintage": "Conciliación 2023",
    "reference_census": "Censo 2020",
    "published": "2023 (por confirmar)",
    "scenario": "single",
    "reference_date": "07-01",
-   "year_from": 1990,
+   "year_from": 1970,
    "year_to": 2019,
    "access_method": "CSV (manual)",
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv",
-   "raw_sha256": "64903f768b4bed43672131f8179e14b6ce3b8d7a1671c51de7872a51ad26341e",
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv",
+   "raw_sha256": "89db6adc7930965fb5b5c01ad3a98765ed90afa6a151c2cfb913acc2b9e0cac6",
    "retrieved_at": "2026-11-01",
    "retrieved_by": "manual",
-   "location_in_file": "POB_MIT_MUN por municipio; POB_MIT_ENT como verificación cruzada",
+   "location_in_file": "POBLACION por ANIO, CVE_GEO, EDAD y SEXO (32 entidades × 110 edades × 2 sexos)",
    "note": {
-    "es": "Total nacional sumado desde los 2.475 municipios del archivo de CONAPO, que no trae fila nacional. El archivo llega a 2040: la serie nacional de CONAPO, aún sin cargar, llega a 2070, así que el máximo puede quedar fuera de este horizonte.",
-    "en": "National total summed from the 2,475 municipalities in the CONAPO file, which has no national row. The file ends in 2040: CONAPO's national series, not yet loaded, runs to 2070, so the peak may fall outside this horizon."
+    "es": "Total nacional sumado por entidad, edad y sexo: el archivo no trae fila nacional. Empieza en 1970; las filas nacionales de 1950-1969 no vienen en esta copia.",
+    "en": "National total summed by state, age and sex: the file has no national row. It starts in 1970; the national rows for 1950-1969 are not in this copy."
    },
    "transcription": null
   },
@@ -39,36 +39,336 @@
    "series": "projection",
    "source_tier": "national",
    "institution": "CONAPO",
-   "source_url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/e9160552-769b-41ee-88d1-afc765552608/download/pobproy_inddemo.csv",
+   "source_url": "https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv",
    "vintage": "Conciliación 2023",
    "reference_census": "Censo 2020",
    "published": "2023 (por confirmar)",
    "scenario": "single",
    "reference_date": "07-01",
    "year_from": 2020,
-   "year_to": 2040,
+   "year_to": 2070,
    "access_method": "CSV (manual)",
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv",
-   "raw_sha256": "64903f768b4bed43672131f8179e14b6ce3b8d7a1671c51de7872a51ad26341e",
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv",
+   "raw_sha256": "89db6adc7930965fb5b5c01ad3a98765ed90afa6a151c2cfb913acc2b9e0cac6",
    "retrieved_at": "2026-11-01",
    "retrieved_by": "manual",
-   "location_in_file": "POB_MIT_MUN por municipio; POB_MIT_ENT como verificación cruzada",
+   "location_in_file": "POBLACION por ANIO, CVE_GEO, EDAD y SEXO (32 entidades × 110 edades × 2 sexos)",
    "note": {
-    "es": "Total nacional sumado desde los 2.475 municipios del archivo de CONAPO, que no trae fila nacional. El archivo llega a 2040: la serie nacional de CONAPO, aún sin cargar, llega a 2070, así que el máximo puede quedar fuera de este horizonte.",
-    "en": "National total summed from the 2,475 municipalities in the CONAPO file, which has no national row. The file ends in 2040: CONAPO's national series, not yet loaded, runs to 2070, so the peak may fall outside this horizon."
+    "es": "Total nacional sumado por entidad, edad y sexo: el archivo no trae fila nacional. Empieza en 1970; las filas nacionales de 1950-1969 no vienen en esta copia.",
+    "en": "National total summed by state, age and sex: the file has no national row. It starts in 1970; the national rows for 1950-1969 are not in this copy."
    },
    "transcription": null
   }
  ],
  "breaks": [],
  "peak": {
-  "status": "no_peak_in_horizon",
-  "year": null,
-  "population": null,
+  "status": "peak",
+  "year": 2052,
+  "population": 147022927,
   "source_id": "mex_conapo_2023",
-  "horizon_end": 2040
+  "horizon_end": 2070
  },
  "records": [
+  {
+   "iso3": "MEX",
+   "year": 1970,
+   "population": 51560567,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": null,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1971,
+   "population": 53133584,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.030508140067583067,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1972,
+   "population": 54758696,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.03058540150425393,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1973,
+   "population": 56414565,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.030239379695966573,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1974,
+   "population": 58097331,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.029828573525294333,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1975,
+   "population": 59792538,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.029178741446831635,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1976,
+   "population": 61476071,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.028156239161482022,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1977,
+   "population": 63139218,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.027053566907358162,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1978,
+   "population": 64788304,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.026118251892191635,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1979,
+   "population": 66431403,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.02536104356119595,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1980,
+   "population": 68072118,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.02469788271670259,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1981,
+   "population": 69715468,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.024141308486978375,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1982,
+   "population": 71369508,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.02372558124403601,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1983,
+   "population": 73034559,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.023330005301423595,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1984,
+   "population": 74707346,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.022904047383924153,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1985,
+   "population": 76375259,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.022325957075225222,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1986,
+   "population": 78028665,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.021648450318184853,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1987,
+   "population": 79665004,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.020970998286334863,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1988,
+   "population": 81282371,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.020302101535073058,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1989,
+   "population": 82889981,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.019778089396530918,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
   {
    "iso3": "MEX",
    "year": 1990,
@@ -81,8 +381,8 @@
    "reference_date": "07-01",
    "retrieved_at": "2026-11-01",
    "interpolated": false,
-   "growth": null,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "growth": 0.019459613581042978,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -97,7 +397,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.019224042113161754,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -112,7 +412,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.018874975288083684,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -127,7 +427,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0183632080318592,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -142,7 +442,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01778048255371023,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -157,7 +457,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.017077285806632814,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -172,7 +472,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01620307812368793,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -187,7 +487,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.015237181837965963,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -202,7 +502,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.014262282623447975,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -217,7 +517,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.013287632809876104,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -232,7 +532,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.013084952538560346,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -247,7 +547,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01379109136989376,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -262,7 +562,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.014175317125359577,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -277,7 +577,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.013904892872055985,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -292,7 +592,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.013347910454289735,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -307,7 +607,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01334056634401204,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -322,7 +622,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01423977155867795,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -337,7 +637,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.015321954878038113,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -352,7 +652,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0158596966650999,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -367,7 +667,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01576534329104362,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -382,7 +682,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01526884607087986,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -397,7 +697,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.014727945650346852,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -412,7 +712,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.013863348716119273,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -427,7 +727,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.013019933150553609,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -442,7 +742,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.012131926935623705,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -457,7 +757,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01090376886956923,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -472,7 +772,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.009961036538082668,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -487,7 +787,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.00962691125965609,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -502,7 +802,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.009766634236589411,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -517,7 +817,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.009681598576778194,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -532,7 +832,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.007809604203935061,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -547,7 +847,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.00603520793403467,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -562,7 +862,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.007579769910499579,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -577,7 +877,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.009039178027802297,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -592,7 +892,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.008686285680571393,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -607,7 +907,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.008263215465642348,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -622,7 +922,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.007796731297839754,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -637,7 +937,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.007324039003905547,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -652,7 +952,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0068684657996147536,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -667,7 +967,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0064495504178923024,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -682,7 +982,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.006072719338504173,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -697,7 +997,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.005736652254998864,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -712,7 +1012,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.005436343721680226,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -727,7 +1027,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.005168592689577256,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -742,7 +1042,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0049280130274422795,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -757,7 +1057,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.00470407858047639,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -772,7 +1072,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.004481731413685797,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -787,7 +1087,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.004244694750011213,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -802,7 +1102,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.003980174657439051,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -817,7 +1117,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.003683907648705409,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   },
   {
    "iso3": "MEX",
@@ -832,7 +1132,457 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0033597803600466936,
-   "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2041,
+   "population": 144912929,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.003020552888417294,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2042,
+   "population": 145301351,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.0026803819554293007,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2043,
+   "population": 145642911,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.002350700785982429,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2044,
+   "population": 145939797,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.002038451428645338,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2045,
+   "population": 146194887,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.0017479125313570876,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2046,
+   "population": 146411280,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.0014801680444542775,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2047,
+   "population": 146592205,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.0012357312906492446,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2048,
+   "population": 146740307,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.001010299285695293,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2049,
+   "population": 146857365,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.0007977221963968439,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2050,
+   "population": 146943948,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.0005895720653845693,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2051,
+   "population": 146999649,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.00037906290635403295,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2052,
+   "population": 147022927,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.00015835411960751777,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2053,
+   "population": 147011306,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -7.904209389053563e-05,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2054,
+   "population": 146961870,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.00033627345641018547,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2055,
+   "population": 146872208,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.000610103831694575,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2056,
+   "population": 146741137,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.000892415262116808,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2057,
+   "population": 146568916,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.0011736381734591683,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2058,
+   "population": 146356973,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.001446029661568926,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2059,
+   "population": 146107409,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.001705173282041006,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2060,
+   "population": 145822700,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.001948628080866155,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2061,
+   "population": 145505553,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.002174880865599138,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2062,
+   "population": 145158569,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.0023846787483086107,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2063,
+   "population": 144784066,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.0025799579217400392,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2064,
+   "population": 144383681,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.002765394086943207,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2065,
+   "population": 143958301,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.0029461778301662633,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2066,
+   "population": 143507972,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.0031281905723519188,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2067,
+   "population": 143032072,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.0033161920788623567,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2068,
+   "population": 142529549,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.0035133588780004166,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2069,
+   "population": 141999271,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.0037204776393420236,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 2070,
+   "population": 141440479,
+   "series_type": "projection",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": -0.003935175131990598,
+   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
   }
  ]
 }

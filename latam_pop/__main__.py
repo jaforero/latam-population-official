@@ -19,9 +19,12 @@ def main() -> int:
     i.add_argument("iso3")
     i.add_argument("series", choices=["historical", "projection"])
     i.add_argument("file", type=Path)
+    i.add_argument("--raw-key", help="Entrada de earlier_sources a la que pertenece el archivo")
     a = ap.parse_args()
     if a.cmd == "ingest":
         e = yaml.safe_load(Path("sources.yaml").read_text(encoding="utf8"))["sources"][a.iso3][a.series]
+        if a.raw_key:
+            e = next(x for x in e.get("earlier_sources", []) if x["raw_key"] == a.raw_key)
         saved = RawStore(Path("data/raw")).save(e.get("raw_scope", a.iso3), e["raw_key"], a.file.name, a.file.read_bytes(), e["url"], "manual")
         print(f"{saved.path} sha256={saved.sha256}")
         return 0

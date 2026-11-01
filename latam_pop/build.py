@@ -96,14 +96,17 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
     for iso3 in ISO3:
         records: list[Record] = []
         series_status, segments, cur = {}, [], {}
-        for kind in ("historical", "projection"):
-            entry = sources[iso3][kind]
+        # `earlier_sources`: tramos de otra edición dentro de la misma serie. El estado del panel sigue a la entrada principal.
+        parts = [(k, sources[iso3][k], False) for k in ("historical", "projection")]
+        parts += [(k, x, True) for k in ("historical", "projection") for x in sources[iso3][k].get("earlier_sources", [])]
+        for kind, entry, earlier in parts:
             prev_s = prev_status.get(iso3, {}).get("series", {}).get(kind, {})
             st = dict(status=entry["status"], source_tier=entry["source_tier"], institution=entry["institution"],
                       source_id=entry.get("source_id"), vintage=entry.get("vintage_label"),
                       url=entry["url"], last_success=prev_s.get("last_success"), retrieved_at=None, error=None,
                       reason=entry.get("public_reason"), note=entry.get("public_note"))
-            series_status[kind] = st
+            if not earlier:
+                series_status[kind] = st
             if not entry.get("adapter"):
                 st["error"] = entry.get("pending_reason")
                 continue
@@ -157,6 +160,8 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
                                      retrieved_by=raw.retrieved_by, location_in_file=entry.get("location_in_file"),
                                      note=entry.get("public_note"), transcription=entry.get("transcription")))
             last = recs[-1] if recs else None
+            if earlier:
+                continue
             cur[kind] = dict(source_id=last.source_id if last else None, vintage=last.vintage if last else None,
                              source_tier=entry["source_tier"], institution=entry["institution"],
                              url=entry["url"], raw_sha256=raw.sha256, retrieved_at=raw.retrieved_at)

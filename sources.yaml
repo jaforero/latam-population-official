@@ -108,8 +108,6 @@ sources:
       - Archivo aportado a mano el 2026-11-01 (bolivia-PC2010100.xlsx).
       - Revisión superada en estos mismos años por la Revisión 2025; se usará PC20107 cuando llegue.
       - 'Sin 2023: la revisión termina en 2022 y la siguiente empieza en 2024.'
-      - 'No usar bolivia-PC201070.xls: es la Revisión 2014 del Cuadro 7, con título casi idéntico al de la Revisión
-        2025 (PC20107).'
       source_id: bol_ine_rev2020
       adapter: bol_ine
       raw_key: bol_ine_rev2020
@@ -122,11 +120,49 @@ sources:
       estimate_until: 2012
       location_in_file: Cuadro N.° 1, fila Total
       public_note:
-        es: 'Revisión anterior: la fuente rotula estos años como proyección y no declara fecha de referencia. Ninguno
-          de los dos cuadros cargados incluye 2023. La Revisión 2025 recalculó el pasado, pero su cuadro 2000-2050
+        es: 'Revisión anterior: la fuente rotula estos años como proyección y no declara fecha de referencia. Ninguna
+          revisión vigente cargada incluye 2023. La Revisión 2025 recalculó el pasado, pero su cuadro 2000-2050
           aún no está cargado.'
-        en: 'Earlier revision: the source labels these years as projection and states no reference date. Neither
-          loaded table includes 2023. Revision 2025 recalculated the past, but its 2000-2050 table is not yet loaded.'
+        en: 'Earlier revision: the source labels these years as projection and states no reference date. No current
+          revision loaded includes 2023. Revision 2025 recalculated the past, but its 2000-2050 table is not yet
+          loaded.'
+      earlier_sources:
+      - status: manual
+        source_tier: national
+        institution: INE Bolivia
+        url: https://www.ine.gob.bo/index.php/censos-y-proyecciones-de-poblacion-sociales/
+        access_method: XLS (manual)
+        adapter: bol_ine
+        source_id: bol_ine_rev2014
+        raw_key: bol_ine_rev2014
+        year_from: 2000
+        year_to: 2011
+        years_covered: 2000-2011 (el archivo llega a 2050)
+        vintage_label: Rev. 2014
+        reference_code: mid-year
+        reference_date: Mitad de año
+        scenario_code: single
+        location_in_file: Hoja BOLIVIA, Cuadro N.° 7
+        vintage:
+          base_year: 2012
+          reference_census: Censo 2012
+          published: No consta en el archivo
+          revision: Revisión 2014
+        control:
+          year: 2011
+          value: 10190775
+          unit: personas
+          location: Hoja BOLIVIA, Cuadro N.° 7, 2011
+        public_note:
+          es: 'Revisión 2014, usada solo para 2000-2011, donde no hay otra serie cargada. Sus años posteriores no
+            se usan: el INE recomienda la revisión más reciente, y para 2034 esta da 13,94 M frente a 12,16 M de
+            la Revisión 2025.'
+          en: 'Revision 2014, used only for 2000-2011, where no other series is loaded. Its later years are not
+            used: INE recommends the latest revision, and for 2034 this one gives 13.94 M against 12.16 M in Revision
+            2025.'
+        flags:
+        - Archivo aportado a mano el 2026-11-01 (bolivia-PC201070.xls). Su hoja BOLIVIA dice Revisión 2014.
+        - 'No se usa para 2023 ni para 2035-2050, aunque los traiga: rellenaría con una proyección superada.'
     projection:
       source_tier: national
       status: manual
@@ -805,7 +841,7 @@ sources:
       source_tier: national
       status: manual
       institution: CONAPO
-      url: https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/e9160552-769b-41ee-88d1-afc765552608/download/pobproy_inddemo.csv
+      url: https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv
       access_method: CSV (manual)
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
@@ -816,42 +852,41 @@ sources:
         revision: Conciliación 1950-2019 y proyecciones 2020-2070
       scenario: 'No aplica: serie única'
       reference_date: 1 de julio (mitad de año)
-      years_covered: 1990-2019
+      years_covered: 1970-2019
       update_frequency: Sin calendario fijo
       control:
         year: 2019
         value: 127215666
         unit: personas
-        location: Suma de POB_MIT_MUN de todos los municipios, 2019
+        location: Suma de POBLACION de las 32 entidades, 2019
       flags:
-      - Archivo aportado a mano el 2026-11-01. Suma derivada, no interpolada; el adaptador exige que municipios
-        y entidades den el mismo total.
-      - Cada año 1990-2040 coincidió exactamente con la serie nacional consultada en la verificación inicial, que
-        además sitúa el máximo en 2052.
+      - Archivo aportado a mano el 2026-11-01 (mx-00_Pob_Mitad_1950_2070.csv). Suma derivada, no interpolada; el
+        adaptador rechaza un año sin las 32 entidades completas.
+      - La suma coincide con la serie nacional de CONAPO en 101 de 101 años y con el archivo municipal pobproy_inddemo.csv
+        en 51 de 51.
+      - 'La columna RENGLON llega a 737.660 y el archivo trae 711.040 filas: faltan las 26.620 nacionales (121 años
+        × 220). De ahí que falte 1950-1969.'
       - 'datos.gob.mx responde 403 a un agente identificado: método manual (decisión D4).'
-      - Falta 05_indicadores_demograficos_proyecciones.csv, que extiende la serie a 1950-2070 con fila nacional.
       source_id: mex_conapo_2023
       adapter: mex_conapo
-      raw_key: mex_conapo_municipal
-      year_from: 1990
+      raw_key: mex_conapo_mitad
+      year_from: 1970
       year_to: 2019
       reference_code: 07-01
       scenario_code: single
       vintage_label: Conciliación 2023
       landing_page: https://www.datos.gob.mx/dataset/proyecciones-de-poblacion
-      location_in_file: POB_MIT_MUN por municipio; POB_MIT_ENT como verificación cruzada
+      location_in_file: POBLACION por ANIO, CVE_GEO, EDAD y SEXO (32 entidades × 110 edades × 2 sexos)
       public_note:
-        es: 'Total nacional sumado desde los 2.475 municipios del archivo de CONAPO, que no trae fila nacional.
-          El archivo llega a 2040: la serie nacional de CONAPO, aún sin cargar, llega a 2070, así que el máximo
-          puede quedar fuera de este horizonte.'
-        en: 'National total summed from the 2,475 municipalities in the CONAPO file, which has no national row.
-          The file ends in 2040: CONAPO''s national series, not yet loaded, runs to 2070, so the peak may fall outside
-          this horizon.'
+        es: 'Total nacional sumado por entidad, edad y sexo: el archivo no trae fila nacional. Empieza en 1970;
+          las filas nacionales de 1950-1969 no vienen en esta copia.'
+        en: 'National total summed by state, age and sex: the file has no national row. It starts in 1970; the national
+          rows for 1950-1969 are not in this copy.'
     projection:
       source_tier: national
       status: manual
       institution: CONAPO
-      url: https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/e9160552-769b-41ee-88d1-afc765552608/download/pobproy_inddemo.csv
+      url: https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv
       access_method: CSV (manual)
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
@@ -862,37 +897,36 @@ sources:
         revision: Conciliación 1950-2019 y proyecciones 2020-2070
       scenario: No indica variantes (por confirmar)
       reference_date: 1 de julio (mitad de año)
-      years_covered: 2020-2040
+      years_covered: 2020-2070
       update_frequency: Sin calendario fijo
       control:
         year: 2025
         value: 133367428
         unit: personas
-        location: Suma de POB_MIT_MUN de todos los municipios, 2025
+        location: Suma de POBLACION de las 32 entidades, 2025
       flags:
-      - Archivo aportado a mano el 2026-11-01. Suma derivada, no interpolada; el adaptador exige que municipios
-        y entidades den el mismo total.
-      - Cada año 1990-2040 coincidió exactamente con la serie nacional consultada en la verificación inicial, que
-        además sitúa el máximo en 2052.
+      - Archivo aportado a mano el 2026-11-01 (mx-00_Pob_Mitad_1950_2070.csv). Suma derivada, no interpolada; el
+        adaptador rechaza un año sin las 32 entidades completas.
+      - La suma coincide con la serie nacional de CONAPO en 101 de 101 años y con el archivo municipal pobproy_inddemo.csv
+        en 51 de 51.
+      - 'La columna RENGLON llega a 737.660 y el archivo trae 711.040 filas: faltan las 26.620 nacionales (121 años
+        × 220). De ahí que falte 1950-1969.'
       - 'datos.gob.mx responde 403 a un agente identificado: método manual (decisión D4).'
-      - Falta 05_indicadores_demograficos_proyecciones.csv, que extiende la serie a 1950-2070 con fila nacional.
       source_id: mex_conapo_2023
       adapter: mex_conapo
-      raw_key: mex_conapo_municipal
+      raw_key: mex_conapo_mitad
       year_from: 2020
-      year_to: 2040
+      year_to: 2070
       reference_code: 07-01
       scenario_code: single
       vintage_label: Conciliación 2023
       landing_page: https://www.datos.gob.mx/dataset/proyecciones-de-poblacion
-      location_in_file: POB_MIT_MUN por municipio; POB_MIT_ENT como verificación cruzada
+      location_in_file: POBLACION por ANIO, CVE_GEO, EDAD y SEXO (32 entidades × 110 edades × 2 sexos)
       public_note:
-        es: 'Total nacional sumado desde los 2.475 municipios del archivo de CONAPO, que no trae fila nacional.
-          El archivo llega a 2040: la serie nacional de CONAPO, aún sin cargar, llega a 2070, así que el máximo
-          puede quedar fuera de este horizonte.'
-        en: 'National total summed from the 2,475 municipalities in the CONAPO file, which has no national row.
-          The file ends in 2040: CONAPO''s national series, not yet loaded, runs to 2070, so the peak may fall outside
-          this horizon.'
+        es: 'Total nacional sumado por entidad, edad y sexo: el archivo no trae fila nacional. Empieza en 1970;
+          las filas nacionales de 1950-1969 no vienen en esta copia.'
+        en: 'National total summed by state, age and sex: the file has no national row. It starts in 1970; the national
+          rows for 1950-1969 are not in this copy.'
   NIC:
     historical:
       source_tier: national

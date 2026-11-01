@@ -64,6 +64,22 @@ def test_failure_without_previous_data_does_not_crash(workdir):
     assert load(workdir / "data/processed/URY.json")["records"]
 
 
+def test_earlier_source_joins_series_without_changing_panel_status(workdir):
+    from pathlib import Path
+    from latam_pop.store import RawStore
+    r = reg(workdir)
+    fix = Path(__file__).parent / "fixtures"
+    store = RawStore(workdir / "data/raw")
+    store.save("BOL", "bol_ine_rev2014", "b.xls", (fix / "bol_rev2014.xls").read_bytes(), "u", "manual")
+    store.save("BOL", "bol_ine_rev2020", "b.xlsx", (fix / "bol_rev2020.xlsx").read_bytes(), "u", "manual")
+    run(workdir, http=FakeHttp(r), watch=False, today="2026-11-01")
+    bol = load(workdir / "data/processed/BOL.json")
+    assert {s["source_id"] for s in bol["segments"]} == {"bol_ine_rev2014", "bol_ine_rev2020"}
+    assert bol["breaks"][0]["year"] == 2012
+    st = load(workdir / "data/status.json")["countries"]["BOL"]["series"]["historical"]
+    assert st["source_id"] == "bol_ine_rev2020" and st["status"] == "manual"
+
+
 def test_no_changes_means_no_file_changes(workdir):
     r = reg(workdir)
     run(workdir, http=FakeHttp(r), watch=False, today="2026-11-01")

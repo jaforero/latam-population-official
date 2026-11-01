@@ -40,9 +40,11 @@ class ArgIndec2022(Adapter):
 
 @register("bol_ine")
 class BolIne(Adapter):
-    """Acepta los dos formatos del INE: tabla por edad (años en columnas) y cuadro anual 2000-2050 (años en filas)."""
+    """Acepta los formatos del INE: tabla por edad (años en columnas), cuadro anual (años en filas) y el .xls con hoja BOLIVIA."""
 
     def parse(self, raw):
+        if str(raw).lower().endswith(".xls"):
+            return first_two(xls_rows(raw, "BOLIVIA"))
         rows = list(xlsx_rows(raw))
         if any(isinstance(c, str) and c.strip() == "Edad" for r in rows for c in r):
             return wide_row(rows, "Total", self.entry["year_from"])
@@ -130,8 +132,9 @@ class HndIne(Adapter):
 
 @register("mex_conapo")
 class MexConapo(Adapter):
-    """Acepta la serie nacional (POB_MIT_ANIO) y el archivo municipal (POB_MIT_MUN), que no trae fila nacional.
-    En el municipal el total es una suma: municipios y entidades deben coincidir o el archivo se rechaza."""
+    """Acepta los indicadores nacionales (POB_MIT_ANIO) y la base por edad y sexo (POBLACION).
+    En la base, la fila nacional manda si existe; si no, el total es la suma de las 32 entidades, y un año incompleto se rechaza."""
+    STATES = 32
 
     def parse(self, raw):
         data = Path(raw).read_bytes()
@@ -140,20 +143,28 @@ class MexConapo(Adapter):
         except UnicodeDecodeError:
             text = data.decode("latin1")
         reader = csv.DictReader(io.StringIO(text))
-        out: dict[int, float] = {}
         if "POB_MIT_ANIO" in (reader.fieldnames or []):
-            for r in reader:
-                if r["CVE_GEO"].strip() == "0" or r["ENTIDAD"].lower().startswith("rep"):
-                    out[int(r["ANIO"])] = float(r["POB_MIT_ANIO"])
-            return out
+            return {int(r["ANIO"]): float(r["POB_MIT_ANIO"]) for r in reader
+                    if r["CVE_GEO"].strip() == "0" or r["ENTIDAD"].lower().startswith("rep")}
+        national: dict[int, float] = {}
         states: dict[int, dict[str, float]] = {}
         for r in reader:
-            y = int(r["ANO"])
-            out[y] = out.get(y, 0.0) + float(r["POB_MIT_MUN"])
-            states.setdefault(y, {})[r["CLAVE_ENT"]] = float(r["POB_MIT_ENT"])
+            y, geo = int(r["ANIO"]), r["CVE_GEO"].strip()
+            if geo == "0":
+                national[y] = national.get(y, 0.0) + float(r["POBLACION"])
+            else:
+                s = states.setdefault(y, {})
+                s[geo] = s.get(geo, 0.0) + float(r["POBLACION"])
+        out = dict(national)
         for y, s in states.items():
-            if abs(sum(s.values()) - out[y]) > 0.5:
-                raise ParseError(f"México {y}: municipios {out[y]} y entidades {sum(s.values())} no coinciden")
+            total = sum(s.values())
+            if y in national:
+                if abs(total - national[y]) > 0.5:
+                    raise ParseError(f"México {y}: nacional {national[y]} y suma de entidades {total} no coinciden")
+            elif len(s) != self.STATES:
+                raise ParseError(f"México {y}: solo {len(s)} de {self.STATES} entidades")
+            else:
+                out[y] = total
         return out
 
 

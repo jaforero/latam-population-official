@@ -1,6 +1,6 @@
 {
  "schema_version": "1.1",
- "generated_at": "2026-11-01T15:36:36+00:00",
+ "generated_at": "2026-11-01T15:42:54+00:00",
  "last_data_update": "2026-11-01",
  "countries": {
   "ARG": {
@@ -60,8 +60,8 @@
      "error": null,
      "reason": null,
      "note": {
-      "es": "Revisión anterior: la fuente rotula estos años como proyección y no declara fecha de referencia. Ninguno de los dos cuadros cargados incluye 2023. La Revisión 2025 recalculó el pasado, pero su cuadro 2000-2050 aún no está cargado.",
-      "en": "Earlier revision: the source labels these years as projection and states no reference date. Neither loaded table includes 2023. Revision 2025 recalculated the past, but its 2000-2050 table is not yet loaded."
+      "es": "Revisión anterior: la fuente rotula estos años como proyección y no declara fecha de referencia. Ninguna revisión vigente cargada incluye 2023. La Revisión 2025 recalculó el pasado, pero su cuadro 2000-2050 aún no está cargado.",
+      "en": "Earlier revision: the source labels these years as projection and states no reference date. No current revision loaded includes 2023. Revision 2025 recalculated the past, but its 2000-2050 table is not yet loaded."
      },
      "raw_file": "data/raw/BOL/bol_ine_rev2020/2026-11-01_33a9ff6c910a_bolivia-PC2010100.xlsx",
      "raw_sha256": "33a9ff6c910a34e90d8e706ef32342766f55af7ad0f7f595f3f4d2309ffa3f6c",
@@ -490,17 +490,17 @@
      "institution": "CONAPO",
      "source_id": "mex_conapo_2023",
      "vintage": "Conciliación 2023",
-     "url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/e9160552-769b-41ee-88d1-afc765552608/download/pobproy_inddemo.csv",
+     "url": "https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv",
      "last_success": "2026-11-01",
      "retrieved_at": "2026-11-01",
      "error": null,
      "reason": null,
      "note": {
-      "es": "Total nacional sumado desde los 2.475 municipios del archivo de CONAPO, que no trae fila nacional. El archivo llega a 2040: la serie nacional de CONAPO, aún sin cargar, llega a 2070, así que el máximo puede quedar fuera de este horizonte.",
-      "en": "National total summed from the 2,475 municipalities in the CONAPO file, which has no national row. The file ends in 2040: CONAPO's national series, not yet loaded, runs to 2070, so the peak may fall outside this horizon."
+      "es": "Total nacional sumado por entidad, edad y sexo: el archivo no trae fila nacional. Empieza en 1970; las filas nacionales de 1950-1969 no vienen en esta copia.",
+      "en": "National total summed by state, age and sex: the file has no national row. It starts in 1970; the national rows for 1950-1969 are not in this copy."
      },
-     "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv",
-     "raw_sha256": "64903f768b4bed43672131f8179e14b6ce3b8d7a1671c51de7872a51ad26341e",
+     "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv",
+     "raw_sha256": "89db6adc7930965fb5b5c01ad3a98765ed90afa6a151c2cfb913acc2b9e0cac6",
      "retrieved_by": "manual"
     },
     "projection": {
@@ -509,17 +509,17 @@
      "institution": "CONAPO",
      "source_id": "mex_conapo_2023",
      "vintage": "Conciliación 2023",
-     "url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/e9160552-769b-41ee-88d1-afc765552608/download/pobproy_inddemo.csv",
+     "url": "https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv",
      "last_success": "2026-11-01",
      "retrieved_at": "2026-11-01",
      "error": null,
      "reason": null,
      "note": {
-      "es": "Total nacional sumado desde los 2.475 municipios del archivo de CONAPO, que no trae fila nacional. El archivo llega a 2040: la serie nacional de CONAPO, aún sin cargar, llega a 2070, así que el máximo puede quedar fuera de este horizonte.",
-      "en": "National total summed from the 2,475 municipalities in the CONAPO file, which has no national row. The file ends in 2040: CONAPO's national series, not yet loaded, runs to 2070, so the peak may fall outside this horizon."
+      "es": "Total nacional sumado por entidad, edad y sexo: el archivo no trae fila nacional. Empieza en 1970; las filas nacionales de 1950-1969 no vienen en esta copia.",
+      "en": "National total summed by state, age and sex: the file has no national row. It starts in 1970; the national rows for 1950-1969 are not in this copy."
      },
-     "raw_file": "data/raw/MEX/mex_conapo_municipal/2026-11-01_64903f768b4b_mx-pobproy_inddemo.csv",
-     "raw_sha256": "64903f768b4bed43672131f8179e14b6ce3b8d7a1671c51de7872a51ad26341e",
+     "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv",
+     "raw_sha256": "89db6adc7930965fb5b5c01ad3a98765ed90afa6a151c2cfb913acc2b9e0cac6",
      "retrieved_by": "manual"
     }
    }

@@ -51,6 +51,20 @@ def test_costa_rica_has_complete_annual_series():
     assert [r["year"] for r in d["records"]] == list(range(1950, 2101)) and d["peak"]["year"] == 2044
 
 
+def test_mexico_reaches_the_published_peak():
+    d = json.loads((P / "MEX.json").read_text(encoding="utf8"))
+    assert [r["year"] for r in d["records"]] == list(range(1970, 2071))
+    assert d["peak"]["year"] == 2052 and d["peak"]["population"] == 147022927
+
+
+def test_bolivia_never_fills_2023_or_uses_old_projection():
+    d = json.loads((P / "BOL.json").read_text(encoding="utf8"))
+    years = [r["year"] for r in d["records"]]
+    assert 2023 not in years and years == list(range(2000, 2023)) + list(range(2024, 2035))
+    assert [b["year"] for b in d["breaks"]] == [2012, 2024]
+    assert {r["vintage"] for r in d["records"] if r["year"] >= 2024} == {"Rev. 2025"}
+
+
 def test_pending_countries_show_no_figures():
     for iso in ("CUB", "DOM", "GTM"):
         assert json.loads((P / f"{iso}.json").read_text(encoding="utf8"))["records"] == []

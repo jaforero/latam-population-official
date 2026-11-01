@@ -84,7 +84,7 @@ Para fuentes que no admiten descarga automática:
 1. Abre la URL de `sources.yaml` en tu navegador y descarga el archivo.
 2. Registra el archivo con el país y la serie a los que corresponde, y ejecuta el pipeline:
 ```bash
-python -m latam_pop ingest MEX historical ~/Downloads/05_indicadores_demograficos_proyecciones.csv
+python -m latam_pop ingest BOL projection ~/Downloads/PC20107.xlsx
 ```
 ```bash
 python -m latam_pop run
@@ -93,7 +93,11 @@ python -m latam_pop run
 
 Un archivo cubre las dos series cuando comparten `raw_key`, y basta ingerirlo una vez. Si el archivo no es el que indica la entrada, primero corrige la entrada (URL, años, `vintage_label`, `raw_key` y control): `ingest` guarda la URL registrada como procedencia. Si el país estaba `pendiente`, complétalo como en la sección siguiente, con `status: manual`.
 
-**Archivos que ampliarían series ya cargadas:** Bolivia (`PC20107`, 2000-2050, Revisión 2025) y México (`05_indicadores_demograficos_proyecciones.csv`, 1950-2070). Sus adaptadores ya aceptan esos formatos. En Bolivia, cuidado: la página del INE ofrece cuadros 2000-2050 casi idénticos de las revisiones 2014, 2020 y 2025; el título interno del archivo dice cuál es.
+**Archivos que ampliarían series ya cargadas:**
+- **Bolivia:** `PC20107` (2000-2050, Revisión 2025) reemplazaría las tres revisiones actuales. La página del INE ofrece cuadros 2000-2050 casi idénticos de las revisiones 2014, 2020 y 2025: el pie del cuadro dice cuál es.
+- **México:** el archivo cargado no trae las filas nacionales, así que empieza en 1970. Una copia con ellas, o `05_indicadores_demograficos_proyecciones.csv`, agregaría 1950-1969. El adaptador acepta ambos; ajusta `year_from` a 1950.
+
+Si un archivo trae una edición anterior útil solo para algunos años, regístrala en `earlier_sources` de la entrada e ingiérela con `--raw-key`. Aparecerá como ruptura de serie.
 
 ## Cómo agregar un país o una fuente
 1. Agrega o completa la entrada en `sources.yaml`: `source_tier`, URL exacta, `adapter`, `source_id`, `raw_key`, `year_from`, `year_to`, vintage, referencia temporal y una **cifra de control** leída en la fuente. Un país nuevo también va en `latam_pop/__init__.py` y en `NAMES` de `build.py`.

@@ -34,7 +34,7 @@ for name, iso, key in [("arg_2010.xls", "ARG", "arg_indec_2010"), ("arg_2022.xls
                        ("pan.xlsx", "PAN", "pan_inec"), ("slv.xlsx", "SLV", "slv_onec"),
                        ("ury_hist.xlsx", "URY", "ury_ine_hist"), ("ury_proj.xlsx", "URY", "ury_ine_proj"),
                        ("ven_2011.xls", "VEN", "ven_ine_2011"), ("bol_rev2020.xlsx", "BOL", "bol_ine_rev2020"),
-                       ("bol_rev2025.xlsx", "BOL", "bol_ine_rev2025")]:
+                       ("bol_rev2025.xlsx", "BOL", "bol_ine_rev2025"), ("bol_rev2014.xls", "BOL", "bol_ine_rev2014")]:
     shutil.copy(latest(iso, key), OUT / name)
 
 trim_xlsx(latest("BRA", "bra_ibge"), OUT / "bra.xlsx", "4) INDICADORES", lambda i, r: i < 8 or r[3] == "Brasil")
@@ -59,12 +59,11 @@ pdf_pages(latest("NIC", "nic_inide"), OUT / "nic.pdf", [45])
 pdf_pages(latest("PER", "per_inei"), OUT / "per.pdf", [15, 16])
 pdf_pages(latest("VEN", "ven_ine_2001"), OUT / "ven_2001.pdf", [30])
 
-with open(latest("MEX", "mex_conapo_municipal"), encoding="utf-8-sig", newline="") as f, \
+with open(latest("MEX", "mex_conapo_mitad"), encoding="utf-8-sig", newline="") as f, \
         open(OUT / "mex.csv", "w", encoding="utf8", newline="") as out:
-    reader = csv.DictReader(f)
-    writer = csv.DictWriter(out, ["ANO", "CLAVE_ENT", "POB_MIT_MUN", "POB_MIT_ENT"], lineterminator="\n")
+    writer = csv.DictWriter(out, ["ANIO", "ENTIDAD", "CVE_GEO", "EDAD", "SEXO", "POBLACION"], lineterminator="\n")
     writer.writeheader()
-    for r in reader:
-        if r["ANO"] in ("2019", "2025"):
+    for r in csv.DictReader(f):
+        if r["ANIO"] in ("2019", "2025"):
             writer.writerow({k: r[k] for k in writer.fieldnames})
 print(json.dumps(sorted(p.name for p in OUT.iterdir())))

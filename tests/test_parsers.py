@@ -64,14 +64,28 @@ def test_cepal_reads_one_country_in_persons():
     assert rows[2024] == 11772557 and min(rows) == 1950 and max(rows) == 2100
 
 
-def test_mexico_sums_municipalities_and_checks_states(tmp_path):
+def test_mexico_sums_states_by_age_and_sex():
     e = REG["MEX"]["projection"]
-    a = REGISTRY[e["adapter"]]("MEX", "projection", e)
-    assert a.parse(FIX / "mex.csv")[2025] == 133367428
-    bad = tmp_path / "m.csv"
-    bad.write_text("ANO,CLAVE_ENT,POB_MIT_MUN,POB_MIT_ENT\n2025,1,10,10\n2025,2,5,6\n", encoding="utf8")
+    assert REGISTRY[e["adapter"]]("MEX", "projection", e).parse(FIX / "mex.csv")[2025] == 133367428
+
+
+def test_mexico_rejects_incomplete_year(tmp_path):
+    e = REG["MEX"]["projection"]
+    f = tmp_path / "m.csv"
+    f.write_text("ANIO,CVE_GEO,POBLACION\n2025,1,10\n2025,2,5\n", encoding="utf8")
+    with pytest.raises(Exception, match="de 32 entidades"):
+        REGISTRY[e["adapter"]]("MEX", "projection", e).parse(f)
+
+
+def test_mexico_prefers_national_row_and_cross_checks(tmp_path):
+    e = REG["MEX"]["historical"]
+    a = REGISTRY[e["adapter"]]("MEX", "historical", e)
+    f = tmp_path / "m.csv"
+    f.write_text("ANIO,CVE_GEO,POBLACION\n1960,0,40\n1961,0,41\n", encoding="utf8")
+    assert a.parse(f) == {1960: 40.0, 1961: 41.0}
+    f.write_text("ANIO,CVE_GEO,POBLACION\n1970,0,50\n1970,1,49\n", encoding="utf8")
     with pytest.raises(Exception, match="no coinciden"):
-        a.parse(bad)
+        a.parse(f)
 
 
 def test_mexico_also_accepts_national_file(tmp_path):
@@ -90,6 +104,13 @@ def test_bolivia_accepts_both_layouts(tmp_path):
     wb.save(f)
     e = REG["BOL"]["projection"]
     assert REGISTRY[e["adapter"]]("BOL", "projection", e).parse(f) == {2025: 11945263.0}
+
+
+def test_bolivia_reads_revision_2014_sheet():
+    e = REG["BOL"]["historical"]["earlier_sources"][0]
+    rows = REGISTRY[e["adapter"]]("BOL", "historical", e).parse(FIX / "bol_rev2014.xls")
+    assert rows[e["control"]["year"]] == e["control"]["value"] and rows[2000] == 8427790
+    assert e["year_to"] == 2011, "Los años posteriores de la Revisión 2014 no se usan"
 
 
 def test_series_type_follows_source_labels():

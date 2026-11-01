@@ -54,8 +54,9 @@ def xlsx_sheetnames(path: Path) -> list[str]:
     return names
 
 
-def xls_rows(path: Path, sheet: int = 0):
-    ws = xlrd.open_workbook(path).sheet_by_index(sheet)
+def xls_rows(path: Path, sheet: int | str = 0):
+    wb = xlrd.open_workbook(path)
+    ws = wb.sheet_by_name(sheet) if isinstance(sheet, str) else wb.sheet_by_index(sheet)
     for i in range(ws.nrows):
         yield ws.row_values(i)
 

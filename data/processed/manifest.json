@@ -1,6 +1,6 @@
 {
  "schema_version": "1.1",
- "generated_at": "2026-11-01T15:36:36+00:00",
+ "generated_at": "2026-11-01T15:42:54+00:00",
  "countries": {
   "ARG": {
    "historical": {
@@ -191,8 +191,8 @@
     "vintage": "Conciliación 2023",
     "source_tier": "national",
     "institution": "CONAPO",
-    "url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/e9160552-769b-41ee-88d1-afc765552608/download/pobproy_inddemo.csv",
-    "raw_sha256": "64903f768b4bed43672131f8179e14b6ce3b8d7a1671c51de7872a51ad26341e",
+    "url": "https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv",
+    "raw_sha256": "89db6adc7930965fb5b5c01ad3a98765ed90afa6a151c2cfb913acc2b9e0cac6",
     "retrieved_at": "2026-11-01"
    },
    "projection": {
@@ -200,8 +200,8 @@
     "vintage": "Conciliación 2023",
     "source_tier": "national",
     "institution": "CONAPO",
-    "url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/e9160552-769b-41ee-88d1-afc765552608/download/pobproy_inddemo.csv",
-    "raw_sha256": "64903f768b4bed43672131f8179e14b6ce3b8d7a1671c51de7872a51ad26341e",
+    "url": "https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv",
+    "raw_sha256": "89db6adc7930965fb5b5c01ad3a98765ed90afa6a151c2cfb913acc2b9e0cac6",
     "retrieved_at": "2026-11-01"
    }
   },

@@ -14,6 +14,9 @@ CASES = [
     ("chl", {"chl_ine": "chl.xlsx"}, 2026, 20150948),
     ("col", {"col_dane_edad_hist": "col_edad_hist.xlsx", "col_dane_edad_proj": "col_edad_proj.xlsx"}, 2025, 53057212),
     ("cri", {"cri_inec": "cri_c2.xlsx"}, 2025, 5191823.08),
+    ("dom", {"dom_one": "dom.csv"}, 2025, 10878267),
+    ("ven", {"ven_ine_nacional": "ven_2011.xls"}, 2025, 34446036),
+    ("ven", {"ven_ine_nacional": "ven_2011.xls"}, 2000, 24394145),
     ("ecu", {"ecu_inec": "ecu.xlsx"}, 2025, 18103660),
     ("gtm", {"gtm_ine": "gtm.xlsx"}, 2025, 18079810),
     ("hnd", {"hnd_ine": "hnd.pdf"}, 2025, 10039862),
@@ -76,6 +79,8 @@ def test_harmonize_rejects_missing_groups():
 def test_year_columns_ignores_data_rows_with_year_like_values():
     assert year_columns(["Sexo", 2000, 2001, 2002]) == {1: 2000, 2: 2001, 3: 2002}
     assert year_columns([85, 2045, 2061, 2118]) == {}
+    assert year_columns(["Edad", 2000, 2005, 2010, 2015, 2020]) == {1: 2000, 2: 2005, 3: 2010, 4: 2015, 5: 2020}
+    assert year_columns([0, 2045, 2050, 2055]) == {}, "Tres valores a paso 5 pueden ser datos"
 
 
 # 0-4 con más hombres y 80+ con más mujeres; suma 321.

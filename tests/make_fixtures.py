@@ -36,7 +36,7 @@ for name, iso, key in [("arg_2010.xls", "ARG", "arg_indec_2010"), ("arg_2022.xls
                        ("col_hist.xlsx", "COL", "col_dane_hist"), ("col_proj.xlsx", "COL", "col_dane_proj"),
                        ("pan.xlsx", "PAN", "pan_inec"), ("slv.xlsx", "SLV", "slv_onec"),
                        ("ury_hist.xlsx", "URY", "ury_ine_hist"), ("ury_proj.xlsx", "URY", "ury_ine_proj"),
-                       ("ven_2011.xls", "VEN", "ven_ine_2011"), ("bol_rev2020.xlsx", "BOL", "bol_ine_rev2020"),
+                       ("ven_2011.xls", "VEN", "ven_ine_nacional"), ("dom.csv", "DOM", "dom_one"), ("bol_rev2020.xlsx", "BOL", "bol_ine_rev2020"),
                        ("bol_rev2025.xlsx", "BOL", "bol_ine_rev2025"), ("bol_rev2014.xls", "BOL", "bol_ine_rev2014")]:
     shutil.copy(latest(iso, key), OUT / name)
 

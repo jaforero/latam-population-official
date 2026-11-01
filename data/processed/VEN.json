@@ -39,7 +39,7 @@
    "series": "projection",
    "source_tier": "national",
    "institution": "INE Venezuela",
-   "source_url": "https://ine.gob.ve/wp-content/uploads/2026/09/PROYECCION-POBLACION-PARROQUIAS.xls",
+   "source_url": "https://ine.gob.ve/wp-content/uploads/2026/04/Nacional.xls",
    "vintage": "Censo 2011",
    "reference_census": "Censo 2011",
    "published": "Calculada en 2013; archivo subido en 2026-09",
@@ -48,11 +48,11 @@
    "year_from": 2000,
    "year_to": 2050,
    "access_method": "XLS",
-   "raw_file": "data/raw/VEN/ven_ine_2011/2026-11-01_f515cc5f0b06_PROYECCION-POBLACION-PARROQUIAS.xls",
-   "raw_sha256": "f515cc5f0b0651d234bca9a3e0496cf09f6063a964bcceb9d2350deb1f0de450",
+   "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls",
+   "raw_sha256": "402b2d82fabed16751fe775e7c764687c982ac501e20e0e3d0bf887785e867a2",
    "retrieved_at": "2026-11-01",
    "retrieved_by": "script",
-   "location_in_file": null,
+   "location_in_file": "Hoja Nacional, fila Total",
    "note": {
     "es": "Calculada en 2013, antes de la emigración masiva. CEPAL da 28,5 M para 2025 frente a 34,4 M. Lectura con cautela. Solo quinquenal.",
     "en": "Computed in 2013, before mass emigration. ECLAC gives 28.5 M for 2025 against 34.4 M. Read with caution. Five-yearly only."
@@ -70,7 +70,7 @@
    "from_tier": "national",
    "to_tier": "national",
    "last_value": 23867393,
-   "first_value": 24393979
+   "first_value": 24394145
   }
  ],
  "peak": {
@@ -834,7 +834,7 @@
   {
    "iso3": "VEN",
    "year": 2000,
-   "population": 24393979,
+   "population": 24394145,
    "series_type": "estimate",
    "source_id": "ven_ine_censo2011",
    "source_tier": "national",
@@ -844,12 +844,12 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": null,
-   "raw_file": "data/raw/VEN/ven_ine_2011/2026-11-01_f515cc5f0b06_PROYECCION-POBLACION-PARROQUIAS.xls"
+   "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls"
   },
   {
    "iso3": "VEN",
    "year": 2005,
-   "population": 26444821,
+   "population": 26444921,
    "series_type": "estimate",
    "source_id": "ven_ine_censo2011",
    "source_tier": "national",
@@ -859,12 +859,12 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": null,
-   "raw_file": "data/raw/VEN/ven_ine_2011/2026-11-01_f515cc5f0b06_PROYECCION-POBLACION-PARROQUIAS.xls"
+   "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls"
   },
   {
    "iso3": "VEN",
    "year": 2010,
-   "population": 28524389,
+   "population": 28524411,
    "series_type": "estimate",
    "source_id": "ven_ine_censo2011",
    "source_tier": "national",
@@ -874,12 +874,12 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": null,
-   "raw_file": "data/raw/VEN/ven_ine_2011/2026-11-01_f515cc5f0b06_PROYECCION-POBLACION-PARROQUIAS.xls"
+   "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls"
   },
   {
    "iso3": "VEN",
    "year": 2015,
-   "population": 30620438,
+   "population": 30620404,
    "series_type": "projection",
    "source_id": "ven_ine_censo2011",
    "source_tier": "national",
@@ -889,7 +889,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": null,
-   "raw_file": "data/raw/VEN/ven_ine_2011/2026-11-01_f515cc5f0b06_PROYECCION-POBLACION-PARROQUIAS.xls"
+   "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls"
   },
   {
    "iso3": "VEN",
@@ -904,7 +904,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": null,
-   "raw_file": "data/raw/VEN/ven_ine_2011/2026-11-01_f515cc5f0b06_PROYECCION-POBLACION-PARROQUIAS.xls"
+   "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls"
   },
   {
    "iso3": "VEN",
@@ -919,7 +919,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": null,
-   "raw_file": "data/raw/VEN/ven_ine_2011/2026-11-01_f515cc5f0b06_PROYECCION-POBLACION-PARROQUIAS.xls"
+   "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls"
   },
   {
    "iso3": "VEN",
@@ -934,7 +934,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": null,
-   "raw_file": "data/raw/VEN/ven_ine_2011/2026-11-01_f515cc5f0b06_PROYECCION-POBLACION-PARROQUIAS.xls"
+   "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls"
   },
   {
    "iso3": "VEN",
@@ -949,7 +949,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": null,
-   "raw_file": "data/raw/VEN/ven_ine_2011/2026-11-01_f515cc5f0b06_PROYECCION-POBLACION-PARROQUIAS.xls"
+   "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls"
   },
   {
    "iso3": "VEN",
@@ -964,12 +964,12 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": null,
-   "raw_file": "data/raw/VEN/ven_ine_2011/2026-11-01_f515cc5f0b06_PROYECCION-POBLACION-PARROQUIAS.xls"
+   "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls"
   },
   {
    "iso3": "VEN",
    "year": 2045,
-   "population": 39760543,
+   "population": 39760542,
    "series_type": "projection",
    "source_id": "ven_ine_censo2011",
    "source_tier": "national",
@@ -979,12 +979,12 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": null,
-   "raw_file": "data/raw/VEN/ven_ine_2011/2026-11-01_f515cc5f0b06_PROYECCION-POBLACION-PARROQUIAS.xls"
+   "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls"
   },
   {
    "iso3": "VEN",
    "year": 2050,
-   "population": 40500760,
+   "population": 40500761,
    "series_type": "projection",
    "source_id": "ven_ine_censo2011",
    "source_tier": "national",
@@ -994,7 +994,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": null,
-   "raw_file": "data/raw/VEN/ven_ine_2011/2026-11-01_f515cc5f0b06_PROYECCION-POBLACION-PARROQUIAS.xls"
+   "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls"
   }
  ]
 }

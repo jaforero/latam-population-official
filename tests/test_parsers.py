@@ -14,7 +14,7 @@ CASES = [("ARG", "historical", "arg_2010.xls"), ("ARG", "projection", "arg_2022.
          ("BOL", "projection", "bol_rev2025.xlsx"), ("CHL", "historical", "chl.xlsx"), ("CHL", "projection", "chl.xlsx"), ("BRA", "historical", "bra.xlsx"), ("BRA", "projection", "bra.xlsx"),
          ("COL", "historical", "col_hist.xlsx"), ("COL", "projection", "col_proj.xlsx"),
          ("CRI", "historical", "cri.xlsx"), ("CRI", "projection", "cri.xlsx"), ("ECU", "historical", "ecu.xlsx"),
-         ("ECU", "projection", "ecu.xlsx"), ("GTM", "historical", "gtm.xlsx"), ("GTM", "projection", "gtm.xlsx"), ("HND", "projection", "hnd.pdf"), ("MEX", "historical", "mex.csv"),
+         ("DOM", "historical", "dom.csv"), ("DOM", "projection", "dom.csv"), ("ECU", "projection", "ecu.xlsx"), ("GTM", "historical", "gtm.xlsx"), ("GTM", "projection", "gtm.xlsx"), ("HND", "projection", "hnd.pdf"), ("MEX", "historical", "mex.csv"),
          ("MEX", "projection", "mex.csv"), ("NIC", "historical", "nic.pdf"), ("PAN", "historical", "pan.xlsx"),
          ("PAN", "projection", "pan.xlsx"), ("PER", "historical", "per.pdf"), ("PER", "projection", "per.pdf"),
          ("PRY", "historical", "pry.xlsx"), ("PRY", "projection", "pry.xlsx"), ("SLV", "historical", "slv.xlsx"),

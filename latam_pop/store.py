@@ -27,10 +27,11 @@ class RawStore:
 
     def latest(self, iso3: str, key: str) -> RawFile | None:
         d = self._dir(iso3, key)
-        metas = sorted(d.glob("*.meta.json")) if d.exists() else []
+        metas = [json.loads(p.read_text(encoding="utf8")) for p in d.glob("*.meta.json")] if d.exists() else []
         if not metas:
             return None
-        m = json.loads(metas[-1].read_text(encoding="utf8"))
+        # `seq` desempata dos versiones del mismo día: el nombre del archivo lleva el hash, que no ordena en el tiempo.
+        m = max(metas, key=lambda x: (x["retrieved_at"], x.get("seq", 0)))
         return RawFile(d / m["file"], m["sha256"], m["retrieved_at"], m["url"], m["retrieved_by"])
 
     def save(self, iso3: str, key: str, name: str, content: bytes, url: str,
@@ -46,6 +47,7 @@ class RawStore:
         safe = re.sub(r"[^\w.\-]", "_", name, flags=re.ASCII) or "file"
         fname = f"{today}_{sha[:12]}_{safe}"
         (d / fname).write_bytes(content)
-        meta = dict(file=fname, sha256=sha, bytes=len(content), retrieved_at=today, url=url, retrieved_by=retrieved_by)
+        meta = dict(file=fname, sha256=sha, bytes=len(content), retrieved_at=today, url=url, retrieved_by=retrieved_by,
+                    seq=len(list(d.glob("*.meta.json"))))
         (d / f"{fname}.meta.json").write_text(json.dumps(meta, indent=1, ensure_ascii=False) + "\n", encoding="utf8")
         return RawFile(d / fname, sha, today, url, retrieved_by)

@@ -1,6 +1,6 @@
 {
  "schema_version": "1.2",
- "generated_at": "2026-11-01T16:01:06+00:00",
+ "generated_at": "2026-11-01T16:19:33+00:00",
  "countries": {
   "ARG": {
    "historical": {
@@ -123,7 +123,26 @@
    }
   },
   "CUB": {},
-  "DOM": {},
+  "DOM": {
+   "historical": {
+    "source_id": "dom_one_1950_2050",
+    "vintage": "ONE 1950-2050",
+    "source_tier": "national",
+    "institution": "ONE",
+    "url": "https://descargas.one.gob.do/download/OGTIC/Estimaciones_y_Proyecciones_de_la_Poblaci%C3%B3n_Total_seg%C3%BAn_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+    "raw_sha256": "be23d746702990cd2cdfe52771241a79fe57d6b04e67347909adf094da9d6971",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "dom_one_1950_2050",
+    "vintage": "ONE 1950-2050",
+    "source_tier": "national",
+    "institution": "ONE",
+    "url": "https://descargas.one.gob.do/download/OGTIC/Estimaciones_y_Proyecciones_de_la_Poblaci%C3%B3n_Total_seg%C3%BAn_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+    "raw_sha256": "be23d746702990cd2cdfe52771241a79fe57d6b04e67347909adf094da9d6971",
+    "retrieved_at": "2026-11-01"
+   }
+  },
   "ECU": {
    "historical": {
     "source_id": "ecu_inec_rev2024",
@@ -359,15 +378,15 @@
     "vintage": "Censo 2011",
     "source_tier": "national",
     "institution": "INE Venezuela",
-    "url": "https://ine.gob.ve/wp-content/uploads/2026/09/PROYECCION-POBLACION-PARROQUIAS.xls",
-    "raw_sha256": "f515cc5f0b0651d234bca9a3e0496cf09f6063a964bcceb9d2350deb1f0de450",
+    "url": "https://ine.gob.ve/wp-content/uploads/2026/04/Nacional.xls",
+    "raw_sha256": "402b2d82fabed16751fe775e7c764687c982ac501e20e0e3d0bf887785e867a2",
     "retrieved_at": "2026-11-01"
    }
   }
  },
  "decisions": {
   "D1": "Aprobado 2026-11-01 y actualizado el mismo día: CEPAL/CELADE se acepta como respaldo. Se pasó de la API CEPALSTAT (Revisión 2022) al Excel de la Revisión 2024 aportado por Javier Forero (003_COMPARATIVO.xlsx), que responde a un agente identificado. El Excel cita coproducción con la ONU (WPP 2024).",
-  "D2": "Aprobado 2026-11-01: Cuba queda pendiente; no se usa CEPAL provisional porque existe serie nacional. El mismo criterio aplica a Guatemala y República Dominicana, aunque 003_COMPARATIVO.xlsx también los incluye.",
+  "D2": "Aprobado 2026-11-01: Cuba queda pendiente; no se usa CEPAL provisional porque existe serie nacional, aunque 003_COMPARATIVO.xlsx también la incluye.",
   "D3": "Aprobado 2026-11-01: los años previos a la serie nacional quedan null, salvo Honduras (sin ninguna serie nacional antes de 2013). La cifra IHSI 2024 de Haití es contraste, no se mezcla.",
   "D4": "Aprobado 2026-11-01: México queda manual; no se falsea el agente de usuario."
  }

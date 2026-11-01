@@ -119,8 +119,8 @@ Los síntomas son un issue de falla, `status: error` o una alerta `control_misma
 5. **Decide sobre las alertas:** una variación de ±4 % puede ser real. No se corrige; se documenta en el issue.
 
 ## Límites conocidos
-- **Licencias:** los términos de uso de cada fuente siguen sin verificar y constan como tales en `sources.yaml`.
-- **Vintages:** Perú, Honduras y El Salvador tienen una edición nueva esperada o citada; Venezuela usa una proyección de 2013. Bolivia usa la Revisión 2020 para 2012-2022 mientras no llegue el cuadro 2000-2050.
+- **Licencias:** salvo Rep. Dominicana (ODbL, según datos.gob.do), los términos de uso de cada fuente siguen sin verificar y constan como tales en `sources.yaml`.
+- **Vintages:** Perú, Honduras y El Salvador tienen una edición nueva esperada o citada; Venezuela usa una proyección de 2013. Bolivia usa la Revisión 2020 para 2012-2022 mientras no llegue el cuadro 2000-2050. Rep. Dominicana usa una serie anterior a la edición con censo 2022 que la ONE anunció en junio de 2026.
 - **Peso:** `data/raw/` ocupa unos 190 MB y conserva cada versión de los archivos.
 - **Red:** algunos sitios pueden bloquear los ejecutores de GitHub Actions aunque respondan desde otra conexión; en ese caso la serie pasa a `stale`.
 

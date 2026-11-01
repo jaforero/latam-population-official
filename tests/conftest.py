@@ -17,7 +17,7 @@ class FakeHttp:
                  "col_dane_hist": "col_hist.xlsx", "col_dane_proj": "col_proj.xlsx", "ecu_inec": "ecu.xlsx",
                  "hnd_ine": "hnd.pdf", "nic_inide": "nic.pdf", "pan_inec": "pan.xlsx", "per_inei": "per.pdf",
                  "pry_ine": "pry.xlsx", "slv_onec": "slv.xlsx", "ury_ine_hist": "ury_hist.xlsx",
-                 "ury_ine_proj": "ury_proj.xlsx", "ven_ine_2001": "ven_2001.pdf", "ven_ine_2011": "ven_2011.xls",
+                 "ury_ine_proj": "ury_proj.xlsx", "ven_ine_2001": "ven_2001.pdf", "ven_ine_nacional": "ven_2011.xls", "dom_one": "dom.csv",
                  "cepal_rev2024": "cepal.xlsx", "chl_ine": "chl.xlsx", "arg_indec_2022_edades": "arg_edades.csv",
                  "bra_ibge_tab2": "bra_tab2.xlsx", "col_dane_edad_hist": "col_edad_hist.xlsx", "col_dane_edad_proj": "col_edad_proj.xlsx"}
         for v in reg["sources"].values():

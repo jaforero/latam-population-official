@@ -96,6 +96,20 @@ class CriInec(Adapter):
         return first_two(xlsx_rows(raw, "C1. Población total"))
 
 
+@register("dom_one")
+class DomOne(Adapter):
+    """CSV de datos.gob.do: 17 grupos por sexo y año. El total es la suma de las edades de Ambos sexos."""
+
+    def parse(self, raw):
+        out: dict[int, float] = {}
+        reader = csv.reader(io.StringIO(Path(raw).read_bytes().decode("latin1")), delimiter=";")
+        next(reader)
+        for r in reader:
+            if len(r) >= 4 and r[1].strip() == "Ambos sexos":
+                out[int(r[3])] = out.get(int(r[3]), 0.0) + float(r[2])
+        return out
+
+
 @register("ecu_inec")
 class EcuInec(Adapter):
     def parse(self, raw):

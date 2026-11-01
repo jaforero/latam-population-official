@@ -88,5 +88,17 @@
   "iso3": "GTM",
   "code": "source_added",
   "message": "Pirámides: nuevas salidas data/processed/pyramids/ para 15 países (contrato 1.2)"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "DOM",
+  "code": "source_added",
+  "message": "pendiente → ONE vía datos.gob.do, serie quinquenal 1950-2050 y pirámide; descarga automática"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "VEN",
+  "code": "source_added",
+  "message": "Proyección: archivo de parroquias → tabla nacional por edad y sexo, misma vintage Censo 2011; se agrega pirámide"
  }
 ]

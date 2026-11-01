@@ -1,6 +1,6 @@
 {
  "schema_version": "1.2",
- "generated_at": "2026-11-01T16:13:19+00:00",
+ "generated_at": "2026-11-01T16:19:33+00:00",
  "last_data_update": "2026-11-01",
  "countries": {
   "ARG": {
@@ -341,47 +341,50 @@
    "name_en": "Dominican Republic",
    "series": {
     "historical": {
-     "status": "pendiente",
+     "status": "ok",
      "source_tier": "national",
      "institution": "ONE",
-     "source_id": null,
-     "vintage": null,
-     "url": "https://www.one.gob.do/datos-y-estadisticas/temas/estadisticas-demograficas/estimaciones-y-proyecciones-demograficas/",
-     "last_success": null,
-     "retrieved_at": null,
-     "error": "one.gob.do responde 403 a scripts y muestra un bloqueo de Cloudflare en navegador: página no abierta ni archivo verificado. Según buscador y prensa, la ONE publicó en junio de 2026 nuevas estimaciones 1950-2100 con el censo 2022. No se elude; requiere descarga manual.",
-     "reason": {
-      "es": "one.gob.do bloquea el acceso automatizado (Cloudflare); requiere descarga manual.",
-      "en": "one.gob.do blocks automated access (Cloudflare); manual download required."
+     "source_id": "dom_one_1950_2050",
+     "vintage": "ONE 1950-2050",
+     "url": "https://descargas.one.gob.do/download/OGTIC/Estimaciones_y_Proyecciones_de_la_Poblaci%C3%B3n_Total_seg%C3%BAn_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": {
+      "es": "Serie quinquenal de la ONE en datos.gob.do, actualizada en marzo de 2026. La ONE anunció en junio de 2026 una edición 1950-2100 con el censo 2022 que aún no está cargada. El corte 2010/2015 se infiere del censo 2010: el archivo no lo marca.",
+      "en": "ONE's five-yearly series on datos.gob.do, updated in March 2026. In June 2026 ONE announced a 1950-2100 edition with the 2022 census, not yet loaded. The 2010/2015 cut is inferred from the 2010 census: the file does not mark it."
      },
-     "note": null
+     "raw_file": "data/raw/DOM/dom_one/2026-11-01_be23d7467029_Estimaciones_y_Proyecciones_de_la_Poblaci_n_Total_seg_n_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+     "raw_sha256": "be23d746702990cd2cdfe52771241a79fe57d6b04e67347909adf094da9d6971",
+     "retrieved_by": "script"
     },
     "projection": {
-     "status": "pendiente",
+     "status": "ok",
      "source_tier": "national",
      "institution": "ONE",
-     "source_id": null,
-     "vintage": null,
-     "url": "https://www.one.gob.do/datos-y-estadisticas/temas/estadisticas-demograficas/estimaciones-y-proyecciones-demograficas/",
-     "last_success": null,
-     "retrieved_at": null,
-     "error": "one.gob.do responde 403 a scripts y muestra un bloqueo de Cloudflare en navegador: página no abierta ni archivo verificado. Según buscador y prensa, la ONE publicó en junio de 2026 nuevas estimaciones 1950-2100 con el censo 2022. No se elude; requiere descarga manual.",
-     "reason": {
-      "es": "one.gob.do bloquea el acceso automatizado (Cloudflare); requiere descarga manual.",
-      "en": "one.gob.do blocks automated access (Cloudflare); manual download required."
+     "source_id": "dom_one_1950_2050",
+     "vintage": "ONE 1950-2050",
+     "url": "https://descargas.one.gob.do/download/OGTIC/Estimaciones_y_Proyecciones_de_la_Poblaci%C3%B3n_Total_seg%C3%BAn_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": {
+      "es": "Serie quinquenal de la ONE en datos.gob.do, actualizada en marzo de 2026. La ONE anunció en junio de 2026 una edición 1950-2100 con el censo 2022 que aún no está cargada. El corte 2010/2015 se infiere del censo 2010: el archivo no lo marca.",
+      "en": "ONE's five-yearly series on datos.gob.do, updated in March 2026. In June 2026 ONE announced a 1950-2100 edition with the 2022 census, not yet loaded. The 2010/2015 cut is inferred from the 2010 census: the file does not mark it."
      },
-     "note": null
+     "raw_file": "data/raw/DOM/dom_one/2026-11-01_be23d7467029_Estimaciones_y_Proyecciones_de_la_Poblaci_n_Total_seg_n_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+     "raw_sha256": "be23d746702990cd2cdfe52771241a79fe57d6b04e67347909adf094da9d6971",
+     "retrieved_by": "script"
     }
    },
    "pyramid": {
-    "status": "pendiente",
-    "year_from": null,
-    "year_to": null,
-    "years": 0,
-    "reason": {
-     "es": "Sin archivo verificado: one.gob.do bloquea el acceso automatizado y aún no hay descarga manual.",
-     "en": "No verified file: one.gob.do blocks automated access and no manual download has been provided yet."
-    }
+    "status": "ok",
+    "year_from": 1950,
+    "year_to": 2050,
+    "years": 21,
+    "reason": null
    }
   },
   "ECU": {
@@ -504,7 +507,7 @@
      "retrieved_by": "script"
     },
     "projection": {
-     "status": "stale",
+     "status": "ok",
      "source_tier": "national",
      "institution": "INE Honduras",
      "source_id": "hnd_ine_censo2013",
@@ -512,7 +515,7 @@
      "url": "https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
      "last_success": "2026-11-01",
      "retrieved_at": "2026-11-01",
-     "error": "HTTP 403 en https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
+     "error": null,
      "reason": null,
      "note": {
       "es": "Proyección basada en el censo 2013; desde 2030 solo quinquenal.",
@@ -944,7 +947,7 @@
      "institution": "INE Venezuela",
      "source_id": "ven_ine_censo2011",
      "vintage": "Censo 2011",
-     "url": "https://ine.gob.ve/wp-content/uploads/2026/09/PROYECCION-POBLACION-PARROQUIAS.xls",
+     "url": "https://ine.gob.ve/wp-content/uploads/2026/04/Nacional.xls",
      "last_success": "2026-11-01",
      "retrieved_at": "2026-11-01",
      "error": null,
@@ -953,20 +956,17 @@
       "es": "Calculada en 2013, antes de la emigración masiva. CEPAL da 28,5 M para 2025 frente a 34,4 M. Lectura con cautela. Solo quinquenal.",
       "en": "Computed in 2013, before mass emigration. ECLAC gives 28.5 M for 2025 against 34.4 M. Read with caution. Five-yearly only."
      },
-     "raw_file": "data/raw/VEN/ven_ine_2011/2026-11-01_f515cc5f0b06_PROYECCION-POBLACION-PARROQUIAS.xls",
-     "raw_sha256": "f515cc5f0b0651d234bca9a3e0496cf09f6063a964bcceb9d2350deb1f0de450",
+     "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls",
+     "raw_sha256": "402b2d82fabed16751fe775e7c764687c982ac501e20e0e3d0bf887785e867a2",
      "retrieved_by": "script"
     }
    },
    "pyramid": {
-    "status": "pendiente",
-    "year_from": null,
-    "year_to": null,
-    "years": 0,
-    "reason": {
-     "es": "INE Venezuela publica sus proyecciones por edad solo en un PDF escaneado de 2005, de otra vintage que la serie vigente; el archivo de 2013 no trae edad ni sexo.",
-     "en": "INE Venezuela publishes its age projections only in a scanned 2005 PDF, a different vintage from the current series; the 2013 file has neither age nor sex."
-    }
+    "status": "ok",
+    "year_from": 2000,
+    "year_to": 2050,
+    "years": 11,
+    "reason": null
    }
   }
  }

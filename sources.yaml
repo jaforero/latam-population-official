@@ -593,46 +593,102 @@ sources:
   DOM:
     historical:
       source_tier: national
-      status: pendiente
+      status: ok
       institution: ONE
-      url: https://www.one.gob.do/datos-y-estadisticas/temas/estadisticas-demograficas/estimaciones-y-proyecciones-demograficas/
-      access_method: desconocido
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
-      pending_reason: 'one.gob.do responde 403 a scripts y muestra un bloqueo de Cloudflare en navegador: página
-        no abierta ni archivo verificado. Según buscador y prensa, la ONE publicó en junio de 2026 nuevas estimaciones
-        1950-2100 con el censo 2022. No se elude; requiere descarga manual.'
+      url: https://descargas.one.gob.do/download/OGTIC/Estimaciones_y_Proyecciones_de_la_Poblaci%C3%B3n_Total_seg%C3%BAn_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv
+      access_method: CSV
+      license: Open Data Commons Open Database License (ODbL), según la ficha del conjunto en datos.gob.do.
       flags:
-      - 'Existe serie nacional: CEPAL no se usa.'
-      source_id: null
-      public_reason:
-        es: one.gob.do bloquea el acceso automatizado (Cloudflare); requiere descarga manual.
-        en: one.gob.do blocks automated access (Cloudflare); manual download required.
+      - URL y archivo aportados a mano el 2026-11-01; el archivo es idéntico (mismo hash) al que descarga el script
+        desde descargas.one.gob.do.
+      - 'Vintage posiblemente superada: la edición 1950-2100 con censo 2022 sigue tras el bloqueo de one.gob.do.'
+      - 'Solo quinquenal: años intermedios null, sin interpolar; sin crecimiento anual.'
+      source_id: dom_one_1950_2050
+      landing_page: https://datos.gob.do/dataset/estimaciones-y-proyecciones-de-la-poblacion-total-segun-sexo-y-grupos-quinquenales-de-edad-1950-2050
+      adapter: dom_one
+      raw_key: dom_one
+      year_from: 1950
+      year_to: 2010
+      years_covered: 1950-2010, quinquenal
+      annual_until: 1949
+      step_after: 5
+      vintage_label: ONE 1950-2050
+      vintage:
+        base_year: null
+        reference_census: Censo 2010 (inferido; el archivo no lo cita)
+        published: Creado 2020-12-01; actualizado 2026-03-09 en datos.gob.do
+        revision: No declarada en el archivo
+      scenario: El archivo no presenta variantes
+      scenario_code: single
+      reference_date: No declarada
+      reference_code: null
+      update_frequency: Sin calendario fijo
+      location_in_file: Filas Sexo = Ambos sexos, sumadas por Año
+      control:
+        year: 2010
+        value: 9478612
+        unit: personas
+        location: Suma de las 17 edades, Ambos sexos, 2010
+      public_note:
+        es: 'Serie quinquenal de la ONE en datos.gob.do, actualizada en marzo de 2026. La ONE anunció en junio de
+          2026 una edición 1950-2100 con el censo 2022 que aún no está cargada. El corte 2010/2015 se infiere del
+          censo 2010: el archivo no lo marca.'
+        en: 'ONE''s five-yearly series on datos.gob.do, updated in March 2026. In June 2026 ONE announced a 1950-2100
+          edition with the 2022 census, not yet loaded. The 2010/2015 cut is inferred from the 2010 census: the
+          file does not mark it.'
     projection:
       source_tier: national
-      status: pendiente
+      status: ok
       institution: ONE
-      url: https://www.one.gob.do/datos-y-estadisticas/temas/estadisticas-demograficas/estimaciones-y-proyecciones-demograficas/
-      access_method: desconocido
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
-      pending_reason: 'one.gob.do responde 403 a scripts y muestra un bloqueo de Cloudflare en navegador: página
-        no abierta ni archivo verificado. Según buscador y prensa, la ONE publicó en junio de 2026 nuevas estimaciones
-        1950-2100 con el censo 2022. No se elude; requiere descarga manual.'
+      url: https://descargas.one.gob.do/download/OGTIC/Estimaciones_y_Proyecciones_de_la_Poblaci%C3%B3n_Total_seg%C3%BAn_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv
+      access_method: CSV
+      license: Open Data Commons Open Database License (ODbL), según la ficha del conjunto en datos.gob.do.
       flags:
-      - 'Existe serie nacional: CEPAL no se usa.'
-      source_id: null
-      public_reason:
-        es: one.gob.do bloquea el acceso automatizado (Cloudflare); requiere descarga manual.
-        en: one.gob.do blocks automated access (Cloudflare); manual download required.
+      - URL y archivo aportados a mano el 2026-11-01; el archivo es idéntico (mismo hash) al que descarga el script
+        desde descargas.one.gob.do.
+      - 'Vintage posiblemente superada: la edición 1950-2100 con censo 2022 sigue tras el bloqueo de one.gob.do.'
+      - 'Solo quinquenal: años intermedios null, sin interpolar; sin crecimiento anual.'
+      source_id: dom_one_1950_2050
+      landing_page: https://datos.gob.do/dataset/estimaciones-y-proyecciones-de-la-poblacion-total-segun-sexo-y-grupos-quinquenales-de-edad-1950-2050
+      adapter: dom_one
+      raw_key: dom_one
+      year_from: 2015
+      year_to: 2050
+      years_covered: 2015-2050, quinquenal
+      annual_until: 1949
+      step_after: 5
+      vintage_label: ONE 1950-2050
+      vintage:
+        base_year: null
+        reference_census: Censo 2010 (inferido; el archivo no lo cita)
+        published: Creado 2020-12-01; actualizado 2026-03-09 en datos.gob.do
+        revision: No declarada en el archivo
+      scenario: El archivo no presenta variantes
+      scenario_code: single
+      reference_date: No declarada
+      reference_code: null
+      update_frequency: Sin calendario fijo
+      location_in_file: Filas Sexo = Ambos sexos, sumadas por Año
+      control:
+        year: 2025
+        value: 10878267
+        unit: personas
+        location: Suma de las 17 edades, Ambos sexos, 2025
+      public_note:
+        es: 'Serie quinquenal de la ONE en datos.gob.do, actualizada en marzo de 2026. La ONE anunció en junio de
+          2026 una edición 1950-2100 con el censo 2022 que aún no está cargada. El corte 2010/2015 se infiere del
+          censo 2010: el archivo no lo marca.'
+        en: 'ONE''s five-yearly series on datos.gob.do, updated in March 2026. In June 2026 ONE announced a 1950-2100
+          edition with the 2022 census, not yet loaded. The 2010/2015 cut is inferred from the 2010 census: the
+          file does not mark it.'
     pyramid:
-      status: pendiente
-      parser: null
+      status: ok
+      parser: dom
       institution: ONE
-      url: https://www.one.gob.do/datos-y-estadisticas/temas/estadisticas-demograficas/estimaciones-y-proyecciones-demograficas/
-      reason:
-        es: 'Sin archivo verificado: one.gob.do bloquea el acceso automatizado y aún no hay descarga manual.'
-        en: 'No verified file: one.gob.do blocks automated access and no manual download has been provided yet.'
+      url: https://datos.gob.do/dataset/estimaciones-y-proyecciones-de-la-poblacion-total-segun-sexo-y-grupos-quinquenales-de-edad-1950-2050
+      location_in_file: 17 grupos quinquenales, Hombres y Mujeres; quinquenal
+      files:
+      - raw_key: dom_one
   ECU:
     historical:
       source_tier: national
@@ -1621,7 +1677,7 @@ sources:
       source_tier: national
       status: ok
       institution: INE Venezuela
-      url: https://ine.gob.ve/wp-content/uploads/2026/09/PROYECCION-POBLACION-PARROQUIAS.xls
+      url: https://ine.gob.ve/wp-content/uploads/2026/04/Nacional.xls
       access_method: XLS
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
@@ -1638,14 +1694,16 @@ sources:
         year: 2025
         value: 34446036
         unit: personas
-        location: Hoja 'Parroquias', fila Total, 2025
+        location: Hoja Nacional, fila Total, 2025
       flags:
       - 'DUDOSO: calculada en 2013, previa a la emigración masiva. CEPAL Rev. 2024 da 28.516,9 mil para 2025. La
         regla obliga a usar la nacional; la página lo advierte.'
       - 'Datos quinquenales: años intermedios null, sin interpolar.'
+      - 'Pasó del archivo de parroquias a la tabla nacional, aportada por Javier Forero el 2026-11-01. Los totales
+        difieren poco (2000: 24.393.979 y 24.394.145).'
       source_id: ven_ine_censo2011
       adapter: ven_ine_2011
-      raw_key: ven_ine_2011
+      raw_key: ven_ine_nacional
       year_from: 2000
       year_to: 2050
       reference_code: 06-30
@@ -1659,22 +1717,21 @@ sources:
           con cautela. Solo quinquenal.
         en: Computed in 2013, before mass emigration. ECLAC gives 28.5 M for 2025 against 34.4 M. Read with caution.
           Five-yearly only.
+      location_in_file: Hoja Nacional, fila Total
     pyramid:
-      status: pendiente
-      parser: null
+      status: ok
+      parser: ven
       institution: INE Venezuela
-      url: https://ine.gob.ve/wp-content/uploads/2026/09/PROYECCION-POBLACION-PARROQUIAS.xls
-      reason:
-        es: INE Venezuela publica sus proyecciones por edad solo en un PDF escaneado de 2005, de otra vintage que
-          la serie vigente; el archivo de 2013 no trae edad ni sexo.
-        en: INE Venezuela publishes its age projections only in a scanned 2005 PDF, a different vintage from the
-          current series; the 2013 file has neither age nor sex.
+      url: https://ine.gob.ve/wp-content/uploads/2026/04/Nacional.xls
+      location_in_file: Hoja Nacional, bloques Hombres y Mujeres; quinquenal
+      files:
+      - raw_key: ven_ine_nacional
 decisions:
   D1: 'Aprobado 2026-11-01 y actualizado el mismo día: CEPAL/CELADE se acepta como respaldo. Se pasó de la API CEPALSTAT
     (Revisión 2022) al Excel de la Revisión 2024 aportado por Javier Forero (003_COMPARATIVO.xlsx), que responde
     a un agente identificado. El Excel cita coproducción con la ONU (WPP 2024).'
-  D2: 'Aprobado 2026-11-01: Cuba queda pendiente; no se usa CEPAL provisional porque existe serie nacional. El mismo
-    criterio aplica a Guatemala y República Dominicana, aunque 003_COMPARATIVO.xlsx también los incluye.'
+  D2: 'Aprobado 2026-11-01: Cuba queda pendiente; no se usa CEPAL provisional porque existe serie nacional, aunque
+    003_COMPARATIVO.xlsx también la incluye.'
   D3: 'Aprobado 2026-11-01: los años previos a la serie nacional quedan null, salvo Honduras (sin ninguna serie
     nacional antes de 2013). La cifra IHSI 2024 de Haití es contraste, no se mezcla.'
   D4: 'Aprobado 2026-11-01: México queda manual; no se falsea el agente de usuario.'
@@ -1703,3 +1760,7 @@ watch:
   url: https://ine.gob.ve/
   pattern: PROYECCION
   reason: Se espera proyección actualizada
+- iso3: DOM
+  url: https://datos.gob.do/dataset/estimaciones-y-proyecciones-de-la-poblacion-total-segun-sexo-y-grupos-quinquenales-de-edad-1950-2050
+  pattern: download/OGTIC
+  reason: La ONE anunció una edición 1950-2100 con el censo 2022

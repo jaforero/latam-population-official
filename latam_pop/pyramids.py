@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pypdf
 
-from .parsing import ParseError, num, xlsx_rows, xlsx_sheetnames, year_of
+from .parsing import ParseError, num, xls_rows, xlsx_rows, xlsx_sheetnames, year_of
 from .validate import alert
 
 AGE_GROUPS = [f"{a}-{a + 4}" for a in range(0, 80, 5)] + ["80+"]
@@ -69,10 +69,13 @@ def sex_of(label) -> str | None:
 
 
 def year_columns(r) -> dict[int, int]:
-    """Columnas de una fila de años. Exige años consecutivos: una fila de datos con cifras como 2.045 no debe pasar por encabezado."""
+    """Columnas de una fila de años a intervalo fijo. Una fila de datos con cifras como 2.045 no debe pasar por encabezado."""
     cols = {j: year_of(c) for j, c in enumerate(r) if year_of(c)}
     ys = list(cols.values())
-    return cols if len(ys) >= 3 and all(b == a + 1 for a, b in zip(ys, ys[1:])) else {}
+    steps = {b - a for a, b in zip(ys, ys[1:])}
+    if len(steps) == 1 and (steps == {1} and len(ys) >= 3 or steps == {5} and len(ys) >= 5):
+        return cols
+    return {}
 
 
 def add(store, year, sex, age, value):
@@ -351,6 +354,26 @@ def per(paths):
             if age and sex:
                 for y, v in zip(years, parts[1:]):
                     add(store, y, sex, age, float(v.replace(" ", "")))
+    return finish(store)
+
+
+@parser("ven")
+def ven(paths):
+    store: dict = {}
+    blocks(xls_rows(paths["ven_ine_nacional"]), store)
+    return finish(store)
+
+
+@parser("dom")
+def dom(paths):
+    """Rótulos como '  5  y 9' o '10 y14': la 'y' separa los extremos del grupo."""
+    store: dict = {}
+    reader = csv.reader(io.StringIO(Path(paths["dom_one"]).read_bytes().decode("latin1")), delimiter=";")
+    next(reader)
+    for r in reader:
+        sex = sex_of(r[1]) if len(r) >= 4 else None
+        if sex:
+            add(store, int(r[3]), sex, parse_age(re.sub(r"\s*y\s*(?=\d)", "-", r[0].strip())), float(r[2]))
     return finish(store)
 
 

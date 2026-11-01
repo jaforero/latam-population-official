@@ -95,6 +95,13 @@ def test_store_keeps_hash_and_dedupes(tmp_path):
     assert s.latest("ARG", "k").path == c.path and c.path.exists()
 
 
+def test_store_latest_respects_order_within_a_day(tmp_path):
+    s = RawStore(tmp_path)
+    for content in (b"zzz", b"aaa", b"mmm"):
+        last = s.save("ARG", "k", "f.xls", content, "u", today="2026-01-01")
+    assert s.latest("ARG", "k").sha256 == last.sha256
+
+
 def test_blocked_page_is_not_saved_as_data():
     e = dict(access_method="XLSX", url="http://x/f.xlsx", status="ok")
     a = REGISTRY["bol_ine"]("BOL", "historical", e)

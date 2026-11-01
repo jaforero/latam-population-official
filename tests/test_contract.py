@@ -71,7 +71,7 @@ def test_guatemala_uses_national_series():
     assert {r["source_tier"] for r in d["records"]} == {"national"} and d["breaks"] == []
 
 
-WITH_PYRAMID = {"ARG", "BRA", "CHL", "COL", "CRI", "ECU", "GTM", "HND", "MEX", "NIC", "PAN", "PER", "PRY", "SLV", "URY"}
+WITH_PYRAMID = {"ARG", "BRA", "CHL", "COL", "CRI", "DOM", "ECU", "GTM", "HND", "MEX", "NIC", "PAN", "PER", "PRY", "SLV", "URY", "VEN"}
 
 
 @pytest.mark.parametrize("iso", ISO3)
@@ -103,8 +103,15 @@ def test_nicaragua_national_figure_prevails_in_2025():
     assert rows[2026]["source_tier"] == "regional_fallback"
 
 
+def test_five_yearly_series_have_no_invented_years():
+    for iso, last in (("DOM", 2050), ("VEN", 2050)):
+        rows = json.loads((P / f"{iso}.json").read_text(encoding="utf8"))["records"]
+        recent = [r["year"] for r in rows if r["year"] >= 2000]
+        assert recent == list(range(2000, last + 1, 5)) and all(r["interpolated"] is False for r in rows)
+
+
 def test_pending_countries_show_no_figures():
-    for iso in ("CUB", "DOM"):
+    for iso in ("CUB",):
         assert json.loads((P / f"{iso}.json").read_text(encoding="utf8"))["records"] == []
 
 

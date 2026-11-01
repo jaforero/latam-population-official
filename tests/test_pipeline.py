@@ -29,7 +29,7 @@ def test_end_to_end(workdir):
     assert next(x for x in arg["records"] if x["year"] == 2023)["growth"] is not None
     assert arg["peak"]["status"] == "no_peak_in_horizon"
     st = load(workdir / "data/status.json")["countries"]
-    assert st["CUB"]["series"]["projection"]["status"] == "pendiente"
+    assert st["CUB"]["series"]["projection"]["source_tier"] == "regional_fallback"
     assert st["CHL"]["series"]["projection"]["status"] == "ok"
     assert st["BOL"]["series"]["historical"]["status"] == "manual_pendiente"
     assert st["COL"]["series"]["projection"]["source_tier"] == "national"
@@ -38,7 +38,8 @@ def test_end_to_end(workdir):
         rows = list(csv.DictReader(f))
     assert rows and all((workdir / x["raw_file"]).exists() for x in rows)
     assert {"manifest.json", "latam.csv"} <= {p.name for p in (workdir / "data/processed").iterdir()}
-    assert load(workdir / "data/processed/pyramids/BOL.json")["status"] == "pendiente"
+    assert load(workdir / "data/processed/pyramids/BOL.json")["status"] == "manual_pendiente"
+    assert load(workdir / "data/processed/CUB.json")["records"][0]["source_tier"] == "regional_fallback"
     col = load(workdir / "data/processed/pyramids/COL.json")
     assert col["status"] == "ok" and sum(col["years"]["2025"]["m"]) + sum(col["years"]["2025"]["f"]) == 53057212
     assert load(workdir / "data/processed/pyramids/CRI.json")["status"] == "manual_pendiente"
@@ -67,22 +68,6 @@ def test_failure_without_previous_data_does_not_crash(workdir):
     assert load(workdir / "data/status.json")["countries"]["URY"]["series"]["historical"]["status"] == "error"
     assert any(f["iso3"] == "URY" for f in rep["failures"])
     assert load(workdir / "data/processed/URY.json")["records"]
-
-
-def test_earlier_source_joins_series_without_changing_panel_status(workdir):
-    from pathlib import Path
-    from latam_pop.store import RawStore
-    r = reg(workdir)
-    fix = Path(__file__).parent / "fixtures"
-    store = RawStore(workdir / "data/raw")
-    store.save("BOL", "bol_ine_rev2014", "b.xls", (fix / "bol_rev2014.xls").read_bytes(), "u", "manual")
-    store.save("BOL", "bol_ine_rev2020", "b.xlsx", (fix / "bol_rev2020.xlsx").read_bytes(), "u", "manual")
-    run(workdir, http=FakeHttp(r), watch=False, today="2026-11-01")
-    bol = load(workdir / "data/processed/BOL.json")
-    assert {s["source_id"] for s in bol["segments"]} == {"bol_ine_rev2014", "bol_ine_rev2020"}
-    assert bol["breaks"][0]["year"] == 2012
-    st = load(workdir / "data/status.json")["countries"]["BOL"]["series"]["historical"]
-    assert st["source_id"] == "bol_ine_rev2020" and st["status"] == "manual"
 
 
 def test_no_changes_means_no_file_changes(workdir):

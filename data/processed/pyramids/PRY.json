@@ -1,13 +1,11 @@
 {
- "schema_version": "1.2",
+ "schema_version": "1.3",
  "iso3": "PRY",
  "name_es": "Paraguay",
  "name_en": "Paraguay",
  "status": "ok",
- "parser": "pry",
  "institution": "INE Paraguay",
  "source_url": "https://www.ine.gov.py/Publicaciones/Biblioteca/documento/266/Estimaciones y Proyecciones Nacional por año 1950-2050. Revisión 2024.xlsx",
- "location_in_file": "Hoja 'Poblac a mitad de año 1950-2050', bloques Hombres y Mujeres",
  "reason": null,
  "note": null,
  "age_groups": [
@@ -28,6 +26,22 @@
   "70-74",
   "75-79",
   "80+"
+ ],
+ "parts": [
+  {
+   "institution": "INE Paraguay",
+   "source_url": "https://www.ine.gov.py/Publicaciones/Biblioteca/documento/266/Estimaciones y Proyecciones Nacional por año 1950-2050. Revisión 2024.xlsx",
+   "source_tier": "national",
+   "location_in_file": "Hoja 'Poblac a mitad de año 1950-2050', bloques Hombres y Mujeres",
+   "raw_files": [
+    {
+     "path": "data/raw/PRY/pry_ine/2026-11-01_342c4f661760_Estimaciones_y_Proyecciones_Nacional_por_a_o_1950-2050._Revisi_n_2024.xlsx",
+     "sha256": "342c4f6617602cb190b0681a07af24f1215e34976d5eba09a14a0f27216235ce",
+     "retrieved_at": "2026-11-01",
+     "retrieved_by": "script"
+    }
+   ]
+  }
  ],
  "raw_files": [
   {
@@ -77,6 +91,7 @@
     6230,
     5536
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -122,6 +137,7 @@
     6512,
     6051
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -167,6 +183,7 @@
     6757,
     6528
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -212,6 +229,7 @@
     6965,
     6968
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -257,6 +275,7 @@
     7142,
     7379
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -302,6 +321,7 @@
     7294,
     7760
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -347,6 +367,7 @@
     7427,
     8118
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -392,6 +413,7 @@
     7567,
     8445
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -437,6 +459,7 @@
     7752,
     8740
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -482,6 +505,7 @@
     8026,
     9011
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -527,6 +551,7 @@
     8450,
     9258
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -572,6 +597,7 @@
     9044,
     9485
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -617,6 +643,7 @@
     9697,
     9698
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -662,6 +689,7 @@
     10338,
     10259
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -707,6 +735,7 @@
     10865,
     11157
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -752,6 +781,7 @@
     11132,
     12006
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -797,6 +827,7 @@
     11136,
     12829
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -842,6 +873,7 @@
     10976,
     13582
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -887,6 +919,7 @@
     10796,
     14212
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -932,6 +965,7 @@
     10709,
     14687
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -977,6 +1011,7 @@
     10779,
     15001
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1022,6 +1057,7 @@
     10993,
     15094
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1067,6 +1103,7 @@
     11295,
     14908
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1112,6 +1149,7 @@
     11774,
     14913
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1157,6 +1195,7 @@
     12371,
     15130
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1202,6 +1241,7 @@
     12919,
     15324
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1247,6 +1287,7 @@
     13461,
     15684
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1292,6 +1333,7 @@
     13991,
     16168
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1337,6 +1379,7 @@
     14489,
     16704
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1382,6 +1425,7 @@
     14926,
     17189
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1427,6 +1471,7 @@
     15280,
     17539
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1472,6 +1517,7 @@
     15565,
     17792
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1517,6 +1563,7 @@
     15717,
     17729
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1562,6 +1609,7 @@
     15821,
     17431
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1607,6 +1655,7 @@
     16068,
     17252
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1652,6 +1701,7 @@
     16498,
     17168
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1697,6 +1747,7 @@
     17122,
     17150
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1742,6 +1793,7 @@
     17885,
     17204
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1787,6 +1839,7 @@
     18665,
     17360
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1832,6 +1885,7 @@
     19328,
     17658
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1877,6 +1931,7 @@
     19786,
     18112
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1922,6 +1977,7 @@
     20023,
     18726
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -1967,6 +2023,7 @@
     20101,
     19469
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2012,6 +2069,7 @@
     20156,
     20261
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2057,6 +2115,7 @@
     20351,
     21042
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2102,6 +2161,7 @@
     20784,
     21761
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2147,6 +2207,7 @@
     21484,
     22411
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2192,6 +2253,7 @@
     22423,
     23022
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2237,6 +2299,7 @@
     23538,
     23656
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2282,6 +2345,7 @@
     24763,
     24387
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2327,6 +2391,7 @@
     26061,
     25259
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2372,6 +2437,7 @@
     27415,
     26272
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2417,6 +2483,7 @@
     28768,
     27428
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2462,6 +2529,7 @@
     29977,
     28722
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2507,6 +2575,7 @@
     30881,
     30165
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2552,6 +2621,7 @@
     31378,
     31753
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2597,6 +2667,7 @@
     31460,
     33485
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2642,6 +2713,7 @@
     31246,
     35308
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2687,6 +2759,7 @@
     30998,
     37116
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2732,6 +2805,7 @@
     31018,
     38790
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2777,6 +2851,7 @@
     31477,
     40261
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2822,6 +2897,7 @@
     32388,
     41521
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2867,6 +2943,7 @@
     33641,
     42636
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2912,6 +2989,7 @@
     35038,
     43702
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -2957,6 +3035,7 @@
     36433,
     44829
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3002,6 +3081,7 @@
     37841,
     46102
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3047,6 +3127,7 @@
     39356,
     47527
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3092,6 +3173,7 @@
     40983,
     49072
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3137,6 +3219,7 @@
     42671,
     50683
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3182,6 +3265,7 @@
     44342,
     52334
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3227,6 +3311,7 @@
     45804,
     53890
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3272,6 +3357,7 @@
     46492,
     54383
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3317,6 +3403,7 @@
     47054,
     54776
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3362,6 +3449,7 @@
     48419,
     56715
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3407,6 +3495,7 @@
     50123,
     59373
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3452,6 +3541,7 @@
     51869,
     62037
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3497,6 +3587,7 @@
     53770,
     64725
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3542,6 +3633,7 @@
     55808,
     67559
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3587,6 +3679,7 @@
     57931,
     70630
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3632,6 +3725,7 @@
     60307,
     73813
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3677,6 +3771,7 @@
     63069,
     77030
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3722,6 +3817,7 @@
     66144,
     80383
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3767,6 +3863,7 @@
     69475,
     83954
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3812,6 +3909,7 @@
     73057,
     87780
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3857,6 +3955,7 @@
     76864,
     91894
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3902,6 +4001,7 @@
     80778,
     96327
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3947,6 +4047,7 @@
     84660,
     101108
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -3992,6 +4093,7 @@
     88347,
     106258
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -4037,6 +4139,7 @@
     91606,
     111799
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -4082,6 +4185,7 @@
     94298,
     117735
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -4127,6 +4231,7 @@
     96440,
     124001
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -4172,6 +4277,7 @@
     98110,
     130488
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -4217,6 +4323,7 @@
     99425,
     137090
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -4262,6 +4369,7 @@
     100518,
     143629
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -4307,6 +4415,7 @@
     101528,
     150002
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -4352,6 +4461,7 @@
     102629,
     156157
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -4397,6 +4507,7 @@
     103872,
     162094
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -4442,6 +4553,7 @@
     105336,
     167817
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -4487,6 +4599,7 @@
     107191,
     173286
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -4532,6 +4645,7 @@
     109384,
     178536
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",
@@ -4577,6 +4691,7 @@
     111747,
     183684
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pry_ine_rev2024",
    "vintage": "Rev. 2024",

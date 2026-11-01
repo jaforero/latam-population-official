@@ -100,5 +100,47 @@
   "iso3": "VEN",
   "code": "source_added",
   "message": "Proyección: archivo de parroquias → tabla nacional por edad y sexo, misma vintage Censo 2011; se agrega pirámide"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "BOL",
+  "code": "vintage_change",
+  "message": "Revisiones 2014 y 2020 → Revisión 2025 única, 2000-2050, sin rupturas; se agrega pirámide 2024-2034"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "MEX",
+  "code": "source_added",
+  "message": "Serie 1970-2070 sumada → fila nacional de 05_indicadores, 1950-2070; mismas cifras en los años comunes"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CUB",
+  "code": "source_added",
+  "message": "pendiente → CEPAL Rev. 2024 como respaldo marcado, tras aportar Javier Forero su archivo; ONEI sigue sin ser verificable"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HTI",
+  "code": "source_added",
+  "message": "Pirámide desde el archivo por país de CEPAL Rev. 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "NIC",
+  "code": "source_added",
+  "message": "Pirámide: desde 2026 usa CEPAL Rev. 2024, igual que la serie"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HND",
+  "code": "source_added",
+  "message": "Pirámide: antes de 2013 usa CEPAL Rev. 2024, igual que la serie"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "BOL",
+  "code": "vintage_change",
+  "message": "historical: vintage Rev. 2020 → Rev. 2025"
  }
 ]

@@ -1,13 +1,11 @@
 {
- "schema_version": "1.2",
+ "schema_version": "1.3",
  "iso3": "PER",
  "name_es": "Perú",
  "name_en": "Peru",
  "status": "ok",
- "parser": "per",
  "institution": "INEI",
  "source_url": "https://www.inei.gob.pe/media/principales_indicadores/libro_bol_esp_24_4.pdf",
- "location_in_file": "Boletín Especial 24, Cuadro N.° 2",
  "reason": null,
  "note": null,
  "age_groups": [
@@ -28,6 +26,22 @@
   "70-74",
   "75-79",
   "80+"
+ ],
+ "parts": [
+  {
+   "institution": "INEI",
+   "source_url": "https://www.inei.gob.pe/media/principales_indicadores/libro_bol_esp_24_4.pdf",
+   "source_tier": "national",
+   "location_in_file": "Boletín Especial 24, Cuadro N.° 2",
+   "raw_files": [
+    {
+     "path": "data/raw/PER/per_inei/2026-11-01_50671ed79533_libro_bol_esp_24_4.pdf",
+     "sha256": "50671ed795339fcf63c0e577c0725a7222df6619a87d7947fb4f2e493817f87f",
+     "retrieved_at": "2026-11-01",
+     "retrieved_by": "script"
+    }
+   ]
+  }
  ],
  "raw_files": [
   {
@@ -77,6 +91,7 @@
     24898,
     14936
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -122,6 +137,7 @@
     25941,
     14781
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -167,6 +183,7 @@
     26497,
     14756
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -212,6 +229,7 @@
     26754,
     14829
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -257,6 +275,7 @@
     26902,
     14969
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -302,6 +321,7 @@
     27130,
     15145
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -347,6 +367,7 @@
     27312,
     15377
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -392,6 +413,7 @@
     27321,
     15687
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -437,6 +459,7 @@
     27348,
     16043
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -482,6 +505,7 @@
     27581,
     16413
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -527,6 +551,7 @@
     28209,
     16768
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -572,6 +597,7 @@
     29345,
     17055
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -617,6 +643,7 @@
     30863,
     17295
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -662,6 +689,7 @@
     32594,
     17566
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -707,6 +735,7 @@
     34370,
     17944
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -752,6 +781,7 @@
     36022,
     18505
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -797,6 +827,7 @@
     37511,
     19270
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -842,6 +873,7 @@
     38950,
     20187
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -887,6 +919,7 @@
     40398,
     21226
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -932,6 +965,7 @@
     41913,
     22360
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -977,6 +1011,7 @@
     43556,
     23558
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1022,6 +1057,7 @@
     45392,
     24828
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1067,6 +1103,7 @@
     47380,
     26188
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1112,6 +1149,7 @@
     49424,
     27630
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1157,6 +1195,7 @@
     51426,
     29141
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1202,6 +1241,7 @@
     53288,
     30713
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1247,6 +1287,7 @@
     54850,
     32330
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1292,6 +1333,7 @@
     56177,
     33999
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1337,6 +1379,7 @@
     57510,
     35743
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1382,6 +1425,7 @@
     59089,
     37583
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1427,6 +1471,7 @@
     61156,
     39542
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1472,6 +1517,7 @@
     63848,
     41536
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1517,6 +1563,7 @@
     67005,
     43551
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1562,6 +1609,7 @@
     70421,
     45711
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1607,6 +1655,7 @@
     73888,
     48144
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1652,6 +1701,7 @@
     77200,
     50974
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1697,6 +1747,7 @@
     80364,
     54307
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1742,6 +1793,7 @@
     83519,
     58058
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1787,6 +1839,7 @@
     86653,
     62071
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1832,6 +1885,7 @@
     89756,
     66189
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1877,6 +1931,7 @@
     92818,
     70256
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1922,6 +1977,7 @@
     95636,
     74254
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -1967,6 +2023,7 @@
     98218,
     78287
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2012,6 +2069,7 @@
     100867,
     82382
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2057,6 +2115,7 @@
     103887,
     86564
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2102,6 +2161,7 @@
     107584,
     90860
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2147,6 +2207,7 @@
     112121,
     95125
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2192,6 +2253,7 @@
     117294,
     99342
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2237,6 +2299,7 @@
     122860,
     103727
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2282,6 +2345,7 @@
     128570,
     108498
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2327,6 +2391,7 @@
     134181,
     113872
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2372,6 +2437,7 @@
     139724,
     119861
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2417,6 +2483,7 @@
     145364,
     126322
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2462,6 +2529,7 @@
     151051,
     133234
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2507,6 +2575,7 @@
     156737,
     140577
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2552,6 +2621,7 @@
     162372,
     148332
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2597,6 +2667,7 @@
     167699,
     156288
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2642,6 +2713,7 @@
     172750,
     164458
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2687,6 +2759,7 @@
     177913,
     173159
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2732,6 +2805,7 @@
     183573,
     182704
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2777,6 +2851,7 @@
     190118,
     193411
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2822,6 +2897,7 @@
     197763,
     205119
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2867,6 +2943,7 @@
     206250,
     217620
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2912,6 +2989,7 @@
     215256,
     231150
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -2957,6 +3035,7 @@
     224458,
     245948
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3002,6 +3081,7 @@
     233533,
     262253
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3047,6 +3127,7 @@
     242444,
     281091
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3092,6 +3173,7 @@
     251407,
     302302
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3137,6 +3219,7 @@
     260476,
     324348
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3182,6 +3265,7 @@
     269708,
     345690
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3227,6 +3311,7 @@
     279157,
     364790
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3272,6 +3357,7 @@
     288165,
     380968
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3317,6 +3403,7 @@
     296694,
     395251
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3362,6 +3449,7 @@
     305734,
     408656
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3407,6 +3495,7 @@
     316274,
     422202
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3452,6 +3541,7 @@
     329302,
     436907
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3497,6 +3587,7 @@
     346086,
     452174
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3542,6 +3633,7 @@
     365966,
     467323
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3587,6 +3679,7 @@
     387042,
     483251
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3632,6 +3725,7 @@
     407414,
     500855
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3677,6 +3771,7 @@
     425183,
     521031
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3722,6 +3817,7 @@
     439340,
     544384
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3767,6 +3863,7 @@
     451151,
     570318
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3812,6 +3909,7 @@
     462129,
     597922
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3857,6 +3955,7 @@
     473787,
     626290
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3902,6 +4001,7 @@
     487637,
     654511
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3947,6 +4047,7 @@
     504201,
     682301
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -3992,6 +4093,7 @@
     522470,
     710266
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -4037,6 +4139,7 @@
     541662,
     738834
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -4082,6 +4185,7 @@
     560996,
     768431
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -4127,6 +4231,7 @@
     579690,
     799485
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -4172,6 +4277,7 @@
     598058,
     832172
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -4217,6 +4323,7 @@
     616620,
     866207
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -4262,6 +4369,7 @@
     634906,
     901327
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -4307,6 +4415,7 @@
     652447,
     937268
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -4352,6 +4461,7 @@
     668773,
     973767
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -4397,6 +4507,7 @@
     684196,
     1011000
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -4442,6 +4553,7 @@
     699031,
     1049142
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -4487,6 +4599,7 @@
     712807,
     1087931
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -4532,6 +4645,7 @@
     725054,
     1127102
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",
@@ -4577,6 +4691,7 @@
     735302,
     1166393
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "per_inei_be24",
    "vintage": "Boletín Especial 24",

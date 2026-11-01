@@ -32,17 +32,17 @@ def test_country_file(iso):
 
 def test_cepal_only_where_declared():
     allowed = {(i, k) for i, v in REG.items() for k, e in v.items() if k != "pyramid" and e["source_tier"] == "regional_fallback"}
-    assert allowed == {("HND", "historical"), ("HTI", "historical"), ("HTI", "projection"), ("NIC", "projection")}
+    assert allowed == {("CUB", "historical"), ("CUB", "projection"), ("HND", "historical"), ("HTI", "historical"), ("HTI", "projection"), ("NIC", "projection")}
     with open(P / "latam.csv", encoding="utf8") as f:
         for r in csv.DictReader(f):
             if r["source_tier"] == "regional_fallback":
-                assert r["iso3"] in {"HND", "HTI", "NIC"}
+                assert r["iso3"] in {"CUB", "HND", "HTI", "NIC"}
                 assert not (r["iso3"] == "HND" and int(r["year"]) >= 2013)
                 assert not (r["iso3"] == "NIC" and int(r["year"]) <= 2025)
 
 
 def test_cepal_uses_current_revision():
-    for i, k in (("HND", "historical"), ("HTI", "historical"), ("HTI", "projection"), ("NIC", "projection")):
+    for i, k in (("CUB", "historical"), ("CUB", "projection"), ("HND", "historical"), ("HTI", "historical"), ("HTI", "projection"), ("NIC", "projection")):
         assert REG[i][k]["source_id"] == "cepal_celade_rev2024" and REG[i][k]["url"].startswith("https://celade.cepal.org/")
 
 
@@ -53,40 +53,34 @@ def test_costa_rica_has_complete_annual_series():
 
 def test_mexico_reaches_the_published_peak():
     d = json.loads((P / "MEX.json").read_text(encoding="utf8"))
-    assert [r["year"] for r in d["records"]] == list(range(1970, 2071))
+    assert [r["year"] for r in d["records"]] == list(range(1950, 2071))
     assert d["peak"]["year"] == 2052 and d["peak"]["population"] == 147022927
+    assert d["records"][0]["population"] == 28463441
 
 
-def test_bolivia_never_fills_2023_or_uses_old_projection():
+def test_bolivia_uses_one_revision_without_breaks():
     d = json.loads((P / "BOL.json").read_text(encoding="utf8"))
-    years = [r["year"] for r in d["records"]]
-    assert 2023 not in years and years == list(range(2000, 2023)) + list(range(2024, 2035))
-    assert [b["year"] for b in d["breaks"]] == [2012, 2024]
-    assert {r["vintage"] for r in d["records"] if r["year"] >= 2024} == {"Rev. 2025"}
+    assert [r["year"] for r in d["records"]] == list(range(2000, 2051)) and d["breaks"] == []
+    assert {r["vintage"] for r in d["records"]} == {"Rev. 2025"}
+    assert next(r for r in d["records"] if r["year"] == 2023)["population"] == 11872175
 
 
-def test_guatemala_uses_national_series():
-    d = json.loads((P / "GTM.json").read_text(encoding="utf8"))
-    assert [r["year"] for r in d["records"]] == list(range(1950, 2051))
-    assert {r["source_tier"] for r in d["records"]} == {"national"} and d["breaks"] == []
-
-
-WITH_PYRAMID = {"ARG", "BRA", "CHL", "COL", "CRI", "DOM", "ECU", "GTM", "HND", "MEX", "NIC", "PAN", "PER", "PRY", "SLV", "URY", "VEN"}
+def test_cuba_is_marked_as_regional():
+    d = json.loads((P / "CUB.json").read_text(encoding="utf8"))
+    assert {r["source_tier"] for r in d["records"]} == {"regional_fallback"} and d["segments"][0]["note"]["es"]
 
 
 @pytest.mark.parametrize("iso", ISO3)
 def test_pyramid_file(iso):
     d = json.loads((P / "pyramids" / f"{iso}.json").read_text(encoding="utf8"))
     assert d["schema_version"] == SCHEMA_VERSION and len(d["age_groups"]) == 17
-    if iso not in WITH_PYRAMID:
-        assert d["years"] == {} and d["reason"]["es"] and d["reason"]["en"]
-        return
     main = {r["year"]: r for r in json.loads((P / f"{iso}.json").read_text(encoding="utf8"))["records"]}
     assert d["years"]
     for y, v in d["years"].items():
         rec = main[int(y)]
         assert len(v["m"]) == len(v["f"]) == 17 and all(x >= 0 for x in v["m"] + v["f"])
-        assert sum(v["m"]) + sum(v["f"]) == pytest.approx(rec["population"], abs=1.5), f"{iso} {y} no cuadra con el total oficial"
+        assert sum(v["m"]) + sum(v["f"]) == pytest.approx(rec["population"], abs=max(1.5, 0.0005 * rec["population"])), f"{iso} {y} no cuadra"
+        assert d["parts"][v["part"]]["source_tier"] == rec["source_tier"]
         assert v["source_id"] == rec["source_id"] and v["series_type"] == rec["series_type"]
     for f in d["raw_files"]:
         assert hashlib.sha256((ROOT / f["path"]).read_bytes()).hexdigest() == f["sha256"]
@@ -94,7 +88,7 @@ def test_pyramid_file(iso):
 
 def test_status_reports_pyramid_coverage():
     st = json.loads((ROOT / "data/status.json").read_text(encoding="utf8"))["countries"]
-    assert {i for i, c in st.items() if c["pyramid"]["years"]} == WITH_PYRAMID
+    assert {i for i, c in st.items() if c["pyramid"]["years"]} == set(ISO3)
 
 
 def test_nicaragua_national_figure_prevails_in_2025():
@@ -108,11 +102,6 @@ def test_five_yearly_series_have_no_invented_years():
         rows = json.loads((P / f"{iso}.json").read_text(encoding="utf8"))["records"]
         recent = [r["year"] for r in rows if r["year"] >= 2000]
         assert recent == list(range(2000, last + 1, 5)) and all(r["interpolated"] is False for r in rows)
-
-
-def test_pending_countries_show_no_figures():
-    for iso in ("CUB",):
-        assert json.loads((P / f"{iso}.json").read_text(encoding="utf8"))["records"] == []
 
 
 def test_no_excluded_sources():

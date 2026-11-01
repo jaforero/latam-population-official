@@ -1,13 +1,11 @@
 {
- "schema_version": "1.2",
+ "schema_version": "1.3",
  "iso3": "PAN",
  "name_es": "Panamá",
  "name_en": "Panama",
  "status": "ok",
- "parser": "pan",
  "institution": "INEC Panamá",
  "source_url": "https://www.inec.gob.pa/archivos/P0705547520260126142400Cuadro 1.xlsx",
- "location_in_file": "Cuadro 1, bloques Hombres y Mujeres",
  "reason": null,
  "note": null,
  "age_groups": [
@@ -28,6 +26,22 @@
   "70-74",
   "75-79",
   "80+"
+ ],
+ "parts": [
+  {
+   "institution": "INEC Panamá",
+   "source_url": "https://www.inec.gob.pa/archivos/P0705547520260126142400Cuadro 1.xlsx",
+   "source_tier": "national",
+   "location_in_file": "Cuadro 1, bloques Hombres y Mujeres",
+   "raw_files": [
+    {
+     "path": "data/raw/PAN/pan_inec/2026-11-01_1c832db124d7_P0705547520260126142400Cuadro_1.xlsx",
+     "sha256": "1c832db124d7ac1eab011f0d0830d696570d2414068be929debc391749b492b2",
+     "retrieved_at": "2026-11-01",
+     "retrieved_by": "script"
+    }
+   ]
+  }
  ],
  "raw_files": [
   {
@@ -77,6 +91,7 @@
     2474,
     1673
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -122,6 +137,7 @@
     2476,
     1506
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -167,6 +183,7 @@
     2500,
     1415
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -212,6 +229,7 @@
     2547,
     1366
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -257,6 +275,7 @@
     2608,
     1349
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -302,6 +321,7 @@
     2683,
     1361
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -347,6 +367,7 @@
     2773,
     1389
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -392,6 +413,7 @@
     2875,
     1436
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -437,6 +459,7 @@
     2986,
     1497
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -482,6 +505,7 @@
     3109,
     1572
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -527,6 +551,7 @@
     3237,
     1660
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -572,6 +597,7 @@
     3373,
     1759
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -617,6 +643,7 @@
     3514,
     1866
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -662,6 +689,7 @@
     3662,
     1982
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -707,6 +735,7 @@
     3816,
     2101
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -752,6 +781,7 @@
     3974,
     2228
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -797,6 +827,7 @@
     4136,
     2365
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -842,6 +873,7 @@
     4307,
     2508
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -887,6 +919,7 @@
     4487,
     2660
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -932,6 +965,7 @@
     4673,
     2820
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -977,6 +1011,7 @@
     4867,
     2984
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1022,6 +1057,7 @@
     5072,
     3159
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1067,6 +1103,7 @@
     5297,
     3354
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1112,6 +1149,7 @@
     5540,
     3575
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1157,6 +1195,7 @@
     5793,
     3812
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1202,6 +1241,7 @@
     6061,
     4068
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1247,6 +1287,7 @@
     6347,
     4347
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1292,6 +1333,7 @@
     6651,
     4648
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1337,6 +1379,7 @@
     6972,
     4975
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1382,6 +1425,7 @@
     7310,
     5315
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1427,6 +1471,7 @@
     7667,
     5700
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1472,6 +1517,7 @@
     8030,
     6110
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1517,6 +1563,7 @@
     8389,
     6525
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1562,6 +1609,7 @@
     8752,
     6966
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1607,6 +1655,7 @@
     9120,
     7434
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1652,6 +1701,7 @@
     9496,
     7922
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1697,6 +1747,7 @@
     9881,
     8432
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1742,6 +1793,7 @@
     10293,
     8964
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1787,6 +1839,7 @@
     10735,
     9516
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1832,6 +1885,7 @@
     11199,
     10086
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1877,6 +1931,7 @@
     11676,
     10657
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1922,6 +1977,7 @@
     12162,
     11249
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -1967,6 +2023,7 @@
     12653,
     11885
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2012,6 +2069,7 @@
     13133,
     12554
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2057,6 +2115,7 @@
     13611,
     13242
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2102,6 +2161,7 @@
     14089,
     13956
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2147,6 +2207,7 @@
     14578,
     14686
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2192,6 +2253,7 @@
     15083,
     15430
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2237,6 +2299,7 @@
     15611,
     16194
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2282,6 +2345,7 @@
     16163,
     16971
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2327,6 +2391,7 @@
     16752,
     17984
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2372,6 +2437,7 @@
     17345,
     19148
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2417,6 +2483,7 @@
     17967,
     20317
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2462,6 +2529,7 @@
     18618,
     21508
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2507,6 +2575,7 @@
     19305,
     22705
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2552,6 +2621,7 @@
     20030,
     23935
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2597,6 +2667,7 @@
     20798,
     25180
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2642,6 +2713,7 @@
     21607,
     26468
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2687,6 +2759,7 @@
     22465,
     27795
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2732,6 +2805,7 @@
     23367,
     29165
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2777,6 +2851,7 @@
     24355,
     30600
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2822,6 +2897,7 @@
     25411,
     32088
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2867,6 +2943,7 @@
     26523,
     33651
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2912,6 +2989,7 @@
     27690,
     35282
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -2957,6 +3035,7 @@
     28894,
     36976
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3002,6 +3081,7 @@
     30150,
     38788
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3047,6 +3127,7 @@
     31471,
     40688
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3092,6 +3173,7 @@
     32848,
     42631
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3137,6 +3219,7 @@
     34269,
     44676
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3182,6 +3265,7 @@
     35729,
     46881
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3227,6 +3311,7 @@
     37093,
     48933
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3272,6 +3357,7 @@
     38360,
     50813
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3317,6 +3403,7 @@
     39792,
     53014
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3362,6 +3449,7 @@
     41400,
     55519
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3407,6 +3495,7 @@
     43147,
     58107
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3452,6 +3541,7 @@
     44967,
     60820
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3497,6 +3587,7 @@
     46891,
     63656
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3542,6 +3633,7 @@
     49002,
     66632
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3587,6 +3679,7 @@
     51290,
     69761
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3632,6 +3725,7 @@
     53669,
     73074
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3677,6 +3771,7 @@
     56188,
     76545
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3722,6 +3817,7 @@
     58824,
     80185
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3767,6 +3863,7 @@
     61522,
     84086
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3812,6 +3909,7 @@
     64311,
     88243
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3857,6 +3955,7 @@
     67238,
     92637
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3902,6 +4001,7 @@
     70322,
     97261
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3947,6 +4047,7 @@
     73542,
     102119
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -3992,6 +4093,7 @@
     76846,
     107233
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -4037,6 +4139,7 @@
     80165,
     112623
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -4082,6 +4185,7 @@
     83419,
     118319
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -4127,6 +4231,7 @@
     86535,
     124310
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -4172,6 +4277,7 @@
     89507,
     130604
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -4217,6 +4323,7 @@
     92347,
     137170
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -4262,6 +4369,7 @@
     95124,
     143956
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -4307,6 +4415,7 @@
     97881,
     150899
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -4352,6 +4461,7 @@
     100614,
     157970
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -4397,6 +4507,7 @@
     103236,
     165139
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -4442,6 +4553,7 @@
     105678,
     172387
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -4487,6 +4599,7 @@
     107871,
     179744
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -4532,6 +4645,7 @@
     109776,
     187210
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",
@@ -4577,6 +4691,7 @@
     111400,
     194715
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "pan_inec_censo2023",
    "vintage": "Censo 2023",

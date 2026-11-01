@@ -95,88 +95,49 @@ sources:
       source_tier: national
       status: manual
       institution: INE Bolivia
-      url: https://nube.ine.gob.bo/index.php/s/4HGAf9gp5E6k68z/download
+      url: https://nimbus.ine.gob.bo/index.php/s/kdz7ktspssFz6C4/download
       access_method: XLSX (manual)
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
       vintage:
-        base_year: 2012
-        reference_census: Censo 2012
-        published: Archivo modificado el 2026-02-09
-        revision: Revisión 2020
+        base_year: 2024
+        reference_census: Censo 2024
+        published: Archivo modificado el 2026-02-06
+        revision: Revisión 2025
       scenario: 'No aplica: serie única'
-      reference_date: No declarada en el cuadro
-      years_covered: 2012-2022
+      reference_date: 1 de enero
+      years_covered: 2000-2023
       update_frequency: Sin calendario fijo
       control:
-        year: 2022
-        value: 12006031
+        year: 2023
+        value: 11872175
         unit: personas
-        location: Cuadro N.° 1, fila Total, 2022
+        location: Cuadro N.° 7, 2023
       flags:
-      - Archivo aportado a mano el 2026-11-01 (bolivia-PC2010100.xlsx).
-      - Revisión superada en estos mismos años por la Revisión 2025; se usará PC20107 cuando llegue.
-      - 'Sin 2023: la revisión termina en 2022 y la siguiente empieza en 2024.'
-      source_id: bol_ine_rev2020
+      - 'Archivo aportado a mano el 2026-11-01 (bolivia-PC20107.xlsx). robots.txt de nimbus.ine.gob.bo prohíbe la
+        descarga automática: método manual.'
+      - Reemplaza a las Revisiones 2014 y 2020, que se conservan en data/raw/ sin usarse.
+      - Corte 2023/2024 inferido; confirmar con la metodología del INE.
+      source_id: bol_ine_rev2025
       adapter: bol_ine
-      raw_key: bol_ine_rev2020
-      year_from: 2012
-      year_to: 2022
-      reference_code: null
+      raw_key: bol_ine_rev2025_anual
+      year_from: 2000
+      year_to: 2023
+      reference_code: 01-01
       scenario_code: single
-      vintage_label: Rev. 2020
+      vintage_label: Rev. 2025
       landing_page: https://www.ine.gob.bo/index.php/censos-y-proyecciones-de-poblacion-sociales/
-      estimate_until: 2012
-      location_in_file: Cuadro N.° 1, fila Total
+      location_in_file: Cuadro N.° 7
       public_note:
-        es: 'Revisión anterior: la fuente rotula estos años como proyección y no declara fecha de referencia. Ninguna
-          revisión vigente cargada incluye 2023. La Revisión 2025 recalculó el pasado, pero su cuadro 2000-2050
-          aún no está cargado.'
-        en: 'Earlier revision: the source labels these years as projection and states no reference date. No current
-          revision loaded includes 2023. Revision 2025 recalculated the past, but its 2000-2050 table is not yet
-          loaded.'
-      earlier_sources:
-      - status: manual
-        source_tier: national
-        institution: INE Bolivia
-        url: https://www.ine.gob.bo/index.php/censos-y-proyecciones-de-poblacion-sociales/
-        access_method: XLS (manual)
-        adapter: bol_ine
-        source_id: bol_ine_rev2014
-        raw_key: bol_ine_rev2014
-        year_from: 2000
-        year_to: 2011
-        years_covered: 2000-2011 (el archivo llega a 2050)
-        vintage_label: Rev. 2014
-        reference_code: mid-year
-        reference_date: Mitad de año
-        scenario_code: single
-        location_in_file: Hoja BOLIVIA, Cuadro N.° 7
-        vintage:
-          base_year: 2012
-          reference_census: Censo 2012
-          published: No consta en el archivo
-          revision: Revisión 2014
-        control:
-          year: 2011
-          value: 10190775
-          unit: personas
-          location: Hoja BOLIVIA, Cuadro N.° 7, 2011
-        public_note:
-          es: 'Revisión 2014, usada solo para 2000-2011, donde no hay otra serie cargada. Sus años posteriores no
-            se usan: el INE recomienda la revisión más reciente, y para 2034 esta da 13,94 M frente a 12,16 M de
-            la Revisión 2025.'
-          en: 'Revision 2014, used only for 2000-2011, where no other series is loaded. Its later years are not
-            used: INE recommends the latest revision, and for 2034 this one gives 13.94 M against 12.16 M in Revision
-            2025.'
-        flags:
-        - Archivo aportado a mano el 2026-11-01 (bolivia-PC201070.xls). Su hoja BOLIVIA dice Revisión 2014.
-        - 'No se usa para 2023 ni para 2035-2050, aunque los traiga: rellenaría con una proyección superada.'
+        es: 'Cifras al 1 de enero, no a mitad de año. El cuadro no marca el corte entre estimación y proyección:
+          2023/2024 se infiere del censo 2024.'
+        en: 'Figures as of January 1, not mid-year. The table does not mark the cut between estimate and projection:
+          2023/2024 is inferred from the 2024 census.'
     projection:
       source_tier: national
       status: manual
       institution: INE Bolivia
-      url: https://nimbus.ine.gob.bo/index.php/s/nBq9cK6Mn5L2Q4a/download
+      url: https://nimbus.ine.gob.bo/index.php/s/kdz7ktspssFz6C4/download
       access_method: XLSX (manual)
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
@@ -187,41 +148,44 @@ sources:
         revision: Revisión 2025
       scenario: No indica variantes (por confirmar)
       reference_date: 1 de enero
-      years_covered: 2024-2034
+      years_covered: 2024-2050
       update_frequency: Sin calendario fijo
       control:
         year: 2025
         value: 11945263
         unit: personas
-        location: Cuadro N.° 1, fila Total, 2025
+        location: Cuadro N.° 7, 2025
       flags:
-      - Archivo aportado a mano el 2026-11-01 (bolivia-PC20101.xlsx).
-      - robots.txt de nimbus.ine.gob.bo prohíbe la descarga automática.
+      - 'Archivo aportado a mano el 2026-11-01 (bolivia-PC20107.xlsx). robots.txt de nimbus.ine.gob.bo prohíbe la
+        descarga automática: método manual.'
+      - Reemplaza a las Revisiones 2014 y 2020, que se conservan en data/raw/ sin usarse.
+      - Corte 2023/2024 inferido; confirmar con la metodología del INE.
       source_id: bol_ine_rev2025
       adapter: bol_ine
-      raw_key: bol_ine_rev2025
+      raw_key: bol_ine_rev2025_anual
       year_from: 2024
-      year_to: 2034
+      year_to: 2050
       reference_code: 01-01
       scenario_code: single
       vintage_label: Rev. 2025
       public_note:
-        es: Cifras al 1 de enero, no a mitad de año. El cuadro cargado llega a 2034; INE Bolivia publica otro hasta
-          2050, aún sin cargar.
-        en: Figures as of January 1, not mid-year. The loaded table ends in 2034; INE Bolivia publishes another
-          to 2050, not yet loaded.
+        es: 'Cifras al 1 de enero, no a mitad de año. El cuadro no marca el corte entre estimación y proyección:
+          2023/2024 se infiere del censo 2024.'
+        en: 'Figures as of January 1, not mid-year. The table does not mark the cut between estimate and projection:
+          2023/2024 is inferred from the 2024 census.'
       landing_page: https://www.ine.gob.bo/index.php/censos-y-proyecciones-de-poblacion-sociales/
-      location_in_file: Cuadro N.° 1, fila Total
+      location_in_file: Cuadro N.° 7
     pyramid:
-      status: pendiente
-      parser: null
+      status: manual
+      parser: bol
       institution: INE Bolivia
       url: https://nimbus.ine.gob.bo/index.php/s/g3QPXLGSLmXPEsF/download
-      reason:
-        es: Los cuadros cargados traen las edades con ambos sexos juntos. Falta el cuadro del INE por sexo y edad;
-          requiere descarga manual.
-        en: The loaded tables give ages with both sexes combined. INE's table by sex and age is missing; it needs
-          a manual download.
+      location_in_file: Cuadro N.° 1 por sexo y edad, 2024-2034
+      files:
+      - raw_key: bol_ine_rev2025_sexo
+      note:
+        es: INE Bolivia publica edad y sexo de la Revisión 2025 solo para 2024-2034.
+        en: INE Bolivia publishes age and sex from Revision 2025 only for 2024-2034.
   BRA:
     historical:
       source_tier: national
@@ -545,51 +509,113 @@ sources:
       - raw_key: cri_inec
   CUB:
     historical:
-      source_tier: national
-      status: pendiente
-      institution: ONEI / CEPDE
-      url: https://www.onei.gob.cu/
-      access_method: desconocido
+      source_tier: regional_fallback
+      status: ok
+      institution: CEPAL/CELADE
+      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
+      access_method: XLSX
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
-      pending_reason: 'El certificado TLS de www.onei.gob.cu venció el 2026-09-02: el sitio no se pudo abrir ni
-        se desactivó la comprobación. Por tanto no se verificó ningún archivo. Las copias en terceros (oncubanews)
-        no son fuente válida.'
       flags:
-      - 'La ONEI cambió a ''población efectiva'' desde 2021: hay ruptura conceptual frente a la población residente.'
-      - Según prensa, proyección CEPDE 2015-2050 sin actualización tras la caída de población. Sin verificar.
-      - Decisión D2 pendiente.
-      source_id: null
-      public_reason:
-        es: El certificado TLS de ONEI venció el 2026-09-02; no se pudo verificar ningún archivo.
-        en: ONEI's TLS certificate expired on 2026-09-02; no file could be verified.
+      - 'Decisión del 2026-11-01: Javier Forero aportó el archivo de CEPAL para Cuba, lo que modifica D2.'
+      - Prensa cita a ONEI con 9.434.593 de población efectiva al cierre de 2025; CEPAL da 10.937.203,5 a mitad
+        de 2025. Sin verificar y con otra definición.
+      - CELADE y la División de Población de la ONU coproducen la serie.
+      source_id: cepal_celade_rev2024
+      landing_page: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
+      adapter: cepal_excel
+      raw_key: cepal_rev2024
+      raw_scope: _regional
+      cepal_row: Cuba
+      vintage_label: CEPAL Rev. 2024
+      vintage:
+        base_year: null
+        reference_census: null
+        published: Archivo modificado el 2024-07-06
+        revision: Revisión 2024
+      scenario: medio (la Revisión 2024 no publica variantes en este cuadro; por confirmar)
+      scenario_code: medium
+      reference_date: mitad de año
+      reference_code: mid-year
+      year_from: 1950
+      year_to: 2023
+      years_covered: 1950-2023
+      update_frequency: Irregular; revisiones de CELADE
+      location_in_file: Hoja CAD01, fila Cuba
+      control:
+        year: 2023
+        value: 11019.9305
+        unit: miles de personas
+        location: Hoja CAD01, fila Cuba, 2023
+      fallback_justification:
+        searched: 'ONEI: www.onei.gob.cu no abre (certificado TLS vencido el 2026-09-02). Copias en terceros no
+          son fuente válida.'
+        why_not_usable: La institución nacional no es verificable hoy. Se sustituye por ONEI si vuelve a responder
+          con una serie descargable.
+      public_note:
+        es: 'ONEI no se pudo verificar: su certificado venció el 2026-09-02. Según prensa, ONEI reporta una «población
+          efectiva» bastante menor que esta cifra de CEPAL, sin poder confirmarlo aquí.'
+        en: 'ONEI could not be verified: its certificate expired on 2026-09-02. According to press reports, ONEI
+          gives an “effective population” well below this ECLAC figure; this could not be confirmed here.'
     projection:
-      source_tier: national
-      status: pendiente
-      institution: ONEI / CEPDE
-      url: https://www.onei.gob.cu/
-      access_method: desconocido
+      source_tier: regional_fallback
+      status: ok
+      institution: CEPAL/CELADE
+      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
+      access_method: XLSX
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
-      pending_reason: 'El certificado TLS de www.onei.gob.cu venció el 2026-09-02: el sitio no se pudo abrir ni
-        se desactivó la comprobación. Por tanto no se verificó ningún archivo. Las copias en terceros (oncubanews)
-        no son fuente válida.'
       flags:
-      - 'La ONEI cambió a ''población efectiva'' desde 2021: hay ruptura conceptual frente a la población residente.'
-      - Según prensa, proyección CEPDE 2015-2050 sin actualización tras la caída de población. Sin verificar.
-      - Decisión D2 pendiente.
-      source_id: null
-      public_reason:
-        es: El certificado TLS de ONEI venció el 2026-09-02; no se pudo verificar ningún archivo.
-        en: ONEI's TLS certificate expired on 2026-09-02; no file could be verified.
+      - 'Decisión del 2026-11-01: Javier Forero aportó el archivo de CEPAL para Cuba, lo que modifica D2.'
+      - Prensa cita a ONEI con 9.434.593 de población efectiva al cierre de 2025; CEPAL da 10.937.203,5 a mitad
+        de 2025. Sin verificar y con otra definición.
+      - CELADE y la División de Población de la ONU coproducen la serie.
+      source_id: cepal_celade_rev2024
+      landing_page: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
+      adapter: cepal_excel
+      raw_key: cepal_rev2024
+      raw_scope: _regional
+      cepal_row: Cuba
+      vintage_label: CEPAL Rev. 2024
+      vintage:
+        base_year: null
+        reference_census: null
+        published: Archivo modificado el 2024-07-06
+        revision: Revisión 2024
+      scenario: medio (la Revisión 2024 no publica variantes en este cuadro; por confirmar)
+      scenario_code: medium
+      reference_date: mitad de año
+      reference_code: mid-year
+      year_from: 2024
+      year_to: 2100
+      years_covered: 2024-2100
+      update_frequency: Irregular; revisiones de CELADE
+      location_in_file: Hoja CAD01, fila Cuba
+      control:
+        year: 2025
+        value: 10937.2035
+        unit: miles de personas
+        location: Hoja CAD01, fila Cuba, 2025
+      fallback_justification:
+        searched: 'ONEI: www.onei.gob.cu no abre (certificado TLS vencido el 2026-09-02). Copias en terceros no
+          son fuente válida.'
+        why_not_usable: La institución nacional no es verificable hoy. Se sustituye por ONEI si vuelve a responder
+          con una serie descargable.
+      public_note:
+        es: 'ONEI no se pudo verificar: su certificado venció el 2026-09-02. Según prensa, ONEI reporta una «población
+          efectiva» bastante menor que esta cifra de CEPAL, sin poder confirmarlo aquí.'
+        en: 'ONEI could not be verified: its certificate expired on 2026-09-02. According to press reports, ONEI
+          gives an “effective population” well below this ECLAC figure; this could not be confirmed here.'
     pyramid:
-      status: pendiente
-      parser: null
-      institution: ONEI / CEPDE
-      url: https://www.onei.gob.cu/
-      reason:
-        es: 'Sin archivo verificado: el certificado de ONEI está vencido.'
-        en: 'No verified file: ONEI''s certificate has expired.'
+      status: ok
+      parser: cepal_pais
+      tier: regional_fallback
+      institution: CEPAL/CELADE
+      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/07_CUB.xlsx
+      location_in_file: Hoja 'Población a mitad de año', bloques Hombres y Mujeres
+      files:
+      - raw_key: cepal_cub_pais
+        url: https://celade.cepal.org/bdcelade/proyecciones/resultados/07_CUB.xlsx
   DOM:
     historical:
       source_tier: national
@@ -946,6 +972,18 @@ sources:
       location_in_file: Tomo 9, cuadro de cada año; quinquenal desde 2030
       files:
       - raw_key: hnd_ine
+      extra_parts:
+      - parser: cepal_pais
+        tier: regional_fallback
+        institution: CEPAL/CELADE
+        url: https://celade.cepal.org/bdcelade/proyecciones/resultados/12_HND.xlsx
+        location_in_file: Hoja 'Población a mitad de año', bloques Hombres y Mujeres
+        files:
+        - raw_key: cepal_hnd_pais
+          url: https://celade.cepal.org/bdcelade/proyecciones/resultados/12_HND.xlsx
+      note:
+        es: Antes de 2013 usa CEPAL, igual que la serie. Desde 2030, el INE publica solo cada 5 años.
+        en: Before 2013 it uses ECLAC, like the series. From 2030, INE publishes only every 5 years.
   HTI:
     historical:
       source_tier: regional_fallback
@@ -1034,21 +1072,21 @@ sources:
       cepal_row: Haití / Haiti
       location_in_file: Hoja CAD01, fila Haití / Haiti
     pyramid:
-      status: pendiente
-      parser: null
+      status: ok
+      parser: cepal_pais
+      tier: regional_fallback
       institution: CEPAL/CELADE
-      url: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
-      reason:
-        es: IHSI no publica edad y sexo en serie. CEPAL los tiene por país en la Revisión 2024, pero falta el archivo
-          de Haití.
-        en: IHSI publishes no series by age and sex. ECLAC has them by country in Revision 2024, but Haiti's file
-          is missing.
+      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/11_HTI.xlsx
+      location_in_file: Hoja 'Población a mitad de año', bloques Hombres y Mujeres
+      files:
+      - raw_key: cepal_hti_pais
+        url: https://celade.cepal.org/bdcelade/proyecciones/resultados/11_HTI.xlsx
   MEX:
     historical:
       source_tier: national
       status: manual
       institution: CONAPO
-      url: https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv
+      url: https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/b4fe49a8-c86a-4c32-8450-8f3c4cc83125/download/05_indicadores_demograficos_proyecciones.csv
       access_method: CSV (manual)
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
@@ -1059,41 +1097,32 @@ sources:
         revision: Conciliación 1950-2019 y proyecciones 2020-2070
       scenario: 'No aplica: serie única'
       reference_date: 1 de julio (mitad de año)
-      years_covered: 1970-2019
+      years_covered: 1950-2019
       update_frequency: Sin calendario fijo
       control:
         year: 2019
         value: 127215666
         unit: personas
-        location: Suma de POBLACION de las 32 entidades, 2019
+        location: POB_MIT_ANIO, República Mexicana, 2019
       flags:
-      - Archivo aportado a mano el 2026-11-01 (mx-00_Pob_Mitad_1950_2070.csv). Suma derivada, no interpolada; el
-        adaptador rechaza un año sin las 32 entidades completas.
-      - La suma coincide con la serie nacional de CONAPO en 101 de 101 años y con el archivo municipal pobproy_inddemo.csv
-        en 51 de 51.
-      - 'La columna RENGLON llega a 737.660 y el archivo trae 711.040 filas: faltan las 26.620 nacionales (121 años
-        × 220). De ahí que falte 1950-1969.'
+      - Archivo aportado a mano el 2026-11-01. Mismo hash que la copia leída en la verificación inicial.
+      - Coincide con la suma de la base por edad y sexo en 101 de 101 años.
       - 'datos.gob.mx responde 403 a un agente identificado: método manual (decisión D4).'
       source_id: mex_conapo_2023
       adapter: mex_conapo
-      raw_key: mex_conapo_mitad
-      year_from: 1970
+      raw_key: mex_conapo_indicadores
+      year_from: 1950
       year_to: 2019
       reference_code: 07-01
       scenario_code: single
       vintage_label: Conciliación 2023
       landing_page: https://www.datos.gob.mx/dataset/proyecciones-de-poblacion
-      location_in_file: POBLACION por ANIO, CVE_GEO, EDAD y SEXO (32 entidades × 110 edades × 2 sexos)
-      public_note:
-        es: 'Total nacional sumado por entidad, edad y sexo: el archivo no trae fila nacional. Empieza en 1970;
-          las filas nacionales de 1950-1969 no vienen en esta copia.'
-        en: 'National total summed by state, age and sex: the file has no national row. It starts in 1970; the national
-          rows for 1950-1969 are not in this copy.'
+      location_in_file: POB_MIT_ANIO, fila República Mexicana
     projection:
       source_tier: national
       status: manual
       institution: CONAPO
-      url: https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv
+      url: https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/b4fe49a8-c86a-4c32-8450-8f3c4cc83125/download/05_indicadores_demograficos_proyecciones.csv
       access_method: CSV (manual)
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
@@ -1110,30 +1139,21 @@ sources:
         year: 2025
         value: 133367428
         unit: personas
-        location: Suma de POBLACION de las 32 entidades, 2025
+        location: POB_MIT_ANIO, República Mexicana, 2025
       flags:
-      - Archivo aportado a mano el 2026-11-01 (mx-00_Pob_Mitad_1950_2070.csv). Suma derivada, no interpolada; el
-        adaptador rechaza un año sin las 32 entidades completas.
-      - La suma coincide con la serie nacional de CONAPO en 101 de 101 años y con el archivo municipal pobproy_inddemo.csv
-        en 51 de 51.
-      - 'La columna RENGLON llega a 737.660 y el archivo trae 711.040 filas: faltan las 26.620 nacionales (121 años
-        × 220). De ahí que falte 1950-1969.'
+      - Archivo aportado a mano el 2026-11-01. Mismo hash que la copia leída en la verificación inicial.
+      - Coincide con la suma de la base por edad y sexo en 101 de 101 años.
       - 'datos.gob.mx responde 403 a un agente identificado: método manual (decisión D4).'
       source_id: mex_conapo_2023
       adapter: mex_conapo
-      raw_key: mex_conapo_mitad
+      raw_key: mex_conapo_indicadores
       year_from: 2020
       year_to: 2070
       reference_code: 07-01
       scenario_code: single
       vintage_label: Conciliación 2023
       landing_page: https://www.datos.gob.mx/dataset/proyecciones-de-poblacion
-      location_in_file: POBLACION por ANIO, CVE_GEO, EDAD y SEXO (32 entidades × 110 edades × 2 sexos)
-      public_note:
-        es: 'Total nacional sumado por entidad, edad y sexo: el archivo no trae fila nacional. Empieza en 1970;
-          las filas nacionales de 1950-1969 no vienen en esta copia.'
-        en: 'National total summed by state, age and sex: the file has no national row. It starts in 1970; the national
-          rows for 1950-1969 are not in this copy.'
+      location_in_file: POB_MIT_ANIO, fila República Mexicana
     pyramid:
       status: manual
       parser: mex
@@ -1142,6 +1162,10 @@ sources:
       location_in_file: POBLACION por ANIO, EDAD y SEXO; suma de 32 entidades
       files:
       - raw_key: mex_conapo_mitad
+      note:
+        es: 'Pirámide desde 1970: la base por edad y sexo cargada no trae filas nacionales, así que se suma por
+          entidad.'
+        en: 'Pyramid from 1970: the loaded age-and-sex base has no national rows, so it is summed by state.'
   NIC:
     historical:
       source_tier: national
@@ -1249,8 +1273,17 @@ sources:
       files:
       - raw_key: nic_inide
       note:
-        es: INIDE publica edad y sexo solo para 2023, 2024 y 2025 en este anuario.
-        en: INIDE publishes age and sex only for 2023, 2024 and 2025 in this yearbook.
+        es: INIDE publica edad y sexo solo para 2023-2025. Desde 2026 usa CEPAL, igual que la serie.
+        en: INIDE publishes age and sex only for 2023-2025. From 2026 it uses ECLAC, like the series.
+      extra_parts:
+      - parser: cepal_pais
+        tier: regional_fallback
+        institution: CEPAL/CELADE
+        url: https://celade.cepal.org/bdcelade/proyecciones/resultados/14_NIC.xlsx
+        location_in_file: Hoja 'Población a mitad de año', bloques Hombres y Mujeres
+        files:
+        - raw_key: cepal_nic_pais
+          url: https://celade.cepal.org/bdcelade/proyecciones/resultados/14_NIC.xlsx
   PAN:
     historical:
       source_tier: national
@@ -1730,8 +1763,9 @@ decisions:
   D1: 'Aprobado 2026-11-01 y actualizado el mismo día: CEPAL/CELADE se acepta como respaldo. Se pasó de la API CEPALSTAT
     (Revisión 2022) al Excel de la Revisión 2024 aportado por Javier Forero (003_COMPARATIVO.xlsx), que responde
     a un agente identificado. El Excel cita coproducción con la ONU (WPP 2024).'
-  D2: 'Aprobado 2026-11-01: Cuba queda pendiente; no se usa CEPAL provisional porque existe serie nacional, aunque
-    003_COMPARATIVO.xlsx también la incluye.'
+  D2: 'Actualizado 2026-11-01: Cuba pasa a CEPAL como respaldo marcado, tras aportar Javier Forero su archivo. ONEI
+    sigue sin ser verificable (certificado vencido); si vuelve a responder, se abre una alerta para sustituirla
+    por la serie nacional.'
   D3: 'Aprobado 2026-11-01: los años previos a la serie nacional quedan null, salvo Honduras (sin ninguna serie
     nacional antes de 2013). La cifra IHSI 2024 de Haití es contraste, no se mezcla.'
   D4: 'Aprobado 2026-11-01: México queda manual; no se falsea el agente de usuario.'
@@ -1764,3 +1798,7 @@ watch:
   url: https://datos.gob.do/dataset/estimaciones-y-proyecciones-de-la-poblacion-total-segun-sexo-y-grupos-quinquenales-de-edad-1950-2050
   pattern: download/OGTIC
   reason: La ONE anunció una edición 1950-2100 con el censo 2022
+- iso3: CUB
+  url: https://www.onei.gob.cu/
+  pattern: demogr|poblaci|anuario
+  reason: Serie nacional posible donde se usa CEPAL

@@ -40,15 +40,8 @@ class ArgIndec2022(Adapter):
 
 @register("bol_ine")
 class BolIne(Adapter):
-    """Acepta los formatos del INE: tabla por edad (años en columnas), cuadro anual (años en filas) y el .xls con hoja BOLIVIA."""
-
     def parse(self, raw):
-        if str(raw).lower().endswith(".xls"):
-            return first_two(xls_rows(raw, "BOLIVIA"))
-        rows = list(xlsx_rows(raw))
-        if any(isinstance(c, str) and c.strip() == "Edad" for r in rows for c in r):
-            return wide_row(rows, "Total", self.entry["year_from"])
-        return first_two(rows)
+        return first_two(xlsx_rows(raw))
 
 
 @register("bra_ibge")
@@ -152,9 +145,7 @@ class HndIne(Adapter):
 
 @register("mex_conapo")
 class MexConapo(Adapter):
-    """Acepta los indicadores nacionales (POB_MIT_ANIO) y la base por edad y sexo (POBLACION).
-    En la base, la fila nacional manda si existe; si no, el total es la suma de las 32 entidades, y un año incompleto se rechaza."""
-    STATES = 32
+    """Indicadores demográficos de CONAPO: la fila de la República trae el total nacional a mitad de año."""
 
     def parse(self, raw):
         data = Path(raw).read_bytes()
@@ -162,30 +153,8 @@ class MexConapo(Adapter):
             text = data.decode("utf-8-sig")
         except UnicodeDecodeError:
             text = data.decode("latin1")
-        reader = csv.DictReader(io.StringIO(text))
-        if "POB_MIT_ANIO" in (reader.fieldnames or []):
-            return {int(r["ANIO"]): float(r["POB_MIT_ANIO"]) for r in reader
-                    if r["CVE_GEO"].strip() == "0" or r["ENTIDAD"].lower().startswith("rep")}
-        national: dict[int, float] = {}
-        states: dict[int, dict[str, float]] = {}
-        for r in reader:
-            y, geo = int(r["ANIO"]), r["CVE_GEO"].strip()
-            if geo == "0":
-                national[y] = national.get(y, 0.0) + float(r["POBLACION"])
-            else:
-                s = states.setdefault(y, {})
-                s[geo] = s.get(geo, 0.0) + float(r["POBLACION"])
-        out = dict(national)
-        for y, s in states.items():
-            total = sum(s.values())
-            if y in national:
-                if abs(total - national[y]) > 0.5:
-                    raise ParseError(f"México {y}: nacional {national[y]} y suma de entidades {total} no coinciden")
-            elif len(s) != self.STATES:
-                raise ParseError(f"México {y}: solo {len(s)} de {self.STATES} entidades")
-            else:
-                out[y] = total
-        return out
+        return {int(r["ANIO"]): float(r["POB_MIT_ANIO"]) for r in csv.DictReader(io.StringIO(text))
+                if r["CVE_GEO"].strip() == "0" or r["ENTIDAD"].lower().startswith("rep")}
 
 
 @register("nic_inide")

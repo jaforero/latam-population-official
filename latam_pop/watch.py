@@ -21,9 +21,11 @@ def run_watch(items: list[dict], http: Http, state: dict) -> tuple[dict, list[di
         try:
             digest = link_digest(http.get(w["url"]).decode("utf8", "ignore"), w["url"], w["pattern"])
         except FetchError:
+            new.setdefault(w["url"], "unreachable")
             continue
         old = state.get(w["url"])
         if old and old != digest:
-            alerts.append(alert("watch_change", w["iso3"], f"Cambió el portal {w['url']}: {w['reason']}", digest=digest))
+            what = "Volvió a responder" if old == "unreachable" else "Cambió"
+            alerts.append(alert("watch_change", w["iso3"], f"{what} el portal {w['url']}: {w['reason']}", digest=digest))
         new[w["url"]] = digest
     return new, alerts

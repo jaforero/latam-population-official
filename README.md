@@ -25,7 +25,7 @@ data/processed/           salidas de contrato
 tests/fixtures/           crudos reales o recortados, para probar sin red
 ```
 
-## Contrato de datos · `schema_version` 1.2
+## Contrato de datos · `schema_version` 1.3
 Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es un cambio de versión:** campo eliminado, renombrado o con otro significado sube la versión mayor. Los campos nuevos opcionales suben la menor.
 
 | Ruta | Contenido |
@@ -53,9 +53,9 @@ Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es
 | `growth` | número o null | `(P_t / P_{t-1}) − 1`, solo dentro de la misma fuente y vintage |
 | `raw_file` | ruta | Archivo de `data/raw/` del que sale la cifra |
 
-**Cambios:** la 1.1 admite `reference_date: census` (hoy sin uso). La 1.2 agrega las pirámides y `pyramid` en `status.json`. Ambas son compatibles con la 1.0.
+**Cambios:** la 1.1 admite `reference_date: census` (hoy sin uso). La 1.2 agrega las pirámides y `pyramid` en `status.json`. La 1.3 agrega `parts` y `part`, porque una pirámide puede combinar dos fuentes. Todas son compatibles con la 1.0.
 
-**Pirámides:** `age_groups` lista 0-4 … 75-79 y 80+. `years["2025"]` trae `m` y `f` (17 valores) más `series_type`, `source_id`, `vintage`, `source_tier` y `reference_date`, los mismos del registro de ese año. Además `status`, `reason`, `raw_files` (ruta, hash, fecha) y `location_in_file`. Solo se suman grupos publicados; no se desagrega ni se interpola. Un año se publica únicamente si hombres + mujeres cuadra con el total oficial de ese año (tolerancia de 0,05 %); si no, se excluye y genera una alerta.
+**Pirámides:** `age_groups` lista 0-4 … 75-79 y 80+. `years["2025"]` trae `m` y `f` (17 valores) más `series_type`, `source_id`, `vintage`, `source_tier` y `reference_date`, los mismos del registro de ese año, y `part`, el índice de `parts`. Cada elemento de `parts` da `institution`, `source_url`, `source_tier`, `location_in_file` y `raw_files` (ruta, hash, fecha). Además `status`, `reason`, `note` y `raw_files` con todos los crudos. Cada año usa la parte del mismo nivel de fuente que la serie de ese año. Solo se suman grupos publicados; no se desagrega ni se interpola. Un año se publica únicamente si hombres + mujeres cuadra con el total oficial de ese año (tolerancia de 0,05 %); si no, se excluye y genera una alerta.
 
 **Por país**, además: `segments` (institución, URL, vintage, hash, ubicación en el archivo), `breaks` (ruptura con año de corte y sin ajuste), `peak` (`peak`, `no_peak_in_horizon` o `no_projection`) y `reasons` en español e inglés.
 
@@ -96,11 +96,14 @@ python -m latam_pop run
 
 Un archivo cubre las dos series cuando comparten `raw_key`, y basta ingerirlo una vez. Si el archivo no es el que indica la entrada, primero corrige la entrada (URL, años, `vintage_label`, `raw_key` y control): `ingest` guarda la URL registrada como procedencia. Si el país estaba `pendiente`, complétalo como en la sección siguiente, con `status: manual`.
 
-**Archivos que ampliarían series ya cargadas:**
-- **Bolivia:** `PC20107` (2000-2050, Revisión 2025) reemplazaría las tres revisiones actuales. La página del INE ofrece cuadros 2000-2050 casi idénticos de las revisiones 2014, 2020 y 2025: el pie del cuadro dice cuál es.
-- **México:** el archivo cargado no trae las filas nacionales, así que empieza en 1970. Una copia con ellas, o `05_indicadores_demograficos_proyecciones.csv`, agregaría 1950-1969. El adaptador acepta ambos; ajusta `year_from` a 1950.
+**Archivos que mejorarían lo cargado:**
+- **Rep. Dominicana:** la edición 1950-2100 con censo 2022 que la ONE anunció en junio de 2026.
+- **México:** una copia de `00_Pob_Mitad_1950_2070.csv` con filas nacionales agregaría 1950-1969 a la pirámide.
+- **Cuba:** cualquier serie de ONEI verificable reemplazaría a CEPAL.
 
-Si un archivo trae una edición anterior útil solo para algunos años, regístrala en `earlier_sources` de la entrada e ingiérela con `--raw-key`. Aparecerá como ruptura de serie.
+La página del INE de Bolivia ofrece cuadros 2000-2050 casi idénticos de las revisiones 2014, 2020 y 2025: el pie del cuadro dice cuál es.
+
+Si el archivo manual es de una pirámide, usa `ingest ISO3 pyramid ARCHIVO`.
 
 ## Cómo agregar un país o una fuente
 1. Agrega o completa la entrada en `sources.yaml`: `source_tier`, URL exacta, `adapter`, `source_id`, `raw_key`, `year_from`, `year_to`, vintage, referencia temporal y una **cifra de control** leída en la fuente. Un país nuevo también va en `latam_pop/__init__.py` y en `NAMES` de `build.py`.
@@ -120,8 +123,9 @@ Los síntomas son un issue de falla, `status: error` o una alerta `control_misma
 
 ## Límites conocidos
 - **Licencias:** salvo Rep. Dominicana (ODbL, según datos.gob.do), los términos de uso de cada fuente siguen sin verificar y constan como tales en `sources.yaml`.
-- **Vintages:** Perú, Honduras y El Salvador tienen una edición nueva esperada o citada; Venezuela usa una proyección de 2013. Bolivia usa la Revisión 2020 para 2012-2022 mientras no llegue el cuadro 2000-2050. Rep. Dominicana usa una serie anterior a la edición con censo 2022 que la ONE anunció en junio de 2026.
-- **Peso:** `data/raw/` ocupa unos 190 MB y conserva cada versión de los archivos.
+- **Vintages:** Perú, Honduras y El Salvador tienen una edición nueva esperada o citada; Venezuela usa una proyección de 2013. Rep. Dominicana usa una serie anterior a la edición con censo 2022 que la ONE anunció en junio de 2026.
+- **Cuba:** usa CEPAL porque ONEI no es verificable (certificado vencido). La vigilancia avisa si el portal vuelve a responder.
+- **Peso:** `data/raw/` ocupa unos 205 MB y conserva cada versión de los archivos.
 - **Red:** algunos sitios pueden bloquear los ejecutores de GitHub Actions aunque respondan desde otra conexión; en ese caso la serie pasa a `stale`.
 
 ## Licencia

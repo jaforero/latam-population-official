@@ -377,6 +377,35 @@ def dom(paths):
     return finish(store)
 
 
+@parser("bol")
+def bol(paths):
+    """Cuadro por sexo: cada año ocupa tres columnas (Total, Hombres, Mujeres)."""
+    store: dict = {}
+    cols = {}
+    for r in xlsx_rows(paths["bol_ine_rev2025_sexo"]):
+        years = year_columns(r)
+        if years:
+            cols = years
+            continue
+        label = next((c for c in r if c not in (None, "")), None)
+        age = parse_age(label) if label is not None else None
+        if age and cols:
+            for j, y in cols.items():
+                add(store, y, "m", age, float(r[j + 1]))
+                add(store, y, "f", age, float(r[j + 2]))
+    return finish(store)
+
+
+@parser("cepal_pais")
+def cepal_pais(paths):
+    """Archivo por país de la Revisión 2024. Los rótulos son bilingües: 'Hombres / Men', '100 y más / and over'."""
+    store: dict = {}
+    path = next(iter(paths.values()))
+    rows = ([c.split("/")[0].strip() if isinstance(c, str) else c for c in r] for r in xlsx_rows(path, "Población a mitad de año"))
+    blocks(rows, store)
+    return finish(store)
+
+
 MAX_TOTAL_GAP = 0.0005  # Una pirámide que se aparte más del total oficial de ese año no se publica.
 
 
@@ -384,50 +413,66 @@ def rounded(v: float) -> int | float:
     return int(v) if float(v).is_integer() else round(float(v), 3)
 
 
-def build_pyramid(iso3, cfg, by_year, store, http, content_check) -> tuple[dict, list[dict], list[dict]]:
-    """Devuelve el documento del país, sus alertas y sus fallas. Una falla aquí no afecta la serie principal."""
-    alerts, failures = [], []
-    doc = dict(status=cfg["status"], parser=cfg.get("parser"), institution=cfg.get("institution"), source_url=cfg.get("url"),
-               location_in_file=cfg.get("location_in_file"), reason=cfg.get("reason"), note=cfg.get("note"),
-               age_groups=AGE_GROUPS, raw_files=[], years={})
-    if not cfg.get("parser"):
-        return doc, alerts, failures
-    paths = {}
-    for f in cfg["files"]:
-        key, scope = f["raw_key"], f.get("scope", iso3)
-        raw = None
+def load_part(iso3, part, store, http, content_check, doc, failures):
+    """Descarga o toma los crudos de una parte y la interpreta. Devuelve sus datos o None si no hay archivo o no se pudo leer."""
+    paths, files = {}, []
+    for f in part["files"]:
+        key, raw = f["raw_key"], None
         if f.get("url") and http is not None:
             try:
                 content = http.get(f["url"])
                 content_check(content, f["url"])
-                raw = store.save(scope, key, f.get("filename") or f["url"].rsplit("/", 1)[-1], content, f["url"])
+                raw = store.save(iso3, key, f["url"].rsplit("/", 1)[-1], content, f["url"])
             except Exception as e:  # noqa: BLE001  se conserva el último crudo válido
                 failures.append(dict(iso3=iso3, series="pyramid", error=f"{type(e).__name__}: {str(e)[:180]}"))
                 doc["status"] = "stale"
-        raw = raw or store.latest(scope, key)
+        raw = raw or store.latest(iso3, key)
         if raw is None:
-            doc["status"] = "manual_pendiente" if cfg["status"] == "manual" else "error"
-            return doc, alerts, failures
+            return None
         paths[key] = raw.path
-        doc["raw_files"].append(dict(path=raw.path.as_posix(), sha256=raw.sha256, retrieved_at=raw.retrieved_at, retrieved_by=raw.retrieved_by))
+        files.append(dict(path=raw.path.as_posix(), sha256=raw.sha256, retrieved_at=raw.retrieved_at, retrieved_by=raw.retrieved_by))
     try:
-        data = PARSERS[cfg["parser"]](paths)
+        data = PARSERS[part["parser"]](paths)
     except Exception as e:  # noqa: BLE001  un país que falla no detiene a los demás
         failures.append(dict(iso3=iso3, series="pyramid", error=f"parse: {type(e).__name__}: {str(e)[:180]}"))
-        doc["status"] = "error"
+        return None
+    doc["raw_files"] += files
+    doc["parts"].append(dict(institution=part.get("institution"), source_url=part.get("url"), source_tier=part.get("tier", "national"),
+                             location_in_file=part.get("location_in_file"), raw_files=files))
+    return data
+
+
+def build_pyramid(iso3, cfg, by_year, store, http, content_check) -> tuple[dict, list[dict], list[dict]]:
+    """Devuelve el documento del país, sus alertas y sus fallas. Una falla aquí no afecta la serie principal.
+    Cada año usa la parte del mismo nivel de fuente que la serie principal de ese año (`extra_parts`: p. ej. CEPAL donde la serie es CEPAL)."""
+    alerts, failures = [], []
+    doc = dict(status=cfg["status"], institution=cfg.get("institution"), source_url=cfg.get("url"), reason=cfg.get("reason"),
+               note=cfg.get("note"), age_groups=AGE_GROUPS, parts=[], raw_files=[], years={})
+    if not cfg.get("parser"):
+        return doc, alerts, failures
+    loaded = []
+    for part in [cfg] + cfg.get("extra_parts", []):
+        data = load_part(iso3, part, store, http, content_check, doc, failures)
+        if data is not None:
+            loaded.append((len(doc["parts"]) - 1, part.get("tier", "national"), data))
+    if not loaded:
+        no_file = not failures
+        doc["status"] = "manual_pendiente" if no_file and cfg["status"] == "manual" else "error"
         return doc, alerts, failures
     mismatched, odd_sex = [], []
-    for y in sorted(data):
-        rec = by_year.get(y)
-        if rec is None or rec.population is None:
+    for y in sorted(by_year):
+        rec = by_year[y]
+        match = next(((i, d[y]) for i, tier, d in loaded if tier == rec.source_tier and y in d), None)
+        if match is None or rec.population is None:
             continue
-        m, f = data[y]["m"], data[y]["f"]
+        index, v = match
+        m, f = v["m"], v["f"]
         if abs(sum(m) + sum(f) - rec.population) > max(1.0, MAX_TOTAL_GAP * rec.population):
             mismatched.append(y)
             continue
         if m[0] < f[0] or m[16] > f[16]:
             odd_sex.append(y)
-        doc["years"][str(y)] = dict(m=[rounded(v) for v in m], f=[rounded(v) for v in f], series_type=rec.series_type,
+        doc["years"][str(y)] = dict(m=[rounded(x) for x in m], f=[rounded(x) for x in f], part=index, series_type=rec.series_type,
                                     source_id=rec.source_id, vintage=rec.vintage, source_tier=rec.source_tier,
                                     reference_date=rec.reference_date)
     if mismatched:

@@ -1,5 +1,5 @@
 {
- "schema_version": "1.2",
+ "schema_version": "1.3",
  "iso3": "MEX",
  "name_es": "México",
  "name_en": "Mexico",
@@ -14,24 +14,21 @@
    "series": "historical",
    "source_tier": "national",
    "institution": "CONAPO",
-   "source_url": "https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv",
+   "source_url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/b4fe49a8-c86a-4c32-8450-8f3c4cc83125/download/05_indicadores_demograficos_proyecciones.csv",
    "vintage": "Conciliación 2023",
    "reference_census": "Censo 2020",
    "published": "2023 (por confirmar)",
    "scenario": "single",
    "reference_date": "07-01",
-   "year_from": 1970,
+   "year_from": 1950,
    "year_to": 2019,
    "access_method": "CSV (manual)",
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv",
-   "raw_sha256": "89db6adc7930965fb5b5c01ad3a98765ed90afa6a151c2cfb913acc2b9e0cac6",
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv",
+   "raw_sha256": "e0407d1640f38232023cf97656a0cb7be46049b1cb2344198c7e4aaec7cae6cd",
    "retrieved_at": "2026-11-01",
    "retrieved_by": "manual",
-   "location_in_file": "POBLACION por ANIO, CVE_GEO, EDAD y SEXO (32 entidades × 110 edades × 2 sexos)",
-   "note": {
-    "es": "Total nacional sumado por entidad, edad y sexo: el archivo no trae fila nacional. Empieza en 1970; las filas nacionales de 1950-1969 no vienen en esta copia.",
-    "en": "National total summed by state, age and sex: the file has no national row. It starts in 1970; the national rows for 1950-1969 are not in this copy."
-   },
+   "location_in_file": "POB_MIT_ANIO, fila República Mexicana",
+   "note": null,
    "transcription": null
   },
   {
@@ -39,7 +36,7 @@
    "series": "projection",
    "source_tier": "national",
    "institution": "CONAPO",
-   "source_url": "https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv",
+   "source_url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/b4fe49a8-c86a-4c32-8450-8f3c4cc83125/download/05_indicadores_demograficos_proyecciones.csv",
    "vintage": "Conciliación 2023",
    "reference_census": "Censo 2020",
    "published": "2023 (por confirmar)",
@@ -48,15 +45,12 @@
    "year_from": 2020,
    "year_to": 2070,
    "access_method": "CSV (manual)",
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv",
-   "raw_sha256": "89db6adc7930965fb5b5c01ad3a98765ed90afa6a151c2cfb913acc2b9e0cac6",
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv",
+   "raw_sha256": "e0407d1640f38232023cf97656a0cb7be46049b1cb2344198c7e4aaec7cae6cd",
    "retrieved_at": "2026-11-01",
    "retrieved_by": "manual",
-   "location_in_file": "POBLACION por ANIO, CVE_GEO, EDAD y SEXO (32 entidades × 110 edades × 2 sexos)",
-   "note": {
-    "es": "Total nacional sumado por entidad, edad y sexo: el archivo no trae fila nacional. Empieza en 1970; las filas nacionales de 1950-1969 no vienen en esta copia.",
-    "en": "National total summed by state, age and sex: the file has no national row. It starts in 1970; the national rows for 1950-1969 are not in this copy."
-   },
+   "location_in_file": "POB_MIT_ANIO, fila República Mexicana",
+   "note": null,
    "transcription": null
   }
  ],
@@ -71,6 +65,306 @@
  "records": [
   {
    "iso3": "MEX",
+   "year": 1950,
+   "population": 28463441,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": null,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1951,
+   "population": 29161024,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.02450803471020957,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1952,
+   "population": 29893469,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.025117259256739466,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1953,
+   "population": 30669402,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.02595660610683903,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1954,
+   "population": 31507175,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.02731624829202728,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1955,
+   "population": 32421555,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.029021326094770483,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1956,
+   "population": 33381410,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.029605458467368395,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1957,
+   "population": 34382245,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.02998180723941868,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1958,
+   "population": 35428062,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.030417356400083806,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1959,
+   "population": 36527873,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.031043498794825375,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1960,
+   "population": 37678427,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.03149797416345601,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1961,
+   "population": 38881128,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.03192014889581252,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1962,
+   "population": 40133786,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.032217635249677024,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1963,
+   "population": 41429336,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.03228078208220864,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1964,
+   "population": 42772209,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.032413577663904736,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1965,
+   "population": 44157094,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.032378150027275954,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1966,
+   "population": 45573114,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.032067780547333946,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1967,
+   "population": 47024169,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.03184015470173929,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1968,
+   "population": 48507808,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.03155056286055791,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
+   "year": 1969,
+   "population": 50023146,
+   "series_type": "estimate",
+   "source_id": "mex_conapo_2023",
+   "source_tier": "national",
+   "vintage": "Conciliación 2023",
+   "scenario": "single",
+   "reference_date": "07-01",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": 0.03123905330869614,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
+  },
+  {
+   "iso3": "MEX",
    "year": 1970,
    "population": 51560567,
    "series_type": "estimate",
@@ -81,8 +375,8 @@
    "reference_date": "07-01",
    "retrieved_at": "2026-11-01",
    "interpolated": false,
-   "growth": null,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "growth": 0.030734192527595017,
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -97,7 +391,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.030508140067583067,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -112,7 +406,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.03058540150425393,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -127,7 +421,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.030239379695966573,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -142,7 +436,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.029828573525294333,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -157,7 +451,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.029178741446831635,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -172,7 +466,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.028156239161482022,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -187,7 +481,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.027053566907358162,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -202,7 +496,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.026118251892191635,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -217,7 +511,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.02536104356119595,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -232,7 +526,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.02469788271670259,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -247,7 +541,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.024141308486978375,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -262,7 +556,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.02372558124403601,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -277,7 +571,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.023330005301423595,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -292,7 +586,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.022904047383924153,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -307,7 +601,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.022325957075225222,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -322,7 +616,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.021648450318184853,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -337,7 +631,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.020970998286334863,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -352,7 +646,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.020302101535073058,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -367,7 +661,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.019778089396530918,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -382,7 +676,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.019459613581042978,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -397,7 +691,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.019224042113161754,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -412,7 +706,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.018874975288083684,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -427,7 +721,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0183632080318592,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -442,7 +736,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01778048255371023,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -457,7 +751,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.017077285806632814,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -472,7 +766,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01620307812368793,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -487,7 +781,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.015237181837965963,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -502,7 +796,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.014262282623447975,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -517,7 +811,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.013287632809876104,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -532,7 +826,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.013084952538560346,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -547,7 +841,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01379109136989376,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -562,7 +856,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.014175317125359577,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -577,7 +871,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.013904892872055985,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -592,7 +886,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.013347910454289735,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -607,7 +901,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01334056634401204,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -622,7 +916,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01423977155867795,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -637,7 +931,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.015321954878038113,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -652,7 +946,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0158596966650999,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -667,7 +961,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01576534329104362,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -682,7 +976,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01526884607087986,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -697,7 +991,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.014727945650346852,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -712,7 +1006,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.013863348716119273,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -727,7 +1021,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.013019933150553609,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -742,7 +1036,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.012131926935623705,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -757,7 +1051,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.01090376886956923,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -772,7 +1066,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.009961036538082668,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -787,7 +1081,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.00962691125965609,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -802,7 +1096,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.009766634236589411,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -817,7 +1111,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.009681598576778194,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -832,7 +1126,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.007809604203935061,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -847,7 +1141,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.00603520793403467,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -862,7 +1156,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.007579769910499579,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -877,7 +1171,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.009039178027802297,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -892,7 +1186,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.008686285680571393,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -907,7 +1201,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.008263215465642348,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -922,7 +1216,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.007796731297839754,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -937,7 +1231,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.007324039003905547,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -952,7 +1246,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0068684657996147536,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -967,7 +1261,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0064495504178923024,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -982,7 +1276,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.006072719338504173,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -997,7 +1291,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.005736652254998864,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1012,7 +1306,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.005436343721680226,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1027,7 +1321,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.005168592689577256,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1042,7 +1336,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0049280130274422795,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1057,7 +1351,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.00470407858047639,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1072,7 +1366,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.004481731413685797,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1087,7 +1381,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.004244694750011213,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1102,7 +1396,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.003980174657439051,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1117,7 +1411,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.003683907648705409,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1132,7 +1426,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0033597803600466936,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1147,7 +1441,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.003020552888417294,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1162,7 +1456,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0026803819554293007,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1177,7 +1471,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.002350700785982429,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1192,7 +1486,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.002038451428645338,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1207,7 +1501,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0017479125313570876,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1222,7 +1516,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0014801680444542775,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1237,7 +1531,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0012357312906492446,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1252,7 +1546,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.001010299285695293,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1267,7 +1561,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0007977221963968439,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1282,7 +1576,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.0005895720653845693,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1297,7 +1591,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.00037906290635403295,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1312,7 +1606,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": 0.00015835411960751777,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1327,7 +1621,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -7.904209389053563e-05,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1342,7 +1636,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.00033627345641018547,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1357,7 +1651,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.000610103831694575,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1372,7 +1666,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.000892415262116808,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1387,7 +1681,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.0011736381734591683,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1402,7 +1696,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.001446029661568926,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1417,7 +1711,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.001705173282041006,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1432,7 +1726,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.001948628080866155,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1447,7 +1741,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.002174880865599138,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1462,7 +1756,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.0023846787483086107,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1477,7 +1771,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.0025799579217400392,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1492,7 +1786,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.002765394086943207,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1507,7 +1801,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.0029461778301662633,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1522,7 +1816,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.0031281905723519188,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1537,7 +1831,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.0033161920788623567,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1552,7 +1846,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.0035133588780004166,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1567,7 +1861,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.0037204776393420236,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   },
   {
    "iso3": "MEX",
@@ -1582,7 +1876,7 @@
    "retrieved_at": "2026-11-01",
    "interpolated": false,
    "growth": -0.003935175131990598,
-   "raw_file": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv"
+   "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv"
   }
  ]
 }

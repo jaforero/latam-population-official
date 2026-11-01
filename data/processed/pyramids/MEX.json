@@ -1,15 +1,16 @@
 {
- "schema_version": "1.2",
+ "schema_version": "1.3",
  "iso3": "MEX",
  "name_es": "México",
  "name_en": "Mexico",
  "status": "manual",
- "parser": "mex",
  "institution": "CONAPO",
  "source_url": "https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv",
- "location_in_file": "POBLACION por ANIO, EDAD y SEXO; suma de 32 entidades",
  "reason": null,
- "note": null,
+ "note": {
+  "es": "Pirámide desde 1970: la base por edad y sexo cargada no trae filas nacionales, así que se suma por entidad.",
+  "en": "Pyramid from 1970: the loaded age-and-sex base has no national rows, so it is summed by state."
+ },
  "age_groups": [
   "0-4",
   "5-9",
@@ -28,6 +29,22 @@
   "70-74",
   "75-79",
   "80+"
+ ],
+ "parts": [
+  {
+   "institution": "CONAPO",
+   "source_url": "https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv",
+   "source_tier": "national",
+   "location_in_file": "POBLACION por ANIO, EDAD y SEXO; suma de 32 entidades",
+   "raw_files": [
+    {
+     "path": "data/raw/MEX/mex_conapo_mitad/2026-11-01_89db6adc7930_mx-00_Pob_Mitad_1950_2070.csv",
+     "sha256": "89db6adc7930965fb5b5c01ad3a98765ed90afa6a151c2cfb913acc2b9e0cac6",
+     "retrieved_at": "2026-11-01",
+     "retrieved_by": "manual"
+    }
+   ]
+  }
  ],
  "raw_files": [
   {
@@ -77,6 +94,7 @@
     169940,
     143482
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -122,6 +140,7 @@
     178651,
     151108
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -167,6 +186,7 @@
     188969,
     159581
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -212,6 +232,7 @@
     200255,
     168144
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -257,6 +278,7 @@
     212706,
     177558
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -302,6 +324,7 @@
     225853,
     188014
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -347,6 +370,7 @@
     238642,
     198890
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -392,6 +416,7 @@
     251223,
     211271
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -437,6 +462,7 @@
     263152,
     225048
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -482,6 +508,7 @@
     273897,
     239522
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -527,6 +554,7 @@
     283587,
     254437
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -572,6 +600,7 @@
     292713,
     270031
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -617,6 +646,7 @@
     301793,
     286567
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -662,6 +692,7 @@
     310503,
     302645
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -707,6 +738,7 @@
     318912,
     318149
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -752,6 +784,7 @@
     327124,
     333409
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -797,6 +830,7 @@
     335094,
     348475
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -842,6 +876,7 @@
     342898,
     363637
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -887,6 +922,7 @@
     350298,
     378569
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -932,6 +968,7 @@
     357565,
     393531
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -977,6 +1014,7 @@
     365369,
     409188
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1022,6 +1060,7 @@
     373809,
     424806
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1067,6 +1106,7 @@
     383153,
     439777
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1112,6 +1152,7 @@
     393582,
     453932
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1157,6 +1198,7 @@
     405348,
     467189
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1202,6 +1244,7 @@
     418357,
     479473
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1247,6 +1290,7 @@
     432354,
     491183
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1292,6 +1336,7 @@
     447559,
     503918
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1337,6 +1382,7 @@
     463781,
     518292
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1382,6 +1428,7 @@
     480654,
     534465
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1427,6 +1474,7 @@
     498207,
     553297
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1472,6 +1520,7 @@
     516332,
     574737
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1517,6 +1566,7 @@
     535119,
     597273
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1562,6 +1612,7 @@
     554454,
     620087
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1607,6 +1658,7 @@
     574663,
     643885
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1652,6 +1704,7 @@
     595993,
     668312
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1697,6 +1750,7 @@
     618243,
     694125
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1742,6 +1796,7 @@
     640675,
     722086
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1787,6 +1842,7 @@
     662343,
     750264
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1832,6 +1888,7 @@
     683479,
     779284
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1877,6 +1934,7 @@
     704440,
     810587
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1922,6 +1980,7 @@
     726575,
     845292
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -1967,6 +2026,7 @@
     750342,
     882815
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2012,6 +2072,7 @@
     775527,
     920909
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2057,6 +2118,7 @@
     801991,
     958346
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2102,6 +2164,7 @@
     829604,
     994660
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2147,6 +2210,7 @@
     858430,
     1031066
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2192,6 +2256,7 @@
     888661,
     1069427
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2237,6 +2302,7 @@
     920670,
     1110540
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2282,6 +2348,7 @@
     954332,
     1153916
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2327,6 +2394,7 @@
     979567,
     1182974
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2372,6 +2440,7 @@
     994807,
     1196477
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2417,6 +2486,7 @@
     1019556,
     1228286
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2462,6 +2532,7 @@
     1054546,
     1280269
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2507,6 +2578,7 @@
     1088819,
     1334856
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2552,6 +2624,7 @@
     1122356,
     1391759
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2597,6 +2670,7 @@
     1157322,
     1450437
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2642,6 +2716,7 @@
     1196960,
     1510895
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2687,6 +2762,7 @@
     1243461,
     1573061
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2732,6 +2808,7 @@
     1299077,
     1636774
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2777,6 +2854,7 @@
     1364137,
     1701765
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2822,6 +2900,7 @@
     1435276,
     1769409
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2867,6 +2946,7 @@
     1509099,
     1842325
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2912,6 +2992,7 @@
     1584647,
     1922222
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -2957,6 +3038,7 @@
     1661112,
     2010743
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3002,6 +3084,7 @@
     1738570,
     2107850
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3047,6 +3130,7 @@
     1818096,
     2211782
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3092,6 +3176,7 @@
     1899486,
     2321840
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3137,6 +3222,7 @@
     1981848,
     2438579
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3182,6 +3268,7 @@
     2064082,
     2562643
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3227,6 +3314,7 @@
     2144672,
     2693997
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3272,6 +3360,7 @@
     2222886,
     2832027
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3317,6 +3406,7 @@
     2299775,
     2975938
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3362,6 +3452,7 @@
     2376337,
     3125453
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3407,6 +3498,7 @@
     2453106,
     3280162
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3452,6 +3544,7 @@
     2531435,
     3438783
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3497,6 +3590,7 @@
     2612299,
     3600193
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3542,6 +3636,7 @@
     2694541,
     3764653
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3587,6 +3682,7 @@
     2776026,
     3932799
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3632,6 +3728,7 @@
     2854010,
     4104794
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3677,6 +3774,7 @@
     2924698,
     4280725
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3722,6 +3820,7 @@
     2983964,
     4460533
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3767,6 +3866,7 @@
     3030147,
     4643493
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3812,6 +3912,7 @@
     3065365,
     4828400
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3857,6 +3958,7 @@
     3094223,
     5013118
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3902,6 +4004,7 @@
     3122368,
     5194584
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3947,6 +4050,7 @@
     3155581,
     5369328
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -3992,6 +4096,7 @@
     3197996,
     5535484
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -4037,6 +4142,7 @@
     3250091,
     5694045
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -4082,6 +4188,7 @@
     3310019,
     5847331
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -4127,6 +4234,7 @@
     3374835,
     5997752
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -4172,6 +4280,7 @@
     3440975,
     6147449
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -4217,6 +4326,7 @@
     3506057,
     6298487
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -4262,6 +4372,7 @@
     3569516,
     6452218
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -4307,6 +4418,7 @@
     3632219,
     6609094
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -4352,6 +4464,7 @@
     3696767,
     6768667
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -4397,6 +4510,7 @@
     3764965,
     6929704
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -4442,6 +4556,7 @@
     3833445,
     7091937
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -4487,6 +4602,7 @@
     3896356,
     7256047
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -4532,6 +4648,7 @@
     3948880,
     7423162
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",
@@ -4577,6 +4694,7 @@
     3986689,
     7595134
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "mex_conapo_2023",
    "vintage": "Conciliación 2023",

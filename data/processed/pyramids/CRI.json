@@ -1,13 +1,11 @@
 {
- "schema_version": "1.2",
+ "schema_version": "1.3",
  "iso3": "CRI",
  "name_es": "Costa Rica",
  "name_en": "Costa Rica",
  "status": "manual",
- "parser": "cri",
  "institution": "INEC Costa Rica",
  "source_url": "https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx",
- "location_in_file": "Hoja 'C2. Edades quinquenales'",
  "reason": null,
  "note": null,
  "age_groups": [
@@ -28,6 +26,22 @@
   "70-74",
   "75-79",
   "80+"
+ ],
+ "parts": [
+  {
+   "institution": "INEC Costa Rica",
+   "source_url": "https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx",
+   "source_tier": "national",
+   "location_in_file": "Hoja 'C2. Edades quinquenales'",
+   "raw_files": [
+    {
+     "path": "data/raw/CRI/cri_inec/2026-11-01_6657e66c97f1_costarica-repoblaceppnacio1950-2100..xlsx",
+     "sha256": "6657e66c97f12d9fbee29f1a83180e43eec3a2ce0de30c366b981cd64836a915",
+     "retrieved_at": "2026-11-01",
+     "retrieved_by": "manual"
+    }
+   ]
+  }
  ],
  "raw_files": [
   {
@@ -77,6 +91,7 @@
     2520.368,
     2424.022
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -122,6 +137,7 @@
     2640.311,
     2514.352
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -167,6 +183,7 @@
     2756.787,
     2587.279
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -212,6 +229,7 @@
     2866.0,
     2685.799
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -257,6 +275,7 @@
     3018.386,
     2815.521
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -302,6 +321,7 @@
     3187.201,
     2954.806
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -347,6 +367,7 @@
     3320.741,
     3092.329
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -392,6 +413,7 @@
     3472.634,
     3233.982
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -437,6 +459,7 @@
     3630.985,
     3368.799
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -482,6 +505,7 @@
     3759.213,
     3537.489
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -527,6 +551,7 @@
     3866.623,
     3754.591
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -572,6 +597,7 @@
     3969.285,
     3968.237
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -617,6 +643,7 @@
     4107.195,
     4147.616
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -662,6 +689,7 @@
     4248.145,
     4263.951
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -707,6 +735,7 @@
     4410.642,
     4374.036
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -752,6 +781,7 @@
     4569.845,
     4478.464
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -797,6 +827,7 @@
     4720.402,
     4582.855
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -842,6 +873,7 @@
     4893.67,
     4769.585
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -887,6 +919,7 @@
     5085.462,
     4957.993
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -932,6 +965,7 @@
     5240.836,
     5100.507
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -977,6 +1011,7 @@
     5440.3,
     5236.392
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1022,6 +1057,7 @@
     5740.298,
     5387.922
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1067,6 +1103,7 @@
     5984.689,
     5567.038
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1112,6 +1149,7 @@
     6178.871,
     5772.554
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1157,6 +1195,7 @@
     6581.263,
     5999.357
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1202,6 +1241,7 @@
     7139.284,
     6276.352
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1247,6 +1287,7 @@
     7495.045,
     6636.115
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1292,6 +1333,7 @@
     7773.596,
     7030.518
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1337,6 +1379,7 @@
     8139.313,
     7406.567
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1382,6 +1425,7 @@
     8402.541,
     7906.124
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1427,6 +1471,7 @@
     8646.97,
     8567.217
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1472,6 +1517,7 @@
     9110.306,
     9099.725
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1517,6 +1563,7 @@
     9735.139,
     9499.88
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1562,6 +1609,7 @@
     10315.917,
     9928.15
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1607,6 +1655,7 @@
     10931.649,
     10366.837
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1652,6 +1701,7 @@
     11676.934,
     10881.592
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1697,6 +1747,7 @@
     12333.019,
     11536.209
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1742,6 +1793,7 @@
     12903.938,
     12228.152
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1787,6 +1839,7 @@
     13591.203,
     12877.249
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1832,6 +1885,7 @@
     14310.126,
     13642.79
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1877,6 +1931,7 @@
     14793.789,
     14599.023
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1922,6 +1977,7 @@
     15127.219,
     15461.127
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -1967,6 +2023,7 @@
     15352.077,
     16340.479
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2012,6 +2069,7 @@
     15395.113,
     17303.137
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2057,6 +2115,7 @@
     15476.256,
     18252.594
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2102,6 +2161,7 @@
     15944.935,
     19106.14
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2147,6 +2207,7 @@
     16726.03,
     19873.388
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2192,6 +2253,7 @@
     17825.009,
     20608.255
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2237,6 +2299,7 @@
     18685.828,
     21206.971
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2282,6 +2345,7 @@
     19668.959,
     21895.651
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2327,6 +2391,7 @@
     20599.791,
     22814.495
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2372,6 +2437,7 @@
     21685.56,
     23947.984
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2417,6 +2483,7 @@
     22784.817,
     25413.749
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2462,6 +2529,7 @@
     24117.118,
     26493.035
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2507,6 +2575,7 @@
     25272.172,
     27791.577
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2552,6 +2621,7 @@
     26428.292,
     29369.482
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2597,6 +2667,7 @@
     27460.598,
     31149.753
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2642,6 +2713,7 @@
     28198.473,
     33079.592
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2687,6 +2759,7 @@
     28971.683,
     35011.005
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2732,6 +2805,7 @@
     29621.29,
     36920.976
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2777,6 +2851,7 @@
     30570.024,
     38912.269
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2822,6 +2897,7 @@
     31468.531,
     41007.858
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2867,6 +2943,7 @@
     32539.675,
     42963.801
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2912,6 +2989,7 @@
     33798.208,
     44845.993
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -2957,6 +3035,7 @@
     35122.047,
     46677.338
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3002,6 +3081,7 @@
     36171.644,
     48826.943
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3047,6 +3127,7 @@
     37100.96,
     50840.29
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3092,6 +3173,7 @@
     38219.822,
     52939.388
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3137,6 +3219,7 @@
     39844.719,
     55147.559
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3182,6 +3265,7 @@
     41549.87,
     57323.646
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3227,6 +3311,7 @@
     43647.171,
     59479.137
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3272,6 +3357,7 @@
     45529.739,
     61072.961
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3317,6 +3403,7 @@
     47943.707,
     62492.973
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3362,6 +3449,7 @@
     50239.759,
     65839.422
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3407,6 +3495,7 @@
     53350.49,
     69344.23
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3452,6 +3541,7 @@
     56649.783,
     73438.53
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3497,6 +3587,7 @@
     60027.023,
     77363.466
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3542,6 +3633,7 @@
     63626.836,
     81863.383
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3587,6 +3679,7 @@
     67570.006,
     86375.034
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3632,6 +3725,7 @@
     71551.146,
     91580.08
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3677,6 +3771,7 @@
     75886.024,
     97453.285
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3722,6 +3817,7 @@
     80500.334,
     103200.114
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3767,6 +3863,7 @@
     84799.679,
     109639.837
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3812,6 +3909,7 @@
     88553.902,
     116387.535
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3857,6 +3955,7 @@
     93058.591,
     123753.762
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3902,6 +4001,7 @@
     96585.178,
     132006.774
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3947,6 +4047,7 @@
     101412.942,
     140311.442
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -3992,6 +4093,7 @@
     105118.221,
     148908.657
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4037,6 +4139,7 @@
     109152.639,
     157213.286
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4082,6 +4185,7 @@
     112427.252,
     166700.358
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4127,6 +4231,7 @@
     115449.836,
     176041.832
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4172,6 +4277,7 @@
     117367.691,
     186574.545
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4217,6 +4323,7 @@
     119773.908,
     196286.993
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4262,6 +4369,7 @@
     121083.691,
     205955.347
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4307,6 +4415,7 @@
     121430.75,
     215919.334
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4352,6 +4461,7 @@
     121337.511,
     225465.113
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4397,6 +4507,7 @@
     121244.559,
     235013.131
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4442,6 +4553,7 @@
     120794.678,
     244239.878
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4487,6 +4599,7 @@
     120939.724,
     252360.856
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4532,6 +4645,7 @@
     121649.053,
     259899.985
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4577,6 +4691,7 @@
     122972.347,
     266572.397
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4622,6 +4737,7 @@
     123907.115,
     273257.52
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4667,6 +4783,7 @@
     127115.891,
     279349.197
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4712,6 +4829,7 @@
     131420.962,
     284986.927
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4757,6 +4875,7 @@
     136948.366,
     290636.031
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4802,6 +4921,7 @@
     142900.282,
     296107.203
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4847,6 +4967,7 @@
     149865.462,
     301258.735
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4892,6 +5013,7 @@
     155394.326,
     308039.448
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4937,6 +5059,7 @@
     159675.05,
     315549.139
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -4982,6 +5105,7 @@
     163524.183,
     324322.719
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5027,6 +5151,7 @@
     170063.267,
     333301.31
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5072,6 +5197,7 @@
     176044.293,
     343069.365
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5117,6 +5243,7 @@
     181105.524,
     352910.389
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5162,6 +5289,7 @@
     184789.048,
     362462.605
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5207,6 +5335,7 @@
     188843.254,
     372798.282
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5252,6 +5381,7 @@
     189611.672,
     385970.207
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5297,6 +5427,7 @@
     188496.782,
     399409.626
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5342,6 +5473,7 @@
     187919.608,
     412153.162
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5387,6 +5519,7 @@
     188935.496,
     423239.076
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5432,6 +5565,7 @@
     187630.751,
     435561.001
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5477,6 +5611,7 @@
     187703.115,
     447533.63
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5522,6 +5657,7 @@
     186880.394,
     457944.747
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5567,6 +5703,7 @@
     186561.546,
     468103.658
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5612,6 +5749,7 @@
     184559.394,
     478134.281
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5657,6 +5795,7 @@
     183210.065,
     486916.549
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5702,6 +5841,7 @@
     180700.783,
     496471.369
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5747,6 +5887,7 @@
     180342.951,
     503550.108
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5792,6 +5933,7 @@
     176491.732,
     510814.254
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5837,6 +5979,7 @@
     174577.893,
     515874.818
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5882,6 +6025,7 @@
     172569.288,
     520171.523
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5927,6 +6071,7 @@
     169965.569,
     523946.689
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -5972,6 +6117,7 @@
     167400.845,
     527431.099
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6017,6 +6163,7 @@
     168139.275,
     527795.354
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6062,6 +6209,7 @@
     168696.852,
     528441.892
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6107,6 +6255,7 @@
     168559.02,
     528707.43
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6152,6 +6301,7 @@
     168330.248,
     527997.089
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6197,6 +6347,7 @@
     169687.734,
     526640.71
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6242,6 +6393,7 @@
     169680.597,
     525847.055
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6287,6 +6439,7 @@
     169014.918,
     525635.213
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6332,6 +6485,7 @@
     169597.424,
     524868.181
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6377,6 +6531,7 @@
     170552.534,
     523289.57
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6422,6 +6577,7 @@
     169039.182,
     523582.42
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6467,6 +6623,7 @@
     166826.238,
     523561.384
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6512,6 +6669,7 @@
     164048.946,
     523252.058
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6557,6 +6715,7 @@
     158230.612,
     523378.14
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6602,6 +6761,7 @@
     150273.603,
     523611.056
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6647,6 +6807,7 @@
     142028.537,
     522968.778
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6692,6 +6853,7 @@
     135126.248,
     521595.633
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6737,6 +6899,7 @@
     128331.947,
     519373.88
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6782,6 +6945,7 @@
     123503.569,
     515064.597
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",
@@ -6827,6 +6991,7 @@
     120419.222,
     508681.074
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "cri_inec_1950_2100",
    "vintage": "1950-2100",

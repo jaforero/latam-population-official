@@ -1,18 +1,34 @@
 {
- "failures": [
-  {
-   "iso3": "HND",
-   "series": "projection",
-   "error": "HTTP 403 en https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf"
-  }
- ],
+ "failures": [],
  "alerts": [
+  {
+   "code": "vintage_change",
+   "iso3": "BOL",
+   "message": "historical: vintage Rev. 2020 → Rev. 2025",
+   "fingerprint": "vintage_change:BOL:historical:Rev. 2025",
+   "series": "historical",
+   "to": "Rev. 2025"
+  },
+  {
+   "code": "pyramid_sex_ratio",
+   "iso3": "CUB",
+   "message": "Revisar sexos: 0-4 con más mujeres o 80+ con más hombres en 3 años ([1955, 1956, 1957])",
+   "fingerprint": "pyramid_sex_ratio:CUB:1955,1956,1957",
+   "years": "1955,1956,1957"
+  },
   {
    "code": "pyramid_sex_ratio",
    "iso3": "GTM",
    "message": "Revisar sexos: 0-4 con más mujeres o 80+ con más hombres en 12 años ([1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958])",
    "fingerprint": "pyramid_sex_ratio:GTM:1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962",
    "years": "1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962"
+  },
+  {
+   "code": "pyramid_sex_ratio",
+   "iso3": "HTI",
+   "message": "Revisar sexos: 0-4 con más mujeres o 80+ con más hombres en 16 años ([1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957])",
+   "fingerprint": "pyramid_sex_ratio:HTI:1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965",
+   "years": "1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965"
   },
   {
    "code": "annual_change",

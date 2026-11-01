@@ -1,13 +1,11 @@
 {
- "schema_version": "1.2",
+ "schema_version": "1.3",
  "iso3": "URY",
  "name_es": "Uruguay",
  "name_en": "Uruguay",
  "status": "ok",
- "parser": "ury",
  "institution": "INE Uruguay",
  "source_url": "https://www5.ine.gub.uy/documents/DemografíayEESS/SERIES%20Y%20OTROS/Estimaciones%20y%20proyecciones/Revisión%202025/B.1.1%20Uruguay%20(100ymas)2024-2070.xlsx",
- "location_in_file": "Hoja 'Uruguay', bloques Hombres y Mujeres",
  "reason": null,
  "note": null,
  "age_groups": [
@@ -28,6 +26,28 @@
   "70-74",
   "75-79",
   "80+"
+ ],
+ "parts": [
+  {
+   "institution": "INE Uruguay",
+   "source_url": "https://www5.ine.gub.uy/documents/DemografíayEESS/SERIES%20Y%20OTROS/Estimaciones%20y%20proyecciones/Revisión%202025/B.1.1%20Uruguay%20(100ymas)2024-2070.xlsx",
+   "source_tier": "national",
+   "location_in_file": "Hoja 'Uruguay', bloques Hombres y Mujeres",
+   "raw_files": [
+    {
+     "path": "data/raw/URY/ury_ine_hist/2026-11-01_4460b64d0d32_A.1.1_Uruguay.xlsx",
+     "sha256": "4460b64d0d3283a520b6a9d3ca8bc601f30b39b5417e5e955902213cf2a81452",
+     "retrieved_at": "2026-11-01",
+     "retrieved_by": "script"
+    },
+    {
+     "path": "data/raw/URY/ury_ine_proj/2026-11-01_def36b35c130_B.1.1_Uruguay__100ymas_2024-2070.xlsx",
+     "sha256": "def36b35c130a86c2591c74d2443078b172d903fca582f292d06a6472d0274df",
+     "retrieved_at": "2026-11-01",
+     "retrieved_by": "script"
+    }
+   ]
+  }
  ],
  "raw_files": [
   {
@@ -83,6 +103,7 @@
     47022.085,
     59712.863
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -128,6 +149,7 @@
     48331.981,
     61320.152
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -173,6 +195,7 @@
     49569.954,
     62894.782
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -218,6 +241,7 @@
     50710.786,
     64233.04
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -263,6 +287,7 @@
     51819.938,
     65748.454
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -308,6 +333,7 @@
     52883.184,
     67514.835
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -353,6 +379,7 @@
     53871.674,
     69210.848
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -398,6 +425,7 @@
     54889.293,
     70746.142
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -443,6 +471,7 @@
     55995.542,
     72207.544
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -488,6 +517,7 @@
     57090.009,
     73763.981
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -533,6 +563,7 @@
     58122.537,
     75568.678
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -578,6 +609,7 @@
     58715.506,
     77263.356
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -623,6 +655,7 @@
     58834.88,
     79050.434
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -668,6 +701,7 @@
     58744.58,
     81345.51
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -713,6 +747,7 @@
     58314.702,
     83412.249
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -758,6 +793,7 @@
     57662.176,
     85249.477
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -803,6 +839,7 @@
     57190.422,
     86744.562
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -848,6 +885,7 @@
     56951.577,
     88239.875
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -893,6 +931,7 @@
     56983.934,
     89901.705
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -938,6 +977,7 @@
     57165.891,
     91384.34
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -983,6 +1023,7 @@
     57322.466,
     92404.423
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1028,6 +1069,7 @@
     57570.982,
     93345.814
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1073,6 +1115,7 @@
     57952.593,
     94429.264
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1118,6 +1161,7 @@
     58374.903,
     95382.888
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1163,6 +1207,7 @@
     59025.558,
     96586.707
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1208,6 +1253,7 @@
     59643.224,
     97145.833
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1253,6 +1299,7 @@
     60121.922,
     96451.783
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1298,6 +1345,7 @@
     60932.201,
     96419.146
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1343,6 +1391,7 @@
     61697.292,
     97060.994
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1388,6 +1437,7 @@
     62270.687,
     97701.257
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1433,6 +1483,7 @@
     63000.561,
     98534.946
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1478,6 +1529,7 @@
     63906.033,
     99555.479
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1523,6 +1575,7 @@
     64813.679,
     100889.592
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1568,6 +1621,7 @@
     65981.202,
     102341.187
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1613,6 +1667,7 @@
     67648.397,
     103933.906
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1658,6 +1713,7 @@
     69667.738,
     105637.117
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1703,6 +1759,7 @@
     71613.6,
     107483.608
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1748,6 +1805,7 @@
     73320.677,
     109501.389
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1793,6 +1851,7 @@
     74852.135,
     111804.199
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1838,6 +1897,7 @@
     75921.946,
     114611.702
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1883,6 +1943,7 @@
     76748.37,
     117773.783
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1928,6 +1989,7 @@
     77824.131,
     120957.15
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -1973,6 +2035,7 @@
     79014.622,
     124040.903
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2018,6 +2081,7 @@
     79907.276,
     127180.74
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2063,6 +2127,7 @@
     80333.673,
     130324.319
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2108,6 +2173,7 @@
     80064.31,
     133524.443
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2153,6 +2219,7 @@
     79295.559,
     136923.344
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2198,6 +2265,7 @@
     78491.789,
     140313.287
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2243,6 +2311,7 @@
     78534.491,
     143468.316
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2288,6 +2357,7 @@
     79437.372,
     146195.018
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2333,6 +2403,7 @@
     80755.52,
     148355.085
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2378,6 +2449,7 @@
     82385.274,
     150255.934
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2423,6 +2495,7 @@
     84090.928,
     152123.878
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2468,6 +2541,7 @@
     85567.731,
     154550.035
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2513,6 +2587,7 @@
     87336.831,
     157374.154
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2558,6 +2633,7 @@
     89854.771,
     160081.912
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2603,6 +2679,7 @@
     92554.541,
     162856.891
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2648,6 +2725,7 @@
     94984.921,
     165685.296
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2693,6 +2771,7 @@
     96801.015,
     168813.665
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2738,6 +2817,7 @@
     97417.357,
     172568.581
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2783,6 +2863,7 @@
     96903.877,
     176892.749
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2828,6 +2909,7 @@
     96230.858,
     181431.045
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2873,6 +2955,7 @@
     95627.186,
     185772.873
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2918,6 +3001,7 @@
     95145.831,
     189836.293
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -2963,6 +3047,7 @@
     95575.097,
     193376.804
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -3008,6 +3093,7 @@
     96776.027,
     196395.14
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -3053,6 +3139,7 @@
     97688.933,
     199450.995
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -3098,6 +3185,7 @@
     99003.16,
     202377.243
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -3143,6 +3231,7 @@
     100747.416,
     205150.296
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -3188,6 +3277,7 @@
     101877.821,
     208263.411
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -3233,6 +3323,7 @@
     102433.478,
     211590.442
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -3278,6 +3369,7 @@
     102810.515,
     214677.318
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -3323,6 +3415,7 @@
     103168.426,
     217998.187
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -3368,6 +3461,7 @@
     103738.451,
     221539.691
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",
@@ -3413,6 +3507,7 @@
     104755.614,
     224814.753
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ury_ine_rev2025",
    "vintage": "Rev. 2025",

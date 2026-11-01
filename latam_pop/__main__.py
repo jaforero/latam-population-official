@@ -17,14 +17,15 @@ def main() -> int:
     r.add_argument("--no-watch", action="store_true")
     i = sub.add_parser("ingest", help="Registra un archivo descargado a mano")
     i.add_argument("iso3")
-    i.add_argument("series", choices=["historical", "projection"])
+    i.add_argument("series", choices=["historical", "projection", "pyramid"])
     i.add_argument("file", type=Path)
-    i.add_argument("--raw-key", help="Entrada de earlier_sources a la que pertenece el archivo")
+    i.add_argument("--raw-key", help="Archivo de la pirámide al que corresponde, si tiene varios")
     a = ap.parse_args()
     if a.cmd == "ingest":
         e = yaml.safe_load(Path("sources.yaml").read_text(encoding="utf8"))["sources"][a.iso3][a.series]
-        if a.raw_key:
-            e = next(x for x in e.get("earlier_sources", []) if x["raw_key"] == a.raw_key)
+        if a.series == "pyramid":
+            f = next(x for x in e["files"] if not a.raw_key or x["raw_key"] == a.raw_key)
+            e = dict(raw_key=f["raw_key"], url=e["url"])
         saved = RawStore(Path("data/raw")).save(e.get("raw_scope", a.iso3), e["raw_key"], a.file.name, a.file.read_bytes(), e["url"], "manual")
         print(f"{saved.path} sha256={saved.sha256}")
         return 0

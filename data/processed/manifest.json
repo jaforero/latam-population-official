@@ -1,6 +1,6 @@
 {
- "schema_version": "1.2",
- "generated_at": "2026-11-01T16:19:33+00:00",
+ "schema_version": "1.3",
+ "generated_at": "2026-11-01T16:36:29+00:00",
  "countries": {
   "ARG": {
    "historical": {
@@ -24,12 +24,12 @@
   },
   "BOL": {
    "historical": {
-    "source_id": "bol_ine_rev2020",
-    "vintage": "Rev. 2020",
+    "source_id": "bol_ine_rev2025",
+    "vintage": "Rev. 2025",
     "source_tier": "national",
     "institution": "INE Bolivia",
-    "url": "https://nube.ine.gob.bo/index.php/s/4HGAf9gp5E6k68z/download",
-    "raw_sha256": "33a9ff6c910a34e90d8e706ef32342766f55af7ad0f7f595f3f4d2309ffa3f6c",
+    "url": "https://nimbus.ine.gob.bo/index.php/s/kdz7ktspssFz6C4/download",
+    "raw_sha256": "12c6e4091e294c26e863e4f92d595c7c625460b2546acaeb9e092777de629022",
     "retrieved_at": "2026-11-01"
    },
    "projection": {
@@ -37,8 +37,8 @@
     "vintage": "Rev. 2025",
     "source_tier": "national",
     "institution": "INE Bolivia",
-    "url": "https://nimbus.ine.gob.bo/index.php/s/nBq9cK6Mn5L2Q4a/download",
-    "raw_sha256": "ea616efb549fb17a11331885930b812d4ad0389883840299a5b6f189066911ec",
+    "url": "https://nimbus.ine.gob.bo/index.php/s/kdz7ktspssFz6C4/download",
+    "raw_sha256": "12c6e4091e294c26e863e4f92d595c7c625460b2546acaeb9e092777de629022",
     "retrieved_at": "2026-11-01"
    }
   },
@@ -122,7 +122,26 @@
     "retrieved_at": "2026-11-01"
    }
   },
-  "CUB": {},
+  "CUB": {
+   "historical": {
+    "source_id": "cepal_celade_rev2024",
+    "vintage": "CEPAL Rev. 2024",
+    "source_tier": "regional_fallback",
+    "institution": "CEPAL/CELADE",
+    "url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
+    "raw_sha256": "bd470d7ed85a5fe0fd47343f8b5dfe56a2986ae3c35e3e43e3f721048d653e0f",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "cepal_celade_rev2024",
+    "vintage": "CEPAL Rev. 2024",
+    "source_tier": "regional_fallback",
+    "institution": "CEPAL/CELADE",
+    "url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
+    "raw_sha256": "bd470d7ed85a5fe0fd47343f8b5dfe56a2986ae3c35e3e43e3f721048d653e0f",
+    "retrieved_at": "2026-11-01"
+   }
+  },
   "DOM": {
    "historical": {
     "source_id": "dom_one_1950_2050",
@@ -229,8 +248,8 @@
     "vintage": "Conciliación 2023",
     "source_tier": "national",
     "institution": "CONAPO",
-    "url": "https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv",
-    "raw_sha256": "89db6adc7930965fb5b5c01ad3a98765ed90afa6a151c2cfb913acc2b9e0cac6",
+    "url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/b4fe49a8-c86a-4c32-8450-8f3c4cc83125/download/05_indicadores_demograficos_proyecciones.csv",
+    "raw_sha256": "e0407d1640f38232023cf97656a0cb7be46049b1cb2344198c7e4aaec7cae6cd",
     "retrieved_at": "2026-11-01"
    },
    "projection": {
@@ -238,8 +257,8 @@
     "vintage": "Conciliación 2023",
     "source_tier": "national",
     "institution": "CONAPO",
-    "url": "https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv",
-    "raw_sha256": "89db6adc7930965fb5b5c01ad3a98765ed90afa6a151c2cfb913acc2b9e0cac6",
+    "url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/b4fe49a8-c86a-4c32-8450-8f3c4cc83125/download/05_indicadores_demograficos_proyecciones.csv",
+    "raw_sha256": "e0407d1640f38232023cf97656a0cb7be46049b1cb2344198c7e4aaec7cae6cd",
     "retrieved_at": "2026-11-01"
    }
   },
@@ -386,7 +405,7 @@
  },
  "decisions": {
   "D1": "Aprobado 2026-11-01 y actualizado el mismo día: CEPAL/CELADE se acepta como respaldo. Se pasó de la API CEPALSTAT (Revisión 2022) al Excel de la Revisión 2024 aportado por Javier Forero (003_COMPARATIVO.xlsx), que responde a un agente identificado. El Excel cita coproducción con la ONU (WPP 2024).",
-  "D2": "Aprobado 2026-11-01: Cuba queda pendiente; no se usa CEPAL provisional porque existe serie nacional, aunque 003_COMPARATIVO.xlsx también la incluye.",
+  "D2": "Actualizado 2026-11-01: Cuba pasa a CEPAL como respaldo marcado, tras aportar Javier Forero su archivo. ONEI sigue sin ser verificable (certificado vencido); si vuelve a responder, se abre una alerta para sustituirla por la serie nacional.",
   "D3": "Aprobado 2026-11-01: los años previos a la serie nacional quedan null, salvo Honduras (sin ninguna serie nacional antes de 2013). La cifra IHSI 2024 de Haití es contraste, no se mezcla.",
   "D4": "Aprobado 2026-11-01: México queda manual; no se falsea el agente de usuario."
  }

@@ -1,13 +1,11 @@
 {
- "schema_version": "1.2",
+ "schema_version": "1.3",
  "iso3": "VEN",
  "name_es": "Venezuela",
  "name_en": "Venezuela",
  "status": "ok",
- "parser": "ven",
  "institution": "INE Venezuela",
  "source_url": "https://ine.gob.ve/wp-content/uploads/2026/04/Nacional.xls",
- "location_in_file": "Hoja Nacional, bloques Hombres y Mujeres; quinquenal",
  "reason": null,
  "note": null,
  "age_groups": [
@@ -28,6 +26,22 @@
   "70-74",
   "75-79",
   "80+"
+ ],
+ "parts": [
+  {
+   "institution": "INE Venezuela",
+   "source_url": "https://ine.gob.ve/wp-content/uploads/2026/04/Nacional.xls",
+   "source_tier": "national",
+   "location_in_file": "Hoja Nacional, bloques Hombres y Mujeres; quinquenal",
+   "raw_files": [
+    {
+     "path": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls",
+     "sha256": "402b2d82fabed16751fe775e7c764687c982ac501e20e0e3d0bf887785e867a2",
+     "retrieved_at": "2026-11-01",
+     "retrieved_by": "script"
+    }
+   ]
+  }
  ],
  "raw_files": [
   {
@@ -77,6 +91,7 @@
     118857,
     121159
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ven_ine_censo2011",
    "vintage": "Censo 2011",
@@ -122,6 +137,7 @@
     137488,
     175279
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ven_ine_censo2011",
    "vintage": "Censo 2011",
@@ -167,6 +183,7 @@
     157031,
     216887
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ven_ine_censo2011",
    "vintage": "Censo 2011",
@@ -212,6 +229,7 @@
     188668,
     252175
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ven_ine_censo2011",
    "vintage": "Censo 2011",
@@ -257,6 +275,7 @@
     231945,
     302393
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ven_ine_censo2011",
    "vintage": "Censo 2011",
@@ -302,6 +321,7 @@
     290248,
     373935
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ven_ine_censo2011",
    "vintage": "Censo 2011",
@@ -347,6 +367,7 @@
     366880,
     473420
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ven_ine_censo2011",
    "vintage": "Censo 2011",
@@ -392,6 +413,7 @@
     474598,
     608251
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ven_ine_censo2011",
    "vintage": "Censo 2011",
@@ -437,6 +459,7 @@
     585797,
     794287
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ven_ine_censo2011",
    "vintage": "Censo 2011",
@@ -482,6 +505,7 @@
     664232,
     1021442
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ven_ine_censo2011",
    "vintage": "Censo 2011",
@@ -527,6 +551,7 @@
     716696,
     1250190
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ven_ine_censo2011",
    "vintage": "Censo 2011",

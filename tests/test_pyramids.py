@@ -11,6 +11,7 @@ FIX = Path(__file__).parent / "fixtures"
 CASES = [
     ("arg", {"arg_indec_2022_edades": "arg_edades.csv"}, 2025, 46387098),
     ("bra", {"bra_ibge_tab2": "bra_tab2.xlsx"}, 2025, 213421037),
+    ("bol", {"bol_ine_rev2025_sexo": "bol_sexo.xlsx"}, 2025, 11945263),
     ("chl", {"chl_ine": "chl.xlsx"}, 2026, 20150948),
     ("col", {"col_dane_edad_hist": "col_edad_hist.xlsx", "col_dane_edad_proj": "col_edad_proj.xlsx"}, 2025, 53057212),
     ("cri", {"cri_inec": "cri_c2.xlsx"}, 2025, 5191823.08),
@@ -42,6 +43,13 @@ def test_parser_matches_official_total(parser, files, year, total):
     assert sum(y["m"]) + sum(y["f"]) == pytest.approx(total, abs=1)
     assert y["m"][0] > y["f"][0], "Nacen más hombres que mujeres"
     assert y["f"][16] > y["m"][16], "En 80+ hay más mujeres que hombres"
+
+
+@pytest.mark.parametrize("fixture,year,total", [("hti_pais.xlsx", 2025, 11906095.5), ("cub_pais.xlsx", 2025, 10937203.5)])
+def test_cepal_country_file_matches_general_table(fixture, year, total):
+    y = load("cepal_pais", {"x": fixture})[year]
+    assert sum(y["m"]) + sum(y["f"]) == pytest.approx(total, abs=20), "CEPAL redondea por separado; difiere en decenas"
+    assert y["m"][0] > y["f"][0]
 
 
 def test_argentina_sex_codes_follow_indec_metadata():
@@ -121,6 +129,22 @@ def test_pyramid_flags_implausible_sex_structure(tmp_path):
     _, alerts, _ = build_pyramid("XXX", cfg(), {2025: rec(2025, 323)}, fake_store(tmp_path), None, None)
     assert [a["code"] for a in alerts] == ["pyramid_sex_ratio"]
     del PARSERS["fake"]
+
+
+def test_each_year_uses_the_part_of_its_own_source_tier(tmp_path):
+    national = {"m": [10.0] * 16 + [8.0], "f": [9.0] * 16 + [9.0]}
+    regional = {"m": [20.0] * 16 + [16.0], "f": [18.0] * 16 + [18.0]}
+    PARSERS["fake"] = lambda paths: {2025: national}
+    PARSERS["fake2"] = lambda paths: {2025: regional, 2026: regional}
+    store = fake_store(tmp_path)
+    store.save("XXX", "k2", "g.csv", b"y", "u", today="2026-01-01")
+    c = cfg()
+    c["extra_parts"] = [dict(parser="fake2", tier="regional_fallback", institution="CEPAL", url="v", files=[dict(raw_key="k2")])]
+    later = Record("XXX", 2026, 642, "projection", "c", "regional_fallback", "v", None, None, "2026-01-01")
+    doc, alerts, _ = build_pyramid("XXX", c, {2025: rec(2025, 321), 2026: later}, store, None, None)
+    assert doc["years"]["2025"]["part"] == 0 and doc["years"]["2026"]["part"] == 1 and alerts == []
+    assert [p["institution"] for p in doc["parts"]] == ["I", "CEPAL"]
+    del PARSERS["fake"], PARSERS["fake2"]
 
 
 def test_parser_failure_does_not_raise(tmp_path):

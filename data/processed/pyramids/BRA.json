@@ -1,13 +1,11 @@
 {
- "schema_version": "1.2",
+ "schema_version": "1.3",
  "iso3": "BRA",
  "name_es": "Brasil",
  "name_en": "Brazil",
  "status": "ok",
- "parser": "bra",
  "institution": "IBGE",
  "source_url": "https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab2_grupo_quinquenal.xlsx",
- "location_in_file": "Hoja '2) POP_GRUPO QUINQUENAL', LOCAL Brasil",
  "reason": null,
  "note": null,
  "age_groups": [
@@ -28,6 +26,22 @@
   "70-74",
   "75-79",
   "80+"
+ ],
+ "parts": [
+  {
+   "institution": "IBGE",
+   "source_url": "https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab2_grupo_quinquenal.xlsx",
+   "source_tier": "national",
+   "location_in_file": "Hoja '2) POP_GRUPO QUINQUENAL', LOCAL Brasil",
+   "raw_files": [
+    {
+     "path": "data/raw/BRA/bra_ibge_tab2/2026-11-01_57f997f1ee00_projecoes_2024_tab2_grupo_quinquenal.xlsx",
+     "sha256": "57f997f1ee003fb1138b1016805d0b5dc452f15073b875ef4e6ab0943023a1bb",
+     "retrieved_at": "2026-11-01",
+     "retrieved_by": "script"
+    }
+   ]
+  }
  ],
  "raw_files": [
   {
@@ -77,6 +91,7 @@
     1107301,
     1217108
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -122,6 +137,7 @@
     1162082,
     1256997
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -167,6 +183,7 @@
     1212446,
     1304672
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -212,6 +229,7 @@
     1257712,
     1358661
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -257,6 +275,7 @@
     1298291,
     1418432
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -302,6 +321,7 @@
     1335179,
     1483216
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -347,6 +367,7 @@
     1369768,
     1551836
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -392,6 +413,7 @@
     1403932,
     1622731
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -437,6 +459,7 @@
     1439688,
     1694151
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -482,6 +505,7 @@
     1479121,
     1765251
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -527,6 +551,7 @@
     1523400,
     1835464
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -572,6 +597,7 @@
     1573416,
     1905424
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -617,6 +643,7 @@
     1628848,
     1976301
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -662,6 +689,7 @@
     1687030,
     2049336
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -707,6 +735,7 @@
     1743986,
     2124914
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -752,6 +781,7 @@
     1797276,
     2202699
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -797,6 +827,7 @@
     1845388,
     2284397
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -842,6 +873,7 @@
     1890520,
     2371796
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -887,6 +919,7 @@
     1938389,
     2463235
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -932,6 +965,7 @@
     1996507,
     2554757
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -977,6 +1011,7 @@
     2066197,
     2635649
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1022,6 +1057,7 @@
     2143774,
     2692957
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1067,6 +1103,7 @@
     2234649,
     2745906
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1112,6 +1149,7 @@
     2344518,
     2825277
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1157,6 +1195,7 @@
     2463099,
     2929883
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1202,6 +1241,7 @@
     2582930,
     3050181
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1247,6 +1287,7 @@
     2704043,
     3184363
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1292,6 +1333,7 @@
     2828012,
     3329617
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1337,6 +1379,7 @@
     2955509,
     3484327
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1382,6 +1425,7 @@
     3086170,
     3650165
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1427,6 +1471,7 @@
     3219494,
     3828646
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1472,6 +1517,7 @@
     3355119,
     4018335
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1517,6 +1563,7 @@
     3492467,
     4218168
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1562,6 +1609,7 @@
     3631240,
     4427214
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1607,6 +1655,7 @@
     3771241,
     4646344
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1652,6 +1701,7 @@
     3911685,
     4876279
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1697,6 +1747,7 @@
     4052504,
     5115308
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1742,6 +1793,7 @@
     4192197,
     5361902
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1787,6 +1839,7 @@
     4326552,
     5614998
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1832,6 +1885,7 @@
     4456872,
     5875319
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1877,6 +1931,7 @@
     4578716,
     6143069
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1922,6 +1977,7 @@
     4686689,
     6417002
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -1967,6 +2023,7 @@
     4778583,
     6694739
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2012,6 +2069,7 @@
     4857523,
     6971888
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2057,6 +2115,7 @@
     4923852,
     7250437
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2102,6 +2161,7 @@
     4983672,
     7526924
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2147,6 +2207,7 @@
     5045404,
     7795834
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2192,6 +2253,7 @@
     5115534,
     8053484
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2237,6 +2299,7 @@
     5193409,
     8299177
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2282,6 +2345,7 @@
     5278289,
     8535308
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2327,6 +2391,7 @@
     5376167,
     8764537
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2372,6 +2437,7 @@
     5494474,
     8989721
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2417,6 +2483,7 @@
     5636835,
     9213591
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2462,6 +2529,7 @@
     5806333,
     9435154
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2507,6 +2575,7 @@
     5996877,
     9656055
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2552,6 +2621,7 @@
     6191589,
     9884018
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2597,6 +2667,7 @@
     6367932,
     10128077
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2642,6 +2713,7 @@
     6509842,
     10393684
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2687,6 +2759,7 @@
     6613420,
     10682321
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2732,6 +2805,7 @@
     6683064,
     10989666
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2777,6 +2851,7 @@
     6721644,
     11307226
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2822,6 +2897,7 @@
     6734967,
     11622571
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2867,6 +2943,7 @@
     6728524,
     11925830
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2912,6 +2989,7 @@
     6700832,
     12214491
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -2957,6 +3035,7 @@
     6653326,
     12488461
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -3002,6 +3081,7 @@
     6598008,
     12742676
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -3047,6 +3127,7 @@
     6550536,
     12971351
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -3092,6 +3173,7 @@
     6521706,
     13170843
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -3137,6 +3219,7 @@
     6515608,
     13337974
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -3182,6 +3265,7 @@
     6528268,
     13474395
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",
@@ -3227,6 +3311,7 @@
     6552619,
     13587066
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "bra_ibge_rev2024",
    "vintage": "Rev. 2024",

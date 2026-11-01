@@ -1,13 +1,11 @@
 {
- "schema_version": "1.2",
+ "schema_version": "1.3",
  "iso3": "ECU",
  "name_es": "Ecuador",
  "name_en": "Ecuador",
  "status": "ok",
- "parser": "ecu",
  "institution": "INEC Ecuador",
  "source_url": "https://www.ecuadorencifras.gob.ec/documentos/web-inec/Poblacion_y_Demografia/Proyecciones_Poblacionales/censo_2022/revision_2024_areas/Tabulados_Estimacion_Proyeccion_v2.xlsx",
- "location_in_file": "Hoja '1.2', columnas Hombre y Mujer",
  "reason": null,
  "note": null,
  "age_groups": [
@@ -28,6 +26,22 @@
   "70-74",
   "75-79",
   "80+"
+ ],
+ "parts": [
+  {
+   "institution": "INEC Ecuador",
+   "source_url": "https://www.ecuadorencifras.gob.ec/documentos/web-inec/Poblacion_y_Demografia/Proyecciones_Poblacionales/censo_2022/revision_2024_areas/Tabulados_Estimacion_Proyeccion_v2.xlsx",
+   "source_tier": "national",
+   "location_in_file": "Hoja '1.2', columnas Hombre y Mujer",
+   "raw_files": [
+    {
+     "path": "data/raw/ECU/ecu_inec/2026-11-01_35dba440e116_Tabulados_Estimacion_Proyeccion_v2.xlsx",
+     "sha256": "35dba440e116cad9e606d58960c1c27affc690392f6a29eacf651309bc5e01cd",
+     "retrieved_at": "2026-11-01",
+     "retrieved_by": "script"
+    }
+   ]
+  }
  ],
  "raw_files": [
   {
@@ -77,6 +91,7 @@
     18046,
     11364
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -122,6 +137,7 @@
     18986,
     10960
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -167,6 +183,7 @@
     19563,
     11180
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -212,6 +229,7 @@
     19955,
     11783
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -257,6 +275,7 @@
     20346,
     12539
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -302,6 +321,7 @@
     20796,
     13342
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -347,6 +367,7 @@
     21286,
     14183
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -392,6 +413,7 @@
     21814,
     15033
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -437,6 +459,7 @@
     22353,
     15892
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -482,6 +505,7 @@
     22867,
     16771
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -527,6 +551,7 @@
     23345,
     17659
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -572,6 +597,7 @@
     23792,
     18564
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -617,6 +643,7 @@
     24212,
     19485
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -662,6 +689,7 @@
     24613,
     20402
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -707,6 +735,7 @@
     25001,
     21289
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -752,6 +781,7 @@
     25383,
     22149
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -797,6 +827,7 @@
     25764,
     22988
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -842,6 +873,7 @@
     26152,
     23813
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -887,6 +919,7 @@
     26541,
     24622
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -932,6 +965,7 @@
     26928,
     25421
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -977,6 +1011,7 @@
     27321,
     26210
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1022,6 +1057,7 @@
     27719,
     26998
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1067,6 +1103,7 @@
     28108,
     27793
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1112,6 +1149,7 @@
     28521,
     28591
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1157,6 +1195,7 @@
     28974,
     29307
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1202,6 +1241,7 @@
     29476,
     29958
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1247,6 +1287,7 @@
     30081,
     30647
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1292,6 +1333,7 @@
     30806,
     31373
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1337,6 +1379,7 @@
     31607,
     32162
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1382,6 +1425,7 @@
     32408,
     33042
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1427,6 +1471,7 @@
     33206,
     34020
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1472,6 +1517,7 @@
     33997,
     35101
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1517,6 +1563,7 @@
     34750,
     36297
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1562,6 +1609,7 @@
     35548,
     37604
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1607,6 +1655,7 @@
     36543,
     39004
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1652,6 +1701,7 @@
     37755,
     40506
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1697,6 +1747,7 @@
     39205,
     42107
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1742,6 +1793,7 @@
     40926,
     43794
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1787,6 +1839,7 @@
     42758,
     45621
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1832,6 +1885,7 @@
     44443,
     47682
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1877,6 +1931,7 @@
     45884,
     49993
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1922,6 +1977,7 @@
     47070,
     52521
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -1967,6 +2023,7 @@
     47949,
     55203
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2012,6 +2069,7 @@
     48661,
     57934
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2057,6 +2115,7 @@
     49498,
     60596
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2102,6 +2161,7 @@
     50603,
     63155
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2147,6 +2207,7 @@
     51947,
     65627
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2192,6 +2253,7 @@
     53537,
     68009
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2237,6 +2299,7 @@
     55354,
     70346
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2282,6 +2345,7 @@
     57319,
     72750
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2327,6 +2391,7 @@
     59341,
     75120
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2372,6 +2437,7 @@
     61482,
     77589
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2417,6 +2483,7 @@
     63840,
     80465
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2462,6 +2529,7 @@
     66348,
     83661
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2507,6 +2575,7 @@
     68905,
     87068
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2552,6 +2621,7 @@
     71521,
     90972
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2597,6 +2667,7 @@
     74259,
     95551
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2642,6 +2713,7 @@
     77044,
     100402
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2687,6 +2759,7 @@
     79809,
     105292
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2732,6 +2805,7 @@
     82600,
     110386
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2777,6 +2851,7 @@
     85491,
     115829
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2822,6 +2897,7 @@
     88482,
     121635
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2867,6 +2943,7 @@
     91507,
     127656
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2912,6 +2989,7 @@
     94630,
     133710
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -2957,6 +3035,7 @@
     98088,
     139895
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3002,6 +3081,7 @@
     101908,
     146211
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3047,6 +3127,7 @@
     105964,
     152408
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3092,6 +3173,7 @@
     110382,
     158825
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3137,6 +3219,7 @@
     115383,
     166434
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3182,6 +3265,7 @@
     120570,
     174316
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3227,6 +3311,7 @@
     124269,
     176656
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3272,6 +3357,7 @@
     126934,
     175820
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3317,6 +3403,7 @@
     130871,
     178561
    ],
+   "part": 0,
    "series_type": "estimate",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3362,6 +3449,7 @@
     136821,
     183913
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3407,6 +3495,7 @@
     144605,
     190541
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3452,6 +3541,7 @@
     153035,
     198188
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3497,6 +3587,7 @@
     161603,
     206605
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3542,6 +3633,7 @@
     170383,
     215796
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3587,6 +3679,7 @@
     178461,
     226603
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3632,6 +3725,7 @@
     185464,
     239333
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3677,6 +3771,7 @@
     192323,
     253019
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3722,6 +3817,7 @@
     199544,
     267138
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3767,6 +3863,7 @@
     206972,
     281839
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3812,6 +3909,7 @@
     214604,
     297111
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3857,6 +3955,7 @@
     222448,
     312949
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3902,6 +4001,7 @@
     230499,
     329350
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3947,6 +4047,7 @@
     238747,
     346311
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -3992,6 +4093,7 @@
     247169,
     363825
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -4037,6 +4139,7 @@
     255713,
     381903
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -4082,6 +4185,7 @@
     264361,
     400549
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -4127,6 +4231,7 @@
     273136,
     419759
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -4172,6 +4277,7 @@
     282062,
     439536
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -4217,6 +4323,7 @@
     291180,
     459862
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -4262,6 +4369,7 @@
     300541,
     480707
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -4307,6 +4415,7 @@
     310134,
     502065
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -4352,6 +4461,7 @@
     319909,
     523966
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -4397,6 +4507,7 @@
     329799,
     546436
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -4442,6 +4553,7 @@
     339698,
     569495
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -4487,6 +4599,7 @@
     349493,
     593167
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -4532,6 +4645,7 @@
     359169,
     617425
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",
@@ -4577,6 +4691,7 @@
     368923,
     642503
    ],
+   "part": 0,
    "series_type": "projection",
    "source_id": "ecu_inec_rev2024",
    "vintage": "Rev. 2024",

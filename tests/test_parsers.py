@@ -10,12 +10,12 @@ from latam_pop.adapters.sources import VenIne2001
 ROOT = Path(__file__).resolve().parents[1]
 FIX = ROOT / "tests" / "fixtures"
 REG = yaml.safe_load((ROOT / "sources.yaml").read_text(encoding="utf8"))["sources"]
-CASES = [("ARG", "historical", "arg_2010.xls"), ("ARG", "projection", "arg_2022.xlsx"), ("BOL", "historical", "bol_rev2020.xlsx"),
-         ("BOL", "projection", "bol_rev2025.xlsx"), ("CHL", "historical", "chl.xlsx"), ("CHL", "projection", "chl.xlsx"), ("BRA", "historical", "bra.xlsx"), ("BRA", "projection", "bra.xlsx"),
+CASES = [("ARG", "historical", "arg_2010.xls"), ("ARG", "projection", "arg_2022.xlsx"), ("BOL", "historical", "bol_anual.xlsx"),
+         ("BOL", "projection", "bol_anual.xlsx"), ("CUB", "historical", "cepal.xlsx"), ("CUB", "projection", "cepal.xlsx"), ("CHL", "historical", "chl.xlsx"), ("CHL", "projection", "chl.xlsx"), ("BRA", "historical", "bra.xlsx"), ("BRA", "projection", "bra.xlsx"),
          ("COL", "historical", "col_hist.xlsx"), ("COL", "projection", "col_proj.xlsx"),
          ("CRI", "historical", "cri.xlsx"), ("CRI", "projection", "cri.xlsx"), ("ECU", "historical", "ecu.xlsx"),
-         ("DOM", "historical", "dom.csv"), ("DOM", "projection", "dom.csv"), ("ECU", "projection", "ecu.xlsx"), ("GTM", "historical", "gtm.xlsx"), ("GTM", "projection", "gtm.xlsx"), ("HND", "projection", "hnd.pdf"), ("MEX", "historical", "mex.csv"),
-         ("MEX", "projection", "mex.csv"), ("NIC", "historical", "nic.pdf"), ("PAN", "historical", "pan.xlsx"),
+         ("DOM", "historical", "dom.csv"), ("DOM", "projection", "dom.csv"), ("ECU", "projection", "ecu.xlsx"), ("GTM", "historical", "gtm.xlsx"), ("GTM", "projection", "gtm.xlsx"), ("HND", "projection", "hnd.pdf"), ("MEX", "historical", "mex_ind.csv"),
+         ("MEX", "projection", "mex_ind.csv"), ("NIC", "historical", "nic.pdf"), ("PAN", "historical", "pan.xlsx"),
          ("PAN", "projection", "pan.xlsx"), ("PER", "historical", "per.pdf"), ("PER", "projection", "per.pdf"),
          ("PRY", "historical", "pry.xlsx"), ("PRY", "projection", "pry.xlsx"), ("SLV", "historical", "slv.xlsx"),
          ("SLV", "projection", "slv.xlsx"), ("URY", "historical", "ury_hist.xlsx"), ("URY", "projection", "ury_proj.xlsx"),
@@ -64,62 +64,21 @@ def test_cepal_reads_one_country_in_persons():
     assert rows[2024] == 11772557 and min(rows) == 1950 and max(rows) == 2100
 
 
-def test_mexico_sums_states_by_age_and_sex():
-    e = REG["MEX"]["projection"]
-    assert REGISTRY[e["adapter"]]("MEX", "projection", e).parse(FIX / "mex.csv")[2025] == 133367428
-
-
-def test_mexico_rejects_incomplete_year(tmp_path):
-    e = REG["MEX"]["projection"]
-    f = tmp_path / "m.csv"
-    f.write_text("ANIO,CVE_GEO,POBLACION\n2025,1,10\n2025,2,5\n", encoding="utf8")
-    with pytest.raises(Exception, match="de 32 entidades"):
-        REGISTRY[e["adapter"]]("MEX", "projection", e).parse(f)
-
-
-def test_mexico_prefers_national_row_and_cross_checks(tmp_path):
+def test_mexico_reads_national_row():
     e = REG["MEX"]["historical"]
-    a = REGISTRY[e["adapter"]]("MEX", "historical", e)
-    f = tmp_path / "m.csv"
-    f.write_text("ANIO,CVE_GEO,POBLACION\n1960,0,40\n1961,0,41\n", encoding="utf8")
-    assert a.parse(f) == {1960: 40.0, 1961: 41.0}
-    f.write_text("ANIO,CVE_GEO,POBLACION\n1970,0,50\n1970,1,49\n", encoding="utf8")
-    with pytest.raises(Exception, match="no coinciden"):
-        a.parse(f)
-
-
-def test_mexico_also_accepts_national_file(tmp_path):
-    e = REG["MEX"]["projection"]
-    f = tmp_path / "n.csv"
-    f.write_text("ANIO,ENTIDAD,CVE_GEO,POB_MIT_ANIO\n2025,República Mexicana,0,133367428\n2025,Colima,6,1\n", encoding="utf8")
-    assert REGISTRY[e["adapter"]]("MEX", "projection", e).parse(f) == {2025: 133367428.0}
-
-
-def test_bolivia_accepts_both_layouts(tmp_path):
-    import openpyxl
-    wb = openpyxl.Workbook()
-    wb.active.append(["AÑOS", "POBLACIÓN"])
-    wb.active.append([2025, 11945263])
-    f = tmp_path / "b.xlsx"
-    wb.save(f)
-    e = REG["BOL"]["projection"]
-    assert REGISTRY[e["adapter"]]("BOL", "projection", e).parse(f) == {2025: 11945263.0}
-
-
-def test_bolivia_reads_revision_2014_sheet():
-    e = REG["BOL"]["historical"]["earlier_sources"][0]
-    rows = REGISTRY[e["adapter"]]("BOL", "historical", e).parse(FIX / "bol_rev2014.xls")
-    assert rows[e["control"]["year"]] == e["control"]["value"] and rows[2000] == 8427790
-    assert e["year_to"] == 2011, "Los años posteriores de la Revisión 2014 no se usan"
+    rows = REGISTRY[e["adapter"]]("MEX", "historical", e).parse(FIX / "mex_ind.csv")
+    assert rows[1950] == 28463441 and rows[2070] == 141440479 and len(rows) == 121
 
 
 def test_series_type_follows_source_labels():
     bol = REGISTRY["bol_ine"]("BOL", "historical", REG["BOL"]["historical"])
-    assert bol.series_type_for(2012) == "estimate" and bol.series_type_for(2013) == "projection"
+    assert bol.series_type_for(2023) == "estimate"
     chl = REGISTRY["chl_ine"]("CHL", "projection", REG["CHL"]["projection"])
     assert chl.series_type_for(2025) == "projection"
     cri = REGISTRY["cri_inec"]("CRI", "historical", REG["CRI"]["historical"])
     assert cri.series_type_for(2022) == "estimate"
+    ven = REGISTRY["ven_ine_2011"]("VEN", "projection", REG["VEN"]["projection"])
+    assert ven.series_type_for(2010) == "estimate" and ven.series_type_for(2015) == "projection"
 
 
 def test_costa_rica_keeps_year_with_footnote():

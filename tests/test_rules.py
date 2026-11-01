@@ -102,6 +102,24 @@ def test_store_latest_respects_order_within_a_day(tmp_path):
     assert s.latest("ARG", "k").sha256 == last.sha256
 
 
+def test_watch_alerts_when_unreachable_portal_comes_back():
+    from latam_pop.watch import run_watch
+
+    class Down:
+        def get(self, url):
+            raise FetchError("certificado vencido")
+
+    class Up:
+        def get(self, url):
+            return b'<a href="/anuario.pdf">x</a>'
+
+    w = [dict(iso3="CUB", url="https://x.test/", pattern="anuario", reason="r")]
+    state, alerts = run_watch(w, Down(), {})
+    assert state["https://x.test/"] == "unreachable" and alerts == []
+    state, alerts = run_watch(w, Up(), state)
+    assert alerts[0]["code"] == "watch_change" and "Volvió a responder" in alerts[0]["message"]
+
+
 def test_blocked_page_is_not_saved_as_data():
     e = dict(access_method="XLSX", url="http://x/f.xlsx", status="ok")
     a = REGISTRY["bol_ine"]("BOL", "historical", e)

@@ -36,8 +36,8 @@ for name, iso, key in [("arg_2010.xls", "ARG", "arg_indec_2010"), ("arg_2022.xls
                        ("col_hist.xlsx", "COL", "col_dane_hist"), ("col_proj.xlsx", "COL", "col_dane_proj"),
                        ("pan.xlsx", "PAN", "pan_inec"), ("slv.xlsx", "SLV", "slv_onec"),
                        ("ury_hist.xlsx", "URY", "ury_ine_hist"), ("ury_proj.xlsx", "URY", "ury_ine_proj"),
-                       ("ven_2011.xls", "VEN", "ven_ine_nacional"), ("dom.csv", "DOM", "dom_one"), ("bol_rev2020.xlsx", "BOL", "bol_ine_rev2020"),
-                       ("bol_rev2025.xlsx", "BOL", "bol_ine_rev2025"), ("bol_rev2014.xls", "BOL", "bol_ine_rev2014")]:
+                       ("ven_2011.xls", "VEN", "ven_ine_nacional"), ("dom.csv", "DOM", "dom_one"), ("bol_anual.xlsx", "BOL", "bol_ine_rev2025_anual"),
+                       ("bol_sexo.xlsx", "BOL", "bol_ine_rev2025_sexo")]:
     shutil.copy(latest(iso, key), OUT / name)
 
 trim_xlsx(latest("BRA", "bra_ibge"), OUT / "bra.xlsx", "4) INDICADORES", lambda i, r: i < 8 or r[3] == "Brasil")
@@ -56,6 +56,8 @@ trim_xlsx(latest("COL", "col_dane_edad_proj"), OUT / "col_edad_proj.xlsx", "PobN
 with open(latest("ARG", "arg_indec_2022_edades"), encoding="latin1", newline="") as f:
     lines = f.readlines()
 (OUT / "arg_edades.csv").write_text(lines[0] + "".join(x for x in lines[1:] if x.rstrip().endswith(";2025")), encoding="latin1")
+trim_xlsx(latest("HTI", "cepal_hti_pais"), OUT / "hti_pais.xlsx", "Población a mitad de año", lambda i, r: True)
+trim_xlsx(latest("CUB", "cepal_cub_pais"), OUT / "cub_pais.xlsx", "Población a mitad de año", lambda i, r: True)
 trim_xlsx(latest("_regional", "cepal_rev2024"), OUT / "cepal.xlsx", "CAD01", lambda i, r: True)
 
 
@@ -80,5 +82,12 @@ with open(latest("MEX", "mex_conapo_mitad"), encoding="utf-8-sig", newline="") a
     writer.writeheader()
     for r in csv.DictReader(f):
         if r["ANIO"] in ("2019", "2025"):
+            writer.writerow({k: r[k] for k in writer.fieldnames})
+with open(latest("MEX", "mex_conapo_indicadores"), encoding="latin1", newline="") as f, \
+        open(OUT / "mex_ind.csv", "w", encoding="utf8", newline="") as out:
+    writer = csv.DictWriter(out, ["ANIO", "ENTIDAD", "CVE_GEO", "POB_MIT_ANIO"], lineterminator="\n")
+    writer.writeheader()
+    for r in csv.DictReader(f):
+        if r["CVE_GEO"].strip() == "0":
             writer.writerow({k: r[k] for k in writer.fieldnames})
 print(json.dumps(sorted(p.name for p in OUT.iterdir())))

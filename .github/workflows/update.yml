@@ -2,7 +2,7 @@ name: Actualizar datos
 
 on:
   schedule:
-    - cron: "17 9 * * 1"
+    - cron: "17 9 * * 1" # lunes, 09:17 UTC
   workflow_dispatch:
 
 permissions:

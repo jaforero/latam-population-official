@@ -46,3 +46,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python scripts/open_issues.py
+
+  # Un push hecho con GITHUB_TOKEN no dispara otros workflows: aquí se llama de forma explícita.
+  respaldo:
+    needs: update
+    uses: ./.github/workflows/respaldo-cdn.yml

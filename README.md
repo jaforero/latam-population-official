@@ -81,6 +81,8 @@ python -m latam_pop run
 ## Automatización
 `.github/workflows/update.yml` corre cada lunes y por disparo manual. Hace commit solo si cambian los datos y abre un issue con la etiqueta `pipeline` si un adaptador falla, salta una validación nueva o cambia un portal vigilado donde se usa CEPAL. Una falla de fuente no pone el workflow en rojo: queda en `status.json` y en un issue.
 
+**Respaldo en jsDelivr:** jsDelivr rechaza los paquetes de más de 50 MB, así que no puede servir `main` de forma fiable. La rama `respaldo-cdn` contiene `data/` sin `data/raw/` (unos 2,4 MB) y es la que lee la página si falla raw.githubusercontent.com: `https://cdn.jsdelivr.net/gh/jaforero/latam-population-official@respaldo-cdn/data/status.json`. No se edita a mano. La mantiene `.github/workflows/respaldo-cdn.yml` con `scripts/publish_cdn.py`, en cada push a `main` que toque `data/`, después de cada corrida semanal y una vez al día como comprobación. Publica todo lo que haya bajo `data/`, así que un archivo nuevo del contrato no requiere cambios. Después purga la caché de jsDelivr y compara el hash de cada archivo servido con el de `main`; si alguno sigue atrasado tras los reintentos, el workflow queda en rojo y abre un issue `pipeline`.
+
 **Secrets:** ninguna fuente actual requiere token. Si alguna lo exige, léelo con `os.environ` desde un secret llamado `<ISO3>_API_TOKEN`, documenta el nombre aquí y nunca lo escribas en el código.
 
 ## Cargar una fuente manual
@@ -126,7 +128,7 @@ Los síntomas son un issue de falla, `status: error` o una alerta `control_misma
 - **Licencias:** los términos de CEPAL/CELADE limitan la redistribución y aún no hay permiso escrito; seis instituciones no tienen licencia localizada. Ver [Términos de uso de las fuentes](#términos-de-uso-de-las-fuentes).
 - **Vintages:** Perú, Honduras y El Salvador tienen una edición nueva esperada o citada; Venezuela usa una proyección de 2013. Rep. Dominicana usa una serie anterior a la edición con censo 2022 que la ONE anunció en junio de 2026.
 - **Cuba:** usa CEPAL porque ONEI no es verificable (certificado vencido). La vigilancia avisa si el portal vuelve a responder.
-- **Peso:** `data/raw/` ocupa unos 205 MB y conserva cada versión de los archivos.
+- **Peso:** `data/raw/` ocupa unos 205 MB y conserva cada versión de los archivos. Por eso queda fuera de la rama `respaldo-cdn`.
 - **Red:** algunos sitios pueden bloquear los ejecutores de GitHub Actions aunque respondan desde otra conexión; en ese caso la serie pasa a `stale`.
 
 ## Términos de uso de las fuentes

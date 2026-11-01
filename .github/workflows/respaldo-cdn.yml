@@ -1,0 +1,54 @@
+name: Publicar respaldo en jsDelivr
+
+on:
+  push:
+    branches: [main]
+    paths: ["data/**"]
+  schedule:
+    - cron: "41 10 * * *" # a diario: repara o avisa si jsDelivr se atrasa
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: respaldo-cdn
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      # Sin data/raw/: la publicación solo necesita los objetos de lo que se publica.
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            /scripts/
+            /data/
+            !/data/raw/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Publicar rama liviana, purgar y comprobar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python scripts/publish_cdn.py
+      - name: Abrir issue si el respaldo queda atrasado
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          titulo="Respaldo en jsDelivr atrasado"
+          gh label create pipeline --color 4E00FF --description "Generado por el pipeline" --force
+          if [ -z "$(gh issue list --label pipeline --state open --search "\"$titulo\" in:title" --json number --jq '.[].number')" ]; then
+            gh issue create --title "$titulo" --label pipeline --body "La rama \`respaldo-cdn\` no quedó al día en jsDelivr. Mientras tanto, si falla la fuente principal, la página leería datos atrasados. Corrida: $RUN_URL"
+          fi

@@ -87,10 +87,8 @@ class Adapter:
         return self.entry["source_id"], self.entry["vintage_label"]
 
     def series_type_for(self, year: int) -> str:
-        """Sigue el rótulo de la fuente: `observed_until` para censos y `estimate_until` para el corte a proyección."""
+        """Sigue el rótulo de la fuente: `estimate_until` marca el corte a proyección."""
         e = self.entry
-        if year <= e.get("observed_until", 0):
-            return "observed"
         if "estimate_until" in e:
             return "estimate" if year <= e["estimate_until"] else "projection"
         return "estimate" if self.kind == "historical" else "projection"

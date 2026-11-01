@@ -29,8 +29,8 @@
    "retrieved_by": "manual",
    "location_in_file": "Cuadro N.° 1, fila Total",
    "note": {
-    "es": "Revisión anterior: la fuente rotula estos años como proyección y no declara fecha de referencia. La Revisión 2025 recalculó el pasado, pero su cuadro 2000-2050 aún no está cargado.",
-    "en": "Earlier revision: the source labels these years as projection and states no reference date. Revision 2025 recalculated the past, but its 2000-2050 table is not yet loaded."
+    "es": "Revisión anterior: la fuente rotula estos años como proyección y no declara fecha de referencia. Ninguno de los dos cuadros cargados incluye 2023. La Revisión 2025 recalculó el pasado, pero su cuadro 2000-2050 aún no está cargado.",
+    "en": "Earlier revision: the source labels these years as projection and states no reference date. Neither loaded table includes 2023. Revision 2025 recalculated the past, but its 2000-2050 table is not yet loaded."
    },
    "transcription": null
   },

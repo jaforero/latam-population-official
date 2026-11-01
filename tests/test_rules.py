@@ -74,8 +74,10 @@ def test_quinquennial_expected_years():
     assert expected_years(dict(year_from=2000, year_to=2010, annual_until=1999, step_after=5)) == [2000, 2005, 2010]
 
 
-def test_census_series_expects_only_published_years():
-    assert expected_years(dict(year_from=1950, year_to=2022, years_published=[1950, 2022])) == [1950, 2022]
+def test_year_of_accepts_footnote_marks_only():
+    from latam_pop.parsing import year_of
+    assert year_of("2022a/") == 2022 and year_of("2022") == 2022 and year_of(2022.0) == 2022
+    assert year_of("Total") is None and year_of("2022 hombres") is None and year_of(123) is None
 
 
 def test_vintage_and_tier_change_alerts():

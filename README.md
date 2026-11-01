@@ -43,7 +43,7 @@ Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es
 | `iso3` | texto | País |
 | `year` | entero | Año |
 | `population` | número o null | Personas, con el valor publicado (sin redondear). CEPAL publica en miles y se multiplica por 1000. |
-| `series_type` | `observed` · `estimate` · `projection` | Sigue el rótulo de la fuente. `observed` solo se usa en conteos censales directos (hoy, Costa Rica 1950-2011). |
+| `series_type` | `observed` · `estimate` · `projection` | Sigue el rótulo de la fuente. Hoy no hay `observed`: las series históricas son estimaciones oficiales ancladas en censos. |
 | `source_id` · `source_tier` | texto · `national` / `regional_fallback` | Fuente y nivel |
 | `vintage` · `scenario` | texto · `single` / `medium` / `recommended` / null | Edición y escenario |
 | `reference_date` | `MM-DD` · `mid-year` · `census` · null | Fecha de referencia de la cifra; `census` es la fecha de cada censo |
@@ -52,7 +52,7 @@ Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es
 | `growth` | número o null | `(P_t / P_{t-1}) − 1`, solo dentro de la misma fuente y vintage |
 | `raw_file` | ruta | Archivo de `data/raw/` del que sale la cifra |
 
-**Cambios:** la 1.1 agrega `reference_date: census` y empieza a usar `observed`. Es compatible con la 1.0.
+**Cambios:** la 1.1 admite `reference_date: census` (hoy sin uso). Es compatible con la 1.0.
 
 **Por país**, además: `segments` (institución, URL, vintage, hash, ubicación en el archivo), `breaks` (ruptura con año de corte y sin ajuste), `peak` (`peak`, `no_peak_in_horizon` o `no_projection`) y `reasons` en español e inglés.
 
@@ -84,7 +84,7 @@ Para fuentes que no admiten descarga automática:
 1. Abre la URL de `sources.yaml` en tu navegador y descarga el archivo.
 2. Registra el archivo con el país y la serie a los que corresponde, y ejecuta el pipeline:
 ```bash
-python -m latam_pop ingest CRI projection ~/Downloads/repoblaceppnacio1950-2100..xlsx
+python -m latam_pop ingest MEX historical ~/Downloads/05_indicadores_demograficos_proyecciones.csv
 ```
 ```bash
 python -m latam_pop run
@@ -93,7 +93,7 @@ python -m latam_pop run
 
 Un archivo cubre las dos series cuando comparten `raw_key`, y basta ingerirlo una vez. Si el archivo no es el que indica la entrada, primero corrige la entrada (URL, años, `vintage_label`, `raw_key` y control): `ingest` guarda la URL registrada como procedencia. Si el país estaba `pendiente`, complétalo como en la sección siguiente, con `status: manual`.
 
-**Pendientes de carga manual:** Bolivia (`PC20107`, 2000-2050), México (`05_indicadores_demograficos_proyecciones.csv`, 1950-2070) y Costa Rica (`repoblaceppnacio1950-2100..xlsx`). Bolivia y México ya tienen datos parciales; sus adaptadores aceptan estos formatos.
+**Archivos que ampliarían series ya cargadas:** Bolivia (`PC20107`, 2000-2050, Revisión 2025) y México (`05_indicadores_demograficos_proyecciones.csv`, 1950-2070). Sus adaptadores ya aceptan esos formatos. En Bolivia, cuidado: la página del INE ofrece cuadros 2000-2050 casi idénticos de las revisiones 2014, 2020 y 2025; el título interno del archivo dice cuál es.
 
 ## Cómo agregar un país o una fuente
 1. Agrega o completa la entrada en `sources.yaml`: `source_tier`, URL exacta, `adapter`, `source_id`, `raw_key`, `year_from`, `year_to`, vintage, referencia temporal y una **cifra de control** leída en la fuente. Un país nuevo también va en `latam_pop/__init__.py` y en `NAMES` de `build.py`.

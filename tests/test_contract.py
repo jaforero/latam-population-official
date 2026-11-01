@@ -46,6 +46,11 @@ def test_cepal_uses_current_revision():
         assert REG[i][k]["source_id"] == "cepal_celade_rev2024" and REG[i][k]["url"].startswith("https://celade.cepal.org/")
 
 
+def test_costa_rica_has_complete_annual_series():
+    d = json.loads((P / "CRI.json").read_text(encoding="utf8"))
+    assert [r["year"] for r in d["records"]] == list(range(1950, 2101)) and d["peak"]["year"] == 2044
+
+
 def test_pending_countries_show_no_figures():
     for iso in ("CUB", "DOM", "GTM"):
         assert json.loads((P / f"{iso}.json").read_text(encoding="utf8"))["records"] == []

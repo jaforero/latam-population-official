@@ -1,6 +1,6 @@
 {
  "schema_version": "1.1",
- "generated_at": "2026-11-01T15:17:11+00:00",
+ "generated_at": "2026-11-01T15:36:36+00:00",
  "countries": {
   "ARG": {
    "historical": {
@@ -104,12 +104,21 @@
   },
   "CRI": {
    "historical": {
-    "source_id": "cri_inec_estimacion2022",
-    "vintage": "Censos y Estimación 2022",
+    "source_id": "cri_inec_1950_2100",
+    "vintage": "1950-2100",
     "source_tier": "national",
     "institution": "INEC Costa Rica",
-    "url": "https://inec.cr/sites/default/files/2025-06/reResultadosEstimacionPoblacionVivienda2022.xlsx",
-    "raw_sha256": "1da1a8e241e89ea45e2ee240b59471fba893a2c24f16f71a8211fb9c5dd3941c",
+    "url": "https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx",
+    "raw_sha256": "6657e66c97f12d9fbee29f1a83180e43eec3a2ce0de30c366b981cd64836a915",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "cri_inec_1950_2100",
+    "vintage": "1950-2100",
+    "source_tier": "national",
+    "institution": "INEC Costa Rica",
+    "url": "https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx",
+    "raw_sha256": "6657e66c97f12d9fbee29f1a83180e43eec3a2ce0de30c366b981cd64836a915",
     "retrieved_at": "2026-11-01"
    }
   },

@@ -46,5 +46,17 @@
   "iso3": "CRI",
   "code": "source_added",
   "message": "manual_pendiente → INEC, años censales 1950-2022 aportados a mano; la proyección sigue pendiente"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CRI",
+  "code": "vintage_change",
+  "message": "historical: vintage Censos y Estimación 2022 → 1950-2100"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CRI",
+  "code": "source_added",
+  "message": "projection: manual_pendiente → INEC, serie 1950-2100 aportada a mano"
  }
 ]

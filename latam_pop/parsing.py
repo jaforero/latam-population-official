@@ -24,7 +24,12 @@ def num(x) -> float | None:
 
 
 def year_of(x) -> int | None:
-    v = num(x) if not isinstance(x, str) else (float(x.strip()) if re.fullmatch(r"\s*\d{4}(\.0)?\s*", x) else None)
+    if isinstance(x, str):
+        # Acepta años con nota al pie, como '2022a/' en el cuadro de INEC Costa Rica.
+        m = re.fullmatch(r"\s*(\d{4})(?:\.0)?\s*(?:[a-z]?\d?/)?\s*", x)
+        v = float(m.group(1)) if m else None
+    else:
+        v = num(x)
     return int(v) if v is not None and v == int(v) and 1900 <= v <= 2150 else None
 
 

@@ -108,6 +108,8 @@ sources:
       - Archivo aportado a mano el 2026-11-01 (bolivia-PC2010100.xlsx).
       - Revisión superada en estos mismos años por la Revisión 2025; se usará PC20107 cuando llegue.
       - 'Sin 2023: la revisión termina en 2022 y la siguiente empieza en 2024.'
+      - 'No usar bolivia-PC201070.xls: es la Revisión 2014 del Cuadro 7, con título casi idéntico al de la Revisión
+        2025 (PC20107).'
       source_id: bol_ine_rev2020
       adapter: bol_ine
       raw_key: bol_ine_rev2020
@@ -120,10 +122,11 @@ sources:
       estimate_until: 2012
       location_in_file: Cuadro N.° 1, fila Total
       public_note:
-        es: 'Revisión anterior: la fuente rotula estos años como proyección y no declara fecha de referencia. La
-          Revisión 2025 recalculó el pasado, pero su cuadro 2000-2050 aún no está cargado.'
-        en: 'Earlier revision: the source labels these years as projection and states no reference date. Revision
-          2025 recalculated the past, but its 2000-2050 table is not yet loaded.'
+        es: 'Revisión anterior: la fuente rotula estos años como proyección y no declara fecha de referencia. Ninguno
+          de los dos cuadros cargados incluye 2023. La Revisión 2025 recalculó el pasado, pero su cuadro 2000-2050
+          aún no está cargado.'
+        en: 'Earlier revision: the source labels these years as projection and states no reference date. Neither
+          loaded table includes 2023. Revision 2025 recalculated the past, but its 2000-2050 table is not yet loaded.'
     projection:
       source_tier: national
       status: manual
@@ -372,55 +375,46 @@ sources:
       source_tier: national
       status: manual
       institution: INEC Costa Rica
-      url: https://inec.cr/sites/default/files/2025-06/reResultadosEstimacionPoblacionVivienda2022.xlsx
+      url: https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx
       access_method: XLSX (manual)
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
       vintage:
         base_year: 2022
         reference_census: Estimación de Población y Vivienda 2022
-        published: Archivo modificado el 2025-06-10
-        revision: Cuadro 1, 1864-2022
-      scenario: 'No aplica: serie única'
-      reference_date: Fecha de cada censo o estimación
-      years_covered: 1950, 1963, 1973, 1984, 2000, 2011 y 2022
-      update_frequency: Con cada censo
+        published: 2024-07-11 (archivo republicado 2026-06)
+        revision: Estimaciones y proyecciones nacionales 1950-2100
+      scenario: El cuadro no presenta variantes
+      reference_date: 30 de junio
+      years_covered: 1950-2022
+      update_frequency: Sin calendario fijo
       control:
-        year: 2022
-        value: 5044197
+        year: 2021
+        value: 5077666.859816892
         unit: personas
-        location: Hoja 1 (Cuadro 1), 2022, Población total
+        location: Hoja 'C1. Población total', 2021, Total
       flags:
-      - Archivo aportado a mano el 2026-11-01. El cuadro también trae 1864, 1883, 1892 y 1927, fuera del rango de
-        la pieza.
-      - 'La cifra de 2022 es otra medición que la serie anual del INEC (2021: 5.077.667; 2023: 5.135.912, a 30 de
-        junio). No se mezclan.'
-      - Se reemplaza por repoblaceppnacio1950-2100..xlsx cuando llegue.
-      source_id: cri_inec_estimacion2022
-      adapter: cri_inec_censos
-      raw_key: cri_inec_estimacion2022
+      - 'Archivo aportado a mano el 2026-11-01; su tamaño coincide con el que se leyó en navegador en la verificación
+        inicial. El servidor rechaza scripts: método manual.'
+      - INEC declara en la nota a/ del cuadro que 2022 es la población final de las estimaciones y la base de las
+        proyecciones.
+      - Reemplaza al cuadro de años censales (reResultadosEstimacionPoblacionVivienda2022.xlsx), que se conserva
+        en data/raw/ como referencia del 5.044.197.
+      source_id: cri_inec_1950_2100
+      adapter: cri_inec
+      raw_key: cri_inec
       year_from: 1950
       year_to: 2022
-      reference_code: census
+      reference_code: 06-30
       scenario_code: single
-      vintage_label: Censos y Estimación 2022
-      landing_page: https://inec.cr/tabulados
-      years_published:
-      - 1950
-      - 1963
-      - 1973
-      - 1984
-      - 2000
-      - 2011
-      - 2022
-      observed_until: 2011
-      estimate_until: 2022
-      location_in_file: Hoja 1 (Cuadro 1), columna Población total
+      vintage_label: 1950-2100
+      landing_page: https://inec.cr/noticias/poblacion-65-anos-mas-costa-rica-se-duplicara-los-proximos-20-anos
+      location_in_file: Hoja 'C1. Población total', columna Total
       public_note:
-        es: 'Solo años de censo (1950-2011) y la Estimación de Población y Vivienda 2022: no hay serie anual ni
-          crecimiento interanual. El cuadro anual 1950-2100 de INEC aún no está cargado.'
-        en: 'Census years only (1950-2011) plus the 2022 Population and Housing Estimate: no annual series or year-on-year
-          growth. INEC''s 1950-2100 annual table is not yet loaded.'
+        es: La Estimación de Población y Vivienda 2022 de INEC da 5.044.197 personas; esta serie da 5.104.907 al
+          30 de junio de 2022. Son mediciones distintas y no se mezclan.
+        en: INEC's 2022 Population and Housing Estimate gives 5,044,197 people; this series gives 5,104,907 as of
+          June 30, 2022. They are different measurements and are not mixed.
     projection:
       source_tier: national
       status: manual
@@ -433,8 +427,8 @@ sources:
         base_year: 2022
         reference_census: Estimación de Población y Vivienda 2022
         published: 2024-07-11 (archivo republicado 2026-06)
-        revision: Estimaciones y proyecciones 1950-2100
-      scenario: Medio (por confirmar)
+        revision: Estimaciones y proyecciones nacionales 1950-2100
+      scenario: El cuadro no presenta variantes
       reference_date: 30 de junio
       years_covered: 2023-2100
       update_frequency: Sin calendario fijo
@@ -442,23 +436,22 @@ sources:
         year: 2025
         value: 5191823.079956115
         unit: personas
-        location: Hoja 'C1. Población total', 2025, Total (leído en navegador)
+        location: Hoja 'C1. Población total', 2025, Total
       flags:
-      - El servidor responde 403 a scripts y a robots.txt; solo abre en navegador. Método manual; no se elude.
-      - El publicador lo llama 'kit de cuadros'; archivo republicado en 2026-06, metodología de 2024-07.
+      - 'Archivo aportado a mano el 2026-11-01; su tamaño coincide con el que se leyó en navegador en la verificación
+        inicial. El servidor rechaza scripts: método manual.'
+      - INEC declara en la nota a/ del cuadro que 2022 es la población final de las estimaciones y la base de las
+        proyecciones.
       source_id: cri_inec_1950_2100
       adapter: cri_inec
       raw_key: cri_inec
       year_from: 2023
       year_to: 2100
       reference_code: 06-30
-      scenario_code: medium
+      scenario_code: single
       vintage_label: 1950-2100
-      public_reason:
-        es: INEC publica la proyección 1950-2100 en un cuadro aún no cargado; su servidor rechaza scripts, así que
-          requiere descarga manual.
-        en: INEC publishes the 1950-2100 projection in a table not yet loaded; its server rejects scripts, so a
-          manual download is required.
+      landing_page: https://inec.cr/noticias/poblacion-65-anos-mas-costa-rica-se-duplicara-los-proximos-20-anos
+      location_in_file: Hoja 'C1. Población total', columna Total
   CUB:
     historical:
       source_tier: national

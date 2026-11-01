@@ -13,7 +13,7 @@ REG = yaml.safe_load((ROOT / "sources.yaml").read_text(encoding="utf8"))["source
 CASES = [("ARG", "historical", "arg_2010.xls"), ("ARG", "projection", "arg_2022.xlsx"), ("BOL", "historical", "bol_rev2020.xlsx"),
          ("BOL", "projection", "bol_rev2025.xlsx"), ("CHL", "historical", "chl.xlsx"), ("CHL", "projection", "chl.xlsx"), ("BRA", "historical", "bra.xlsx"), ("BRA", "projection", "bra.xlsx"),
          ("COL", "historical", "col_hist.xlsx"), ("COL", "projection", "col_proj.xlsx"),
-         ("CRI", "historical", "cri_censos.xlsx"), ("CRI", "projection", "cri.xlsx"), ("ECU", "historical", "ecu.xlsx"),
+         ("CRI", "historical", "cri.xlsx"), ("CRI", "projection", "cri.xlsx"), ("ECU", "historical", "ecu.xlsx"),
          ("ECU", "projection", "ecu.xlsx"), ("HND", "projection", "hnd.pdf"), ("MEX", "historical", "mex.csv"),
          ("MEX", "projection", "mex.csv"), ("NIC", "historical", "nic.pdf"), ("PAN", "historical", "pan.xlsx"),
          ("PAN", "projection", "pan.xlsx"), ("PER", "historical", "per.pdf"), ("PER", "projection", "per.pdf"),
@@ -93,9 +93,16 @@ def test_bolivia_accepts_both_layouts(tmp_path):
 
 
 def test_series_type_follows_source_labels():
-    cri = REGISTRY["cri_inec_censos"]("CRI", "historical", REG["CRI"]["historical"])
-    assert cri.series_type_for(2011) == "observed" and cri.series_type_for(2022) == "estimate"
     bol = REGISTRY["bol_ine"]("BOL", "historical", REG["BOL"]["historical"])
     assert bol.series_type_for(2012) == "estimate" and bol.series_type_for(2013) == "projection"
     chl = REGISTRY["chl_ine"]("CHL", "projection", REG["CHL"]["projection"])
     assert chl.series_type_for(2025) == "projection"
+    cri = REGISTRY["cri_inec"]("CRI", "historical", REG["CRI"]["historical"])
+    assert cri.series_type_for(2022) == "estimate"
+
+
+def test_costa_rica_keeps_year_with_footnote():
+    e = REG["CRI"]["historical"]
+    rows = REGISTRY[e["adapter"]]("CRI", "historical", e).parse(FIX / "cri.xlsx")
+    assert rows[2022] == pytest.approx(5104906.836650608)
+    assert sorted(rows) == list(range(1950, 2101))

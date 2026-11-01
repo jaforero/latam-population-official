@@ -94,14 +94,6 @@ class CriInec(Adapter):
         return first_two(xlsx_rows(raw, "C1. Población total"))
 
 
-@register("cri_inec_censos")
-class CriInecCensos(Adapter):
-    """Cuadro 1: censos 1864-2011 y Estimación de Población y Vivienda 2022. Solo esos años existen."""
-
-    def parse(self, raw):
-        return first_two(xlsx_rows(raw, "1"))
-
-
 @register("ecu_inec")
 class EcuInec(Adapter):
     def parse(self, raw):

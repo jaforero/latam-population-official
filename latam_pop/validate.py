@@ -14,8 +14,6 @@ def alert(code: str, iso3: str, message: str, **extra) -> dict:
 
 
 def expected_years(entry: dict) -> list[int]:
-    if entry.get("years_published"):
-        return list(entry["years_published"])
     a, b = entry["year_from"], entry["year_to"]
     until, step = entry.get("annual_until"), entry.get("step_after", 5)
     if until is None:

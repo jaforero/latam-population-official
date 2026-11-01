@@ -1,6 +1,6 @@
 {
  "schema_version": "1.1",
- "generated_at": "2026-11-01T15:23:14+00:00",
+ "generated_at": "2026-11-01T15:36:36+00:00",
  "last_data_update": "2026-11-01",
  "countries": {
   "ARG": {
@@ -60,8 +60,8 @@
      "error": null,
      "reason": null,
      "note": {
-      "es": "Revisión anterior: la fuente rotula estos años como proyección y no declara fecha de referencia. La Revisión 2025 recalculó el pasado, pero su cuadro 2000-2050 aún no está cargado.",
-      "en": "Earlier revision: the source labels these years as projection and states no reference date. Revision 2025 recalculated the past, but its 2000-2050 table is not yet loaded."
+      "es": "Revisión anterior: la fuente rotula estos años como proyección y no declara fecha de referencia. Ninguno de los dos cuadros cargados incluye 2023. La Revisión 2025 recalculó el pasado, pero su cuadro 2000-2050 aún no está cargado.",
+      "en": "Earlier revision: the source labels these years as projection and states no reference date. Neither loaded table includes 2023. Revision 2025 recalculated the past, but its 2000-2050 table is not yet loaded."
      },
      "raw_file": "data/raw/BOL/bol_ine_rev2020/2026-11-01_33a9ff6c910a_bolivia-PC2010100.xlsx",
      "raw_sha256": "33a9ff6c910a34e90d8e706ef32342766f55af7ad0f7f595f3f4d2309ffa3f6c",
@@ -210,36 +210,36 @@
      "status": "manual",
      "source_tier": "national",
      "institution": "INEC Costa Rica",
-     "source_id": "cri_inec_estimacion2022",
-     "vintage": "Censos y Estimación 2022",
-     "url": "https://inec.cr/sites/default/files/2025-06/reResultadosEstimacionPoblacionVivienda2022.xlsx",
+     "source_id": "cri_inec_1950_2100",
+     "vintage": "1950-2100",
+     "url": "https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx",
      "last_success": "2026-11-01",
      "retrieved_at": "2026-11-01",
      "error": null,
      "reason": null,
      "note": {
-      "es": "Solo años de censo (1950-2011) y la Estimación de Población y Vivienda 2022: no hay serie anual ni crecimiento interanual. El cuadro anual 1950-2100 de INEC aún no está cargado.",
-      "en": "Census years only (1950-2011) plus the 2022 Population and Housing Estimate: no annual series or year-on-year growth. INEC's 1950-2100 annual table is not yet loaded."
+      "es": "La Estimación de Población y Vivienda 2022 de INEC da 5.044.197 personas; esta serie da 5.104.907 al 30 de junio de 2022. Son mediciones distintas y no se mezclan.",
+      "en": "INEC's 2022 Population and Housing Estimate gives 5,044,197 people; this series gives 5,104,907 as of June 30, 2022. They are different measurements and are not mixed."
      },
-     "raw_file": "data/raw/CRI/cri_inec_estimacion2022/2026-11-01_1da1a8e241e8_costarica-reResultadosEstimacionPoblacionVivienda2022.xlsx",
-     "raw_sha256": "1da1a8e241e89ea45e2ee240b59471fba893a2c24f16f71a8211fb9c5dd3941c",
+     "raw_file": "data/raw/CRI/cri_inec/2026-11-01_6657e66c97f1_costarica-repoblaceppnacio1950-2100..xlsx",
+     "raw_sha256": "6657e66c97f12d9fbee29f1a83180e43eec3a2ce0de30c366b981cd64836a915",
      "retrieved_by": "manual"
     },
     "projection": {
-     "status": "manual_pendiente",
+     "status": "manual",
      "source_tier": "national",
      "institution": "INEC Costa Rica",
      "source_id": "cri_inec_1950_2100",
      "vintage": "1950-2100",
      "url": "https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx",
-     "last_success": null,
-     "retrieved_at": null,
-     "error": "Fuente manual sin archivo en data/raw/",
-     "reason": {
-      "es": "INEC publica la proyección 1950-2100 en un cuadro aún no cargado; su servidor rechaza scripts, así que requiere descarga manual.",
-      "en": "INEC publishes the 1950-2100 projection in a table not yet loaded; its server rejects scripts, so a manual download is required."
-     },
-     "note": null
+     "last_success": "2026-11-01",
+     "retrieved_at": "2026-11-01",
+     "error": null,
+     "reason": null,
+     "note": null,
+     "raw_file": "data/raw/CRI/cri_inec/2026-11-01_6657e66c97f1_costarica-repoblaceppnacio1950-2100..xlsx",
+     "raw_sha256": "6657e66c97f12d9fbee29f1a83180e43eec3a2ce0de30c366b981cd64836a915",
+     "retrieved_by": "manual"
     }
    }
   },
@@ -419,7 +419,7 @@
      "retrieved_by": "script"
     },
     "projection": {
-     "status": "stale",
+     "status": "ok",
      "source_tier": "national",
      "institution": "INE Honduras",
      "source_id": "hnd_ine_censo2013",
@@ -427,7 +427,7 @@
      "url": "https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
      "last_success": "2026-11-01",
      "retrieved_at": "2026-11-01",
-     "error": "HTTP 403 en https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
+     "error": null,
      "reason": null,
      "note": {
       "es": "Proyección basada en el censo 2013; desde 2030 solo quinquenal.",

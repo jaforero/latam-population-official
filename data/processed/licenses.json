@@ -1,6 +1,6 @@
 {
- "schema_version": "1.4",
- "generated_at": "2026-11-01T19:23:04+00:00",
+ "schema_version": "1.5",
+ "generated_at": "2026-11-01T19:27:03+00:00",
  "review": {
   "reviewed": "2026-11-01",
   "method": "Se buscó el texto aplicable a cada archivo con agente identificado y, si el sitio rechazaba al script, en navegador. Las verificaciones anti-bots no se eludieron; el texto de CEPAL/CELADE, tras una de ellas, lo aportó Javier Forero.",

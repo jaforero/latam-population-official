@@ -17,6 +17,7 @@ sources.yaml              registro: una entrada por país y tipo de serie
 latam_pop/adapters/       un adaptador por fuente (fetch → parse → normalize)
 latam_pop/derive.py       crecimiento, CAGR, rupturas, año máximo
 latam_pop/validate.py     validaciones: alertas, nunca correcciones
+latam_pop/region.py       agregado regional: suma sin rellenar ni encadenar
 latam_pop/build.py        orquesta y escribe las salidas
 data/raw/<iso3>/<clave>/  <fecha>_<sha12>_<archivo> + .meta.json (hash, fecha, URL, quién lo obtuvo)
 data/raw/_regional/       archivos compartidos por varios países (CEPAL)
@@ -25,7 +26,7 @@ data/processed/           salidas de contrato
 tests/fixtures/           crudos reales o recortados, para probar sin red
 ```
 
-## Contrato de datos · `schema_version` 1.4
+## Contrato de datos · `schema_version` 1.5
 Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es un cambio de versión:** campo eliminado, renombrado o con otro significado sube la versión mayor. Los campos nuevos opcionales suben la menor.
 
 | Ruta | Contenido |
@@ -33,6 +34,7 @@ Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es
 | `data/processed/<iso3>.json` | Registro, segmentos de fuente, rupturas y año máximo de un país. Existe para los 20, aun sin datos. |
 | `data/processed/pyramids/<iso3>.json` | Pirámide por año: hombres y mujeres en 17 grupos comunes, con su fuente. Existe para los 20, aun sin datos. |
 | `data/processed/latam.csv` | Todos los registros, en formato largo. |
+| `data/processed/region.json` · `region.csv` | Agregado propio de los 20 países: total, crecimiento, índice y pirámide. No es una cifra oficial. |
 | `data/processed/manifest.json` | Fuentes, niveles, vintages y fechas vigentes por país y serie. |
 | `data/processed/licenses.json` | Revisión de términos por institución: estado, texto leído, cita exigida y condiciones. |
 | `data/status.json` | Estado, última actualización, nivel de fuente y error por país y serie. |
@@ -54,9 +56,11 @@ Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es
 | `growth` | número o null | `(P_t / P_{t-1}) − 1`, solo dentro de la misma fuente y vintage |
 | `raw_file` | ruta | Archivo de `data/raw/` del que sale la cifra |
 
-**Cambios:** la 1.1 admite `reference_date: census` (hoy sin uso). La 1.2 agrega las pirámides y `pyramid` en `status.json`. La 1.3 agrega `parts` y `part`, porque una pirámide puede combinar dos fuentes. La 1.4 agrega `licenses.json` y el campo `license` en segmentos, `status.json`, `parts` y `latam.csv`. Todas son compatibles con la 1.0.
+**Cambios:** la 1.1 admite `reference_date: census` (hoy sin uso). La 1.2 agrega las pirámides y `pyramid` en `status.json`. La 1.3 agrega `parts` y `part`, porque una pirámide puede combinar dos fuentes. La 1.4 agrega `licenses.json` y el campo `license` en segmentos, `status.json`, `parts` y `latam.csv`. La 1.5 agrega `region.json`, `region.csv` y `region` en `status.json`. Todas son compatibles con la 1.0.
 
 **Pirámides:** `age_groups` lista 0-4 … 75-79 y 80+. `years["2025"]` trae `m` y `f` (17 valores) más `series_type`, `source_id`, `vintage`, `source_tier` y `reference_date`, los mismos del registro de ese año, y `part`, el índice de `parts`. Cada elemento de `parts` da `institution`, `source_url`, `source_tier`, `location_in_file` y `raw_files` (ruta, hash, fecha). Además `status`, `reason`, `note` y `raw_files` con todos los crudos. Cada año usa la parte del mismo nivel de fuente que la serie de ese año. Solo se suman grupos publicados; no se desagrega ni se interpola. Un año se publica únicamente si hombres + mujeres cuadra con el total oficial de ese año (tolerancia de 0,05 %); si no, se excluye y genera una alerta.
+
+**Región (`region.json`):** agregado propio, con `official: false` y `derived: true`; `note` declara en español e inglés qué mezcla y de qué depende. `years` lista los años con dato de los 20 países. `points` trae por año `population` (suma redondeada a personas), `n_projection`, `regional_fallback` (países con CEPAL/CELADE), `reference_dates`, `shares` y `components`, con fuente, vintage, `license` y `raw_file` de cada país. `periods` trae la tasa anual media entre años consecutivos (`rate`), `country_rates`, `n_countries`, `covers_share` y `excluded`. `index["2025"]` trae el índice de cada año contra esa base. `pyramid` suma las 20 pirámides en `years` y lista en `missing_by_year` qué países faltan en los demás años.
 
 **Por país**, además: `segments` (institución, URL, vintage, hash, ubicación en el archivo), `breaks` (ruptura con año de corte y sin ajuste), `peak` (`peak`, `no_peak_in_horizon` o `no_projection`) y `reasons` en español e inglés.
 
@@ -68,6 +72,7 @@ Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es
 - Si un año tiene dato nacional y regional, queda el nacional y se genera una alerta.
 - Validaciones: años duplicados, huecos, variación anual fuera de ±4 %, discrepancia con la cifra de control, cambio de vintage o de nivel. Solo alertan.
 - Si una fuente falla, los demás países siguen y esa conserva su último crudo válido.
+- El total regional solo existe en años con dato de los 20 países: nunca se rellena un hueco ni se publica un total parcial. Crecimiento e índice regionales excluyen y listan al país que cambia de serie entre los dos años.
 - Descarga con agente identificado, TLS activo y respeto de `robots.txt`. Login, captcha, bloqueos de red o `robots.txt` llevan a método manual. No se eluden.
 
 ## Ejecutar
@@ -128,7 +133,8 @@ Los síntomas son un issue de falla, `status: error` o una alerta `control_misma
 - **Licencias:** los términos de CEPAL/CELADE limitan la redistribución y aún no hay permiso escrito; seis instituciones no tienen licencia localizada. Ver [Términos de uso de las fuentes](#términos-de-uso-de-las-fuentes).
 - **Vintages:** Perú, Honduras y El Salvador tienen una edición nueva esperada o citada; Venezuela usa una proyección de 2013. Rep. Dominicana usa una serie anterior a la edición con censo 2022 que la ONE anunció en junio de 2026.
 - **Cuba:** usa CEPAL porque ONEI no es verificable (certificado vencido). La vigilancia avisa si el portal vuelve a responder.
-- **Peso:** `data/raw/` ocupa unos 205 MB y conserva cada versión de los archivos. Por eso queda fuera de la rama `respaldo-cdn`.
+- **Peso:** `data/raw/` ocupa unos 205 MB y conserva cada versión de los archivos.
+- **Región:** hay total de 2010 a 2040, cada cinco años, porque Rep. Dominicana y Venezuela publican cada cinco años y Argentina solo cubre ese tramo. Hay pirámide regional solo en 2025 y 2030: Bolivia publica edades de 2024 a 2034, Argentina desde 2022 y Nicaragua desde 2023. El total depende de CEPAL/CELADE para Cuba, Haití, la historia de Honduras y la proyección de Nicaragua: sin esas cifras no habría total de los 20 países.
 - **Red:** algunos sitios pueden bloquear los ejecutores de GitHub Actions aunque respondan desde otra conexión; en ese caso la serie pasa a `stale`.
 
 ## Términos de uso de las fuentes
@@ -143,9 +149,9 @@ Revisados el 2026-11-01. Es una lectura de textos publicados, no un dictamen jur
 
 **Copias crudas:** de los 42 archivos de `data/raw/`, 17 no tienen permiso expreso de redistribución: 8 de CEPAL/CELADE y 9 de instituciones sin licencia localizada. Siguen aquí por trazabilidad mientras se resuelve.
 
-**Cambios respecto a los originales:** se extrae la población total, los miles de CEPAL pasan a personas, las edades se suman en 17 grupos comunes y aquí se calculan el crecimiento y el año máximo. Ninguna cifra se corrige.
+**Cambios respecto a los originales:** se extrae la población total, los miles de CEPAL pasan a personas, las edades se suman en 17 grupos comunes y aquí se calculan el crecimiento, el año máximo y el total regional. Ninguna cifra se corrige.
 
 ## Licencia
-El código puede reutilizarse con atribución. Este repositorio no otorga una licencia nueva sobre los datos: cada cifra conserva las condiciones de su fuente, registradas en el campo `license`. Lo derivado de fuentes CC BY-SA 4.0 u ODbL se comparte bajo esa misma licencia.
+El código puede reutilizarse con atribución. Este repositorio no otorga una licencia nueva sobre los datos: cada cifra conserva las condiciones de su fuente, registradas en el campo `license`. `region.json` y `region.csv` son una base derivada que combina esas condiciones, incluidas CC BY-SA y ODbL; cada componente conserva la licencia de su fuente. Lo derivado de fuentes CC BY-SA 4.0 u ODbL se comparte bajo esa misma licencia.
 
 Javier Forero · [javierforero.co](https://javierforero.co)

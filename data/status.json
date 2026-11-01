@@ -1,6 +1,6 @@
 {
- "schema_version": "1.4",
- "generated_at": "2026-11-01T19:11:14+00:00",
+ "schema_version": "1.5",
+ "generated_at": "2026-11-01T19:27:03+00:00",
  "last_data_update": "2026-11-01",
  "countries": {
   "ARG": {
@@ -1000,5 +1000,20 @@
     "reason": null
    }
   }
+ },
+ "region": {
+  "years": [
+   2010,
+   2015,
+   2020,
+   2025,
+   2030,
+   2035,
+   2040
+  ],
+  "pyramid_years": [
+   2025,
+   2030
+  ]
  }
 }

@@ -16,6 +16,7 @@ from .derive import add_growth, find_breaks, peak
 from .http import BlockedError, FetchError, Http
 from .parsing import ParseError
 from .pyramids import build_pyramid
+from .region import build_region, region_csv_rows
 from .store import RawStore
 from .validate import alert, check_against_previous, check_entry, check_growth
 from .watch import run_watch
@@ -30,6 +31,8 @@ NAMES = {
     "SLV": ("El Salvador", "El Salvador"), "URY": ("Uruguay", "Uruguay"), "VEN": ("Venezuela", "Venezuela"),
 }
 VOLATILE = ("generated_at", "last_success", "last_data_update")
+REGION_CSV_FIELDS = ["year", "population", "n_countries", "n_projection", "regional_fallback", "annual_rate_to_next",
+                     "next_year", "countries_in_rate", "excluded_from_rate"]
 CSV_FIELDS = ["iso3", "year", "population", "series_type", "source_id", "source_tier", "vintage", "scenario",
               "reference_date", "retrieved_at", "interpolated", "growth", "raw_file", "license"]
 
@@ -53,6 +56,18 @@ def write_stable(path: Path, doc) -> bool:
             pass
     path.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
     return True
+
+
+def write_csv_stable(path: Path, fields: list[str], rows: list[dict]) -> None:
+    tmp = path.parent / f".{path.name}.tmp"
+    with open(tmp, "w", newline="", encoding="utf8") as f:
+        w = csv.DictWriter(f, fields, lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+    if path.exists() and path.read_bytes() == tmp.read_bytes():
+        tmp.unlink()
+    else:
+        tmp.replace(path)
 
 
 def read_json(path: Path, default):
@@ -95,9 +110,11 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
     now = today or dt.datetime.now(dt.timezone.utc).date().isoformat()
     processed = root / "data" / "processed"
     prev_manifest = read_json(processed / "manifest.json", {}).get("countries", {})
+    prev_region_years = read_json(processed / "region.json", {}).get("years", [])
     prev_status = read_json(root / "data" / "status.json", {}).get("countries", {})
     changes = read_json(root / "data" / "source_changes.json", [])
     alerts, failures, all_rows, status, manifest = [], [], [], {}, {}
+    country_rows, pyramid_docs = {}, {}
     license_by_source = {}
 
     for iso3 in ISO3:
@@ -190,9 +207,11 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
                    records=[asdict(r) for r in records])
         write_stable(processed / f"{iso3}.json", doc)
         all_rows += records
+        country_rows[iso3] = [asdict(r) for r in records]
         status[iso3] = dict(name_es=NAMES[iso3][0], name_en=NAMES[iso3][1], series=series_status)
         pyr, pyr_alerts, pyr_failures = build_pyramid(iso3, sources[iso3]["pyramid"], {r.year: r for r in records}, store, http,
                                                       check_pyramid_content)
+        pyramid_docs[iso3] = pyr
         alerts += pyr_alerts
         failures += pyr_failures
         for f in pyr["raw_files"]:
@@ -204,17 +223,16 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
                                        year_to=pyr_years[-1] if pyr_years else None, years=len(pyr_years), reason=pyr["reason"])
         manifest[iso3] = cur
 
-    with_csv = processed / "latam.csv"
-    tmp = processed / ".latam.csv.tmp"
-    with open(tmp, "w", newline="", encoding="utf8") as f:
-        w = csv.DictWriter(f, CSV_FIELDS, lineterminator="\n")
-        w.writeheader()
-        for r in all_rows:
-            w.writerow(dict(asdict(r), license=license_by_source.get(r.source_id)))
-    if with_csv.exists() and with_csv.read_bytes() == tmp.read_bytes():
-        tmp.unlink()
-    else:
-        tmp.replace(with_csv)
+    write_csv_stable(processed / "latam.csv", CSV_FIELDS, [dict(asdict(r), license=license_by_source.get(r.source_id)) for r in all_rows])
+
+    region, region_issues = build_region(country_rows, pyramid_docs, license_by_source)
+    write_stable(processed / "region.json", dict(schema_version=SCHEMA_VERSION, **region))
+    write_csv_stable(processed / "region.csv", REGION_CSV_FIELDS, region_csv_rows(region))
+    lost = sorted(set(prev_region_years) - set(region["years"]))
+    if lost:
+        alerts.append(alert("region_coverage_lost", "REG", f"El total regional dejó de existir en {lost}: algún país perdió esos años", years=lost))
+    alerts += [alert("region_pyramid_gap", "REG", f"{i['year']}: la pirámide regional suma {i['pyramid_total']} y el total es {i['region_total']}; no se publica",
+                     year=i["year"]) for i in region_issues]
 
     stamp = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     write_stable(processed / "manifest.json", dict(schema_version=SCHEMA_VERSION, generated_at=stamp, countries=manifest,
@@ -223,7 +241,8 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
                                                    status_values=reg.get("license_status_values"), licenses=reg.get("licenses", {})))
     latest = max((s.get("last_success") or "" for c in status.values() for s in c["series"].values()), default=None)
     write_stable(root / "data" / "status.json", dict(schema_version=SCHEMA_VERSION, generated_at=stamp,
-                                                     last_data_update=latest or None, countries=status))
+                                                     last_data_update=latest or None, countries=status,
+                                                     region=dict(years=region["years"], pyramid_years=sorted(int(y) for y in region["pyramid"]["years"]))))
     write_stable(root / "data" / "source_changes.json", changes)
 
     if watch:

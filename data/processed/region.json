@@ -1,0 +1,4307 @@
+{
+ "schema_version": "1.5",
+ "id": "REG",
+ "name_es": "Región (20 países)",
+ "name_en": "Region (20 countries)",
+ "official": false,
+ "derived": true,
+ "note": {
+  "es": "Base derivada: suma propia de cifras con condiciones de uso distintas, incluidas CC BY-SA y ODbL; cada cifra conserva las de su fuente (campo license de cada componente). Depende de CEPAL/CELADE para los países listados en regional_fallback: sin ellos no habría total de los 20.",
+  "en": "Derived database: our own sum of figures under different terms of use, including CC BY-SA and ODbL; each figure keeps those of its source (license field of each component). It relies on ECLAC/CELADE for the countries listed in regional_fallback: without them there would be no total of the 20."
+ },
+ "countries": [
+  "ARG",
+  "BOL",
+  "BRA",
+  "CHL",
+  "COL",
+  "CRI",
+  "CUB",
+  "DOM",
+  "ECU",
+  "GTM",
+  "HND",
+  "HTI",
+  "MEX",
+  "NIC",
+  "PAN",
+  "PER",
+  "PRY",
+  "SLV",
+  "URY",
+  "VEN"
+ ],
+ "years": [
+  2010,
+  2015,
+  2020,
+  2025,
+  2030,
+  2035,
+  2040
+ ],
+ "points": [
+  {
+   "year": 2010,
+   "population": 575997826,
+   "n_countries": 20,
+   "n_projection": 0,
+   "projection_share": 0.0,
+   "regional_fallback": [
+    "CUB",
+    "HND",
+    "HTI"
+   ],
+   "reference_dates": {
+    "01-01": 1,
+    "06-30": 10,
+    "07-01": 4,
+    "mid-year": 3,
+    "no_declarada": 2
+   },
+   "shares": {
+    "ARG": 0.070814,
+    "BOL": 0.017494,
+    "BRA": 0.338108,
+    "CHL": 0.029567,
+    "COL": 0.076539,
+    "CRI": 0.007868,
+    "CUB": 0.019614,
+    "DOM": 0.016456,
+    "ECU": 0.02584,
+    "GTM": 0.024756,
+    "HND": 0.014524,
+    "HTI": 0.01702,
+    "MEX": 0.19923,
+    "NIC": 0.010096,
+    "PAN": 0.006296,
+    "PER": 0.049814,
+    "PRY": 0.00984,
+    "SLV": 0.010705,
+    "URY": 0.005897,
+    "VEN": 0.049522
+   },
+   "components": [
+    {
+     "iso3": "ARG",
+     "population": 40788453,
+     "series_type": "estimate",
+     "source_id": "arg_indec_censo2010",
+     "source_tier": "national",
+     "vintage": "Censo 2010",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/ARG/arg_indec_2010/2026-11-01_61d36046a63c_c1_proyecciones_nac_2010_2040.xls",
+     "license": "indec"
+    },
+    {
+     "iso3": "BOL",
+     "population": 10076577,
+     "series_type": "estimate",
+     "source_id": "bol_ine_rev2025",
+     "source_tier": "national",
+     "vintage": "Rev. 2025",
+     "reference_date": "01-01",
+     "raw_file": "data/raw/BOL/bol_ine_rev2025_anual/2026-11-01_12c6e4091e29_bolivia-PC20107.xlsx",
+     "license": "ine_bol"
+    },
+    {
+     "iso3": "BRA",
+     "population": 194749329,
+     "series_type": "estimate",
+     "source_id": "bra_ibge_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/BRA/bra_ibge/2026-11-01_0169644992d1_projecoes_2024_tab4_indicadores.xlsx",
+     "license": "ibge"
+    },
+    {
+     "iso3": "CHL",
+     "population": 17030393,
+     "series_type": "estimate",
+     "source_id": "chl_ine_base2024",
+     "source_tier": "national",
+     "vintage": "Base 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/CHL/chl_ine/2026-11-01_81bfc9a8393f_estimaciones-y-proyecciones-1992-2070_base-2024_tabulados.xlsx",
+     "license": "ine_chl"
+    },
+    {
+     "iso3": "COL",
+     "population": 44086292,
+     "series_type": "estimate",
+     "source_id": "col_dane_pped2025",
+     "source_tier": "national",
+     "vintage": "PPED 2025",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/COL/col_dane_hist/2026-11-01_43cccbd8c33e_PPED-AreaNac-1950-2017.xlsx",
+     "license": "dane"
+    },
+    {
+     "iso3": "CRI",
+     "population": 4532028.578482881,
+     "series_type": "estimate",
+     "source_id": "cri_inec_1950_2100",
+     "source_tier": "national",
+     "vintage": "1950-2100",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/CRI/cri_inec/2026-11-01_6657e66c97f1_costarica-repoblaceppnacio1950-2100..xlsx",
+     "license": "inec_cri"
+    },
+    {
+     "iso3": "CUB",
+     "population": 11297409,
+     "series_type": "estimate",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "DOM",
+     "population": 9478612,
+     "series_type": "estimate",
+     "source_id": "dom_one_1950_2050",
+     "source_tier": "national",
+     "vintage": "ONE 1950-2050",
+     "reference_date": null,
+     "raw_file": "data/raw/DOM/dom_one/2026-11-01_be23d7467029_Estimaciones_y_Proyecciones_de_la_Poblaci_n_Total_seg_n_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+     "license": "one_dom"
+    },
+    {
+     "iso3": "ECU",
+     "population": 14883661,
+     "series_type": "estimate",
+     "source_id": "ecu_inec_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/ECU/ecu_inec/2026-11-01_35dba440e116_Tabulados_Estimacion_Proyeccion_v2.xlsx",
+     "license": "inec_ecu"
+    },
+    {
+     "iso3": "GTM",
+     "population": 14259687,
+     "series_type": "estimate",
+     "source_id": "gtm_ine_rev2019",
+     "source_tier": "national",
+     "vintage": "Rev. 2019",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/GTM/gtm_ine/2026-11-01_b8d0502b1994_guatemala-Estimaciones_y_proyecciones_de_poblacion-1950-2050.xlsx",
+     "license": "ine_gtm"
+    },
+    {
+     "iso3": "HND",
+     "population": 8365877.5,
+     "series_type": "estimate",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "HTI",
+     "population": 9803294,
+     "series_type": "estimate",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "MEX",
+     "population": 114756059,
+     "series_type": "estimate",
+     "source_id": "mex_conapo_2023",
+     "source_tier": "national",
+     "vintage": "Conciliación 2023",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv",
+     "license": "conapo"
+    },
+    {
+     "iso3": "NIC",
+     "population": 5815524,
+     "series_type": "estimate",
+     "source_id": "nic_inide_rev2007",
+     "source_tier": "national",
+     "vintage": "Rev. 2007",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/NIC/nic_inide/2026-11-01_47c54be057f9_Anuario_Estadistico_2023.pdf",
+     "license": "inide"
+    },
+    {
+     "iso3": "PAN",
+     "population": 3626670,
+     "series_type": "estimate",
+     "source_id": "pan_inec_censo2023",
+     "source_tier": "national",
+     "vintage": "Censo 2023",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/PAN/pan_inec/2026-11-01_1c832db124d7_P0705547520260126142400Cuadro_1.xlsx",
+     "license": "inec_pan"
+    },
+    {
+     "iso3": "PER",
+     "population": 28692915,
+     "series_type": "estimate",
+     "source_id": "per_inei_be24",
+     "source_tier": "national",
+     "vintage": "Boletín Especial 24",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/PER/per_inei/2026-11-01_50671ed79533_libro_bol_esp_24_4.pdf",
+     "license": "inei"
+    },
+    {
+     "iso3": "PRY",
+     "population": 5668042,
+     "series_type": "estimate",
+     "source_id": "pry_ine_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/PRY/pry_ine/2026-11-01_342c4f661760_Estimaciones_y_Proyecciones_Nacional_por_a_o_1950-2050._Revisi_n_2024.xlsx",
+     "license": "ine_pry"
+    },
+    {
+     "iso3": "SLV",
+     "population": 6165886,
+     "series_type": "estimate",
+     "source_id": "slv_onec_rev2021",
+     "source_tier": "national",
+     "vintage": "Rev. 2021",
+     "reference_date": null,
+     "raw_file": "data/raw/SLV/slv_onec/2026-11-01_2c419f432e9d_El_Salvador_Poblacion_Nacional_2005-2050_rev2021.xlsx",
+     "license": "onec"
+    },
+    {
+     "iso3": "URY",
+     "population": 3396705.641969181,
+     "series_type": "estimate",
+     "source_id": "ury_ine_rev2025",
+     "source_tier": "national",
+     "vintage": "Rev. 2025",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/URY/ury_ine_hist/2026-11-01_4460b64d0d32_A.1.1_Uruguay.xlsx",
+     "license": "ine_ury"
+    },
+    {
+     "iso3": "VEN",
+     "population": 28524411,
+     "series_type": "estimate",
+     "source_id": "ven_ine_censo2011",
+     "source_tier": "national",
+     "vintage": "Censo 2011",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls",
+     "license": "ine_ven"
+    }
+   ]
+  },
+  {
+   "year": 2015,
+   "population": 606581872,
+   "n_countries": 20,
+   "n_projection": 3,
+   "projection_share": 0.081073,
+   "regional_fallback": [
+    "CUB",
+    "HTI"
+   ],
+   "reference_dates": {
+    "01-01": 1,
+    "06-30": 10,
+    "07-01": 5,
+    "mid-year": 2,
+    "no_declarada": 2
+   },
+   "shares": {
+    "ARG": 0.071107,
+    "BOL": 0.018004,
+    "BRA": 0.333679,
+    "CHL": 0.0296,
+    "COL": 0.076352,
+    "CRI": 0.00796,
+    "CUB": 0.018588,
+    "DOM": 0.016453,
+    "ECU": 0.026821,
+    "GTM": 0.025664,
+    "HND": 0.014139,
+    "HTI": 0.017348,
+    "MEX": 0.201734,
+    "NIC": 0.010325,
+    "PAN": 0.006555,
+    "PER": 0.049399,
+    "PRY": 0.009747,
+    "SLV": 0.01032,
+    "URY": 0.005725,
+    "VEN": 0.05048
+   },
+   "components": [
+    {
+     "iso3": "ARG",
+     "population": 43131966,
+     "series_type": "estimate",
+     "source_id": "arg_indec_censo2010",
+     "source_tier": "national",
+     "vintage": "Censo 2010",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/ARG/arg_indec_2010/2026-11-01_61d36046a63c_c1_proyecciones_nac_2010_2040.xls",
+     "license": "indec"
+    },
+    {
+     "iso3": "BOL",
+     "population": 10920682,
+     "series_type": "estimate",
+     "source_id": "bol_ine_rev2025",
+     "source_tier": "national",
+     "vintage": "Rev. 2025",
+     "reference_date": "01-01",
+     "raw_file": "data/raw/BOL/bol_ine_rev2025_anual/2026-11-01_12c6e4091e29_bolivia-PC20107.xlsx",
+     "license": "ine_bol"
+    },
+    {
+     "iso3": "BRA",
+     "population": 202403642,
+     "series_type": "estimate",
+     "source_id": "bra_ibge_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/BRA/bra_ibge/2026-11-01_0169644992d1_projecoes_2024_tab4_indicadores.xlsx",
+     "license": "ibge"
+    },
+    {
+     "iso3": "CHL",
+     "population": 17954875,
+     "series_type": "estimate",
+     "source_id": "chl_ine_base2024",
+     "source_tier": "national",
+     "vintage": "Base 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/CHL/chl_ine/2026-11-01_81bfc9a8393f_estimaciones-y-proyecciones-1992-2070_base-2024_tabulados.xlsx",
+     "license": "ine_chl"
+    },
+    {
+     "iso3": "COL",
+     "population": 46313898,
+     "series_type": "estimate",
+     "source_id": "col_dane_pped2025",
+     "source_tier": "national",
+     "vintage": "PPED 2025",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/COL/col_dane_hist/2026-11-01_43cccbd8c33e_PPED-AreaNac-1950-2017.xlsx",
+     "license": "dane"
+    },
+    {
+     "iso3": "CRI",
+     "population": 4828520.29971576,
+     "series_type": "estimate",
+     "source_id": "cri_inec_1950_2100",
+     "source_tier": "national",
+     "vintage": "1950-2100",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/CRI/cri_inec/2026-11-01_6657e66c97f1_costarica-repoblaceppnacio1950-2100..xlsx",
+     "license": "inec_cri"
+    },
+    {
+     "iso3": "CUB",
+     "population": 11275064.5,
+     "series_type": "estimate",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "DOM",
+     "population": 9980243,
+     "series_type": "projection",
+     "source_id": "dom_one_1950_2050",
+     "source_tier": "national",
+     "vintage": "ONE 1950-2050",
+     "reference_date": null,
+     "raw_file": "data/raw/DOM/dom_one/2026-11-01_be23d7467029_Estimaciones_y_Proyecciones_de_la_Poblaci_n_Total_seg_n_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+     "license": "one_dom"
+    },
+    {
+     "iso3": "ECU",
+     "population": 16269171,
+     "series_type": "estimate",
+     "source_id": "ecu_inec_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/ECU/ecu_inec/2026-11-01_35dba440e116_Tabulados_Estimacion_Proyeccion_v2.xlsx",
+     "license": "inec_ecu"
+    },
+    {
+     "iso3": "GTM",
+     "population": 15567419,
+     "series_type": "estimate",
+     "source_id": "gtm_ine_rev2019",
+     "source_tier": "national",
+     "vintage": "Rev. 2019",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/GTM/gtm_ine/2026-11-01_b8d0502b1994_guatemala-Estimaciones_y_proyecciones_de_poblacion-1950-2050.xlsx",
+     "license": "ine_gtm"
+    },
+    {
+     "iso3": "HND",
+     "population": 8576532,
+     "series_type": "projection",
+     "source_id": "hnd_ine_censo2013",
+     "source_tier": "national",
+     "vintage": "Censo 2013",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/HND/hnd_ine/2026-11-01_53eb3d72c9ce_Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
+     "license": "ine_hnd"
+    },
+    {
+     "iso3": "HTI",
+     "population": 10523241.5,
+     "series_type": "estimate",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "MEX",
+     "population": 122368490,
+     "series_type": "estimate",
+     "source_id": "mex_conapo_2023",
+     "source_tier": "national",
+     "vintage": "Conciliación 2023",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv",
+     "license": "conapo"
+    },
+    {
+     "iso3": "NIC",
+     "population": 6262703,
+     "series_type": "estimate",
+     "source_id": "nic_inide_rev2012",
+     "source_tier": "national",
+     "vintage": "Rev. 2012",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/NIC/nic_inide/2026-11-01_47c54be057f9_Anuario_Estadistico_2023.pdf",
+     "license": "inide"
+    },
+    {
+     "iso3": "PAN",
+     "population": 3975949,
+     "series_type": "estimate",
+     "source_id": "pan_inec_censo2023",
+     "source_tier": "national",
+     "vintage": "Censo 2023",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/PAN/pan_inec/2026-11-01_1c832db124d7_P0705547520260126142400Cuadro_1.xlsx",
+     "license": "inec_pan"
+    },
+    {
+     "iso3": "PER",
+     "population": 29964499,
+     "series_type": "estimate",
+     "source_id": "per_inei_be24",
+     "source_tier": "national",
+     "vintage": "Boletín Especial 24",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/PER/per_inei/2026-11-01_50671ed79533_libro_bol_esp_24_4.pdf",
+     "license": "inei"
+    },
+    {
+     "iso3": "PRY",
+     "population": 5912082,
+     "series_type": "estimate",
+     "source_id": "pry_ine_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/PRY/pry_ine/2026-11-01_342c4f661760_Estimaciones_y_Proyecciones_Nacional_por_a_o_1950-2050._Revisi_n_2024.xlsx",
+     "license": "ine_pry"
+    },
+    {
+     "iso3": "SLV",
+     "population": 6259901,
+     "series_type": "estimate",
+     "source_id": "slv_onec_rev2021",
+     "source_tier": "national",
+     "vintage": "Rev. 2021",
+     "reference_date": null,
+     "raw_file": "data/raw/SLV/slv_onec/2026-11-01_2c419f432e9d_El_Salvador_Poblacion_Nacional_2005-2050_rev2021.xlsx",
+     "license": "onec"
+    },
+    {
+     "iso3": "URY",
+     "population": 3472589.9142747982,
+     "series_type": "estimate",
+     "source_id": "ury_ine_rev2025",
+     "source_tier": "national",
+     "vintage": "Rev. 2025",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/URY/ury_ine_hist/2026-11-01_4460b64d0d32_A.1.1_Uruguay.xlsx",
+     "license": "ine_ury"
+    },
+    {
+     "iso3": "VEN",
+     "population": 30620404,
+     "series_type": "projection",
+     "source_id": "ven_ine_censo2011",
+     "source_tier": "national",
+     "vintage": "Censo 2011",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls",
+     "license": "ine_ven"
+    }
+   ]
+  },
+  {
+   "year": 2020,
+   "population": 637818335,
+   "n_countries": 20,
+   "n_projection": 7,
+   "projection_share": 0.43969,
+   "regional_fallback": [
+    "CUB",
+    "HTI"
+   ],
+   "reference_dates": {
+    "01-01": 1,
+    "06-30": 10,
+    "07-01": 5,
+    "mid-year": 2,
+    "no_declarada": 2
+   },
+   "shares": {
+    "ARG": 0.071144,
+    "BOL": 0.01825,
+    "BRA": 0.327938,
+    "CHL": 0.030158,
+    "COL": 0.079005,
+    "CRI": 0.00792,
+    "CUB": 0.017523,
+    "DOM": 0.016382,
+    "ECU": 0.027479,
+    "GTM": 0.026431,
+    "HND": 0.014588,
+    "HTI": 0.017629,
+    "MEX": 0.201012,
+    "NIC": 0.010341,
+    "PAN": 0.00679,
+    "PER": 0.051152,
+    "PRY": 0.009725,
+    "SLV": 0.00991,
+    "URY": 0.005504,
+    "VEN": 0.05112
+   },
+   "components": [
+    {
+     "iso3": "ARG",
+     "population": 45376763,
+     "series_type": "estimate",
+     "source_id": "arg_indec_censo2010",
+     "source_tier": "national",
+     "vintage": "Censo 2010",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/ARG/arg_indec_2010/2026-11-01_61d36046a63c_c1_proyecciones_nac_2010_2040.xls",
+     "license": "indec"
+    },
+    {
+     "iso3": "BOL",
+     "population": 11640016,
+     "series_type": "estimate",
+     "source_id": "bol_ine_rev2025",
+     "source_tier": "national",
+     "vintage": "Rev. 2025",
+     "reference_date": "01-01",
+     "raw_file": "data/raw/BOL/bol_ine_rev2025_anual/2026-11-01_12c6e4091e29_bolivia-PC20107.xlsx",
+     "license": "ine_bol"
+    },
+    {
+     "iso3": "BRA",
+     "population": 209164889,
+     "series_type": "estimate",
+     "source_id": "bra_ibge_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/BRA/bra_ibge/2026-11-01_0169644992d1_projecoes_2024_tab4_indicadores.xlsx",
+     "license": "ibge"
+    },
+    {
+     "iso3": "CHL",
+     "population": 19235540,
+     "series_type": "estimate",
+     "source_id": "chl_ine_base2024",
+     "source_tier": "national",
+     "vintage": "Base 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/CHL/chl_ine/2026-11-01_81bfc9a8393f_estimaciones-y-proyecciones-1992-2070_base-2024_tabulados.xlsx",
+     "license": "ine_chl"
+    },
+    {
+     "iso3": "COL",
+     "population": 50390790,
+     "series_type": "projection",
+     "source_id": "col_dane_pped2025",
+     "source_tier": "national",
+     "vintage": "PPED 2025",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/COL/col_dane_proj/2026-11-01_957239f522f7_PPED-AreaNac-2018-2070.xlsx",
+     "license": "dane"
+    },
+    {
+     "iso3": "CRI",
+     "population": 5051379.231049843,
+     "series_type": "estimate",
+     "source_id": "cri_inec_1950_2100",
+     "source_tier": "national",
+     "vintage": "1950-2100",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/CRI/cri_inec/2026-11-01_6657e66c97f1_costarica-repoblaceppnacio1950-2100..xlsx",
+     "license": "inec_cri"
+    },
+    {
+     "iso3": "CUB",
+     "population": 11176354,
+     "series_type": "estimate",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "DOM",
+     "population": 10448499,
+     "series_type": "projection",
+     "source_id": "dom_one_1950_2050",
+     "source_tier": "national",
+     "vintage": "ONE 1950-2050",
+     "reference_date": null,
+     "raw_file": "data/raw/DOM/dom_one/2026-11-01_be23d7467029_Estimaciones_y_Proyecciones_de_la_Poblaci_n_Total_seg_n_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+     "license": "one_dom"
+    },
+    {
+     "iso3": "ECU",
+     "population": 17526455,
+     "series_type": "estimate",
+     "source_id": "ecu_inec_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/ECU/ecu_inec/2026-11-01_35dba440e116_Tabulados_Estimacion_Proyeccion_v2.xlsx",
+     "license": "inec_ecu"
+    },
+    {
+     "iso3": "GTM",
+     "population": 16858333,
+     "series_type": "projection",
+     "source_id": "gtm_ine_rev2019",
+     "source_tier": "national",
+     "vintage": "Rev. 2019",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/GTM/gtm_ine/2026-11-01_b8d0502b1994_guatemala-Estimaciones_y_proyecciones_de_poblacion-1950-2050.xlsx",
+     "license": "ine_gtm"
+    },
+    {
+     "iso3": "HND",
+     "population": 9304380,
+     "series_type": "projection",
+     "source_id": "hnd_ine_censo2013",
+     "source_tier": "national",
+     "vintage": "Censo 2013",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/HND/hnd_ine/2026-11-01_53eb3d72c9ce_Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
+     "license": "ine_hnd"
+    },
+    {
+     "iso3": "HTI",
+     "population": 11243848,
+     "series_type": "estimate",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "MEX",
+     "population": 128209170,
+     "series_type": "projection",
+     "source_id": "mex_conapo_2023",
+     "source_tier": "national",
+     "vintage": "Conciliación 2023",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv",
+     "license": "conapo"
+    },
+    {
+     "iso3": "NIC",
+     "population": 6595674,
+     "series_type": "estimate",
+     "source_id": "nic_inide_rev2012",
+     "source_tier": "national",
+     "vintage": "Rev. 2012",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/NIC/nic_inide/2026-11-01_47c54be057f9_Anuario_Estadistico_2023.pdf",
+     "license": "inide"
+    },
+    {
+     "iso3": "PAN",
+     "population": 4331049,
+     "series_type": "estimate",
+     "source_id": "pan_inec_censo2023",
+     "source_tier": "national",
+     "vintage": "Censo 2023",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/PAN/pan_inec/2026-11-01_1c832db124d7_P0705547520260126142400Cuadro_1.xlsx",
+     "license": "inec_pan"
+    },
+    {
+     "iso3": "PER",
+     "population": 32625948,
+     "series_type": "projection",
+     "source_id": "per_inei_be24",
+     "source_tier": "national",
+     "vintage": "Boletín Especial 24",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/PER/per_inei/2026-11-01_50671ed79533_libro_bol_esp_24_4.pdf",
+     "license": "inei"
+    },
+    {
+     "iso3": "PRY",
+     "population": 6202478,
+     "series_type": "estimate",
+     "source_id": "pry_ine_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/PRY/pry_ine/2026-11-01_342c4f661760_Estimaciones_y_Proyecciones_Nacional_por_a_o_1950-2050._Revisi_n_2024.xlsx",
+     "license": "ine_pry"
+    },
+    {
+     "iso3": "SLV",
+     "population": 6321042,
+     "series_type": "estimate",
+     "source_id": "slv_onec_rev2021",
+     "source_tier": "national",
+     "vintage": "Rev. 2021",
+     "reference_date": null,
+     "raw_file": "data/raw/SLV/slv_onec/2026-11-01_2c419f432e9d_El_Salvador_Poblacion_Nacional_2005-2050_rev2021.xlsx",
+     "license": "onec"
+    },
+    {
+     "iso3": "URY",
+     "population": 3510304.8656797893,
+     "series_type": "estimate",
+     "source_id": "ury_ine_rev2025",
+     "source_tier": "national",
+     "vintage": "Rev. 2025",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/URY/ury_ine_hist/2026-11-01_4460b64d0d32_A.1.1_Uruguay.xlsx",
+     "license": "ine_ury"
+    },
+    {
+     "iso3": "VEN",
+     "population": 32605423,
+     "series_type": "projection",
+     "source_id": "ven_ine_censo2011",
+     "source_tier": "national",
+     "vintage": "Censo 2011",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls",
+     "license": "ine_ven"
+    }
+   ]
+  },
+  {
+   "year": 2025,
+   "population": 659961517,
+   "n_countries": 20,
+   "n_projection": 19,
+   "projection_share": 0.989475,
+   "regional_fallback": [
+    "CUB",
+    "HTI"
+   ],
+   "reference_dates": {
+    "01-01": 1,
+    "06-30": 10,
+    "07-01": 5,
+    "mid-year": 2,
+    "no_declarada": 2
+   },
+   "shares": {
+    "ARG": 0.070288,
+    "BOL": 0.0181,
+    "BRA": 0.323384,
+    "CHL": 0.03036,
+    "COL": 0.080394,
+    "CRI": 0.007867,
+    "CUB": 0.016572,
+    "DOM": 0.016483,
+    "ECU": 0.027431,
+    "GTM": 0.027395,
+    "HND": 0.015213,
+    "HTI": 0.018041,
+    "MEX": 0.202084,
+    "NIC": 0.010525,
+    "PAN": 0.006968,
+    "PER": 0.052049,
+    "PRY": 0.009723,
+    "SLV": 0.009646,
+    "URY": 0.005282,
+    "VEN": 0.052194
+   },
+   "components": [
+    {
+     "iso3": "ARG",
+     "population": 46387098,
+     "series_type": "projection",
+     "source_id": "arg_indec_censo2022",
+     "source_tier": "national",
+     "vintage": "Censo 2022",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/ARG/arg_indec_2022/2026-11-01_7dd84165fe90_proyecciones_jurisdicciones_2022_2040_c1.xlsx",
+     "license": "indec"
+    },
+    {
+     "iso3": "BOL",
+     "population": 11945263,
+     "series_type": "projection",
+     "source_id": "bol_ine_rev2025",
+     "source_tier": "national",
+     "vintage": "Rev. 2025",
+     "reference_date": "01-01",
+     "raw_file": "data/raw/BOL/bol_ine_rev2025_anual/2026-11-01_12c6e4091e29_bolivia-PC20107.xlsx",
+     "license": "ine_bol"
+    },
+    {
+     "iso3": "BRA",
+     "population": 213421037,
+     "series_type": "projection",
+     "source_id": "bra_ibge_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/BRA/bra_ibge/2026-11-01_0169644992d1_projecoes_2024_tab4_indicadores.xlsx",
+     "license": "ibge"
+    },
+    {
+     "iso3": "CHL",
+     "population": 20036669,
+     "series_type": "projection",
+     "source_id": "chl_ine_base2024",
+     "source_tier": "national",
+     "vintage": "Base 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/CHL/chl_ine/2026-11-01_81bfc9a8393f_estimaciones-y-proyecciones-1992-2070_base-2024_tabulados.xlsx",
+     "license": "ine_chl"
+    },
+    {
+     "iso3": "COL",
+     "population": 53057212,
+     "series_type": "projection",
+     "source_id": "col_dane_pped2025",
+     "source_tier": "national",
+     "vintage": "PPED 2025",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/COL/col_dane_proj/2026-11-01_957239f522f7_PPED-AreaNac-2018-2070.xlsx",
+     "license": "dane"
+    },
+    {
+     "iso3": "CRI",
+     "population": 5191823.079956115,
+     "series_type": "projection",
+     "source_id": "cri_inec_1950_2100",
+     "source_tier": "national",
+     "vintage": "1950-2100",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/CRI/cri_inec/2026-11-01_6657e66c97f1_costarica-repoblaceppnacio1950-2100..xlsx",
+     "license": "inec_cri"
+    },
+    {
+     "iso3": "CUB",
+     "population": 10937203.5,
+     "series_type": "projection",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "DOM",
+     "population": 10878267,
+     "series_type": "projection",
+     "source_id": "dom_one_1950_2050",
+     "source_tier": "national",
+     "vintage": "ONE 1950-2050",
+     "reference_date": null,
+     "raw_file": "data/raw/DOM/dom_one/2026-11-01_be23d7467029_Estimaciones_y_Proyecciones_de_la_Poblaci_n_Total_seg_n_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+     "license": "one_dom"
+    },
+    {
+     "iso3": "ECU",
+     "population": 18103660,
+     "series_type": "projection",
+     "source_id": "ecu_inec_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/ECU/ecu_inec/2026-11-01_35dba440e116_Tabulados_Estimacion_Proyeccion_v2.xlsx",
+     "license": "inec_ecu"
+    },
+    {
+     "iso3": "GTM",
+     "population": 18079810,
+     "series_type": "projection",
+     "source_id": "gtm_ine_rev2019",
+     "source_tier": "national",
+     "vintage": "Rev. 2019",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/GTM/gtm_ine/2026-11-01_b8d0502b1994_guatemala-Estimaciones_y_proyecciones_de_poblacion-1950-2050.xlsx",
+     "license": "ine_gtm"
+    },
+    {
+     "iso3": "HND",
+     "population": 10039862,
+     "series_type": "projection",
+     "source_id": "hnd_ine_censo2013",
+     "source_tier": "national",
+     "vintage": "Censo 2013",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/HND/hnd_ine/2026-11-01_53eb3d72c9ce_Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
+     "license": "ine_hnd"
+    },
+    {
+     "iso3": "HTI",
+     "population": 11906095.5,
+     "series_type": "projection",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "MEX",
+     "population": 133367428,
+     "series_type": "projection",
+     "source_id": "mex_conapo_2023",
+     "source_tier": "national",
+     "vintage": "Conciliación 2023",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv",
+     "license": "conapo"
+    },
+    {
+     "iso3": "NIC",
+     "population": 6946351,
+     "series_type": "estimate",
+     "source_id": "nic_inide_rev2012",
+     "source_tier": "national",
+     "vintage": "Rev. 2012",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/NIC/nic_inide/2026-11-01_47c54be057f9_Anuario_Estadistico_2023.pdf",
+     "license": "inide"
+    },
+    {
+     "iso3": "PAN",
+     "population": 4598365,
+     "series_type": "projection",
+     "source_id": "pan_inec_censo2023",
+     "source_tier": "national",
+     "vintage": "Censo 2023",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/PAN/pan_inec/2026-11-01_1c832db124d7_P0705547520260126142400Cuadro_1.xlsx",
+     "license": "inec_pan"
+    },
+    {
+     "iso3": "PER",
+     "population": 34350244,
+     "series_type": "projection",
+     "source_id": "per_inei_be24",
+     "source_tier": "national",
+     "vintage": "Boletín Especial 24",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/PER/per_inei/2026-11-01_50671ed79533_libro_bol_esp_24_4.pdf",
+     "license": "inei"
+    },
+    {
+     "iso3": "PRY",
+     "population": 6417076,
+     "series_type": "projection",
+     "source_id": "pry_ine_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/PRY/pry_ine/2026-11-01_342c4f661760_Estimaciones_y_Proyecciones_Nacional_por_a_o_1950-2050._Revisi_n_2024.xlsx",
+     "license": "ine_pry"
+    },
+    {
+     "iso3": "SLV",
+     "population": 6366086,
+     "series_type": "projection",
+     "source_id": "slv_onec_rev2021",
+     "source_tier": "national",
+     "vintage": "Rev. 2021",
+     "reference_date": null,
+     "raw_file": "data/raw/SLV/slv_onec/2026-11-01_2c419f432e9d_El_Salvador_Poblacion_Nacional_2005-2050_rev2021.xlsx",
+     "license": "onec"
+    },
+    {
+     "iso3": "URY",
+     "population": 3485931.2534879902,
+     "series_type": "projection",
+     "source_id": "ury_ine_rev2025",
+     "source_tier": "national",
+     "vintage": "Rev. 2025",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/URY/ury_ine_proj/2026-11-01_def36b35c130_B.1.1_Uruguay__100ymas_2024-2070.xlsx",
+     "license": "ine_ury"
+    },
+    {
+     "iso3": "VEN",
+     "population": 34446036,
+     "series_type": "projection",
+     "source_id": "ven_ine_censo2011",
+     "source_tier": "national",
+     "vintage": "Censo 2011",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls",
+     "license": "ine_ven"
+    }
+   ]
+  },
+  {
+   "year": 2030,
+   "population": 678152317,
+   "n_countries": 20,
+   "n_projection": 20,
+   "projection_share": 1.0,
+   "regional_fallback": [
+    "CUB",
+    "HTI",
+    "NIC"
+   ],
+   "reference_dates": {
+    "01-01": 1,
+    "06-30": 9,
+    "07-01": 5,
+    "mid-year": 3,
+    "no_declarada": 2
+   },
+   "shares": {
+    "ARG": 0.068929,
+    "BOL": 0.017826,
+    "BRA": 0.319947,
+    "CHL": 0.030214,
+    "COL": 0.080392,
+    "CRI": 0.00782,
+    "CUB": 0.015779,
+    "DOM": 0.016594,
+    "ECU": 0.027745,
+    "GTM": 0.028314,
+    "HND": 0.015876,
+    "HTI": 0.01851,
+    "MEX": 0.203544,
+    "NIC": 0.010973,
+    "PAN": 0.007094,
+    "PER": 0.052779,
+    "PRY": 0.00976,
+    "SLV": 0.009541,
+    "URY": 0.005112,
+    "VEN": 0.05325
+   },
+   "components": [
+    {
+     "iso3": "ARG",
+     "population": 46744389,
+     "series_type": "projection",
+     "source_id": "arg_indec_censo2022",
+     "source_tier": "national",
+     "vintage": "Censo 2022",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/ARG/arg_indec_2022/2026-11-01_7dd84165fe90_proyecciones_jurisdicciones_2022_2040_c1.xlsx",
+     "license": "indec"
+    },
+    {
+     "iso3": "BOL",
+     "population": 12088584,
+     "series_type": "projection",
+     "source_id": "bol_ine_rev2025",
+     "source_tier": "national",
+     "vintage": "Rev. 2025",
+     "reference_date": "01-01",
+     "raw_file": "data/raw/BOL/bol_ine_rev2025_anual/2026-11-01_12c6e4091e29_bolivia-PC20107.xlsx",
+     "license": "ine_bol"
+    },
+    {
+     "iso3": "BRA",
+     "population": 216973093,
+     "series_type": "projection",
+     "source_id": "bra_ibge_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/BRA/bra_ibge/2026-11-01_0169644992d1_projecoes_2024_tab4_indicadores.xlsx",
+     "license": "ibge"
+    },
+    {
+     "iso3": "CHL",
+     "population": 20489812,
+     "series_type": "projection",
+     "source_id": "chl_ine_base2024",
+     "source_tier": "national",
+     "vintage": "Base 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/CHL/chl_ine/2026-11-01_81bfc9a8393f_estimaciones-y-proyecciones-1992-2070_base-2024_tabulados.xlsx",
+     "license": "ine_chl"
+    },
+    {
+     "iso3": "COL",
+     "population": 54518223,
+     "series_type": "projection",
+     "source_id": "col_dane_pped2025",
+     "source_tier": "national",
+     "vintage": "PPED 2025",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/COL/col_dane_proj/2026-11-01_957239f522f7_PPED-AreaNac-2018-2070.xlsx",
+     "license": "dane"
+    },
+    {
+     "iso3": "CRI",
+     "population": 5303115.398277463,
+     "series_type": "projection",
+     "source_id": "cri_inec_1950_2100",
+     "source_tier": "national",
+     "vintage": "1950-2100",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/CRI/cri_inec/2026-11-01_6657e66c97f1_costarica-repoblaceppnacio1950-2100..xlsx",
+     "license": "inec_cri"
+    },
+    {
+     "iso3": "CUB",
+     "population": 10700822,
+     "series_type": "projection",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "DOM",
+     "population": 11253284,
+     "series_type": "projection",
+     "source_id": "dom_one_1950_2050",
+     "source_tier": "national",
+     "vintage": "ONE 1950-2050",
+     "reference_date": null,
+     "raw_file": "data/raw/DOM/dom_one/2026-11-01_be23d7467029_Estimaciones_y_Proyecciones_de_la_Poblaci_n_Total_seg_n_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+     "license": "one_dom"
+    },
+    {
+     "iso3": "ECU",
+     "population": 18815497,
+     "series_type": "projection",
+     "source_id": "ecu_inec_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/ECU/ecu_inec/2026-11-01_35dba440e116_Tabulados_Estimacion_Proyeccion_v2.xlsx",
+     "license": "inec_ecu"
+    },
+    {
+     "iso3": "GTM",
+     "population": 19201062,
+     "series_type": "projection",
+     "source_id": "gtm_ine_rev2019",
+     "source_tier": "national",
+     "vintage": "Rev. 2019",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/GTM/gtm_ine/2026-11-01_b8d0502b1994_guatemala-Estimaciones_y_proyecciones_de_poblacion-1950-2050.xlsx",
+     "license": "ine_gtm"
+    },
+    {
+     "iso3": "HND",
+     "population": 10766670,
+     "series_type": "projection",
+     "source_id": "hnd_ine_censo2013",
+     "source_tier": "national",
+     "vintage": "Censo 2013",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/HND/hnd_ine/2026-11-01_53eb3d72c9ce_Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
+     "license": "ine_hnd"
+    },
+    {
+     "iso3": "HTI",
+     "population": 12552359,
+     "series_type": "projection",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "MEX",
+     "population": 138033990,
+     "series_type": "projection",
+     "source_id": "mex_conapo_2023",
+     "source_tier": "national",
+     "vintage": "Conciliación 2023",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv",
+     "license": "conapo"
+    },
+    {
+     "iso3": "NIC",
+     "population": 7441603,
+     "series_type": "projection",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "PAN",
+     "population": 4810744,
+     "series_type": "projection",
+     "source_id": "pan_inec_censo2023",
+     "source_tier": "national",
+     "vintage": "Censo 2023",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/PAN/pan_inec/2026-11-01_1c832db124d7_P0705547520260126142400Cuadro_1.xlsx",
+     "license": "inec_pan"
+    },
+    {
+     "iso3": "PER",
+     "population": 35792079,
+     "series_type": "projection",
+     "source_id": "per_inei_be24",
+     "source_tier": "national",
+     "vintage": "Boletín Especial 24",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/PER/per_inei/2026-11-01_50671ed79533_libro_bol_esp_24_4.pdf",
+     "license": "inei"
+    },
+    {
+     "iso3": "PRY",
+     "population": 6618731,
+     "series_type": "projection",
+     "source_id": "pry_ine_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/PRY/pry_ine/2026-11-01_342c4f661760_Estimaciones_y_Proyecciones_Nacional_por_a_o_1950-2050._Revisi_n_2024.xlsx",
+     "license": "ine_pry"
+    },
+    {
+     "iso3": "SLV",
+     "population": 6470167,
+     "series_type": "projection",
+     "source_id": "slv_onec_rev2021",
+     "source_tier": "national",
+     "vintage": "Rev. 2021",
+     "reference_date": null,
+     "raw_file": "data/raw/SLV/slv_onec/2026-11-01_2c419f432e9d_El_Salvador_Poblacion_Nacional_2005-2050_rev2021.xlsx",
+     "license": "onec"
+    },
+    {
+     "iso3": "URY",
+     "population": 3466466.092861318,
+     "series_type": "projection",
+     "source_id": "ury_ine_rev2025",
+     "source_tier": "national",
+     "vintage": "Rev. 2025",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/URY/ury_ine_proj/2026-11-01_def36b35c130_B.1.1_Uruguay__100ymas_2024-2070.xlsx",
+     "license": "ine_ury"
+    },
+    {
+     "iso3": "VEN",
+     "population": 36111627,
+     "series_type": "projection",
+     "source_id": "ven_ine_censo2011",
+     "source_tier": "national",
+     "vintage": "Censo 2011",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls",
+     "license": "ine_ven"
+    }
+   ]
+  },
+  {
+   "year": 2035,
+   "population": 692423069,
+   "n_countries": 20,
+   "n_projection": 20,
+   "projection_share": 1.0,
+   "regional_fallback": [
+    "CUB",
+    "HTI",
+    "NIC"
+   ],
+   "reference_dates": {
+    "01-01": 1,
+    "06-30": 9,
+    "07-01": 5,
+    "mid-year": 3,
+    "no_declarada": 2
+   },
+   "shares": {
+    "ARG": 0.068049,
+    "BOL": 0.017581,
+    "BRA": 0.316811,
+    "CHL": 0.029813,
+    "COL": 0.080119,
+    "CRI": 0.007763,
+    "CUB": 0.015066,
+    "DOM": 0.016711,
+    "ECU": 0.028184,
+    "GTM": 0.029205,
+    "HND": 0.016556,
+    "HTI": 0.019013,
+    "MEX": 0.204581,
+    "NIC": 0.011318,
+    "PAN": 0.00719,
+    "PER": 0.053464,
+    "PRY": 0.009804,
+    "SLV": 0.009523,
+    "URY": 0.004995,
+    "VEN": 0.054252
+   },
+   "components": [
+    {
+     "iso3": "ARG",
+     "population": 47118716,
+     "series_type": "projection",
+     "source_id": "arg_indec_censo2022",
+     "source_tier": "national",
+     "vintage": "Censo 2022",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/ARG/arg_indec_2022/2026-11-01_7dd84165fe90_proyecciones_jurisdicciones_2022_2040_c1.xlsx",
+     "license": "indec"
+    },
+    {
+     "iso3": "BOL",
+     "population": 12173759,
+     "series_type": "projection",
+     "source_id": "bol_ine_rev2025",
+     "source_tier": "national",
+     "vintage": "Rev. 2025",
+     "reference_date": "01-01",
+     "raw_file": "data/raw/BOL/bol_ine_rev2025_anual/2026-11-01_12c6e4091e29_bolivia-PC20107.xlsx",
+     "license": "ine_bol"
+    },
+    {
+     "iso3": "BRA",
+     "population": 219367247,
+     "series_type": "projection",
+     "source_id": "bra_ibge_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/BRA/bra_ibge/2026-11-01_0169644992d1_projecoes_2024_tab4_indicadores.xlsx",
+     "license": "ibge"
+    },
+    {
+     "iso3": "CHL",
+     "population": 20643490,
+     "series_type": "projection",
+     "source_id": "chl_ine_base2024",
+     "source_tier": "national",
+     "vintage": "Base 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/CHL/chl_ine/2026-11-01_81bfc9a8393f_estimaciones-y-proyecciones-1992-2070_base-2024_tabulados.xlsx",
+     "license": "ine_chl"
+    },
+    {
+     "iso3": "COL",
+     "population": 55476504,
+     "series_type": "projection",
+     "source_id": "col_dane_pped2025",
+     "source_tier": "national",
+     "vintage": "PPED 2025",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/COL/col_dane_proj/2026-11-01_957239f522f7_PPED-AreaNac-2018-2070.xlsx",
+     "license": "dane"
+    },
+    {
+     "iso3": "CRI",
+     "population": 5375045.283347469,
+     "series_type": "projection",
+     "source_id": "cri_inec_1950_2100",
+     "source_tier": "national",
+     "vintage": "1950-2100",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/CRI/cri_inec/2026-11-01_6657e66c97f1_costarica-repoblaceppnacio1950-2100..xlsx",
+     "license": "inec_cri"
+    },
+    {
+     "iso3": "CUB",
+     "population": 10431762,
+     "series_type": "projection",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "DOM",
+     "population": 11571411,
+     "series_type": "projection",
+     "source_id": "dom_one_1950_2050",
+     "source_tier": "national",
+     "vintage": "ONE 1950-2050",
+     "reference_date": null,
+     "raw_file": "data/raw/DOM/dom_one/2026-11-01_be23d7467029_Estimaciones_y_Proyecciones_de_la_Poblaci_n_Total_seg_n_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+     "license": "one_dom"
+    },
+    {
+     "iso3": "ECU",
+     "population": 19515303,
+     "series_type": "projection",
+     "source_id": "ecu_inec_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/ECU/ecu_inec/2026-11-01_35dba440e116_Tabulados_Estimacion_Proyeccion_v2.xlsx",
+     "license": "inec_ecu"
+    },
+    {
+     "iso3": "GTM",
+     "population": 20222438,
+     "series_type": "projection",
+     "source_id": "gtm_ine_rev2019",
+     "source_tier": "national",
+     "vintage": "Rev. 2019",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/GTM/gtm_ine/2026-11-01_b8d0502b1994_guatemala-Estimaciones_y_proyecciones_de_poblacion-1950-2050.xlsx",
+     "license": "ine_gtm"
+    },
+    {
+     "iso3": "HND",
+     "population": 11464062,
+     "series_type": "projection",
+     "source_id": "hnd_ine_censo2013",
+     "source_tier": "national",
+     "vintage": "Censo 2013",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/HND/hnd_ine/2026-11-01_53eb3d72c9ce_Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
+     "license": "ine_hnd"
+    },
+    {
+     "iso3": "HTI",
+     "population": 13165000,
+     "series_type": "projection",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "MEX",
+     "population": 141656637,
+     "series_type": "projection",
+     "source_id": "mex_conapo_2023",
+     "source_tier": "national",
+     "vintage": "Conciliación 2023",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv",
+     "license": "conapo"
+    },
+    {
+     "iso3": "NIC",
+     "population": 7836703,
+     "series_type": "projection",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "PAN",
+     "population": 4978651,
+     "series_type": "projection",
+     "source_id": "pan_inec_censo2023",
+     "source_tier": "national",
+     "vintage": "Censo 2023",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/PAN/pan_inec/2026-11-01_1c832db124d7_P0705547520260126142400Cuadro_1.xlsx",
+     "license": "inec_pan"
+    },
+    {
+     "iso3": "PER",
+     "population": 37019661,
+     "series_type": "projection",
+     "source_id": "per_inei_be24",
+     "source_tier": "national",
+     "vintage": "Boletín Especial 24",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/PER/per_inei/2026-11-01_50671ed79533_libro_bol_esp_24_4.pdf",
+     "license": "inei"
+    },
+    {
+     "iso3": "PRY",
+     "population": 6788357,
+     "series_type": "projection",
+     "source_id": "pry_ine_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/PRY/pry_ine/2026-11-01_342c4f661760_Estimaciones_y_Proyecciones_Nacional_por_a_o_1950-2050._Revisi_n_2024.xlsx",
+     "license": "ine_pry"
+    },
+    {
+     "iso3": "SLV",
+     "population": 6594238,
+     "series_type": "projection",
+     "source_id": "slv_onec_rev2021",
+     "source_tier": "national",
+     "vintage": "Rev. 2021",
+     "reference_date": null,
+     "raw_file": "data/raw/SLV/slv_onec/2026-11-01_2c419f432e9d_El_Salvador_Poblacion_Nacional_2005-2050_rev2021.xlsx",
+     "license": "onec"
+    },
+    {
+     "iso3": "URY",
+     "population": 3458948.7729480444,
+     "series_type": "projection",
+     "source_id": "ury_ine_rev2025",
+     "source_tier": "national",
+     "vintage": "Rev. 2025",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/URY/ury_ine_proj/2026-11-01_def36b35c130_B.1.1_Uruguay__100ymas_2024-2070.xlsx",
+     "license": "ine_ury"
+    },
+    {
+     "iso3": "VEN",
+     "population": 37565136,
+     "series_type": "projection",
+     "source_id": "ven_ine_censo2011",
+     "source_tier": "national",
+     "vintage": "Censo 2011",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls",
+     "license": "ine_ven"
+    }
+   ]
+  },
+  {
+   "year": 2040,
+   "population": 702855854,
+   "n_countries": 20,
+   "n_projection": 20,
+   "projection_share": 1.0,
+   "regional_fallback": [
+    "CUB",
+    "HTI",
+    "NIC"
+   ],
+   "reference_dates": {
+    "01-01": 1,
+    "06-30": 9,
+    "07-01": 5,
+    "mid-year": 3,
+    "no_declarada": 2
+   },
+   "shares": {
+    "ARG": 0.067602,
+    "BOL": 0.017436,
+    "BRA": 0.313559,
+    "CHL": 0.029178,
+    "COL": 0.079629,
+    "CRI": 0.007717,
+    "CUB": 0.014407,
+    "DOM": 0.016839,
+    "ECU": 0.028682,
+    "GTM": 0.030092,
+    "HND": 0.017246,
+    "HTI": 0.01954,
+    "MEX": 0.205556,
+    "NIC": 0.011652,
+    "PAN": 0.007275,
+    "PER": 0.054098,
+    "PRY": 0.009858,
+    "SLV": 0.009555,
+    "URY": 0.0049,
+    "VEN": 0.05518
+   },
+   "components": [
+    {
+     "iso3": "ARG",
+     "population": 47514116,
+     "series_type": "projection",
+     "source_id": "arg_indec_censo2022",
+     "source_tier": "national",
+     "vintage": "Censo 2022",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/ARG/arg_indec_2022/2026-11-01_7dd84165fe90_proyecciones_jurisdicciones_2022_2040_c1.xlsx",
+     "license": "indec"
+    },
+    {
+     "iso3": "BOL",
+     "population": 12254797,
+     "series_type": "projection",
+     "source_id": "bol_ine_rev2025",
+     "source_tier": "national",
+     "vintage": "Rev. 2025",
+     "reference_date": "01-01",
+     "raw_file": "data/raw/BOL/bol_ine_rev2025_anual/2026-11-01_12c6e4091e29_bolivia-PC20107.xlsx",
+     "license": "ine_bol"
+    },
+    {
+     "iso3": "BRA",
+     "population": 220386440,
+     "series_type": "projection",
+     "source_id": "bra_ibge_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/BRA/bra_ibge/2026-11-01_0169644992d1_projecoes_2024_tab4_indicadores.xlsx",
+     "license": "ibge"
+    },
+    {
+     "iso3": "CHL",
+     "population": 20508117,
+     "series_type": "projection",
+     "source_id": "chl_ine_base2024",
+     "source_tier": "national",
+     "vintage": "Base 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/CHL/chl_ine/2026-11-01_81bfc9a8393f_estimaciones-y-proyecciones-1992-2070_base-2024_tabulados.xlsx",
+     "license": "ine_chl"
+    },
+    {
+     "iso3": "COL",
+     "population": 55967762,
+     "series_type": "projection",
+     "source_id": "col_dane_pped2025",
+     "source_tier": "national",
+     "vintage": "PPED 2025",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/COL/col_dane_proj/2026-11-01_957239f522f7_PPED-AreaNac-2018-2070.xlsx",
+     "license": "dane"
+    },
+    {
+     "iso3": "CRI",
+     "population": 5423898.271345161,
+     "series_type": "projection",
+     "source_id": "cri_inec_1950_2100",
+     "source_tier": "national",
+     "vintage": "1950-2100",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/CRI/cri_inec/2026-11-01_6657e66c97f1_costarica-repoblaceppnacio1950-2100..xlsx",
+     "license": "inec_cri"
+    },
+    {
+     "iso3": "CUB",
+     "population": 10125837,
+     "series_type": "projection",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "DOM",
+     "population": 11835070,
+     "series_type": "projection",
+     "source_id": "dom_one_1950_2050",
+     "source_tier": "national",
+     "vintage": "ONE 1950-2050",
+     "reference_date": null,
+     "raw_file": "data/raw/DOM/dom_one/2026-11-01_be23d7467029_Estimaciones_y_Proyecciones_de_la_Poblaci_n_Total_seg_n_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+     "license": "one_dom"
+    },
+    {
+     "iso3": "ECU",
+     "population": 20159630,
+     "series_type": "projection",
+     "source_id": "ecu_inec_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/ECU/ecu_inec/2026-11-01_35dba440e116_Tabulados_Estimacion_Proyeccion_v2.xlsx",
+     "license": "inec_ecu"
+    },
+    {
+     "iso3": "GTM",
+     "population": 21150662,
+     "series_type": "projection",
+     "source_id": "gtm_ine_rev2019",
+     "source_tier": "national",
+     "vintage": "Rev. 2019",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/GTM/gtm_ine/2026-11-01_b8d0502b1994_guatemala-Estimaciones_y_proyecciones_de_poblacion-1950-2050.xlsx",
+     "license": "ine_gtm"
+    },
+    {
+     "iso3": "HND",
+     "population": 12121153,
+     "series_type": "projection",
+     "source_id": "hnd_ine_censo2013",
+     "source_tier": "national",
+     "vintage": "Censo 2013",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/HND/hnd_ine/2026-11-01_53eb3d72c9ce_Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
+     "license": "ine_hnd"
+    },
+    {
+     "iso3": "HTI",
+     "population": 13733852.5,
+     "series_type": "projection",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "MEX",
+     "population": 144476530,
+     "series_type": "projection",
+     "source_id": "mex_conapo_2023",
+     "source_tier": "national",
+     "vintage": "Conciliación 2023",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/MEX/mex_conapo_indicadores/2026-11-01_e0407d1640f3_mx-05_indicadores_demograficos_proyecciones.csv",
+     "license": "conapo"
+    },
+    {
+     "iso3": "NIC",
+     "population": 8189914.5,
+     "series_type": "projection",
+     "source_id": "cepal_celade_rev2024",
+     "source_tier": "regional_fallback",
+     "vintage": "CEPAL Rev. 2024",
+     "reference_date": "mid-year",
+     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
+     "license": "cepal"
+    },
+    {
+     "iso3": "PAN",
+     "population": 5113150,
+     "series_type": "projection",
+     "source_id": "pan_inec_censo2023",
+     "source_tier": "national",
+     "vintage": "Censo 2023",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/PAN/pan_inec/2026-11-01_1c832db124d7_P0705547520260126142400Cuadro_1.xlsx",
+     "license": "inec_pan"
+    },
+    {
+     "iso3": "PER",
+     "population": 38023290,
+     "series_type": "projection",
+     "source_id": "per_inei_be24",
+     "source_tier": "national",
+     "vintage": "Boletín Especial 24",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/PER/per_inei/2026-11-01_50671ed79533_libro_bol_esp_24_4.pdf",
+     "license": "inei"
+    },
+    {
+     "iso3": "PRY",
+     "population": 6928644,
+     "series_type": "projection",
+     "source_id": "pry_ine_rev2024",
+     "source_tier": "national",
+     "vintage": "Rev. 2024",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/PRY/pry_ine/2026-11-01_342c4f661760_Estimaciones_y_Proyecciones_Nacional_por_a_o_1950-2050._Revisi_n_2024.xlsx",
+     "license": "ine_pry"
+    },
+    {
+     "iso3": "SLV",
+     "population": 6715643,
+     "series_type": "projection",
+     "source_id": "slv_onec_rev2021",
+     "source_tier": "national",
+     "vintage": "Rev. 2021",
+     "reference_date": null,
+     "raw_file": "data/raw/SLV/slv_onec/2026-11-01_2c419f432e9d_El_Salvador_Poblacion_Nacional_2005-2050_rev2021.xlsx",
+     "license": "onec"
+    },
+    {
+     "iso3": "URY",
+     "population": 3443671.6936815204,
+     "series_type": "projection",
+     "source_id": "ury_ine_rev2025",
+     "source_tier": "national",
+     "vintage": "Rev. 2025",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/URY/ury_ine_proj/2026-11-01_def36b35c130_B.1.1_Uruguay__100ymas_2024-2070.xlsx",
+     "license": "ine_ury"
+    },
+    {
+     "iso3": "VEN",
+     "population": 38783676,
+     "series_type": "projection",
+     "source_id": "ven_ine_censo2011",
+     "source_tier": "national",
+     "vintage": "Censo 2011",
+     "reference_date": "06-30",
+     "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls",
+     "license": "ine_ven"
+    }
+   ]
+  }
+ ],
+ "periods": [
+  {
+   "from_year": 2010,
+   "to_year": 2015,
+   "rate": 0.01043338,
+   "n_countries": 18,
+   "covers_share": 0.975379,
+   "excluded": [
+    {
+     "iso3": "HND",
+     "from_vintage": "CEPAL Rev. 2024",
+     "to_vintage": "Censo 2013"
+    },
+    {
+     "iso3": "NIC",
+     "from_vintage": "Rev. 2007",
+     "to_vintage": "Rev. 2012"
+    }
+   ],
+   "country_rates": {
+    "ARG": 0.01123573,
+    "BOL": 0.01621908,
+    "BRA": 0.00773994,
+    "CHL": 0.0106285,
+    "COL": 0.0099074,
+    "CRI": 0.01275474,
+    "CUB": -0.00039588,
+    "DOM": 0.01036728,
+    "ECU": 0.01796098,
+    "GTM": 0.01770363,
+    "HND": null,
+    "HTI": 0.01427449,
+    "MEX": 0.01292851,
+    "NIC": null,
+    "PAN": 0.01855985,
+    "PER": 0.00871033,
+    "PRY": 0.0084665,
+    "SLV": 0.00303109,
+    "URY": 0.00442871,
+    "VEN": 0.0142823
+   }
+  },
+  {
+   "from_year": 2015,
+   "to_year": 2020,
+   "rate": 0.01009336,
+   "n_countries": 20,
+   "covers_share": 1.0,
+   "excluded": [],
+   "country_rates": {
+    "ARG": 0.01019881,
+    "BOL": 0.01283981,
+    "BRA": 0.00659343,
+    "CHL": 0.01387496,
+    "COL": 0.01701642,
+    "CRI": 0.00906509,
+    "CUB": -0.00175712,
+    "DOM": 0.00921235,
+    "ECU": 0.01499927,
+    "GTM": 0.01606058,
+    "HND": 0.01642455,
+    "HTI": 0.0133351,
+    "MEX": 0.00936885,
+    "NIC": 0.01041427,
+    "PAN": 0.01725646,
+    "PER": 0.01716457,
+    "PRY": 0.0096363,
+    "SLV": 0.00194583,
+    "URY": 0.00216278,
+    "VEN": 0.01264165
+   }
+  },
+  {
+   "from_year": 2020,
+   "to_year": 2025,
+   "rate": 0.00703449,
+   "n_countries": 19,
+   "covers_share": 0.928856,
+   "excluded": [
+    {
+     "iso3": "ARG",
+     "from_vintage": "Censo 2010",
+     "to_vintage": "Censo 2022"
+    }
+   ],
+   "country_rates": {
+    "ARG": null,
+    "BOL": 0.00519062,
+    "BRA": 0.00403693,
+    "CHL": 0.00819428,
+    "COL": 0.01036583,
+    "CRI": 0.00549979,
+    "CUB": -0.00431669,
+    "DOM": 0.00809431,
+    "ECU": 0.00650158,
+    "GTM": 0.01408847,
+    "HND": 0.01533197,
+    "HTI": 0.01151163,
+    "MEX": 0.00792017,
+    "NIC": 0.01041436,
+    "PAN": 0.01205023,
+    "PER": 0.01035347,
+    "PRY": 0.00682593,
+    "SLV": 0.00142116,
+    "URY": -0.00139256,
+    "VEN": 0.0110436
+   }
+  },
+  {
+   "from_year": 2025,
+   "to_year": 2030,
+   "rate": 0.00536184,
+   "n_countries": 19,
+   "covers_share": 0.989475,
+   "excluded": [
+    {
+     "iso3": "NIC",
+     "from_vintage": "Rev. 2012",
+     "to_vintage": "CEPAL Rev. 2024"
+    }
+   ],
+   "country_rates": {
+    "ARG": 0.00153575,
+    "BOL": 0.00238819,
+    "BRA": 0.00330674,
+    "CHL": 0.00448277,
+    "COL": 0.00544763,
+    "CRI": 0.00425092,
+    "CUB": -0.00436038,
+    "DOM": 0.00680164,
+    "ECU": 0.00774317,
+    "GTM": 0.01210665,
+    "HND": 0.01407653,
+    "HTI": 0.0106277,
+    "MEX": 0.00690212,
+    "NIC": null,
+    "PAN": 0.00907108,
+    "PER": 0.0082574,
+    "PRY": 0.00620741,
+    "SLV": 0.00324868,
+    "URY": -0.00111929,
+    "VEN": 0.00948893
+   }
+  },
+  {
+   "from_year": 2030,
+   "to_year": 2035,
+   "rate": 0.00417373,
+   "n_countries": 20,
+   "covers_share": 1.0,
+   "excluded": [],
+   "country_rates": {
+    "ARG": 0.00159649,
+    "BOL": 0.00140523,
+    "BRA": 0.00219719,
+    "CHL": 0.00149556,
+    "COL": 0.00349099,
+    "CRI": 0.00269814,
+    "CUB": -0.00508013,
+    "DOM": 0.00559107,
+    "ECU": 0.00733035,
+    "GTM": 0.01041935,
+    "HND": 0.01263148,
+    "HTI": 0.0095762,
+    "MEX": 0.00519467,
+    "NIC": 0.01040009,
+    "PAN": 0.00688504,
+    "PER": 0.0067673,
+    "PRY": 0.00507388,
+    "SLV": 0.00380609,
+    "URY": -0.00043409,
+    "VEN": 0.00792353
+   }
+  },
+  {
+   "from_year": 2035,
+   "to_year": 2040,
+   "rate": 0.00299541,
+   "n_countries": 20,
+   "covers_share": 1.0,
+   "excluded": [],
+   "country_rates": {
+    "ARG": 0.00167271,
+    "BOL": 0.00132782,
+    "BRA": 0.00092749,
+    "CHL": -0.00131499,
+    "COL": 0.00176481,
+    "CRI": 0.0018112,
+    "CUB": -0.0059353,
+    "DOM": 0.0045161,
+    "ECU": 0.00651778,
+    "GTM": 0.00901609,
+    "HND": 0.01120936,
+    "HTI": 0.00849629,
+    "MEX": 0.00394998,
+    "NIC": 0.00885603,
+    "PAN": 0.00534557,
+    "PER": 0.00536428,
+    "PRY": 0.00409942,
+    "SLV": 0.00365533,
+    "URY": -0.0008849,
+    "VEN": 0.00640504
+   }
+  }
+ ],
+ "index": {
+  "2010": [
+   {
+    "year": 2010,
+    "index": 100.0,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   },
+   {
+    "year": 2015,
+    "index": 105.3267,
+    "n_countries": 18,
+    "covers_share": 0.975379,
+    "excluded": [
+     "HND",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2020,
+    "index": 110.6978,
+    "n_countries": 18,
+    "covers_share": 0.975379,
+    "excluded": [
+     "HND",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2025,
+    "index": 114.5021,
+    "n_countries": 17,
+    "covers_share": 0.904566,
+    "excluded": [
+     "ARG",
+     "HND",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2030,
+    "index": 117.6904,
+    "n_countries": 17,
+    "covers_share": 0.904566,
+    "excluded": [
+     "ARG",
+     "HND",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2035,
+    "index": 120.1478,
+    "n_countries": 17,
+    "covers_share": 0.904566,
+    "excluded": [
+     "ARG",
+     "HND",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2040,
+    "index": 121.8803,
+    "n_countries": 17,
+    "covers_share": 0.904566,
+    "excluded": [
+     "ARG",
+     "HND",
+     "NIC"
+    ]
+   }
+  ],
+  "2015": [
+   {
+    "year": 2010,
+    "index": 94.9427,
+    "n_countries": 18,
+    "covers_share": 0.975536,
+    "excluded": [
+     "HND",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2015,
+    "index": 100.0,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   },
+   {
+    "year": 2020,
+    "index": 105.1496,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   },
+   {
+    "year": 2025,
+    "index": 108.896,
+    "n_countries": 19,
+    "covers_share": 0.928893,
+    "excluded": [
+     "ARG"
+    ]
+   },
+   {
+    "year": 2030,
+    "index": 111.985,
+    "n_countries": 18,
+    "covers_share": 0.918569,
+    "excluded": [
+     "ARG",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2035,
+    "index": 114.4082,
+    "n_countries": 18,
+    "covers_share": 0.918569,
+    "excluded": [
+     "ARG",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2040,
+    "index": 116.1462,
+    "n_countries": 18,
+    "covers_share": 0.918569,
+    "excluded": [
+     "ARG",
+     "NIC"
+    ]
+   }
+  ],
+  "2020": [
+   {
+    "year": 2010,
+    "index": 90.3361,
+    "n_countries": 18,
+    "covers_share": 0.975071,
+    "excluded": [
+     "HND",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2015,
+    "index": 95.1026,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   },
+   {
+    "year": 2020,
+    "index": 100.0,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   },
+   {
+    "year": 2025,
+    "index": 103.5671,
+    "n_countries": 19,
+    "covers_share": 0.928856,
+    "excluded": [
+     "ARG"
+    ]
+   },
+   {
+    "year": 2030,
+    "index": 106.5069,
+    "n_countries": 18,
+    "covers_share": 0.918515,
+    "excluded": [
+     "ARG",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2035,
+    "index": 108.8115,
+    "n_countries": 18,
+    "covers_share": 0.918515,
+    "excluded": [
+     "ARG",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2040,
+    "index": 110.4645,
+    "n_countries": 18,
+    "covers_share": 0.918515,
+    "excluded": [
+     "ARG",
+     "NIC"
+    ]
+   }
+  ],
+  "2025": [
+   {
+    "year": 2010,
+    "index": 87.3346,
+    "n_countries": 17,
+    "covers_share": 0.903974,
+    "excluded": [
+     "ARG",
+     "HND",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2015,
+    "index": 91.8307,
+    "n_countries": 19,
+    "covers_share": 0.929712,
+    "excluded": [
+     "ARG"
+    ]
+   },
+   {
+    "year": 2020,
+    "index": 96.5558,
+    "n_countries": 19,
+    "covers_share": 0.929712,
+    "excluded": [
+     "ARG"
+    ]
+   },
+   {
+    "year": 2025,
+    "index": 100.0,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   },
+   {
+    "year": 2030,
+    "index": 102.7098,
+    "n_countries": 19,
+    "covers_share": 0.989475,
+    "excluded": [
+     "NIC"
+    ]
+   },
+   {
+    "year": 2035,
+    "index": 104.8347,
+    "n_countries": 19,
+    "covers_share": 0.989475,
+    "excluded": [
+     "NIC"
+    ]
+   },
+   {
+    "year": 2040,
+    "index": 106.3782,
+    "n_countries": 19,
+    "covers_share": 0.989475,
+    "excluded": [
+     "NIC"
+    ]
+   }
+  ],
+  "2030": [
+   {
+    "year": 2010,
+    "index": 84.9687,
+    "n_countries": 17,
+    "covers_share": 0.904221,
+    "excluded": [
+     "ARG",
+     "HND",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2015,
+    "index": 89.2976,
+    "n_countries": 18,
+    "covers_share": 0.920098,
+    "excluded": [
+     "ARG",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2020,
+    "index": 93.8906,
+    "n_countries": 18,
+    "covers_share": 0.920098,
+    "excluded": [
+     "ARG",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2025,
+    "index": 97.3617,
+    "n_countries": 19,
+    "covers_share": 0.989027,
+    "excluded": [
+     "NIC"
+    ]
+   },
+   {
+    "year": 2030,
+    "index": 100.0,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   },
+   {
+    "year": 2035,
+    "index": 102.1044,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   },
+   {
+    "year": 2040,
+    "index": 103.6428,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   }
+  ],
+  "2035": [
+   {
+    "year": 2010,
+    "index": 83.2308,
+    "n_countries": 17,
+    "covers_share": 0.904077,
+    "excluded": [
+     "ARG",
+     "HND",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2015,
+    "index": 87.4063,
+    "n_countries": 18,
+    "covers_share": 0.920633,
+    "excluded": [
+     "ARG",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2020,
+    "index": 91.9021,
+    "n_countries": 18,
+    "covers_share": 0.920633,
+    "excluded": [
+     "ARG",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2025,
+    "index": 95.3883,
+    "n_countries": 19,
+    "covers_share": 0.988682,
+    "excluded": [
+     "NIC"
+    ]
+   },
+   {
+    "year": 2030,
+    "index": 97.939,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   },
+   {
+    "year": 2035,
+    "index": 100.0,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   },
+   {
+    "year": 2040,
+    "index": 101.5067,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   }
+  ],
+  "2040": [
+   {
+    "year": 2010,
+    "index": 82.0477,
+    "n_countries": 17,
+    "covers_share": 0.903501,
+    "excluded": [
+     "ARG",
+     "HND",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2015,
+    "index": 86.0984,
+    "n_countries": 18,
+    "covers_share": 0.920746,
+    "excluded": [
+     "ARG",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2020,
+    "index": 90.5268,
+    "n_countries": 18,
+    "covers_share": 0.920746,
+    "excluded": [
+     "ARG",
+     "NIC"
+    ]
+   },
+   {
+    "year": 2025,
+    "index": 94.0042,
+    "n_countries": 19,
+    "covers_share": 0.988348,
+    "excluded": [
+     "NIC"
+    ]
+   },
+   {
+    "year": 2030,
+    "index": 96.4853,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   },
+   {
+    "year": 2035,
+    "index": 98.5157,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   },
+   {
+    "year": 2040,
+    "index": 100.0,
+    "n_countries": 20,
+    "covers_share": 1.0,
+    "excluded": []
+   }
+  ]
+ },
+ "pyramid": {
+  "age_groups": [
+   "0-4",
+   "5-9",
+   "10-14",
+   "15-19",
+   "20-24",
+   "25-29",
+   "30-34",
+   "35-39",
+   "40-44",
+   "45-49",
+   "50-54",
+   "55-59",
+   "60-64",
+   "65-69",
+   "70-74",
+   "75-79",
+   "80+"
+  ],
+  "years": {
+   "2025": {
+    "m": [
+     23175400,
+     25359225,
+     26262487,
+     26343648,
+     26245147,
+     26251509,
+     25578636,
+     24205980,
+     22450789,
+     20248897,
+     17977822,
+     16025860,
+     13818325,
+     10801314,
+     7950938,
+     5417479,
+     5770098
+    ],
+    "f": [
+     22163585,
+     24251547,
+     25137007,
+     25337184,
+     25659946,
+     26289213,
+     25908246,
+     24876489,
+     23734832,
+     21825296,
+     19607679,
+     17709838,
+     15623855,
+     12645941,
+     9700794,
+     6936611,
+     8669904
+    ],
+    "n_countries": 20,
+    "n_projection": 19,
+    "regional_fallback": [
+     "CUB",
+     "HTI"
+    ]
+   },
+   "2030": {
+    "m": [
+     21579545,
+     23093098,
+     25303455,
+     26102205,
+     25942067,
+     25737108,
+     25774696,
+     25158862,
+     23810007,
+     22001623,
+     19726192,
+     17314620,
+     15149004,
+     12690676,
+     9500455,
+     6542729,
+     7151838
+    ],
+    "f": [
+     20638833,
+     22092624,
+     24204199,
+     25032714,
+     25114279,
+     25398980,
+     26054297,
+     25688144,
+     24656851,
+     23463165,
+     21491330,
+     19173780,
+     17114901,
+     14803336,
+     11612602,
+     8459510,
+     10574587
+    ],
+    "n_countries": 20,
+    "n_projection": 20,
+    "regional_fallback": [
+     "CUB",
+     "HTI",
+     "NIC"
+    ]
+   }
+  },
+  "missing_by_year": {
+   "1950": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1951": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1952": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1953": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1954": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1955": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1956": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1957": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1958": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1959": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1960": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1961": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1962": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1963": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1964": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1965": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1966": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1967": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1968": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1969": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "MEX",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1970": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1971": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1972": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1973": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1974": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1975": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1976": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1977": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1978": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1979": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1980": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1981": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1982": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1983": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1984": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1985": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1986": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1987": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1988": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1989": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1990": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1991": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1992": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1993": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1994": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "DOM",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1995": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "NIC",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "1996": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "DOM",
+    "NIC",
+    "SLV",
+    "VEN"
+   ],
+   "1997": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "DOM",
+    "NIC",
+    "SLV",
+    "VEN"
+   ],
+   "1998": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "DOM",
+    "NIC",
+    "SLV",
+    "VEN"
+   ],
+   "1999": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "DOM",
+    "NIC",
+    "SLV",
+    "VEN"
+   ],
+   "2000": [
+    "ARG",
+    "BOL",
+    "NIC",
+    "SLV"
+   ],
+   "2001": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "VEN"
+   ],
+   "2002": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "VEN"
+   ],
+   "2003": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "VEN"
+   ],
+   "2004": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "SLV",
+    "VEN"
+   ],
+   "2005": [
+    "ARG",
+    "BOL",
+    "NIC"
+   ],
+   "2006": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "VEN"
+   ],
+   "2007": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "VEN"
+   ],
+   "2008": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "VEN"
+   ],
+   "2009": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "VEN"
+   ],
+   "2010": [
+    "ARG",
+    "BOL",
+    "NIC"
+   ],
+   "2011": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "VEN"
+   ],
+   "2012": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "VEN"
+   ],
+   "2013": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "VEN"
+   ],
+   "2014": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "VEN"
+   ],
+   "2015": [
+    "ARG",
+    "BOL",
+    "NIC"
+   ],
+   "2016": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "VEN"
+   ],
+   "2017": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "VEN"
+   ],
+   "2018": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "VEN"
+   ],
+   "2019": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "VEN"
+   ],
+   "2020": [
+    "ARG",
+    "BOL",
+    "NIC"
+   ],
+   "2021": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "NIC",
+    "VEN"
+   ],
+   "2022": [
+    "BOL",
+    "DOM",
+    "NIC",
+    "VEN"
+   ],
+   "2023": [
+    "BOL",
+    "DOM",
+    "VEN"
+   ],
+   "2024": [
+    "DOM",
+    "VEN"
+   ],
+   "2026": [
+    "DOM",
+    "VEN"
+   ],
+   "2027": [
+    "DOM",
+    "VEN"
+   ],
+   "2028": [
+    "DOM",
+    "VEN"
+   ],
+   "2029": [
+    "DOM",
+    "VEN"
+   ],
+   "2031": [
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2032": [
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2033": [
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2034": [
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2035": [
+    "BOL"
+   ],
+   "2036": [
+    "BOL",
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2037": [
+    "BOL",
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2038": [
+    "BOL",
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2039": [
+    "BOL",
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2040": [
+    "BOL"
+   ],
+   "2041": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2042": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2043": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2044": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2045": [
+    "ARG",
+    "BOL"
+   ],
+   "2046": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2047": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2048": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2049": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "HND",
+    "VEN"
+   ],
+   "2050": [
+    "ARG",
+    "BOL"
+   ],
+   "2051": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2052": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2053": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2054": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2055": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2056": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2057": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2058": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2059": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2060": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2061": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2062": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2063": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2064": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2065": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2066": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2067": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2068": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2069": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2070": [
+    "ARG",
+    "BOL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "VEN"
+   ],
+   "2071": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2072": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2073": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2074": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2075": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2076": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2077": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2078": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2079": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2080": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2081": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2082": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2083": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2084": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2085": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2086": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2087": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2088": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2089": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2090": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2091": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2092": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2093": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2094": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2095": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2096": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2097": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2098": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2099": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ],
+   "2100": [
+    "ARG",
+    "BOL",
+    "BRA",
+    "CHL",
+    "COL",
+    "DOM",
+    "ECU",
+    "GTM",
+    "HND",
+    "MEX",
+    "PAN",
+    "PER",
+    "PRY",
+    "SLV",
+    "URY",
+    "VEN"
+   ]
+  }
+ }
+}

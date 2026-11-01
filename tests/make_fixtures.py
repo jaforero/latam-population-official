@@ -42,6 +42,7 @@ trim_xlsx(latest("ECU", "ecu_inec"), OUT / "ecu.xlsx", "1.1",
           lambda i, r: i < 16 or (len(r) > 1 and isinstance(r[1], str) and r[1].strip() == "Total Nacional"))
 trim_xlsx(latest("PRY", "pry_ine"), OUT / "pry.xlsx", "Poblac a mitad de año 1950-2050", lambda i, r: i < 10)
 trim_xlsx(latest("CRI", "cri_inec"), OUT / "cri.xlsx", "C1. Población total", lambda i, r: True)
+trim_xlsx(latest("GTM", "gtm_ine"), OUT / "gtm.xlsx", "Población total", lambda i, r: i < 12)
 trim_xlsx(latest("CHL", "chl_ine"), OUT / "chl.xlsx", "Población al 30 de junio", lambda i, r: i < 14)
 trim_xlsx(latest("_regional", "cepal_rev2024"), OUT / "cepal.xlsx", "CAD01", lambda i, r: True)
 

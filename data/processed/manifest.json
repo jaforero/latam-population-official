@@ -1,6 +1,6 @@
 {
  "schema_version": "1.1",
- "generated_at": "2026-11-01T15:42:54+00:00",
+ "generated_at": "2026-11-01T15:49:29+00:00",
  "countries": {
   "ARG": {
    "historical": {
@@ -144,7 +144,26 @@
     "retrieved_at": "2026-11-01"
    }
   },
-  "GTM": {},
+  "GTM": {
+   "historical": {
+    "source_id": "gtm_ine_rev2019",
+    "vintage": "Rev. 2019",
+    "source_tier": "national",
+    "institution": "INE Guatemala",
+    "url": "https://www.ine.gob.gt/proyecciones/",
+    "raw_sha256": "b8d0502b199467eac3a18c06f0f563b4e1550277eee8e8b4c492f463f2c0fa9d",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "gtm_ine_rev2019",
+    "vintage": "Rev. 2019",
+    "source_tier": "national",
+    "institution": "INE Guatemala",
+    "url": "https://www.ine.gob.gt/proyecciones/",
+    "raw_sha256": "b8d0502b199467eac3a18c06f0f563b4e1550277eee8e8b4c492f463f2c0fa9d",
+    "retrieved_at": "2026-11-01"
+   }
+  },
   "HND": {
    "historical": {
     "source_id": "cepal_celade_rev2024",

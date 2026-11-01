@@ -632,38 +632,84 @@ sources:
   GTM:
     historical:
       source_tier: national
-      status: pendiente
+      status: manual
       institution: INE Guatemala
       url: https://www.ine.gob.gt/proyecciones/
-      access_method: desconocido
+      access_method: XLSX (manual)
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
-      pending_reason: La página abrió una vez en navegador y mostró 'Proyecciones Nacionales 1950-2050' con botón
-        Descargar; al volver apareció un captcha de Radware, también ante scripts. No se elude ni se obtuvo el archivo.
-        Requiere descarga manual.
       flags:
-      - 'Existe serie nacional: CEPAL no se usa.'
-      source_id: null
-      public_reason:
-        es: ine.gob.gt exige captcha; requiere descarga manual.
-        en: ine.gob.gt requires a captcha; manual download required.
+      - 'Archivo aportado a mano el 2026-11-01. ine.gob.gt exige captcha: método manual.'
+      - Total = suma de edades simples = hoja de indicadores, en los 101 años.
+      - Corte 2018/2019 inferido; confirmar en el documento metodológico del INE.
+      source_id: gtm_ine_rev2019
+      adapter: gtm_ine
+      raw_key: gtm_ine
+      year_from: 1950
+      year_to: 2018
+      years_covered: 1950-2018
+      vintage_label: Rev. 2019
+      vintage:
+        base_year: 2018
+        reference_census: Censo 2018 (el archivo no lo cita)
+        published: 2019; archivo modificado el 2020-07-09
+        revision: Revisión 2019
+      scenario: El cuadro no presenta variantes
+      scenario_code: single
+      reference_date: 30 de junio
+      reference_code: 06-30
+      update_frequency: Sin calendario fijo
+      location_in_file: Hoja 'Población total', bloque Ambos sexos, fila Total
+      control:
+        year: 2018
+        value: 16346950
+        unit: personas
+        location: Hoja 'Población total', bloque Ambos sexos, fila Total, 2018
+      public_note:
+        es: 'INE Guatemala, con apoyo de CELADE. El cuadro no marca dónde termina la estimación: el corte entre
+          2018 y 2019 se infiere del censo 2018.'
+        en: 'INE Guatemala, with CELADE support. The table does not mark where the estimate ends: the 2018/2019
+          cut is inferred from the 2018 census.'
     projection:
       source_tier: national
-      status: pendiente
+      status: manual
       institution: INE Guatemala
       url: https://www.ine.gob.gt/proyecciones/
-      access_method: desconocido
+      access_method: XLSX (manual)
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
-      pending_reason: La página abrió una vez en navegador y mostró 'Proyecciones Nacionales 1950-2050' con botón
-        Descargar; al volver apareció un captcha de Radware, también ante scripts. No se elude ni se obtuvo el archivo.
-        Requiere descarga manual.
       flags:
-      - 'Existe serie nacional: CEPAL no se usa.'
-      source_id: null
-      public_reason:
-        es: ine.gob.gt exige captcha; requiere descarga manual.
-        en: ine.gob.gt requires a captcha; manual download required.
+      - 'Archivo aportado a mano el 2026-11-01. ine.gob.gt exige captcha: método manual.'
+      - Total = suma de edades simples = hoja de indicadores, en los 101 años.
+      - Corte 2018/2019 inferido; confirmar en el documento metodológico del INE.
+      source_id: gtm_ine_rev2019
+      adapter: gtm_ine
+      raw_key: gtm_ine
+      year_from: 2019
+      year_to: 2050
+      years_covered: 2019-2050
+      vintage_label: Rev. 2019
+      vintage:
+        base_year: 2018
+        reference_census: Censo 2018 (el archivo no lo cita)
+        published: 2019; archivo modificado el 2020-07-09
+        revision: Revisión 2019
+      scenario: El cuadro no presenta variantes
+      scenario_code: single
+      reference_date: 30 de junio
+      reference_code: 06-30
+      update_frequency: Sin calendario fijo
+      location_in_file: Hoja 'Población total', bloque Ambos sexos, fila Total
+      control:
+        year: 2025
+        value: 18079810
+        unit: personas
+        location: Hoja 'Población total', bloque Ambos sexos, fila Total, 2025
+      public_note:
+        es: 'INE Guatemala, con apoyo de CELADE. El cuadro no marca dónde termina la estimación: el corte entre
+          2018 y 2019 se infiere del censo 2018.'
+        en: 'INE Guatemala, with CELADE support. The table does not mark where the estimate ends: the 2018/2019
+          cut is inferred from the 2018 census.'
   HND:
     historical:
       source_tier: regional_fallback

@@ -65,8 +65,14 @@ def test_bolivia_never_fills_2023_or_uses_old_projection():
     assert {r["vintage"] for r in d["records"] if r["year"] >= 2024} == {"Rev. 2025"}
 
 
+def test_guatemala_uses_national_series():
+    d = json.loads((P / "GTM.json").read_text(encoding="utf8"))
+    assert [r["year"] for r in d["records"]] == list(range(1950, 2051))
+    assert {r["source_tier"] for r in d["records"]} == {"national"} and d["breaks"] == []
+
+
 def test_pending_countries_show_no_figures():
-    for iso in ("CUB", "DOM", "GTM"):
+    for iso in ("CUB", "DOM"):
         assert json.loads((P / f"{iso}.json").read_text(encoding="utf8"))["records"] == []
 
 

@@ -5,7 +5,7 @@
  "name_en": "Honduras",
  "status": {
   "historical": "ok",
-  "projection": "stale"
+  "projection": "ok"
  },
  "reasons": {},
  "segments": [

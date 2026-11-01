@@ -109,6 +109,12 @@ class EcuInec(Adapter):
         raise ParseError("Sin fila Total Nacional")
 
 
+@register("gtm_ine")
+class GtmIne(Adapter):
+    def parse(self, raw):
+        return wide_row(xlsx_rows(raw, "Población total"), "Total", 1950)
+
+
 @register("hnd_ine")
 class HndIne(Adapter):
     """Tomo 9: una página por año hasta 2030; los quinquenios 2030-2050 se ubican con el índice del propio tomo."""

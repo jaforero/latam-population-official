@@ -70,5 +70,11 @@
   "iso3": "BOL",
   "code": "source_added",
   "message": "Se agrega Revisión 2014 solo para 2000-2011; sus años posteriores no se usan"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "GTM",
+  "code": "source_added",
+  "message": "pendiente → INE Guatemala, Revisión 2019 (1950-2050), archivo aportado a mano"
  }
 ]

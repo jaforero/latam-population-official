@@ -20,7 +20,7 @@ concurrency:
 jobs:
   publicar:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90 # si jsDelivr limita la purga del puntero, se espera a que la libere
     steps:
       # Sin data/raw/: la publicación solo necesita los objetos de lo que se publica.
       - uses: actions/checkout@v4
@@ -36,7 +36,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Publicar rama liviana, purgar y comprobar
+      - name: Publicar rama liviana, purgar el puntero y comprobar
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

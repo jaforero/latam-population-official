@@ -25,7 +25,7 @@ data/processed/           salidas de contrato
 tests/fixtures/           crudos reales o recortados, para probar sin red
 ```
 
-## Contrato de datos · `schema_version` 1.3
+## Contrato de datos · `schema_version` 1.4
 Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es un cambio de versión:** campo eliminado, renombrado o con otro significado sube la versión mayor. Los campos nuevos opcionales suben la menor.
 
 | Ruta | Contenido |
@@ -34,6 +34,7 @@ Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es
 | `data/processed/pyramids/<iso3>.json` | Pirámide por año: hombres y mujeres en 17 grupos comunes, con su fuente. Existe para los 20, aun sin datos. |
 | `data/processed/latam.csv` | Todos los registros, en formato largo. |
 | `data/processed/manifest.json` | Fuentes, niveles, vintages y fechas vigentes por país y serie. |
+| `data/processed/licenses.json` | Revisión de términos por institución: estado, texto leído, cita exigida y condiciones. |
 | `data/status.json` | Estado, última actualización, nivel de fuente y error por país y serie. |
 | `data/alerts.json` · `data/source_changes.json` | Alertas de la corrida y bitácora de cambios de fuente o vintage. |
 
@@ -53,7 +54,7 @@ Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es
 | `growth` | número o null | `(P_t / P_{t-1}) − 1`, solo dentro de la misma fuente y vintage |
 | `raw_file` | ruta | Archivo de `data/raw/` del que sale la cifra |
 
-**Cambios:** la 1.1 admite `reference_date: census` (hoy sin uso). La 1.2 agrega las pirámides y `pyramid` en `status.json`. La 1.3 agrega `parts` y `part`, porque una pirámide puede combinar dos fuentes. Todas son compatibles con la 1.0.
+**Cambios:** la 1.1 admite `reference_date: census` (hoy sin uso). La 1.2 agrega las pirámides y `pyramid` en `status.json`. La 1.3 agrega `parts` y `part`, porque una pirámide puede combinar dos fuentes. La 1.4 agrega `licenses.json` y el campo `license` en segmentos, `status.json`, `parts` y `latam.csv`. Todas son compatibles con la 1.0.
 
 **Pirámides:** `age_groups` lista 0-4 … 75-79 y 80+. `years["2025"]` trae `m` y `f` (17 valores) más `series_type`, `source_id`, `vintage`, `source_tier` y `reference_date`, los mismos del registro de ese año, y `part`, el índice de `parts`. Cada elemento de `parts` da `institution`, `source_url`, `source_tier`, `location_in_file` y `raw_files` (ruta, hash, fecha). Además `status`, `reason`, `note` y `raw_files` con todos los crudos. Cada año usa la parte del mismo nivel de fuente que la serie de ese año. Solo se suman grupos publicados; no se desagrega ni se interpola. Un año se publica únicamente si hombres + mujeres cuadra con el total oficial de ese año (tolerancia de 0,05 %); si no, se excluye y genera una alerta.
 
@@ -122,13 +123,27 @@ Los síntomas son un issue de falla, `status: error` o una alerta `control_misma
 5. **Decide sobre las alertas:** una variación de ±4 % puede ser real. No se corrige; se documenta en el issue.
 
 ## Límites conocidos
-- **Licencias:** salvo Rep. Dominicana (ODbL, según datos.gob.do), los términos de uso de cada fuente siguen sin verificar y constan como tales en `sources.yaml`.
+- **Licencias:** CEPAL/CELADE restringe la redistribución, según un texto leído solo por extracto de buscador, y seis instituciones no tienen licencia localizada. Ver [Términos de uso de las fuentes](#términos-de-uso-de-las-fuentes).
 - **Vintages:** Perú, Honduras y El Salvador tienen una edición nueva esperada o citada; Venezuela usa una proyección de 2013. Rep. Dominicana usa una serie anterior a la edición con censo 2022 que la ONE anunció en junio de 2026.
 - **Cuba:** usa CEPAL porque ONEI no es verificable (certificado vencido). La vigilancia avisa si el portal vuelve a responder.
 - **Peso:** `data/raw/` ocupa unos 205 MB y conserva cada versión de los archivos.
 - **Red:** algunos sitios pueden bloquear los ejecutores de GitHub Actions aunque respondan desde otra conexión; en ese caso la serie pasa a `stale`.
 
+## Términos de uso de las fuentes
+Revisados el 2026-11-01. Es una lectura de textos publicados, no un dictamen jurídico. El registro está en `sources.yaml` (`licenses`) y se publica en `data/processed/licenses.json` con la cita exigida y el enlace a cada texto.
+
+| Resultado | Instituciones | Qué implica |
+|---|---|---|
+| Licencia abierta leída | INDEC, INE Chile, INEC Costa Rica, ONE (Rep. Dominicana), INEC Ecuador, CONAPO, INEC Panamá, INE Paraguay | Permiten redistribuir con atribución. Argentina, Chile y Costa Rica (CC BY-SA 4.0) y Rep. Dominicana (ODbL) piden compartir lo derivado bajo la misma licencia. |
+| Condiciones propias leídas | INE Bolivia, DANE, INEI, INE Uruguay | Bolivia y Perú permiten reproducir citando; Bolivia limita el uso comercial. DANE autoriza transformar y analizar con cita textual, sin mencionar la redistribución de archivos. INE Uruguay considera pública la información, sin regular su reutilización. |
+| Sin licencia localizada | IBGE, INE Guatemala, INE Honduras, INIDE, ONEC/BCR, INE Venezuela | No hay permiso expreso para republicar los archivos. No equivale a una prohibición. |
+| Restringe | CEPAL/CELADE | El acuerdo de uso que enlaza CEPALSTAT limita la descarga a uso personal y no comercial, sin redistribuir ni crear otros trabajos. Afecta a Cuba, Haití, la historia de Honduras y la proyección de Nicaragua, con sus pirámides. Se leyó solo por extracto de buscador porque cepal.org bloquea la lectura automática; falta confirmarlo y pedir permiso. |
+
+**Copias crudas:** de los 42 archivos de `data/raw/`, 17 no tienen permiso expreso de redistribución: 8 de CEPAL/CELADE y 9 de instituciones sin licencia localizada. Siguen aquí por trazabilidad mientras se resuelve.
+
+**Cambios respecto a los originales:** se extrae la población total, los miles de CEPAL pasan a personas, las edades se suman en 17 grupos comunes y aquí se calculan el crecimiento y el año máximo. Ninguna cifra se corrige.
+
 ## Licencia
-El código puede reutilizarse con atribución. Los datos pertenecen a las instituciones citadas y se conservan aquí para trazabilidad.
+El código puede reutilizarse con atribución. Este repositorio no otorga una licencia nueva sobre los datos: cada cifra conserva las condiciones de su fuente, registradas en el campo `license`. Lo derivado de fuentes CC BY-SA 4.0 u ODbL se comparte bajo esa misma licencia.
 
 Javier Forero · [javierforero.co](https://javierforero.co)

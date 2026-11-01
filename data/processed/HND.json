@@ -1,11 +1,11 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "HND",
  "name_es": "Honduras",
  "name_en": "Honduras",
  "status": {
   "historical": "ok",
-  "projection": "stale"
+  "projection": "ok"
  },
  "reasons": {},
  "segments": [
@@ -14,6 +14,7 @@
    "series": "historical",
    "source_tier": "regional_fallback",
    "institution": "CEPAL/CELADE",
+   "license": "cepal",
    "source_url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
    "vintage": "CEPAL Rev. 2024",
    "reference_census": null,
@@ -39,6 +40,7 @@
    "series": "projection",
    "source_tier": "national",
    "institution": "INE Honduras",
+   "license": "ine_hnd",
    "source_url": "https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
    "vintage": "Censo 2013",
    "reference_census": "Censo 2013",

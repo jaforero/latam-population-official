@@ -1,10 +1,11 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "BOL",
  "name_es": "Bolivia",
  "name_en": "Bolivia",
  "status": "manual",
  "institution": "INE Bolivia",
+ "license": "ine_bol",
  "source_url": "https://nimbus.ine.gob.bo/index.php/s/g3QPXLGSLmXPEsF/download",
  "reason": null,
  "note": {
@@ -33,6 +34,7 @@
  "parts": [
   {
    "institution": "INE Bolivia",
+   "license": "ine_bol",
    "source_url": "https://nimbus.ine.gob.bo/index.php/s/g3QPXLGSLmXPEsF/download",
    "source_tier": "national",
    "location_in_file": "Cuadro N.° 1 por sexo y edad, 2024-2034",

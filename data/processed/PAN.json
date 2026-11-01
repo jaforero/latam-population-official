@@ -1,5 +1,5 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "PAN",
  "name_es": "Panamá",
  "name_en": "Panama",
@@ -14,6 +14,7 @@
    "series": "historical",
    "source_tier": "national",
    "institution": "INEC Panamá",
+   "license": "inec_pan",
    "source_url": "https://www.inec.gob.pa/archivos/P0705547520260126142400Cuadro 1.xlsx",
    "vintage": "Censo 2023",
    "reference_census": "Censo 2023",
@@ -36,6 +37,7 @@
    "series": "projection",
    "source_tier": "national",
    "institution": "INEC Panamá",
+   "license": "inec_pan",
    "source_url": "https://www.inec.gob.pa/archivos/P0705547520260126142400Cuadro 1.xlsx",
    "vintage": "Censo 2023",
    "reference_census": "Censo 2023",

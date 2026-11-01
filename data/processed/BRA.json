@@ -1,5 +1,5 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "BRA",
  "name_es": "Brasil",
  "name_en": "Brazil",
@@ -14,6 +14,7 @@
    "series": "historical",
    "source_tier": "national",
    "institution": "IBGE",
+   "license": "ibge",
    "source_url": "https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab4_indicadores.xlsx",
    "vintage": "Rev. 2024",
    "reference_census": "Censo 2022",
@@ -36,6 +37,7 @@
    "series": "projection",
    "source_tier": "national",
    "institution": "IBGE",
+   "license": "ibge",
    "source_url": "https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab4_indicadores.xlsx",
    "vintage": "Rev. 2024",
    "reference_census": "Censo 2022",

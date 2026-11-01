@@ -1,5 +1,5 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "COL",
  "name_es": "Colombia",
  "name_en": "Colombia",
@@ -14,6 +14,7 @@
    "series": "historical",
    "source_tier": "national",
    "institution": "DANE",
+   "license": "dane",
    "source_url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Nacional/PPED-AreaNac-1950-2017.xlsx",
    "vintage": "PPED 2025",
    "reference_census": "CNPV 2018",
@@ -36,6 +37,7 @@
    "series": "projection",
    "source_tier": "national",
    "institution": "DANE",
+   "license": "dane",
    "source_url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Nacional/PPED-AreaNac-2018-2070.xlsx",
    "vintage": "PPED 2025",
    "reference_census": "CNPV 2018",

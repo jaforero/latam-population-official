@@ -1,5 +1,5 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "VEN",
  "name_es": "Venezuela",
  "name_en": "Venezuela",
@@ -14,6 +14,7 @@
    "series": "historical",
    "source_tier": "national",
    "institution": "INE Venezuela",
+   "license": "ine_ven",
    "source_url": "https://ine.gob.ve/wp-content/uploads/2026/03/1950-2050-REP.-BOL.-VENEZUELA-PROYECCION-POBLACION.pdf",
    "vintage": "Censo 2001",
    "reference_census": "Censo 2001",
@@ -39,6 +40,7 @@
    "series": "projection",
    "source_tier": "national",
    "institution": "INE Venezuela",
+   "license": "ine_ven",
    "source_url": "https://ine.gob.ve/wp-content/uploads/2026/04/Nacional.xls",
    "vintage": "Censo 2011",
    "reference_census": "Censo 2011",

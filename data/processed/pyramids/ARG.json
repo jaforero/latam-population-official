@@ -1,10 +1,11 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "ARG",
  "name_es": "Argentina",
  "name_en": "Argentina",
  "status": "ok",
  "institution": "INDEC",
+ "license": "indec",
  "source_url": "https://www.indec.gob.ar/ftp/cuadros/poblacion/proyecciones_jurisdicciones_2022_2040_base.csv",
  "reason": null,
  "note": null,
@@ -30,6 +31,7 @@
  "parts": [
   {
    "institution": "INDEC",
+   "license": "indec",
    "source_url": "https://www.indec.gob.ar/ftp/cuadros/poblacion/proyecciones_jurisdicciones_2022_2040_base.csv",
    "source_tier": "national",
    "location_in_file": "Suma de jurisdicciones por Sexo (1 = Mujer, 2 = Varón) y Edad(q)",

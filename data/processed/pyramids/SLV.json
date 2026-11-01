@@ -1,10 +1,11 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "SLV",
  "name_es": "El Salvador",
  "name_en": "El Salvador",
  "status": "ok",
  "institution": "ONEC / BCR (antes DIGESTYC)",
+ "license": "onec",
  "source_url": "https://www.bcr.gob.sv/documental/Inicio/descarga/El_Salvador_Estimaciones_y_Proyecciones_de_Poblacion_Nacional_2005-2050(rev2021).xlsx",
  "reason": null,
  "note": null,
@@ -30,6 +31,7 @@
  "parts": [
   {
    "institution": "ONEC / BCR (antes DIGESTYC)",
+   "license": "onec",
    "source_url": "https://www.bcr.gob.sv/documental/Inicio/descarga/El_Salvador_Estimaciones_y_Proyecciones_de_Poblacion_Nacional_2005-2050(rev2021).xlsx",
    "source_tier": "national",
    "location_in_file": "Hojas 'Masculina' y 'Femenina'",

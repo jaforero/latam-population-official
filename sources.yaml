@@ -8,16 +8,301 @@ status_values:
   ok: descargable por script y cifra de control leída
   manual: dato existe pero la descarga automática no procede; un humano deja el archivo en data/raw/
   pendiente: sin archivo verificado; nunca se rellena
+license_review:
+  reviewed: '2026-11-01'
+  method: Se buscó el texto aplicable a cada archivo con agente identificado y, si el sitio rechazaba al script, en navegador. Las verificaciones anti-bots no se eludieron.
+  caveat:
+    es: Es una lectura de textos publicados, no un dictamen jurídico. Si una licencia específica y unos términos generales difieren, se registra la específica y se anota la diferencia.
+    en: This is a reading of published texts, not a legal opinion. Where a specific licence and general terms differ, the specific one is recorded and the difference noted.
+license_status_values:
+  open_license: licencia abierta declarada y leída para el archivo o su sitio
+  own_terms: condiciones propias leídas; permiten reutilizar con cita, sin licencia abierta estándar
+  no_license: no se localizó permiso aplicable al archivo; no equivale a una prohibición
+  restricted: el texto localizado limita la redistribución o las obras derivadas
+licenses:
+  indec:
+    institution: INDEC
+    countries: [ARG]
+    status: open_license
+    name: Creative Commons (el pie del sitio enlaza CC BY-SA 4.0)
+    license_url: https://creativecommons.org/licenses/by-sa/4.0/deed.es
+    terms_url: https://www.indec.gob.ar/ftp/cuadros/publicaciones/politica_difusion_indec.pdf
+    read_how: direct
+    raw_copy: allowed
+    commercial: allowed
+    share_alike: true
+    attribution: 'Fuente: INDEC, Argentina'
+    summary:
+      es: Permite copiar, reutilizar y redistribuir si se acredita la obra, se cita la fuente primaria y se indican los cambios. La política dice Creative Commons sin versión; el pie del sitio enlaza CC BY-SA 4.0.
+      en: Allows copying, reuse and redistribution if the work is credited, the primary source cited and changes indicated. The policy says Creative Commons with no version; the site footer links to CC BY-SA 4.0.
+  ine_bol:
+    institution: INE Bolivia
+    countries: [BOL]
+    status: own_terms
+    name: Términos y condiciones del INE (Ley 1405)
+    terms_url: https://www.ine.gob.bo/index.php/terminos-y-condiciones/
+    read_how: direct
+    raw_copy: allowed_with_source
+    commercial: needs_authorization
+    share_alike: false
+    attribution: 'Fuente: Instituto Nacional de Estadística (INE), Estado Plurinacional de Bolivia'
+    summary:
+      es: Los datos agregados son públicos y toda reproducción o redistribución debe citar al INE; los cálculos propios deben identificarse. Limita el uso comercial sin autorización y prohíbe el scraping no autorizado. El acceso no cede derechos (Art. 23).
+      en: Aggregate data are public and any reproduction or redistribution must cite INE; your own calculations must be identified. It limits commercial use without authorization and bans unauthorized scraping. Access grants no rights (Art. 23).
+  ibge:
+    institution: IBGE
+    countries: [BRA]
+    status: no_license
+    name: Sin licencia localizada para estos archivos
+    terms_url: https://www.ibge.gov.br/acesso-informacao/acoes-e-programas/politica-de-privacidade.html
+    read_how: browser
+    raw_copy: not_stated
+    commercial: not_stated
+    share_alike: false
+    attribution: 'Fonte: IBGE, Projeções da População, revisão 2024'
+    summary:
+      es: El Termo de Uso del portal trata servicios y privacidad, no la reutilización de datos. La Agência de Notícias permite reproducir su propio contenido citando la fuente, y el Plan de Datos Abiertos prevé abrir la Proyección de Población, pero no se localizó la licencia de estos archivos.
+      en: The portal's Termo de Uso covers services and privacy, not data reuse. The Agência de Notícias allows reproducing its own content with credit, and the Open Data Plan expects to open the Population Projection, but no licence was found for these files.
+  ine_chl:
+    institution: INE Chile
+    countries: [CHL]
+    status: open_license
+    name: CC BY-SA 4.0
+    license_url: https://creativecommons.org/licenses/by-sa/4.0/deed.es
+    terms_url: https://www.ine.gob.cl/terminos-de-uso-y-licencia-de-datos-abiertos
+    read_how: direct
+    raw_copy: allowed
+    commercial: allowed
+    share_alike: true
+    attribution: 'Fuente: INE, Estimaciones y proyecciones de población 1992-2070, base 2024'
+    summary:
+      es: Permite compartir y adaptar, incluso con fines comerciales, reconociendo al INE, enlazando la licencia e indicando cambios. Lo derivado se comparte bajo la misma licencia y no debe presentarse como obra del INE.
+      en: Allows sharing and adapting, including commercially, with credit to INE, a link to the licence and an indication of changes. Derived work is shared under the same licence and must not be presented as INE's.
+  dane:
+    institution: DANE
+    countries: [COL]
+    status: own_terms
+    name: Condiciones generales de uso del portal del DANE
+    terms_url: https://www.dane.gov.co/index.php/terrminos-y-condiciones-dane
+    read_how: direct
+    raw_copy: not_stated
+    commercial: not_stated
+    share_alike: false
+    attribution: 'Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co'
+    summary:
+      es: Autoriza el uso, aprovechamiento, transformación y análisis con una cita textual obligatoria. No menciona la redistribución de los archivos originales y describe el acceso como licencia de usuario final.
+      en: Authorizes use, exploitation, transformation and analysis with a mandatory verbatim citation. It does not mention redistributing the original files and describes access as an end-user licence.
+  inec_cri:
+    institution: INEC Costa Rica
+    countries: [CRI]
+    status: open_license
+    name: CC BY-SA 4.0
+    license_url: https://creativecommons.org/licenses/by-sa/4.0/
+    terms_url: https://inec.cr/
+    read_how: browser
+    raw_copy: allowed
+    commercial: allowed
+    share_alike: true
+    attribution: 'Fuente: INEC-Costa Rica, Estimaciones y proyecciones de población 1950-2100'
+    summary:
+      es: El pie del sitio declara CC BY-SA 4.0, junto a la frase «todos los derechos reservados». Se registra la licencia por ser la declaración específica. Según extractos de buscador, algunas publicaciones en PDF traen un aviso más estrecho; estos archivos Excel no lo traen.
+      en: The site footer declares CC BY-SA 4.0, next to the phrase "all rights reserved". The licence is recorded as the specific statement. According to search excerpts, some PDF publications carry a narrower notice; these Excel files do not.
+  cepal:
+    institution: CEPAL/CELADE
+    countries: [CUB, HND, HTI, NIC]
+    status: restricted
+    name: Acuerdo de uso del sitio web de la CEPAL
+    terms_url: https://www.cepal.org/es/terminos-y-condiciones-sobre-el-uso-del-sitio-web-entre-la-cepal-y-el-usuario
+    read_how: search_excerpt
+    raw_copy: restricted
+    commercial: not_allowed
+    share_alike: false
+    attribution: 'Fuente: CEPAL/CELADE, Estimaciones y proyecciones de población, Revisión 2024'
+    summary:
+      es: CEPALSTAT enlaza este acuerdo como sus términos. Permite bajar y copiar para uso personal, sin fines comerciales, sin revender, redistribuir ni crear otros trabajos. Se leyó solo por extracto de buscador porque cepal.org bloquea la lectura automática. Falta confirmarlo y pedir permiso.
+      en: CEPALSTAT links this agreement as its terms. It allows downloading and copying for personal, non-commercial use, without reselling, redistributing or creating other works. It was read only through a search excerpt because cepal.org blocks automated reading. It still needs confirming and permission requested.
+  one_dom:
+    institution: ONE
+    countries: [DOM]
+    status: open_license
+    name: Open Database License (ODbL)
+    license_url: https://opendatacommons.org/licenses/odbl/1-0/
+    terms_url: https://datos.gob.do/dataset/estimaciones-y-proyecciones-de-la-poblacion-total-segun-sexo-y-grupos-quinquenales-de-edad-1950-2050
+    read_how: direct
+    raw_copy: allowed
+    commercial: allowed
+    share_alike: true
+    attribution: 'Fuente: Oficina Nacional de Estadística (ONE), República Dominicana, vía datos.gob.do'
+    summary:
+      es: La ficha del conjunto declara ODbL, que permite compartir y adaptar con atribución; la base derivada se comparte bajo la misma licencia. Los términos generales del portal no ceden derechos sobre sus contenidos; se registra la licencia de la ficha.
+      en: The dataset page declares ODbL, which allows sharing and adapting with attribution; a derived database is shared under the same licence. The portal's general terms grant no rights over its content; the licence on the dataset page is the one recorded.
+  inec_ecu:
+    institution: INEC Ecuador
+    countries: [ECU]
+    status: open_license
+    name: CC BY 4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/deed.es
+    terms_url: https://www.ecuadorencifras.gob.ec/proyecciones-poblacionales/
+    read_how: direct
+    raw_copy: allowed
+    commercial: allowed
+    share_alike: false
+    attribution: 'Fuente: INEC Ecuador, Estimación y proyección de población, revisión 2024'
+    summary:
+      es: La página de proyecciones declara CC BY 4.0, que permite compartir y adaptar con atribución, enlace a la licencia e indicación de cambios.
+      en: The projections page declares CC BY 4.0, which allows sharing and adapting with credit, a link to the licence and an indication of changes.
+  ine_gtm:
+    institution: INE Guatemala
+    countries: [GTM]
+    status: no_license
+    name: Sin licencia localizada para este archivo
+    terms_url: https://www.ine.gob.gt/proyecciones/
+    read_how: browser
+    raw_copy: not_stated
+    commercial: not_stated
+    share_alike: false
+    attribution: 'Fuente: INE Guatemala, Estimaciones y proyecciones de población 1950-2050'
+    summary:
+      es: La página del archivo solo muestra copyright. Un conjunto hermano, las proyecciones municipales 2015-2030 en datos.ine.gob.gt, declara Open Data Commons Attribution, pero no es este archivo.
+      en: The file's page shows only a copyright line. A sibling dataset, the 2015-2030 municipal projections on datos.ine.gob.gt, declares Open Data Commons Attribution, but it is not this file.
+  ine_hnd:
+    institution: INE Honduras
+    countries: [HND]
+    status: no_license
+    name: Sin licencia localizada para este archivo
+    terms_url: https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf
+    read_how: in_file
+    raw_copy: not_stated
+    commercial: not_stated
+    share_alike: false
+    attribution: 'Fuente: Instituto Nacional de Estadística (INE), Honduras. Tomo 9: Proyecciones de Población 2013-2050'
+    summary:
+      es: El Tomo 9 solo lleva «D.R. ©». Un boletín reciente del INE sí permite reproducir texto, gráficos y estadísticas citando la fuente, pero esa frase se refiere a esa publicación.
+      en: Volume 9 carries only "D.R. ©". A recent INE bulletin does allow reproducing text, charts and statistics with credit, but that sentence refers to that publication.
+  conapo:
+    institution: CONAPO
+    countries: [MEX]
+    status: open_license
+    name: CC BY 4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/deed.es
+    terms_url: https://www.datos.gob.mx/dataset/proyecciones-de-poblacion
+    read_how: browser
+    raw_copy: allowed
+    commercial: allowed
+    share_alike: false
+    attribution: 'Fuente: Secretaría General del Consejo Nacional de Población (CONAPO), Proyecciones de población, vía datos.gob.mx'
+    summary:
+      es: La ficha del conjunto declara CC BY 4.0 y CONAPO describe sus datos abiertos como de libre uso citando la fuente. Los términos generales de gob.mx son más estrechos; se registra la licencia de la ficha.
+      en: The dataset page declares CC BY 4.0 and CONAPO describes its open data as free to use with credit. The general gob.mx terms are narrower; the licence on the dataset page is the one recorded.
+  inide:
+    institution: INIDE
+    countries: [NIC]
+    status: no_license
+    name: Sin licencia localizada para este archivo
+    terms_url: https://www.inide.gob.ni/Home/About
+    read_how: direct
+    raw_copy: not_stated
+    commercial: not_stated
+    share_alike: false
+    attribution: 'Fuente: Instituto Nacional de Información de Desarrollo (INIDE), Anuario Estadístico 2023'
+    summary:
+      es: El sitio declara todos los derechos reservados y el Anuario no trae licencia. El Decreto 68-2011 regula solo las bases de censos y encuestas; pide acreditar al INIDE y prohíbe copiarlas con lucro o transferirlas sin su conocimiento.
+      en: The site declares all rights reserved and the Yearbook carries no licence. Decree 68-2011 covers only census and survey databases; it requires crediting INIDE and bans copying them for profit or transferring them without its knowledge.
+  inec_pan:
+    institution: INEC Panamá
+    countries: [PAN]
+    status: open_license
+    name: CC BY 4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/deed.es
+    terms_url: https://www.inec.gob.pa/
+    read_how: direct
+    raw_copy: allowed
+    commercial: allowed
+    share_alike: false
+    attribution: 'Fuente: Instituto Nacional de Estadística y Censo (INEC), Panamá'
+    summary:
+      es: El pie del sitio, bajo «Licencia para el uso de Datos abiertos», declara CC BY 4.0, que permite compartir y adaptar con atribución, enlace a la licencia e indicación de cambios.
+      en: The site footer, under "Licence for the use of open data", declares CC BY 4.0, which allows sharing and adapting with credit, a link to the licence and an indication of changes.
+  inei:
+    institution: INEI
+    countries: [PER]
+    status: own_terms
+    name: Aviso de reproducción del propio documento
+    terms_url: https://www.inei.gob.pe/media/principales_indicadores/libro_bol_esp_24_4.pdf
+    read_how: in_file
+    raw_copy: allowed_with_source
+    commercial: not_stated
+    share_alike: false
+    attribution: 'Fuente: Instituto Nacional de Estadística e Informática (INEI), Boletín Especial 24'
+    summary:
+      es: La página 2 del Boletín permite reproducir la información, total o parcialmente, mencionando al INEI como fuente de origen.
+      en: Page 2 of the Bulletin allows reproducing the information, in whole or in part, naming INEI as the source.
+  ine_pry:
+    institution: INE Paraguay
+    countries: [PRY]
+    status: open_license
+    name: Licencia de Uso de la Información Pública del Estado Paraguayo (Decreto 4064, Ley 5282/2014)
+    license_url: https://www.ine.gov.py/microdatos/license.php
+    terms_url: https://www.ine.gov.py/microdatos/license.php
+    read_how: direct
+    raw_copy: allowed
+    commercial: allowed
+    share_alike: false
+    attribution: 'Fuente: INE Paraguay, Estimaciones y proyecciones nacional 1950-2050, Revisión 2024, archivo modificado el 2025-11-27. Contenido regido por la Licencia de Uso de la Información Pública del Estado Paraguayo.'
+    summary:
+      es: Autorización gratuita y perpetua para copiar, distribuir y transformar. Exige citar la fuente, indicar que rige esta licencia, dar la fecha de última actualización si se conoce y no sugerir un uso oficial.
+      en: A free, perpetual authorization to copy, distribute and transform. It requires citing the source, stating that this licence applies, giving the last update date if known and not suggesting official use.
+  onec:
+    institution: ONEC / BCR (antes DIGESTYC)
+    countries: [SLV]
+    status: no_license
+    name: Sin licencia localizada para este archivo
+    terms_url: https://onec.bcr.gob.sv/servicios/proyecciones-y-estimaciones-de-poblacion-nacional-y-departamental/
+    read_how: browser
+    raw_copy: not_stated
+    commercial: not_stated
+    share_alike: false
+    attribution: 'Fuente: Banco Central de Reserva, Oficina Nacional de Estadística y Censos (ONEC), Estimaciones y proyecciones de población, revisión 2021'
+    summary:
+      es: Ni la página de la ONEC ni la del BCR muestran términos de uso o licencia, y el archivo no trae aviso.
+      en: Neither the ONEC page nor the BCR page shows terms of use or a licence, and the file carries no notice.
+  ine_ury:
+    institution: INE Uruguay
+    countries: [URY]
+    status: own_terms
+    name: Términos de uso del portal del INE
+    terms_url: https://www.gub.uy/instituto-nacional-estadistica/terminos-y-condiciones-de-uso
+    read_how: direct
+    raw_copy: not_stated
+    commercial: not_stated
+    share_alike: false
+    attribution: 'Fuente: Instituto Nacional de Estadística (INE), Uruguay. Estimaciones y proyecciones de población, Revisión 2025'
+    summary:
+      es: Los términos consideran pública la información salvo indicación contraria, sin regular su reutilización. La Licencia de Datos Abiertos nacional sería más amplia, pero estos archivos no aparecen en el catálogo del INE, así que no se da por aplicada.
+      en: The terms treat information as public unless stated otherwise, without regulating reuse. The national Open Data Licence would be broader, but these files do not appear in INE's catalogue, so it is not assumed to apply.
+  ine_ven:
+    institution: INE Venezuela
+    countries: [VEN]
+    status: no_license
+    name: Sin licencia localizada para estos archivos
+    terms_url: https://ine.gob.ve/marco-legal/
+    read_how: direct
+    raw_copy: not_stated
+    commercial: not_stated
+    share_alike: false
+    attribution: 'Fuente: Instituto Nacional de Estadística (INE), República Bolivariana de Venezuela'
+    summary:
+      es: El sitio declara todos los derechos reservados. Una búsqueda por términos en la Ley de la Función Pública de Estadística no halló una cláusula sobre reutilizar cifras publicadas.
+      en: The site declares all rights reserved. A term search of the Public Statistics Function Act found no clause on reusing published figures.
 sources:
   ARG:
     historical:
       source_tier: national
       status: ok
       institution: INDEC
+      license: indec
       url: https://www.indec.gob.ar/ftp/cuadros/poblacion/c1_proyecciones_nac_2010_2040.xls
       access_method: XLS
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2010
         reference_census: Censo 2010
@@ -47,10 +332,9 @@ sources:
       source_tier: national
       status: ok
       institution: INDEC
+      license: indec
       url: https://www.indec.gob.ar/ftp/cuadros/poblacion/proyecciones_jurisdicciones_2022_2040_c1.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2022
         reference_census: Censo 2022
@@ -85,6 +369,7 @@ sources:
       status: ok
       parser: arg
       institution: INDEC
+      license: indec
       url: https://www.indec.gob.ar/ftp/cuadros/poblacion/proyecciones_jurisdicciones_2022_2040_base.csv
       location_in_file: Suma de jurisdicciones por Sexo (1 = Mujer, 2 = Varón) y Edad(q)
       files:
@@ -95,10 +380,9 @@ sources:
       source_tier: national
       status: manual
       institution: INE Bolivia
+      license: ine_bol
       url: https://nimbus.ine.gob.bo/index.php/s/kdz7ktspssFz6C4/download
       access_method: XLSX (manual)
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2024
         reference_census: Censo 2024
@@ -137,10 +421,9 @@ sources:
       source_tier: national
       status: manual
       institution: INE Bolivia
+      license: ine_bol
       url: https://nimbus.ine.gob.bo/index.php/s/kdz7ktspssFz6C4/download
       access_method: XLSX (manual)
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2024
         reference_census: Censo 2024
@@ -179,6 +462,7 @@ sources:
       status: manual
       parser: bol
       institution: INE Bolivia
+      license: ine_bol
       url: https://nimbus.ine.gob.bo/index.php/s/g3QPXLGSLmXPEsF/download
       location_in_file: Cuadro N.° 1 por sexo y edad, 2024-2034
       files:
@@ -191,10 +475,9 @@ sources:
       source_tier: national
       status: ok
       institution: IBGE
+      license: ibge
       url: https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab4_indicadores.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2022
         reference_census: Censo 2022
@@ -225,10 +508,9 @@ sources:
       source_tier: national
       status: ok
       institution: IBGE
+      license: ibge
       url: https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab4_indicadores.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2022
         reference_census: Censo 2022
@@ -259,6 +541,7 @@ sources:
       status: ok
       parser: bra
       institution: IBGE
+      license: ibge
       url: https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab2_grupo_quinquenal.xlsx
       location_in_file: Hoja '2) POP_GRUPO QUINQUENAL', LOCAL Brasil
       files:
@@ -269,10 +552,9 @@ sources:
       source_tier: national
       status: ok
       institution: INE Chile
+      license: ine_chl
       url: https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/cuadros-estadisticos/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_tabulados.xlsx?sfvrsn=2508a40e_7
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       flags:
       - URL aportada a mano el 2026-11-01; responde a un agente identificado. Lleva parámetro sfvrsn, que puede
         cambiar al republicar.
@@ -305,10 +587,9 @@ sources:
       source_tier: national
       status: ok
       institution: INE Chile
+      license: ine_chl
       url: https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/cuadros-estadisticos/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_tabulados.xlsx?sfvrsn=2508a40e_7
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       flags:
       - URL aportada a mano el 2026-11-01; responde a un agente identificado. Lleva parámetro sfvrsn, que puede
         cambiar al republicar.
@@ -341,6 +622,7 @@ sources:
       status: ok
       parser: chl
       institution: INE Chile
+      license: ine_chl
       url: https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/cuadros-estadisticos/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_tabulados.xlsx?sfvrsn=2508a40e_7
       location_in_file: Hoja 'Población al 30 de junio', bloques Hombres y Mujeres
       files:
@@ -350,10 +632,9 @@ sources:
       source_tier: national
       status: ok
       institution: DANE
+      license: dane
       url: https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Nacional/PPED-AreaNac-1950-2017.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2018
         reference_census: CNPV 2018
@@ -380,10 +661,9 @@ sources:
       source_tier: national
       status: ok
       institution: DANE
+      license: dane
       url: https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Nacional/PPED-AreaNac-2018-2070.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2018
         reference_census: CNPV 2018
@@ -410,6 +690,7 @@ sources:
       status: ok
       parser: col
       institution: DANE
+      license: dane
       url: https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion
       location_in_file: Filas Total, columnas Hombres y Mujeres por edad simple
       files:
@@ -422,10 +703,9 @@ sources:
       source_tier: national
       status: manual
       institution: INEC Costa Rica
+      license: inec_cri
       url: https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx
       access_method: XLSX (manual)
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2022
         reference_census: Estimación de Población y Vivienda 2022
@@ -466,10 +746,9 @@ sources:
       source_tier: national
       status: manual
       institution: INEC Costa Rica
+      license: inec_cri
       url: https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx
       access_method: XLSX (manual)
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2022
         reference_census: Estimación de Población y Vivienda 2022
@@ -503,6 +782,7 @@ sources:
       status: manual
       parser: cri
       institution: INEC Costa Rica
+      license: inec_cri
       url: https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx
       location_in_file: Hoja 'C2. Edades quinquenales'
       files:
@@ -512,10 +792,9 @@ sources:
       source_tier: regional_fallback
       status: ok
       institution: CEPAL/CELADE
+      license: cepal
       url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       flags:
       - 'Decisión del 2026-11-01: Javier Forero aportó el archivo de CEPAL para Cuba, lo que modifica D2.'
       - Prensa cita a ONEI con 9.434.593 de población efectiva al cierre de 2025; CEPAL da 10.937.203,5 a mitad
@@ -561,10 +840,9 @@ sources:
       source_tier: regional_fallback
       status: ok
       institution: CEPAL/CELADE
+      license: cepal
       url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       flags:
       - 'Decisión del 2026-11-01: Javier Forero aportó el archivo de CEPAL para Cuba, lo que modifica D2.'
       - Prensa cita a ONEI con 9.434.593 de población efectiva al cierre de 2025; CEPAL da 10.937.203,5 a mitad
@@ -611,6 +889,7 @@ sources:
       parser: cepal_pais
       tier: regional_fallback
       institution: CEPAL/CELADE
+      license: cepal
       url: https://celade.cepal.org/bdcelade/proyecciones/resultados/07_CUB.xlsx
       location_in_file: Hoja 'Población a mitad de año', bloques Hombres y Mujeres
       files:
@@ -621,9 +900,9 @@ sources:
       source_tier: national
       status: ok
       institution: ONE
+      license: one_dom
       url: https://descargas.one.gob.do/download/OGTIC/Estimaciones_y_Proyecciones_de_la_Poblaci%C3%B3n_Total_seg%C3%BAn_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv
       access_method: CSV
-      license: Open Data Commons Open Database License (ODbL), según la ficha del conjunto en datos.gob.do.
       flags:
       - URL y archivo aportados a mano el 2026-11-01; el archivo es idéntico (mismo hash) al que descarga el script
         desde descargas.one.gob.do.
@@ -666,9 +945,9 @@ sources:
       source_tier: national
       status: ok
       institution: ONE
+      license: one_dom
       url: https://descargas.one.gob.do/download/OGTIC/Estimaciones_y_Proyecciones_de_la_Poblaci%C3%B3n_Total_seg%C3%BAn_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv
       access_method: CSV
-      license: Open Data Commons Open Database License (ODbL), según la ficha del conjunto en datos.gob.do.
       flags:
       - URL y archivo aportados a mano el 2026-11-01; el archivo es idéntico (mismo hash) al que descarga el script
         desde descargas.one.gob.do.
@@ -711,6 +990,7 @@ sources:
       status: ok
       parser: dom
       institution: ONE
+      license: one_dom
       url: https://datos.gob.do/dataset/estimaciones-y-proyecciones-de-la-poblacion-total-segun-sexo-y-grupos-quinquenales-de-edad-1950-2050
       location_in_file: 17 grupos quinquenales, Hombres y Mujeres; quinquenal
       files:
@@ -720,10 +1000,9 @@ sources:
       source_tier: national
       status: ok
       institution: INEC Ecuador
+      license: inec_ecu
       url: https://www.ecuadorencifras.gob.ec/documentos/web-inec/Poblacion_y_Demografia/Proyecciones_Poblacionales/censo_2022/revision_2024_areas/Tabulados_Estimacion_Proyeccion_v2.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2022
         reference_census: Censo 2022
@@ -753,10 +1032,9 @@ sources:
       source_tier: national
       status: ok
       institution: INEC Ecuador
+      license: inec_ecu
       url: https://www.ecuadorencifras.gob.ec/documentos/web-inec/Poblacion_y_Demografia/Proyecciones_Poblacionales/censo_2022/revision_2024_areas/Tabulados_Estimacion_Proyeccion_v2.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2022
         reference_census: Censo 2022
@@ -786,6 +1064,7 @@ sources:
       status: ok
       parser: ecu
       institution: INEC Ecuador
+      license: inec_ecu
       url: https://www.ecuadorencifras.gob.ec/documentos/web-inec/Poblacion_y_Demografia/Proyecciones_Poblacionales/censo_2022/revision_2024_areas/Tabulados_Estimacion_Proyeccion_v2.xlsx
       location_in_file: Hoja '1.2', columnas Hombre y Mujer
       files:
@@ -795,10 +1074,9 @@ sources:
       source_tier: national
       status: manual
       institution: INE Guatemala
+      license: ine_gtm
       url: https://www.ine.gob.gt/proyecciones/
       access_method: XLSX (manual)
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       flags:
       - 'Archivo aportado a mano el 2026-11-01. ine.gob.gt exige captcha: método manual.'
       - Total = suma de edades simples = hoja de indicadores, en los 101 años.
@@ -835,10 +1113,9 @@ sources:
       source_tier: national
       status: manual
       institution: INE Guatemala
+      license: ine_gtm
       url: https://www.ine.gob.gt/proyecciones/
       access_method: XLSX (manual)
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       flags:
       - 'Archivo aportado a mano el 2026-11-01. ine.gob.gt exige captcha: método manual.'
       - Total = suma de edades simples = hoja de indicadores, en los 101 años.
@@ -875,6 +1152,7 @@ sources:
       status: manual
       parser: gtm
       institution: INE Guatemala
+      license: ine_gtm
       url: https://www.ine.gob.gt/proyecciones/
       location_in_file: Hoja 'Población total', bloques Hombres y Mujeres
       files:
@@ -884,10 +1162,9 @@ sources:
       source_tier: regional_fallback
       status: ok
       institution: CEPAL/CELADE
+      license: cepal
       url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: null
         reference_census: null
@@ -929,10 +1206,9 @@ sources:
       source_tier: national
       status: ok
       institution: INE Honduras
+      license: ine_hnd
       url: https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf
       access_method: PDF
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2013
         reference_census: Censo 2013
@@ -968,6 +1244,7 @@ sources:
       status: ok
       parser: hnd
       institution: INE Honduras
+      license: ine_hnd
       url: https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf
       location_in_file: Tomo 9, cuadro de cada año; quinquenal desde 2030
       files:
@@ -976,6 +1253,7 @@ sources:
       - parser: cepal_pais
         tier: regional_fallback
         institution: CEPAL/CELADE
+        license: cepal
         url: https://celade.cepal.org/bdcelade/proyecciones/resultados/12_HND.xlsx
         location_in_file: Hoja 'Población a mitad de año', bloques Hombres y Mujeres
         files:
@@ -989,10 +1267,9 @@ sources:
       source_tier: regional_fallback
       status: ok
       institution: CEPAL/CELADE
+      license: cepal
       url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: null
         reference_census: null
@@ -1031,10 +1308,9 @@ sources:
       source_tier: regional_fallback
       status: ok
       institution: CEPAL/CELADE
+      license: cepal
       url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: null
         reference_census: null
@@ -1076,6 +1352,7 @@ sources:
       parser: cepal_pais
       tier: regional_fallback
       institution: CEPAL/CELADE
+      license: cepal
       url: https://celade.cepal.org/bdcelade/proyecciones/resultados/11_HTI.xlsx
       location_in_file: Hoja 'Población a mitad de año', bloques Hombres y Mujeres
       files:
@@ -1086,10 +1363,9 @@ sources:
       source_tier: national
       status: manual
       institution: CONAPO
+      license: conapo
       url: https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/b4fe49a8-c86a-4c32-8450-8f3c4cc83125/download/05_indicadores_demograficos_proyecciones.csv
       access_method: CSV (manual)
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2020
         reference_census: Censo 2020
@@ -1122,10 +1398,9 @@ sources:
       source_tier: national
       status: manual
       institution: CONAPO
+      license: conapo
       url: https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/b4fe49a8-c86a-4c32-8450-8f3c4cc83125/download/05_indicadores_demograficos_proyecciones.csv
       access_method: CSV (manual)
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2020
         reference_census: Censo 2020
@@ -1158,6 +1433,7 @@ sources:
       status: manual
       parser: mex
       institution: CONAPO
+      license: conapo
       url: https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv
       location_in_file: POBLACION por ANIO, EDAD y SEXO; suma de 32 entidades
       files:
@@ -1171,10 +1447,9 @@ sources:
       source_tier: national
       status: ok
       institution: INIDE
+      license: inide
       url: https://www.inide.gob.ni/docs/Anuarios/Anuario2023/Anuario_Estadistico_2023.pdf
       access_method: PDF
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2005
         reference_census: Censo 2005
@@ -1222,10 +1497,9 @@ sources:
       source_tier: regional_fallback
       status: ok
       institution: CEPAL/CELADE
+      license: cepal
       url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: null
         reference_census: null
@@ -1268,6 +1542,7 @@ sources:
       status: ok
       parser: nic
       institution: INIDE
+      license: inide
       url: https://www.inide.gob.ni/docs/Anuarios/Anuario2023/Anuario_Estadistico_2023.pdf
       location_in_file: Cuadros II.1.5 a II.1.7, La República
       files:
@@ -1279,6 +1554,7 @@ sources:
       - parser: cepal_pais
         tier: regional_fallback
         institution: CEPAL/CELADE
+        license: cepal
         url: https://celade.cepal.org/bdcelade/proyecciones/resultados/14_NIC.xlsx
         location_in_file: Hoja 'Población a mitad de año', bloques Hombres y Mujeres
         files:
@@ -1289,10 +1565,9 @@ sources:
       source_tier: national
       status: ok
       institution: INEC Panamá
+      license: inec_pan
       url: https://www.inec.gob.pa/archivos/P0705547520260126142400Cuadro 1.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2023
         reference_census: Censo 2023
@@ -1322,10 +1597,9 @@ sources:
       source_tier: national
       status: ok
       institution: INEC Panamá
+      license: inec_pan
       url: https://www.inec.gob.pa/archivos/P0705547520260126142400Cuadro 1.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2023
         reference_census: Censo 2023
@@ -1352,6 +1626,7 @@ sources:
       status: ok
       parser: pan
       institution: INEC Panamá
+      license: inec_pan
       url: https://www.inec.gob.pa/archivos/P0705547520260126142400Cuadro 1.xlsx
       location_in_file: Cuadro 1, bloques Hombres y Mujeres
       files:
@@ -1361,10 +1636,9 @@ sources:
       source_tier: national
       status: ok
       institution: INEI
+      license: inei
       url: https://www.inei.gob.pe/media/principales_indicadores/libro_bol_esp_24_4.pdf
       access_method: PDF
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2017
         reference_census: Censo 2017
@@ -1395,10 +1669,9 @@ sources:
       source_tier: national
       status: ok
       institution: INEI
+      license: inei
       url: https://www.inei.gob.pe/media/principales_indicadores/libro_bol_esp_24_4.pdf
       access_method: PDF
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2017
         reference_census: Censo 2017
@@ -1433,6 +1706,7 @@ sources:
       status: ok
       parser: per
       institution: INEI
+      license: inei
       url: https://www.inei.gob.pe/media/principales_indicadores/libro_bol_esp_24_4.pdf
       location_in_file: Boletín Especial 24, Cuadro N.° 2
       files:
@@ -1442,11 +1716,10 @@ sources:
       source_tier: national
       status: ok
       institution: INE Paraguay
+      license: ine_pry
       url: https://www.ine.gov.py/Publicaciones/Biblioteca/documento/266/Estimaciones y Proyecciones Nacional por
         año 1950-2050. Revisión 2024.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2022
         reference_census: Censo 2022
@@ -1477,11 +1750,10 @@ sources:
       source_tier: national
       status: ok
       institution: INE Paraguay
+      license: ine_pry
       url: https://www.ine.gov.py/Publicaciones/Biblioteca/documento/266/Estimaciones y Proyecciones Nacional por
         año 1950-2050. Revisión 2024.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2022
         reference_census: Censo 2022
@@ -1512,6 +1784,7 @@ sources:
       status: ok
       parser: pry
       institution: INE Paraguay
+      license: ine_pry
       url: https://www.ine.gov.py/Publicaciones/Biblioteca/documento/266/Estimaciones y Proyecciones Nacional por
         año 1950-2050. Revisión 2024.xlsx
       location_in_file: Hoja 'Poblac a mitad de año 1950-2050', bloques Hombres y Mujeres
@@ -1522,10 +1795,9 @@ sources:
       source_tier: national
       status: ok
       institution: ONEC / BCR (antes DIGESTYC)
+      license: onec
       url: https://www.bcr.gob.sv/documental/Inicio/descarga/El_Salvador_Estimaciones_y_Proyecciones_de_Poblacion_Nacional_2005-2050(rev2021).xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2007
         reference_census: Censo 2007
@@ -1556,10 +1828,9 @@ sources:
       source_tier: national
       status: ok
       institution: ONEC / BCR (antes DIGESTYC)
+      license: onec
       url: https://www.bcr.gob.sv/documental/Inicio/descarga/El_Salvador_Estimaciones_y_Proyecciones_de_Poblacion_Nacional_2005-2050(rev2021).xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2007
         reference_census: Censo 2007
@@ -1593,6 +1864,7 @@ sources:
       status: ok
       parser: slv
       institution: ONEC / BCR (antes DIGESTYC)
+      license: onec
       url: https://www.bcr.gob.sv/documental/Inicio/descarga/El_Salvador_Estimaciones_y_Proyecciones_de_Poblacion_Nacional_2005-2050(rev2021).xlsx
       location_in_file: Hojas 'Masculina' y 'Femenina'
       files:
@@ -1602,10 +1874,9 @@ sources:
       source_tier: national
       status: ok
       institution: INE Uruguay
+      license: ine_ury
       url: https://www5.ine.gub.uy/documents/DemografíayEESS/SERIES%20Y%20OTROS/Estimaciones%20y%20proyecciones/Revisión%202025/A.1.1%20Uruguay.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2023
         reference_census: Censo 2023
@@ -1632,10 +1903,9 @@ sources:
       source_tier: national
       status: ok
       institution: INE Uruguay
+      license: ine_ury
       url: https://www5.ine.gub.uy/documents/DemografíayEESS/SERIES%20Y%20OTROS/Estimaciones%20y%20proyecciones/Revisión%202025/B.1.1%20Uruguay%20(100ymas)2024-2070.xlsx
       access_method: XLSX
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2023
         reference_census: Censo 2023
@@ -1664,6 +1934,7 @@ sources:
       status: ok
       parser: ury
       institution: INE Uruguay
+      license: ine_ury
       url: https://www5.ine.gub.uy/documents/DemografíayEESS/SERIES%20Y%20OTROS/Estimaciones%20y%20proyecciones/Revisión%202025/B.1.1%20Uruguay%20(100ymas)2024-2070.xlsx
       location_in_file: Hoja 'Uruguay', bloques Hombres y Mujeres
       files:
@@ -1674,10 +1945,9 @@ sources:
       source_tier: national
       status: ok
       institution: INE Venezuela
+      license: ine_ven
       url: https://ine.gob.ve/wp-content/uploads/2026/03/1950-2050-REP.-BOL.-VENEZUELA-PROYECCION-POBLACION.pdf
       access_method: PDF escaneado
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2001
         reference_census: Censo 2001
@@ -1710,10 +1980,9 @@ sources:
       source_tier: national
       status: ok
       institution: INE Venezuela
+      license: ine_ven
       url: https://ine.gob.ve/wp-content/uploads/2026/04/Nacional.xls
       access_method: XLS
-      license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
-        de la Fase 1.'
       vintage:
         base_year: 2011
         reference_census: Censo 2011
@@ -1755,6 +2024,7 @@ sources:
       status: ok
       parser: ven
       institution: INE Venezuela
+      license: ine_ven
       url: https://ine.gob.ve/wp-content/uploads/2026/04/Nacional.xls
       location_in_file: Hoja Nacional, bloques Hombres y Mujeres; quinquenal
       files:

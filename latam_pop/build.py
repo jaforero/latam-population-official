@@ -31,7 +31,7 @@ NAMES = {
 }
 VOLATILE = ("generated_at", "last_success", "last_data_update")
 CSV_FIELDS = ["iso3", "year", "population", "series_type", "source_id", "source_tier", "vintage", "scenario",
-              "reference_date", "retrieved_at", "interpolated", "growth", "raw_file"]
+              "reference_date", "retrieved_at", "interpolated", "growth", "raw_file", "license"]
 
 
 def strip_volatile(x):
@@ -98,6 +98,7 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
     prev_status = read_json(root / "data" / "status.json", {}).get("countries", {})
     changes = read_json(root / "data" / "source_changes.json", [])
     alerts, failures, all_rows, status, manifest = [], [], [], {}, {}
+    license_by_source = {}
 
     for iso3 in ISO3:
         records: list[Record] = []
@@ -105,7 +106,7 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
         for kind in ("historical", "projection"):
             entry = sources[iso3][kind]
             prev_s = prev_status.get(iso3, {}).get("series", {}).get(kind, {})
-            st = dict(status=entry["status"], source_tier=entry["source_tier"], institution=entry["institution"],
+            st = dict(status=entry["status"], source_tier=entry["source_tier"], institution=entry["institution"], license=entry.get("license"),
                       source_id=entry.get("source_id"), vintage=entry.get("vintage_label"),
                       url=entry["url"], last_success=prev_s.get("last_success"), retrieved_at=None, error=None,
                       reason=entry.get("public_reason"), note=entry.get("public_note"))
@@ -146,6 +147,7 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
                 continue
             alerts += check_entry(iso3, kind, entry, rows, recs)
             records += recs
+            license_by_source.update({r.source_id: entry.get("license") for r in recs})
             st.update(status="stale" if stale else entry["status"], error=stale, retrieved_at=raw.retrieved_at,
                       raw_file=recs[0].raw_file if recs else None, raw_sha256=raw.sha256, retrieved_by=raw.retrieved_by)
             if not stale:
@@ -154,7 +156,7 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
             for sid, label in sorted(segs):
                 yrs = [r.year for r in recs if r.source_id == sid]
                 segments.append(dict(source_id=sid, series=kind, source_tier=entry["source_tier"],
-                                     institution=entry["institution"], source_url=entry["url"], vintage=label,
+                                     institution=entry["institution"], license=entry.get("license"), source_url=entry["url"], vintage=label,
                                      reference_census=entry["vintage"].get("reference_census"),
                                      published=entry["vintage"].get("published"), scenario=entry.get("scenario_code"),
                                      reference_date=entry.get("reference_code"), year_from=min(yrs), year_to=max(yrs),
@@ -208,7 +210,7 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
         w = csv.DictWriter(f, CSV_FIELDS, lineterminator="\n")
         w.writeheader()
         for r in all_rows:
-            w.writerow(asdict(r))
+            w.writerow(dict(asdict(r), license=license_by_source.get(r.source_id)))
     if with_csv.exists() and with_csv.read_bytes() == tmp.read_bytes():
         tmp.unlink()
     else:
@@ -217,6 +219,8 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
     stamp = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     write_stable(processed / "manifest.json", dict(schema_version=SCHEMA_VERSION, generated_at=stamp, countries=manifest,
                                                   decisions=reg.get("decisions")))
+    write_stable(processed / "licenses.json", dict(schema_version=SCHEMA_VERSION, generated_at=stamp, review=reg.get("license_review"),
+                                                   status_values=reg.get("license_status_values"), licenses=reg.get("licenses", {})))
     latest = max((s.get("last_success") or "" for c in status.values() for s in c["series"].values()), default=None)
     write_stable(root / "data" / "status.json", dict(schema_version=SCHEMA_VERSION, generated_at=stamp,
                                                      last_data_update=latest or None, countries=status))

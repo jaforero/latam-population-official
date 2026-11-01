@@ -1,5 +1,5 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "DOM",
  "name_es": "República Dominicana",
  "name_en": "Dominican Republic",
@@ -14,6 +14,7 @@
    "series": "historical",
    "source_tier": "national",
    "institution": "ONE",
+   "license": "one_dom",
    "source_url": "https://descargas.one.gob.do/download/OGTIC/Estimaciones_y_Proyecciones_de_la_Poblaci%C3%B3n_Total_seg%C3%BAn_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
    "vintage": "ONE 1950-2050",
    "reference_census": "Censo 2010 (inferido; el archivo no lo cita)",
@@ -39,6 +40,7 @@
    "series": "projection",
    "source_tier": "national",
    "institution": "ONE",
+   "license": "one_dom",
    "source_url": "https://descargas.one.gob.do/download/OGTIC/Estimaciones_y_Proyecciones_de_la_Poblaci%C3%B3n_Total_seg%C3%BAn_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
    "vintage": "ONE 1950-2050",
    "reference_census": "Censo 2010 (inferido; el archivo no lo cita)",

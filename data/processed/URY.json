@@ -1,5 +1,5 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "URY",
  "name_es": "Uruguay",
  "name_en": "Uruguay",
@@ -14,6 +14,7 @@
    "series": "historical",
    "source_tier": "national",
    "institution": "INE Uruguay",
+   "license": "ine_ury",
    "source_url": "https://www5.ine.gub.uy/documents/DemografíayEESS/SERIES%20Y%20OTROS/Estimaciones%20y%20proyecciones/Revisión%202025/A.1.1%20Uruguay.xlsx",
    "vintage": "Rev. 2025",
    "reference_census": "Censo 2023",
@@ -36,6 +37,7 @@
    "series": "projection",
    "source_tier": "national",
    "institution": "INE Uruguay",
+   "license": "ine_ury",
    "source_url": "https://www5.ine.gub.uy/documents/DemografíayEESS/SERIES%20Y%20OTROS/Estimaciones%20y%20proyecciones/Revisión%202025/B.1.1%20Uruguay%20(100ymas)2024-2070.xlsx",
    "vintage": "Rev. 2025",
    "reference_census": "Censo 2023",

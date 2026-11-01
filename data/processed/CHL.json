@@ -1,5 +1,5 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "CHL",
  "name_es": "Chile",
  "name_en": "Chile",
@@ -14,6 +14,7 @@
    "series": "historical",
    "source_tier": "national",
    "institution": "INE Chile",
+   "license": "ine_chl",
    "source_url": "https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/cuadros-estadisticos/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_tabulados.xlsx?sfvrsn=2508a40e_7",
    "vintage": "Base 2024",
    "reference_census": "Censo 2024",
@@ -36,6 +37,7 @@
    "series": "projection",
    "source_tier": "national",
    "institution": "INE Chile",
+   "license": "ine_chl",
    "source_url": "https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/cuadros-estadisticos/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_tabulados.xlsx?sfvrsn=2508a40e_7",
    "vintage": "Base 2024",
    "reference_census": "Censo 2024",

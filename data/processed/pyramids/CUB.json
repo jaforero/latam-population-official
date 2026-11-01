@@ -1,10 +1,11 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "CUB",
  "name_es": "Cuba",
  "name_en": "Cuba",
  "status": "ok",
  "institution": "CEPAL/CELADE",
+ "license": "cepal",
  "source_url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/07_CUB.xlsx",
  "reason": null,
  "note": null,
@@ -30,6 +31,7 @@
  "parts": [
   {
    "institution": "CEPAL/CELADE",
+   "license": "cepal",
    "source_url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/07_CUB.xlsx",
    "source_tier": "regional_fallback",
    "location_in_file": "Hoja 'Población a mitad de año', bloques Hombres y Mujeres",

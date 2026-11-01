@@ -1,10 +1,11 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "PRY",
  "name_es": "Paraguay",
  "name_en": "Paraguay",
  "status": "ok",
  "institution": "INE Paraguay",
+ "license": "ine_pry",
  "source_url": "https://www.ine.gov.py/Publicaciones/Biblioteca/documento/266/Estimaciones y Proyecciones Nacional por año 1950-2050. Revisión 2024.xlsx",
  "reason": null,
  "note": null,
@@ -30,6 +31,7 @@
  "parts": [
   {
    "institution": "INE Paraguay",
+   "license": "ine_pry",
    "source_url": "https://www.ine.gov.py/Publicaciones/Biblioteca/documento/266/Estimaciones y Proyecciones Nacional por año 1950-2050. Revisión 2024.xlsx",
    "source_tier": "national",
    "location_in_file": "Hoja 'Poblac a mitad de año 1950-2050', bloques Hombres y Mujeres",

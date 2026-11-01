@@ -1,10 +1,11 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "PAN",
  "name_es": "Panamá",
  "name_en": "Panama",
  "status": "ok",
  "institution": "INEC Panamá",
+ "license": "inec_pan",
  "source_url": "https://www.inec.gob.pa/archivos/P0705547520260126142400Cuadro 1.xlsx",
  "reason": null,
  "note": null,
@@ -30,6 +31,7 @@
  "parts": [
   {
    "institution": "INEC Panamá",
+   "license": "inec_pan",
    "source_url": "https://www.inec.gob.pa/archivos/P0705547520260126142400Cuadro 1.xlsx",
    "source_tier": "national",
    "location_in_file": "Cuadro 1, bloques Hombres y Mujeres",

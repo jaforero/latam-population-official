@@ -1,10 +1,11 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "CHL",
  "name_es": "Chile",
  "name_en": "Chile",
  "status": "ok",
  "institution": "INE Chile",
+ "license": "ine_chl",
  "source_url": "https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/cuadros-estadisticos/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_tabulados.xlsx?sfvrsn=2508a40e_7",
  "reason": null,
  "note": null,
@@ -30,6 +31,7 @@
  "parts": [
   {
    "institution": "INE Chile",
+   "license": "ine_chl",
    "source_url": "https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/cuadros-estadisticos/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_tabulados.xlsx?sfvrsn=2508a40e_7",
    "source_tier": "national",
    "location_in_file": "Hoja 'Población al 30 de junio', bloques Hombres y Mujeres",

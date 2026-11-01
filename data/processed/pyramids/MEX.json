@@ -1,10 +1,11 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "MEX",
  "name_es": "México",
  "name_en": "Mexico",
  "status": "manual",
  "institution": "CONAPO",
+ "license": "conapo",
  "source_url": "https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv",
  "reason": null,
  "note": {
@@ -33,6 +34,7 @@
  "parts": [
   {
    "institution": "CONAPO",
+   "license": "conapo",
    "source_url": "https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv",
    "source_tier": "national",
    "location_in_file": "POBLACION por ANIO, EDAD y SEXO; suma de 32 entidades",

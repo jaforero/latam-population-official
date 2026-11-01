@@ -1,10 +1,11 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "COL",
  "name_es": "Colombia",
  "name_en": "Colombia",
  "status": "ok",
  "institution": "DANE",
+ "license": "dane",
  "source_url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion",
  "reason": null,
  "note": null,
@@ -30,6 +31,7 @@
  "parts": [
   {
    "institution": "DANE",
+   "license": "dane",
    "source_url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion",
    "source_tier": "national",
    "location_in_file": "Filas Total, columnas Hombres y Mujeres por edad simple",

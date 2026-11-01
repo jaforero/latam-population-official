@@ -1,10 +1,11 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "BRA",
  "name_es": "Brasil",
  "name_en": "Brazil",
  "status": "ok",
  "institution": "IBGE",
+ "license": "ibge",
  "source_url": "https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab2_grupo_quinquenal.xlsx",
  "reason": null,
  "note": null,
@@ -30,6 +31,7 @@
  "parts": [
   {
    "institution": "IBGE",
+   "license": "ibge",
    "source_url": "https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab2_grupo_quinquenal.xlsx",
    "source_tier": "national",
    "location_in_file": "Hoja '2) POP_GRUPO QUINQUENAL', LOCAL Brasil",

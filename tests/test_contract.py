@@ -114,3 +114,49 @@ def test_no_excluded_sources():
 def test_status_covers_20_countries_and_two_series():
     st = json.loads((ROOT / "data/status.json").read_text(encoding="utf8"))["countries"]
     assert set(st) == set(ISO3) and all(set(c["series"]) == {"historical", "projection"} for c in st.values())
+
+
+LICENSES = yaml.safe_load((ROOT / "sources.yaml").read_text(encoding="utf8"))["licenses"]
+LICENSE_STATUS = {"open_license", "own_terms", "no_license", "restricted"}
+READ_HOW = {"direct", "browser", "in_file", "search_excerpt"}
+
+
+def source_entries():
+    for iso, v in REG.items():
+        for kind, e in v.items():
+            yield iso, kind, e
+            for part in e.get("extra_parts", []):
+                yield iso, kind, part
+
+
+def test_every_source_points_to_a_reviewed_license():
+    for iso, kind, e in source_entries():
+        key = e.get("license")
+        assert key in LICENSES, f"{iso} {kind} sin licencia revisada"
+        assert LICENSES[key]["institution"] == e["institution"] and iso in LICENSES[key]["countries"]
+
+
+@pytest.mark.parametrize("key", sorted(LICENSES))
+def test_license_entry_is_complete(key):
+    v = LICENSES[key]
+    assert v["status"] in LICENSE_STATUS and v["read_how"] in READ_HOW
+    assert v["terms_url"].startswith("https://") and v["name"] and v["attribution"]
+    assert v["summary"]["es"] and v["summary"]["en"]
+    if v["status"] == "open_license":
+        assert v["license_url"].startswith("https://")
+    if v["status"] == "restricted":
+        assert v["raw_copy"] == "restricted", "Lo que restringe no se declara como copia permitida"
+
+
+def test_published_data_carries_license():
+    published = json.loads((P / "licenses.json").read_text(encoding="utf8"))
+    assert published["schema_version"] == SCHEMA_VERSION and published["licenses"] == LICENSES
+    assert published["review"]["reviewed"] and published["review"]["caveat"]["en"]
+    for iso in ISO3:
+        d = json.loads((P / f"{iso}.json").read_text(encoding="utf8"))
+        assert all(s["license"] in LICENSES for s in d["segments"])
+        pyr = json.loads((P / "pyramids" / f"{iso}.json").read_text(encoding="utf8"))
+        assert all(part["license"] in LICENSES for part in pyr["parts"])
+    with open(P / "latam.csv", encoding="utf8") as f:
+        for r in csv.DictReader(f):
+            assert r["license"] in LICENSES and r["iso3"] in LICENSES[r["license"]]["countries"]

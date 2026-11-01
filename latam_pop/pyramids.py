@@ -437,7 +437,7 @@ def load_part(iso3, part, store, http, content_check, doc, failures):
         failures.append(dict(iso3=iso3, series="pyramid", error=f"parse: {type(e).__name__}: {str(e)[:180]}"))
         return None
     doc["raw_files"] += files
-    doc["parts"].append(dict(institution=part.get("institution"), source_url=part.get("url"), source_tier=part.get("tier", "national"),
+    doc["parts"].append(dict(institution=part.get("institution"), license=part.get("license"), source_url=part.get("url"), source_tier=part.get("tier", "national"),
                              location_in_file=part.get("location_in_file"), raw_files=files))
     return data
 
@@ -446,7 +446,7 @@ def build_pyramid(iso3, cfg, by_year, store, http, content_check) -> tuple[dict,
     """Devuelve el documento del país, sus alertas y sus fallas. Una falla aquí no afecta la serie principal.
     Cada año usa la parte del mismo nivel de fuente que la serie principal de ese año (`extra_parts`: p. ej. CEPAL donde la serie es CEPAL)."""
     alerts, failures = [], []
-    doc = dict(status=cfg["status"], institution=cfg.get("institution"), source_url=cfg.get("url"), reason=cfg.get("reason"),
+    doc = dict(status=cfg["status"], institution=cfg.get("institution"), license=cfg.get("license"), source_url=cfg.get("url"), reason=cfg.get("reason"),
                note=cfg.get("note"), age_groups=AGE_GROUPS, parts=[], raw_files=[], years={})
     if not cfg.get("parser"):
         return doc, alerts, failures

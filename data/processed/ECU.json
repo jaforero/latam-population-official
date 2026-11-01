@@ -1,5 +1,5 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "iso3": "ECU",
  "name_es": "Ecuador",
  "name_en": "Ecuador",
@@ -14,6 +14,7 @@
    "series": "historical",
    "source_tier": "national",
    "institution": "INEC Ecuador",
+   "license": "inec_ecu",
    "source_url": "https://www.ecuadorencifras.gob.ec/documentos/web-inec/Poblacion_y_Demografia/Proyecciones_Poblacionales/censo_2022/revision_2024_areas/Tabulados_Estimacion_Proyeccion_v2.xlsx",
    "vintage": "Rev. 2024",
    "reference_census": "Censo 2022",
@@ -36,6 +37,7 @@
    "series": "projection",
    "source_tier": "national",
    "institution": "INEC Ecuador",
+   "license": "inec_ecu",
    "source_url": "https://www.ecuadorencifras.gob.ec/documentos/web-inec/Poblacion_y_Demografia/Proyecciones_Poblacionales/censo_2022/revision_2024_areas/Tabulados_Estimacion_Proyeccion_v2.xlsx",
    "vintage": "Rev. 2024",
    "reference_census": "Censo 2022",

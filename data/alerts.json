@@ -1,14 +1,12 @@
 {
- "failures": [],
- "alerts": [
+ "failures": [
   {
-   "code": "vintage_change",
-   "iso3": "BOL",
-   "message": "historical: vintage Rev. 2020 → Rev. 2025",
-   "fingerprint": "vintage_change:BOL:historical:Rev. 2025",
-   "series": "historical",
-   "to": "Rev. 2025"
-  },
+   "iso3": "HND",
+   "series": "projection",
+   "error": "HTTP 403 en https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf"
+  }
+ ],
+ "alerts": [
   {
    "code": "pyramid_sex_ratio",
    "iso3": "CUB",

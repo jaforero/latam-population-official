@@ -123,7 +123,7 @@ Los síntomas son un issue de falla, `status: error` o una alerta `control_misma
 5. **Decide sobre las alertas:** una variación de ±4 % puede ser real. No se corrige; se documenta en el issue.
 
 ## Límites conocidos
-- **Licencias:** CEPAL/CELADE restringe la redistribución, según un texto leído solo por extracto de buscador, y seis instituciones no tienen licencia localizada. Ver [Términos de uso de las fuentes](#términos-de-uso-de-las-fuentes).
+- **Licencias:** los términos de CEPAL/CELADE limitan la redistribución y aún no hay permiso escrito; seis instituciones no tienen licencia localizada. Ver [Términos de uso de las fuentes](#términos-de-uso-de-las-fuentes).
 - **Vintages:** Perú, Honduras y El Salvador tienen una edición nueva esperada o citada; Venezuela usa una proyección de 2013. Rep. Dominicana usa una serie anterior a la edición con censo 2022 que la ONE anunció en junio de 2026.
 - **Cuba:** usa CEPAL porque ONEI no es verificable (certificado vencido). La vigilancia avisa si el portal vuelve a responder.
 - **Peso:** `data/raw/` ocupa unos 205 MB y conserva cada versión de los archivos.
@@ -137,7 +137,7 @@ Revisados el 2026-11-01. Es una lectura de textos publicados, no un dictamen jur
 | Licencia abierta leída | INDEC, INE Chile, INEC Costa Rica, ONE (Rep. Dominicana), INEC Ecuador, CONAPO, INEC Panamá, INE Paraguay | Permiten redistribuir con atribución. Argentina, Chile y Costa Rica (CC BY-SA 4.0) y Rep. Dominicana (ODbL) piden compartir lo derivado bajo la misma licencia. |
 | Condiciones propias leídas | INE Bolivia, DANE, INEI, INE Uruguay | Bolivia y Perú permiten reproducir citando; Bolivia limita el uso comercial. DANE autoriza transformar y analizar con cita textual, sin mencionar la redistribución de archivos. INE Uruguay considera pública la información, sin regular su reutilización. |
 | Sin licencia localizada | IBGE, INE Guatemala, INE Honduras, INIDE, ONEC/BCR, INE Venezuela | No hay permiso expreso para republicar los archivos. No equivale a una prohibición. |
-| Restringe | CEPAL/CELADE | El acuerdo de uso que enlaza CEPALSTAT limita la descarga a uso personal y no comercial, sin redistribuir ni crear otros trabajos. Afecta a Cuba, Haití, la historia de Honduras y la proyección de Nicaragua, con sus pirámides. Se leyó solo por extracto de buscador porque cepal.org bloquea la lectura automática; falta confirmarlo y pedir permiso. |
+| Restringe | CEPAL/CELADE | El acuerdo de uso que enlaza CEPALSTAT limita la descarga a uso personal y no comercial, sin redistribuir ni crear otros trabajos (cláusula 4). Una excepción exige un escrito firmado por un representante autorizado (cláusula 20). Afecta a Cuba, Haití, la historia de Honduras y la proyección de Nicaragua, con sus pirámides. Como cepal.org bloquea la lectura automática, Javier Forero aportó el texto. Aún no hay ese permiso. |
 
 **Copias crudas:** de los 42 archivos de `data/raw/`, 17 no tienen permiso expreso de redistribución: 8 de CEPAL/CELADE y 9 de instituciones sin licencia localizada. Siguen aquí por trazabilidad mientras se resuelve.
 

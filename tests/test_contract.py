@@ -118,7 +118,7 @@ def test_status_covers_20_countries_and_two_series():
 
 LICENSES = yaml.safe_load((ROOT / "sources.yaml").read_text(encoding="utf8"))["licenses"]
 LICENSE_STATUS = {"open_license", "own_terms", "no_license", "restricted"}
-READ_HOW = {"direct", "browser", "in_file", "search_excerpt"}
+READ_HOW = {"direct", "browser", "in_file", "search_excerpt", "provided_by_owner"}
 
 
 def source_entries():

@@ -10,7 +10,7 @@ status_values:
   pendiente: sin archivo verificado; nunca se rellena
 license_review:
   reviewed: '2026-11-01'
-  method: Se buscó el texto aplicable a cada archivo con agente identificado y, si el sitio rechazaba al script, en navegador. Las verificaciones anti-bots no se eludieron.
+  method: Se buscó el texto aplicable a cada archivo con agente identificado y, si el sitio rechazaba al script, en navegador. Las verificaciones anti-bots no se eludieron; el texto de CEPAL/CELADE, tras una de ellas, lo aportó Javier Forero.
   caveat:
     es: Es una lectura de textos publicados, no un dictamen jurídico. Si una licencia específica y unos términos generales difieren, se registra la específica y se anota la diferencia.
     en: This is a reading of published texts, not a legal opinion. Where a specific licence and general terms differ, the specific one is recorded and the difference noted.
@@ -113,14 +113,14 @@ licenses:
     status: restricted
     name: Acuerdo de uso del sitio web de la CEPAL
     terms_url: https://www.cepal.org/es/terminos-y-condiciones-sobre-el-uso-del-sitio-web-entre-la-cepal-y-el-usuario
-    read_how: search_excerpt
+    read_how: provided_by_owner
     raw_copy: restricted
     commercial: not_allowed
     share_alike: false
     attribution: 'Fuente: CEPAL/CELADE, Estimaciones y proyecciones de población, Revisión 2024'
     summary:
-      es: CEPALSTAT enlaza este acuerdo como sus términos. Permite bajar y copiar para uso personal, sin fines comerciales, sin revender, redistribuir ni crear otros trabajos. Se leyó solo por extracto de buscador porque cepal.org bloquea la lectura automática. Falta confirmarlo y pedir permiso.
-      en: CEPALSTAT links this agreement as its terms. It allows downloading and copying for personal, non-commercial use, without reselling, redistributing or creating other works. It was read only through a search excerpt because cepal.org blocks automated reading. It still needs confirming and permission requested.
+      es: CEPALSTAT enlaza este acuerdo como sus términos. La cláusula 4 permite bajar y copiar para uso personal, sin fines comerciales, sin revender, redistribuir ni crear otros trabajos. La cláusula 20 solo admite excepciones por escrito firmado por un representante autorizado. Esta pieza aún no tiene ese permiso.
+      en: CEPALSTAT links this agreement as its terms. Clause 4 allows downloading and copying for personal, non-commercial use, without reselling, redistributing or creating other works. Clause 20 admits exceptions only in writing signed by an authorized representative. This piece does not have that permission yet.
   one_dom:
     institution: ONE
     countries: [DOM]

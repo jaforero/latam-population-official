@@ -121,7 +121,7 @@ Los síntomas son un issue de falla, `status: error` o una alerta `control_misma
 ## Límites conocidos
 - **Licencias:** los términos de uso de cada fuente siguen sin verificar y constan como tales en `sources.yaml`.
 - **Vintages:** Perú, Honduras y El Salvador tienen una edición nueva esperada o citada; Venezuela usa una proyección de 2013. Bolivia usa la Revisión 2020 para 2012-2022 mientras no llegue el cuadro 2000-2050.
-- **Peso:** `data/raw/` ocupa unos 125 MB y conserva cada versión de los archivos.
+- **Peso:** `data/raw/` ocupa unos 190 MB y conserva cada versión de los archivos.
 - **Red:** algunos sitios pueden bloquear los ejecutores de GitHub Actions aunque respondan desde otra conexión; en ese caso la serie pasa a `stale`.
 
 ## Licencia

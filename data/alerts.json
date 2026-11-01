@@ -1,5 +1,11 @@
 {
- "failures": [],
+ "failures": [
+  {
+   "iso3": "HND",
+   "series": "projection",
+   "error": "HTTP 403 en https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf"
+  }
+ ],
  "alerts": [
   {
    "code": "annual_change",

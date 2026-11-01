@@ -10,7 +10,7 @@ from ..parsing import clean
 from ..store import RawFile, RawStore
 
 REGISTRY: dict[str, type["Adapter"]] = {}
-MAGIC = {"XLSX": b"PK", "XLS": b"\xd0\xcf\x11\xe0", "PDF": b"%PDF"}
+MAGIC = {"XLSX": b"PK", "XLS": b"\xd0\xcf\x11\xe0", "PDF": b"%PDF", "GZ": b"\x1f\x8b"}
 
 
 def register(name: str):
@@ -28,7 +28,7 @@ class Record:
     population: int | float | None
     series_type: str  # observed | estimate | projection
     source_id: str
-    source_tier: str  # national | regional_fallback
+    source_tier: str  # national | international_fallback
     vintage: str
     scenario: str | None
     reference_date: str | None

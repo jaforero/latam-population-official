@@ -51,9 +51,9 @@ def test_peak_ignores_other_vintages():
 
 
 def test_national_prevails_over_regional():
-    kept, dropped = resolve_overlaps([rec(2025, 10, sid="cepal", tier="regional_fallback"), rec(2025, 9, sid="ine"), rec(2026, 11, sid="cepal", tier="regional_fallback")])
-    assert [r.source_id for r in kept] == ["ine", "cepal"]
-    assert dropped == [dict(year=2025, dropped_source="cepal", kept_source="ine")]
+    kept, dropped = resolve_overlaps([rec(2025, 10, sid="onu", tier="international_fallback"), rec(2025, 9, sid="ine"), rec(2026, 11, sid="onu", tier="international_fallback")])
+    assert [r.source_id for r in kept] == ["ine", "onu"]
+    assert dropped == [dict(year=2025, dropped_source="onu", kept_source="ine")]
 
 
 def test_alerts_duplicate_gap_control():
@@ -81,7 +81,7 @@ def test_year_of_accepts_footnote_marks_only():
 
 
 def test_vintage_and_tier_change_alerts():
-    prev = dict(projection=dict(source_id="cepal", vintage="r1", source_tier="regional_fallback"))
+    prev = dict(projection=dict(source_id="onu", vintage="r1", source_tier="international_fallback"))
     cur = dict(projection=dict(source_id="ine", vintage="r2", source_tier="national"))
     assert {a["code"] for a in check_against_previous("XXX", prev, cur)} == {"vintage_change", "national_replaces_regional"}
 

@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pypdf
 
-from ..parsing import ParseError, num, wide_row, xls_rows, xlsx_rows, xlsx_sheetnames, xlsx_xml_rows, year_of
+from ..parsing import ParseError, num, wide_row, wpp_rows, xls_rows, xlsx_rows, xlsx_sheetnames, xlsx_xml_rows, year_of
 from .base import Adapter, register
 
 
@@ -251,20 +251,12 @@ class VenIne2011(Adapter):
         return wide_row(xls_rows(raw), "Total", 2000)
 
 
-@register("cepal_excel")
-class CepalExcel(Adapter):
-    """Revisión 2024, hoja CAD01: una fila por país, en miles de personas a mitad de año."""
-
-    def filename(self):
-        return "003_COMPARATIVO.xlsx"
+@register("un_wpp")
+class UnWpp(Adapter):
+    """World Population Prospects: miles de personas al 1 de julio, por país, año y variante. Se usa la media."""
 
     def parse(self, raw):
-        years, target = None, self.entry["cepal_row"].strip()
-        for r in xlsx_rows(raw, "CAD01"):
-            if years is None:
-                if any(year_of(c) == 1950 for c in r):
-                    years = r
-                continue
-            if any(isinstance(c, str) and c.strip() == target for c in r):
-                return {year_of(y): round(float(v) * 1000, 3) for y, v in zip(years, r) if year_of(y) and num(v) is not None}
-        raise ParseError(f"CAD01 no trae la fila {target}")
+        rows = {int(r["Time"]): round(float(r["PopTotal"]) * 1000, 3) for r in wpp_rows(raw, self.iso3) if r["Variant"] == "Medium"}
+        if not rows:
+            raise ParseError(f"WPP no trae la variante media de {self.iso3}")
+        return rows

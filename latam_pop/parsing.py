@@ -1,6 +1,8 @@
 """Lectores de bajo nivel compartidos por los adaptadores."""
 from __future__ import annotations
 
+import csv
+import gzip
 import re
 import zipfile
 from pathlib import Path
@@ -102,3 +104,15 @@ def wide_row(rows, label: str, first_year: int) -> dict[int, float]:
                     out[yy] = vv
             return out
     raise ParseError(f"No se halló la fila '{label}' con años desde {first_year}")
+
+
+def wpp_rows(path: Path, iso3: str):
+    """Filas de un país en un CSV comprimido de World Population Prospects. Cada país es un bloque contiguo: al salir de él se deja de leer."""
+    seen = False
+    with gzip.open(path, "rt", encoding="utf-8-sig", newline="") as f:
+        for r in csv.DictReader(f):
+            if r["ISO3_code"] == iso3:
+                seen = True
+                yield r
+            elif seen:
+                return

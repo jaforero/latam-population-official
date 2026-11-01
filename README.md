@@ -6,10 +6,10 @@ Pipeline, datos crudos y procesados de la población total de 20 países, con se
 
 ## Regla de fuentes
 1. **Nacional:** instituto de estadística u organismo con mandato legal, incluidos sus portales de datos abiertos.
-2. **Respaldo regional:** CEPAL/CELADE, solo por país y tipo de serie cuando la institución nacional no publica esa serie de forma verificable y descargable. La nacional siempre prevalece.
-3. **Fuera:** agregadores como Banco Mundial, ONU/WPP, Wikipedia, Statista, datosmacro u Our World in Data.
+2. **Respaldo internacional:** ONU, World Population Prospects 2024, solo por país y tipo de serie cuando la institución nacional no publica esa serie de forma verificable y descargable. La nacional siempre prevalece.
+3. **Fuera:** agregadores como Banco Mundial, Wikipedia, Statista, datosmacro u Our World in Data.
 
-El respaldo es el Excel de la Revisión 2024 de CEPAL/CELADE, que declara coproducción con la División de Población de la ONU. Se acepta y se cita así (decisión D1 de `sources.yaml`).
+El respaldo son los CSV de la variante media de la ONU, publicados bajo CC BY 3.0 IGO. Son estimaciones y proyecciones de la ONU, no cifras de una institución nacional, y se marcan como tales (decisión D5 de `sources.yaml`). Reemplazaron a CEPAL/CELADE, cuyos términos no permiten redistribuir ni crear otros trabajos; las cifras coinciden salvo redondeo. El FMI se descartó: no trae a Cuba, empieza en 1980 o después y no tiene edad ni sexo.
 
 ## Estructura
 ```
@@ -20,13 +20,13 @@ latam_pop/validate.py     validaciones: alertas, nunca correcciones
 latam_pop/region.py       agregado regional: suma sin rellenar ni encadenar
 latam_pop/build.py        orquesta y escribe las salidas
 data/raw/<iso3>/<clave>/  <fecha>_<sha12>_<archivo> + .meta.json (hash, fecha, URL, quién lo obtuvo)
-data/raw/_regional/       archivos compartidos por varios países (CEPAL)
+data/raw/_global/         archivos compartidos por varios países (ONU)
 data/manual/              transcripciones de fuentes escaneadas
 data/processed/           salidas de contrato
 tests/fixtures/           crudos reales o recortados, para probar sin red
 ```
 
-## Contrato de datos · `schema_version` 1.5
+## Contrato de datos · `schema_version` 2.0
 Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es un cambio de versión:** campo eliminado, renombrado o con otro significado sube la versión mayor. Los campos nuevos opcionales suben la menor.
 
 | Ruta | Contenido |
@@ -46,9 +46,9 @@ Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es
 |---|---|---|
 | `iso3` | texto | País |
 | `year` | entero | Año |
-| `population` | número o null | Personas, con el valor publicado (sin redondear). CEPAL publica en miles y se multiplica por 1000. |
+| `population` | número o null | Personas, con el valor publicado (sin redondear). La ONU publica en miles y se multiplica por 1000. |
 | `series_type` | `observed` · `estimate` · `projection` | Sigue el rótulo de la fuente. Hoy no hay `observed`: las series históricas son estimaciones oficiales ancladas en censos. |
-| `source_id` · `source_tier` | texto · `national` / `regional_fallback` | Fuente y nivel |
+| `source_id` · `source_tier` | texto · `national` / `international_fallback` | Fuente y nivel |
 | `vintage` · `scenario` | texto · `single` / `medium` / `recommended` / null | Edición y escenario |
 | `reference_date` | `MM-DD` · `mid-year` · `census` · null | Fecha de referencia de la cifra; `census` es la fecha de cada censo |
 | `retrieved_at` | fecha | Primera descarga de este archivo (mismo hash) |
@@ -56,11 +56,11 @@ Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es
 | `growth` | número o null | `(P_t / P_{t-1}) − 1`, solo dentro de la misma fuente y vintage |
 | `raw_file` | ruta | Archivo de `data/raw/` del que sale la cifra |
 
-**Cambios:** la 1.1 admite `reference_date: census` (hoy sin uso). La 1.2 agrega las pirámides y `pyramid` en `status.json`. La 1.3 agrega `parts` y `part`, porque una pirámide puede combinar dos fuentes. La 1.4 agrega `licenses.json` y el campo `license` en segmentos, `status.json`, `parts` y `latam.csv`. La 1.5 agrega `region.json`, `region.csv` y `region` en `status.json`. Todas son compatibles con la 1.0.
+**Cambios:** la 1.1 admite `reference_date: census` (hoy sin uso). La 1.2 agrega las pirámides y `pyramid` en `status.json`. La 1.3 agrega `parts` y `part`, porque una pirámide puede combinar dos fuentes. La 1.4 agrega `licenses.json` y el campo `license` en segmentos, `status.json`, `parts` y `latam.csv`. La 1.5 agrega `region.json`, `region.csv` y `region` en `status.json`. Hasta la 1.5 son compatibles con la 1.0. La 2.0 reemplaza el valor `regional_fallback` por `international_fallback`, en `source_tier` y en `region.json` y `region.csv`, porque el respaldo ya no es regional.
 
 **Pirámides:** `age_groups` lista 0-4 … 75-79 y 80+. `years["2025"]` trae `m` y `f` (17 valores) más `series_type`, `source_id`, `vintage`, `source_tier` y `reference_date`, los mismos del registro de ese año, y `part`, el índice de `parts`. Cada elemento de `parts` da `institution`, `source_url`, `source_tier`, `location_in_file` y `raw_files` (ruta, hash, fecha). Además `status`, `reason`, `note` y `raw_files` con todos los crudos. Cada año usa la parte del mismo nivel de fuente que la serie de ese año. Solo se suman grupos publicados; no se desagrega ni se interpola. Un año se publica únicamente si hombres + mujeres cuadra con el total oficial de ese año (tolerancia de 0,05 %); si no, se excluye y genera una alerta.
 
-**Región (`region.json`):** agregado propio, con `official: false` y `derived: true`; `note` declara en español e inglés qué mezcla y de qué depende. `years` lista los años con dato de los 20 países. `points` trae por año `population` (suma redondeada a personas), `n_projection`, `regional_fallback` (países con CEPAL/CELADE), `reference_dates`, `shares` y `components`, con fuente, vintage, `license` y `raw_file` de cada país. `periods` trae la tasa anual media entre años consecutivos (`rate`), `country_rates`, `n_countries`, `covers_share` y `excluded`. `index["2025"]` trae el índice de cada año contra esa base. `pyramid` suma las 20 pirámides en `years` y lista en `missing_by_year` qué países faltan en los demás años.
+**Región (`region.json`):** agregado propio, con `official: false` y `derived: true`; `note` declara en español e inglés qué mezcla y de qué depende. `years` lista los años con dato de los 20 países. `points` trae por año `population` (suma redondeada a personas), `n_projection`, `international_fallback` (países con CEPAL/CELADE), `reference_dates`, `shares` y `components`, con fuente, vintage, `license` y `raw_file` de cada país. `periods` trae la tasa anual media entre años consecutivos (`rate`), `country_rates`, `n_countries`, `covers_share` y `excluded`. `index["2025"]` trae el índice de cada año contra esa base. `pyramid` suma las 20 pirámides en `years` y lista en `missing_by_year` qué países faltan en los demás años.
 
 **Por país**, además: `segments` (institución, URL, vintage, hash, ubicación en el archivo), `breaks` (ruptura con año de corte y sin ajuste), `peak` (`peak`, `no_peak_in_horizon` o `no_projection`) y `reasons` en español e inglés.
 
@@ -69,7 +69,7 @@ Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es
 ## Reglas que el código hace cumplir
 - Las uniones entre fuentes o vintages no se encadenan ni se ajustan: se registran como ruptura y el crecimiento no se calcula a través de ellas.
 - `cagr()` devuelve `None` si los dos años están en series distintas.
-- Si un año tiene dato nacional y regional, queda el nacional y se genera una alerta.
+- Si un año tiene dato nacional e internacional, queda el nacional y se genera una alerta.
 - Validaciones: años duplicados, huecos, variación anual fuera de ±4 %, discrepancia con la cifra de control, cambio de vintage o de nivel. Solo alertan.
 - Si una fuente falla, los demás países siguen y esa conserva su último crudo válido.
 - El total regional solo existe en años con dato de los 20 países: nunca se rellena un hueco ni se publica un total parcial. Crecimiento e índice regionales excluyen y listan al país que cambia de serie entre los dos años.
@@ -84,7 +84,7 @@ python -m latam_pop run
 ```
 
 ## Automatización
-`.github/workflows/update.yml` corre cada lunes y por disparo manual. Hace commit solo si cambian los datos y abre un issue con la etiqueta `pipeline` si un adaptador falla, salta una validación nueva o cambia un portal vigilado donde se usa CEPAL. Una falla de fuente no pone el workflow en rojo: queda en `status.json` y en un issue.
+`.github/workflows/update.yml` corre cada lunes y por disparo manual. Hace commit solo si cambian los datos y abre un issue con la etiqueta `pipeline` si un adaptador falla, salta una validación nueva o cambia un portal vigilado donde se usa la ONU. Una falla de fuente no pone el workflow en rojo: queda en `status.json` y en un issue.
 
 **Respaldo en jsDelivr:** jsDelivr rechaza los paquetes de más de 50 MB, así que no puede servir `main` de forma fiable. La rama `respaldo-cdn` contiene `data/` sin `data/raw/` (unos 2,4 MB) y es la que lee la página si falla raw.githubusercontent.com: `https://cdn.jsdelivr.net/gh/jaforero/latam-population-official@respaldo-cdn/data/status.json`. No se edita a mano. La mantiene `.github/workflows/respaldo-cdn.yml` con `scripts/publish_cdn.py`, en cada push a `main` que toque `data/`, después de cada corrida semanal y una vez al día como comprobación. Publica todo lo que haya bajo `data/`, así que un archivo nuevo del contrato no requiere cambios. Después purga la caché de jsDelivr y compara el hash de cada archivo servido con el de `main`; si alguno sigue atrasado tras los reintentos, el workflow queda en rojo y abre un issue `pipeline`.
 
@@ -107,7 +107,7 @@ Un archivo cubre las dos series cuando comparten `raw_key`, y basta ingerirlo un
 **Archivos que mejorarían lo cargado:**
 - **Rep. Dominicana:** la edición 1950-2100 con censo 2022 que la ONE anunció en junio de 2026.
 - **México:** una copia de `00_Pob_Mitad_1950_2070.csv` con filas nacionales agregaría 1950-1969 a la pirámide.
-- **Cuba:** cualquier serie de ONEI verificable reemplazaría a CEPAL.
+- **Cuba:** cualquier serie de ONEI verificable reemplazaría a la ONU.
 
 La página del INE de Bolivia ofrece cuadros 2000-2050 casi idénticos de las revisiones 2014, 2020 y 2025: el pie del cuadro dice cuál es.
 
@@ -117,7 +117,7 @@ Si el archivo manual es de una pirámide, usa `ingest ISO3 pyramid ARCHIVO`.
 1. Agrega o completa la entrada en `sources.yaml`: `source_tier`, URL exacta, `adapter`, `source_id`, `raw_key`, `year_from`, `year_to`, vintage, referencia temporal y una **cifra de control** leída en la fuente. Un país nuevo también va en `latam_pop/__init__.py` y en `NAMES` de `build.py`.
 2. Escribe el adaptador en `latam_pop/adapters/sources.py` con `@register("nombre")`. Basta implementar `parse`, que devuelve `{año: población}` tal como se publica.
 3. Agrega un fixture en `tests/fixtures/` y el caso en `tests/test_parsers.py`.
-4. Para sustituir CEPAL por una serie nacional, cambia la entrada a `source_tier: national`. El pipeline registra el cambio en `source_changes.json` y abre un issue. Ajusta `test_cepal_only_where_declared`.
+4. Para sustituir la ONU por una serie nacional, cambia la entrada a `source_tier: national`. El pipeline registra el cambio en `source_changes.json` y abre un issue. Ajusta `test_fallback_only_where_declared`.
 5. Para su pirámide, escribe un parser en `latam_pop/pyramids.py` con `@parser("nombre")`, registra el bloque `pyramid` del país en `sources.yaml` y agrega el caso en `tests/test_pyramids.py`.
 6. Ejecuta `python -m pytest -q` y `python -m latam_pop run`.
 
@@ -130,10 +130,11 @@ Los síntomas son un issue de falla, `status: error` o una alerta `control_misma
 5. **Decide sobre las alertas:** una variación de ±4 % puede ser real. No se corrige; se documenta en el issue.
 
 ## Límites conocidos
-- **Licencias:** los términos de CEPAL/CELADE limitan la redistribución y aún no hay permiso escrito; seis instituciones no tienen licencia localizada. Ver [Términos de uso de las fuentes](#términos-de-uso-de-las-fuentes).
+- **Licencias:** seis instituciones no tienen licencia localizada. Ver [Términos de uso de las fuentes](#términos-de-uso-de-las-fuentes).
 - **Vintages:** Perú, Honduras y El Salvador tienen una edición nueva esperada o citada; Venezuela usa una proyección de 2013. Rep. Dominicana usa una serie anterior a la edición con censo 2022 que la ONE anunció en junio de 2026.
-- **Cuba:** usa CEPAL porque ONEI no es verificable (certificado vencido). La vigilancia avisa si el portal vuelve a responder.
-- **Peso:** `data/raw/` ocupa unos 205 MB y conserva cada versión de los archivos.
+- **Cuba:** usa la ONU porque ONEI no es verificable (certificado vencido). La vigilancia avisa si el portal vuelve a responder.
+- **Peso:** `data/raw/` ocupa unos 230 MB y conserva cada versión de los archivos.
+- **Historial de Git:** los archivos de CEPAL/CELADE salieron del árbol el 2026-11-01, pero siguen en commits anteriores.
 - **Región:** hay total de 2010 a 2040, cada cinco años, porque Rep. Dominicana y Venezuela publican cada cinco años y Argentina solo cubre ese tramo. Hay pirámide regional solo en 2025 y 2030: Bolivia publica edades de 2024 a 2034, Argentina desde 2022 y Nicaragua desde 2023. El total depende de CEPAL/CELADE para Cuba, Haití, la historia de Honduras y la proyección de Nicaragua: sin esas cifras no habría total de los 20 países.
 - **Red:** algunos sitios pueden bloquear los ejecutores de GitHub Actions aunque respondan desde otra conexión; en ese caso la serie pasa a `stale`.
 
@@ -142,14 +143,15 @@ Revisados el 2026-11-01. Es una lectura de textos publicados, no un dictamen jur
 
 | Resultado | Instituciones | Qué implica |
 |---|---|---|
-| Licencia abierta leída | INDEC, INE Chile, INEC Costa Rica, ONE (Rep. Dominicana), INEC Ecuador, CONAPO, INEC Panamá, INE Paraguay | Permiten redistribuir con atribución. Argentina, Chile y Costa Rica (CC BY-SA 4.0) y Rep. Dominicana (ODbL) piden compartir lo derivado bajo la misma licencia. |
+| Licencia abierta leída | INDEC, INE Chile, INEC Costa Rica, ONE (Rep. Dominicana), INEC Ecuador, CONAPO, INEC Panamá, INE Paraguay, ONU | Permiten redistribuir con atribución. Argentina, Chile y Costa Rica (CC BY-SA 4.0) y Rep. Dominicana (ODbL) piden compartir lo derivado bajo la misma licencia. |
 | Condiciones propias leídas | INE Bolivia, DANE, INEI, INE Uruguay | Bolivia y Perú permiten reproducir citando; Bolivia limita el uso comercial. DANE autoriza transformar y analizar con cita textual, sin mencionar la redistribución de archivos. INE Uruguay considera pública la información, sin regular su reutilización. |
 | Sin licencia localizada | IBGE, INE Guatemala, INE Honduras, INIDE, ONEC/BCR, INE Venezuela | No hay permiso expreso para republicar los archivos. No equivale a una prohibición. |
-| Restringe | CEPAL/CELADE | El acuerdo de uso que enlaza CEPALSTAT limita la descarga a uso personal y no comercial, sin redistribuir ni crear otros trabajos (cláusula 4). Una excepción exige un escrito firmado por un representante autorizado (cláusula 20). Afecta a Cuba, Haití, la historia de Honduras y la proyección de Nicaragua, con sus pirámides. Como cepal.org bloquea la lectura automática, Javier Forero aportó el texto. Aún no hay ese permiso. |
 
-**Copias crudas:** de los 42 archivos de `data/raw/`, 17 no tienen permiso expreso de redistribución: 8 de CEPAL/CELADE y 9 de instituciones sin licencia localizada. Siguen aquí por trazabilidad mientras se resuelve.
+**Copias crudas:** de los 36 archivos de `data/raw/`, 9 no tienen permiso expreso de redistribución, todos de instituciones sin licencia localizada. Siguen aquí por trazabilidad.
 
-**Cambios respecto a los originales:** se extrae la población total, los miles de CEPAL pasan a personas, las edades se suman en 17 grupos comunes y aquí se calculan el crecimiento, el año máximo y el total regional. Ninguna cifra se corrige.
+**CEPAL/CELADE:** se retiró el 2026-11-01. La cláusula 4 de [su acuerdo de uso](https://www.cepal.org/es/terminos-y-condiciones-sobre-el-uso-del-sitio-web-entre-la-cepal-y-el-usuario), que enlaza CEPALSTAT, limita la descarga a uso personal y no comercial, sin redistribuir ni crear otros trabajos.
+
+**Cambios respecto a los originales:** se extrae la población total, los miles de la ONU pasan a personas, las edades se suman en 17 grupos comunes y aquí se calculan el crecimiento, el año máximo y el total regional. Ninguna cifra se corrige.
 
 ## Licencia
 El código puede reutilizarse con atribución. Este repositorio no otorga una licencia nueva sobre los datos: cada cifra conserva las condiciones de su fuente, registradas en el campo `license`. `region.json` y `region.csv` son una base derivada que combina esas condiciones, incluidas CC BY-SA y ODbL; cada componente conserva la licencia de su fuente. Lo derivado de fuentes CC BY-SA 4.0 u ODbL se comparte bajo esa misma licencia.

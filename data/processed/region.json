@@ -1,13 +1,13 @@
 {
- "schema_version": "1.5",
+ "schema_version": "2.0",
  "id": "REG",
  "name_es": "Región (20 países)",
  "name_en": "Region (20 countries)",
  "official": false,
  "derived": true,
  "note": {
-  "es": "Base derivada: suma propia de cifras con condiciones de uso distintas, incluidas CC BY-SA y ODbL; cada cifra conserva las de su fuente (campo license de cada componente). Depende de CEPAL/CELADE para los países listados en regional_fallback: sin ellos no habría total de los 20.",
-  "en": "Derived database: our own sum of figures under different terms of use, including CC BY-SA and ODbL; each figure keeps those of its source (license field of each component). It relies on ECLAC/CELADE for the countries listed in regional_fallback: without them there would be no total of the 20."
+  "es": "Base derivada: suma propia de cifras con condiciones de uso distintas, incluidas CC BY-SA y ODbL; cada cifra conserva las de su fuente (campo license de cada componente). Depende de la ONU para los países listados en international_fallback: sin ellos no habría total de los 20.",
+  "en": "Derived database: our own sum of figures under different terms of use, including CC BY-SA and ODbL; each figure keeps those of its source (license field of each component). It relies on the UN for the countries listed in international_fallback: without them there would be no total of the 20."
  },
  "countries": [
   "ARG",
@@ -47,7 +47,7 @@
    "n_countries": 20,
    "n_projection": 0,
    "projection_share": 0.0,
-   "regional_fallback": [
+   "international_fallback": [
     "CUB",
     "HND",
     "HTI"
@@ -55,8 +55,7 @@
    "reference_dates": {
     "01-01": 1,
     "06-30": 10,
-    "07-01": 4,
-    "mid-year": 3,
+    "07-01": 7,
     "no_declarada": 2
    },
    "shares": {
@@ -152,12 +151,12 @@
      "iso3": "CUB",
      "population": 11297409,
      "series_type": "estimate",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "DOM",
@@ -194,25 +193,25 @@
     },
     {
      "iso3": "HND",
-     "population": 8365877.5,
+     "population": 8365878,
      "series_type": "estimate",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "HTI",
      "population": 9803294,
      "series_type": "estimate",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "MEX",
@@ -306,19 +305,18 @@
   },
   {
    "year": 2015,
-   "population": 606581872,
+   "population": 606581873,
    "n_countries": 20,
    "n_projection": 3,
    "projection_share": 0.081073,
-   "regional_fallback": [
+   "international_fallback": [
     "CUB",
     "HTI"
    ],
    "reference_dates": {
     "01-01": 1,
     "06-30": 10,
-    "07-01": 5,
-    "mid-year": 2,
+    "07-01": 7,
     "no_declarada": 2
    },
    "shares": {
@@ -412,14 +410,14 @@
     },
     {
      "iso3": "CUB",
-     "population": 11275064.5,
+     "population": 11275065,
      "series_type": "estimate",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "DOM",
@@ -467,14 +465,14 @@
     },
     {
      "iso3": "HTI",
-     "population": 10523241.5,
+     "population": 10523242,
      "series_type": "estimate",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "MEX",
@@ -572,15 +570,14 @@
    "n_countries": 20,
    "n_projection": 7,
    "projection_share": 0.43969,
-   "regional_fallback": [
+   "international_fallback": [
     "CUB",
     "HTI"
    ],
    "reference_dates": {
     "01-01": 1,
     "06-30": 10,
-    "07-01": 5,
-    "mid-year": 2,
+    "07-01": 7,
     "no_declarada": 2
    },
    "shares": {
@@ -676,12 +673,12 @@
      "iso3": "CUB",
      "population": 11176354,
      "series_type": "estimate",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "DOM",
@@ -731,12 +728,12 @@
      "iso3": "HTI",
      "population": 11243848,
      "series_type": "estimate",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "MEX",
@@ -830,19 +827,18 @@
   },
   {
    "year": 2025,
-   "population": 659961517,
+   "population": 659961516,
    "n_countries": 20,
    "n_projection": 19,
    "projection_share": 0.989475,
-   "regional_fallback": [
+   "international_fallback": [
     "CUB",
     "HTI"
    ],
    "reference_dates": {
     "01-01": 1,
     "06-30": 10,
-    "07-01": 5,
-    "mid-year": 2,
+    "07-01": 7,
     "no_declarada": 2
    },
    "shares": {
@@ -936,14 +932,14 @@
     },
     {
      "iso3": "CUB",
-     "population": 10937203.5,
+     "population": 10937203,
      "series_type": "projection",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "DOM",
@@ -991,14 +987,14 @@
     },
     {
      "iso3": "HTI",
-     "population": 11906095.5,
+     "population": 11906095,
      "series_type": "projection",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "MEX",
@@ -1096,7 +1092,7 @@
    "n_countries": 20,
    "n_projection": 20,
    "projection_share": 1.0,
-   "regional_fallback": [
+   "international_fallback": [
     "CUB",
     "HTI",
     "NIC"
@@ -1104,8 +1100,7 @@
    "reference_dates": {
     "01-01": 1,
     "06-30": 9,
-    "07-01": 5,
-    "mid-year": 3,
+    "07-01": 8,
     "no_declarada": 2
    },
    "shares": {
@@ -1201,12 +1196,12 @@
      "iso3": "CUB",
      "population": 10700822,
      "series_type": "projection",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "DOM",
@@ -1256,12 +1251,12 @@
      "iso3": "HTI",
      "population": 12552359,
      "series_type": "projection",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "MEX",
@@ -1278,12 +1273,12 @@
      "iso3": "NIC",
      "population": 7441603,
      "series_type": "projection",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "PAN",
@@ -1359,7 +1354,7 @@
    "n_countries": 20,
    "n_projection": 20,
    "projection_share": 1.0,
-   "regional_fallback": [
+   "international_fallback": [
     "CUB",
     "HTI",
     "NIC"
@@ -1367,8 +1362,7 @@
    "reference_dates": {
     "01-01": 1,
     "06-30": 9,
-    "07-01": 5,
-    "mid-year": 3,
+    "07-01": 8,
     "no_declarada": 2
    },
    "shares": {
@@ -1464,12 +1458,12 @@
      "iso3": "CUB",
      "population": 10431762,
      "series_type": "projection",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "DOM",
@@ -1519,12 +1513,12 @@
      "iso3": "HTI",
      "population": 13165000,
      "series_type": "projection",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "MEX",
@@ -1541,12 +1535,12 @@
      "iso3": "NIC",
      "population": 7836703,
      "series_type": "projection",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "PAN",
@@ -1622,7 +1616,7 @@
    "n_countries": 20,
    "n_projection": 20,
    "projection_share": 1.0,
-   "regional_fallback": [
+   "international_fallback": [
     "CUB",
     "HTI",
     "NIC"
@@ -1630,8 +1624,7 @@
    "reference_dates": {
     "01-01": 1,
     "06-30": 9,
-    "07-01": 5,
-    "mid-year": 3,
+    "07-01": 8,
     "no_declarada": 2
    },
    "shares": {
@@ -1727,12 +1720,12 @@
      "iso3": "CUB",
      "population": 10125837,
      "series_type": "projection",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "DOM",
@@ -1780,14 +1773,14 @@
     },
     {
      "iso3": "HTI",
-     "population": 13733852.5,
+     "population": 13733853,
      "series_type": "projection",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "MEX",
@@ -1802,14 +1795,14 @@
     },
     {
      "iso3": "NIC",
-     "population": 8189914.5,
+     "population": 8189914,
      "series_type": "projection",
-     "source_id": "cepal_celade_rev2024",
-     "source_tier": "regional_fallback",
-     "vintage": "CEPAL Rev. 2024",
-     "reference_date": "mid-year",
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "license": "cepal"
+     "source_id": "un_wpp2024",
+     "source_tier": "international_fallback",
+     "vintage": "ONU WPP 2024",
+     "reference_date": "07-01",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "license": "un_wpp"
     },
     {
      "iso3": "PAN",
@@ -1890,7 +1883,7 @@
    "excluded": [
     {
      "iso3": "HND",
-     "from_vintage": "CEPAL Rev. 2024",
+     "from_vintage": "ONU WPP 2024",
      "to_vintage": "Censo 2013"
     },
     {
@@ -1906,12 +1899,12 @@
     "CHL": 0.0106285,
     "COL": 0.0099074,
     "CRI": 0.01275474,
-    "CUB": -0.00039588,
+    "CUB": -0.00039587,
     "DOM": 0.01036728,
     "ECU": 0.01796098,
     "GTM": 0.01770363,
     "HND": null,
-    "HTI": 0.01427449,
+    "HTI": 0.0142745,
     "MEX": 0.01292851,
     "NIC": null,
     "PAN": 0.01855985,
@@ -1936,12 +1929,12 @@
     "CHL": 0.01387496,
     "COL": 0.01701642,
     "CRI": 0.00906509,
-    "CUB": -0.00175712,
+    "CUB": -0.00175713,
     "DOM": 0.00921235,
     "ECU": 0.01499927,
     "GTM": 0.01606058,
     "HND": 0.01642455,
-    "HTI": 0.0133351,
+    "HTI": 0.01333509,
     "MEX": 0.00936885,
     "NIC": 0.01041427,
     "PAN": 0.01725646,
@@ -1972,12 +1965,12 @@
     "CHL": 0.00819428,
     "COL": 0.01036583,
     "CRI": 0.00549979,
-    "CUB": -0.00431669,
+    "CUB": -0.0043167,
     "DOM": 0.00809431,
     "ECU": 0.00650158,
     "GTM": 0.01408847,
     "HND": 0.01533197,
-    "HTI": 0.01151163,
+    "HTI": 0.01151162,
     "MEX": 0.00792017,
     "NIC": 0.01041436,
     "PAN": 0.01205023,
@@ -1998,7 +1991,7 @@
     {
      "iso3": "NIC",
      "from_vintage": "Rev. 2012",
-     "to_vintage": "CEPAL Rev. 2024"
+     "to_vintage": "ONU WPP 2024"
     }
    ],
    "country_rates": {
@@ -2008,12 +2001,12 @@
     "CHL": 0.00448277,
     "COL": 0.00544763,
     "CRI": 0.00425092,
-    "CUB": -0.00436038,
+    "CUB": -0.00436037,
     "DOM": 0.00680164,
     "ECU": 0.00774317,
     "GTM": 0.01210665,
     "HND": 0.01407653,
-    "HTI": 0.0106277,
+    "HTI": 0.01062771,
     "MEX": 0.00690212,
     "NIC": null,
     "PAN": 0.00907108,
@@ -2075,7 +2068,7 @@
     "HND": 0.01120936,
     "HTI": 0.00849629,
     "MEX": 0.00394998,
-    "NIC": 0.00885603,
+    "NIC": 0.00885602,
     "PAN": 0.00534557,
     "PER": 0.00536428,
     "PRY": 0.00409942,
@@ -2568,91 +2561,91 @@
    "2025": {
     "m": [
      23175400,
-     25359225,
-     26262487,
-     26343648,
-     26245147,
+     25359224,
+     26262488,
+     26343646,
+     26245146,
      26251509,
      25578636,
-     24205980,
-     22450789,
-     20248897,
+     24205981,
+     22450786,
+     20248895,
      17977822,
-     16025860,
+     16025861,
      13818325,
-     10801314,
+     10801315,
      7950938,
-     5417479,
-     5770098
+     5417482,
+     5770100
     ],
     "f": [
-     22163585,
+     22163583,
      24251547,
-     25137007,
-     25337184,
-     25659946,
-     26289213,
-     25908246,
-     24876489,
-     23734832,
-     21825296,
-     19607679,
-     17709838,
-     15623855,
-     12645941,
-     9700794,
+     25137006,
+     25337186,
+     25659947,
+     26289212,
+     25908245,
+     24876487,
+     23734833,
+     21825295,
+     19607681,
+     17709837,
+     15623857,
+     12645942,
+     9700796,
      6936611,
      8669904
     ],
     "n_countries": 20,
     "n_projection": 19,
-    "regional_fallback": [
+    "international_fallback": [
      "CUB",
      "HTI"
     ]
    },
    "2030": {
     "m": [
-     21579545,
-     23093098,
-     25303455,
-     26102205,
-     25942067,
+     21579546,
+     23093096,
+     25303459,
+     26102204,
+     25942066,
      25737108,
-     25774696,
+     25774698,
      25158862,
-     23810007,
-     22001623,
-     19726192,
-     17314620,
+     23810008,
+     22001624,
+     19726194,
+     17314619,
      15149004,
-     12690676,
-     9500455,
-     6542729,
-     7151838
+     12690677,
+     9500456,
+     6542725,
+     7151835
     ],
     "f": [
-     20638833,
-     22092624,
-     24204199,
-     25032714,
-     25114279,
-     25398980,
-     26054297,
-     25688144,
-     24656851,
-     23463165,
-     21491330,
-     19173780,
-     17114901,
+     20638834,
+     22092623,
+     24204198,
+     25032713,
+     25114280,
+     25398983,
+     26054296,
+     25688145,
+     24656850,
+     23463164,
+     21491327,
+     19173779,
+     17114904,
      14803336,
      11612602,
-     8459510,
-     10574587
+     8459511,
+     10574588
     ],
     "n_countries": 20,
     "n_projection": 20,
-    "regional_fallback": [
+    "international_fallback": [
      "CUB",
      "HTI",
      "NIC"

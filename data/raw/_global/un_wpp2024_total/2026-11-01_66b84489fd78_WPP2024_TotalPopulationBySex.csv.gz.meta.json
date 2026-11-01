@@ -1,0 +1,9 @@
+{
+ "file": "2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+ "sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
+ "bytes": 16980593,
+ "retrieved_at": "2026-11-01",
+ "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
+ "retrieved_by": "script",
+ "seq": 0
+}

@@ -14,9 +14,9 @@ from . import ISO3
 NAME_ES, NAME_EN = "Región (20 países)", "Region (20 countries)"
 NOTE = dict(
     es="Base derivada: suma propia de cifras con condiciones de uso distintas, incluidas CC BY-SA y ODbL; cada cifra conserva las de su fuente "
-       "(campo license de cada componente). Depende de CEPAL/CELADE para los países listados en regional_fallback: sin ellos no habría total de los 20.",
+       "(campo license de cada componente). Depende de la ONU para los países listados en international_fallback: sin ellos no habría total de los 20.",
     en="Derived database: our own sum of figures under different terms of use, including CC BY-SA and ODbL; each figure keeps those of its source "
-       "(license field of each component). It relies on ECLAC/CELADE for the countries listed in regional_fallback: without them there would be no total of the 20.")
+       "(license field of each component). It relies on the UN for the countries listed in international_fallback: without them there would be no total of the 20.")
 MAX_PYRAMID_GAP = 0.0005
 
 
@@ -40,7 +40,7 @@ def _point(by: dict, y: int, licenses: dict) -> dict:
     proj = [i for i, r in rows.items() if r["series_type"] == "projection"]
     return dict(year=y, population=round(total), n_countries=len(rows), n_projection=len(proj),
                 projection_share=round(sum(rows[i]["population"] for i in proj) / total, 6),
-                regional_fallback=[i for i, r in rows.items() if r["source_tier"] == "regional_fallback"],
+                international_fallback=[i for i, r in rows.items() if r["source_tier"] == "international_fallback"],
                 reference_dates=dict(sorted(Counter(r["reference_date"] or "no_declarada" for r in rows.values()).items())),
                 shares={i: round(r["population"] / total, 6) for i, r in rows.items()},
                 components=[dict(iso3=i, population=r["population"], series_type=r["series_type"], source_id=r["source_id"],
@@ -91,7 +91,7 @@ def _pyramid(pyramids: dict, totals: dict[int, int]) -> tuple[dict, list[dict]]:
             issues.append(dict(year=y, pyramid_total=sum(m) + sum(f), region_total=total))
             continue
         years[str(y)] = dict(m=m, f=f, n_countries=len(rows), n_projection=sum(r["series_type"] == "projection" for r in rows),
-                             regional_fallback=[i for i in ISO3 if have[i][y]["source_tier"] == "regional_fallback"])
+                             international_fallback=[i for i in ISO3 if have[i][y]["source_tier"] == "international_fallback"])
     return dict(age_groups=ages, years=years, missing_by_year=missing), issues
 
 
@@ -112,7 +112,7 @@ def region_csv_rows(region: dict) -> list[dict]:
     for p in region["points"]:
         g = nxt.get(p["year"])
         rows.append(dict(year=p["year"], population=p["population"], n_countries=p["n_countries"], n_projection=p["n_projection"],
-                         regional_fallback=" ".join(p["regional_fallback"]), annual_rate_to_next=g["rate"] if g else "",
+                         international_fallback=" ".join(p["international_fallback"]), annual_rate_to_next=g["rate"] if g else "",
                          next_year=g["to_year"] if g else "", countries_in_rate=g["n_countries"] if g else "",
                          excluded_from_rate=" ".join(e["iso3"] for e in g["excluded"]) if g else ""))
     return rows

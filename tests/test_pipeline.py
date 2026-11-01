@@ -29,23 +29,24 @@ def test_end_to_end(workdir):
     assert next(x for x in arg["records"] if x["year"] == 2023)["growth"] is not None
     assert arg["peak"]["status"] == "no_peak_in_horizon"
     st = load(workdir / "data/status.json")["countries"]
-    assert st["CUB"]["series"]["projection"]["source_tier"] == "regional_fallback"
+    assert st["CUB"]["series"]["projection"]["source_tier"] == "international_fallback"
     assert st["CHL"]["series"]["projection"]["status"] == "ok"
     assert st["BOL"]["series"]["historical"]["status"] == "manual_pendiente"
     assert st["COL"]["series"]["projection"]["source_tier"] == "national"
-    assert st["HTI"]["series"]["projection"]["source_tier"] == "regional_fallback"
+    assert st["HTI"]["series"]["projection"]["source_tier"] == "international_fallback"
     with open(workdir / "data/processed/latam.csv", encoding="utf8") as f:
         rows = list(csv.DictReader(f))
     assert rows and all((workdir / x["raw_file"]).exists() for x in rows)
     assert {"manifest.json", "latam.csv"} <= {p.name for p in (workdir / "data/processed").iterdir()}
     assert load(workdir / "data/processed/pyramids/BOL.json")["status"] == "manual_pendiente"
-    assert load(workdir / "data/processed/CUB.json")["records"][0]["source_tier"] == "regional_fallback"
+    assert load(workdir / "data/processed/CUB.json")["records"][0]["source_tier"] == "international_fallback"
     col = load(workdir / "data/processed/pyramids/COL.json")
     assert col["status"] == "ok" and sum(col["years"]["2025"]["m"]) + sum(col["years"]["2025"]["f"]) == 53057212
     assert load(workdir / "data/processed/pyramids/CRI.json")["status"] == "manual_pendiente"
     assert load(workdir / "data/status.json")["countries"]["COL"]["pyramid"]["status"] == "ok"
-    # CEPAL: un solo crudo compartido por varios países.
-    assert len(list((workdir / "data/raw/_regional/cepal_rev2024").glob("*.xlsx"))) == 1
+    # ONU: un solo crudo por archivo, compartido por varios países.
+    assert len(list((workdir / "data/raw/_global/un_wpp2024_total").glob("*.csv.gz"))) == 1
+    assert len(list((workdir / "data/raw/_global/un_wpp2024_age5").glob("*.csv.gz"))) == 1
 
 
 def test_failing_country_keeps_last_data_and_others_continue(workdir):

@@ -9,7 +9,7 @@ from pathlib import Path
 LABEL = "pipeline"
 TITLES = {
     "failure": "Falla de adaptador",
-    "national": "Fuente nacional detectada donde se usaba CEPAL",
+    "national": "Fuente nacional detectada donde se usaba la ONU",
     "validation": "Validación del pipeline",
 }
 

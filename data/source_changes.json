@@ -142,5 +142,77 @@
   "iso3": "BOL",
   "code": "vintage_change",
   "message": "historical: vintage Rev. 2020 → Rev. 2025"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CUB",
+  "code": "vintage_change",
+  "message": "historical: vintage CEPAL Rev. 2024 → ONU WPP 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CUB",
+  "code": "tier_change",
+  "message": "historical: nivel regional_fallback → international_fallback (un_wpp2024)"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CUB",
+  "code": "vintage_change",
+  "message": "projection: vintage CEPAL Rev. 2024 → ONU WPP 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CUB",
+  "code": "tier_change",
+  "message": "projection: nivel regional_fallback → international_fallback (un_wpp2024)"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HND",
+  "code": "vintage_change",
+  "message": "historical: vintage CEPAL Rev. 2024 → ONU WPP 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HND",
+  "code": "tier_change",
+  "message": "historical: nivel regional_fallback → international_fallback (un_wpp2024)"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HTI",
+  "code": "vintage_change",
+  "message": "historical: vintage CEPAL Rev. 2024 → ONU WPP 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HTI",
+  "code": "tier_change",
+  "message": "historical: nivel regional_fallback → international_fallback (un_wpp2024)"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HTI",
+  "code": "vintage_change",
+  "message": "projection: vintage CEPAL Rev. 2024 → ONU WPP 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HTI",
+  "code": "tier_change",
+  "message": "projection: nivel regional_fallback → international_fallback (un_wpp2024)"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "NIC",
+  "code": "vintage_change",
+  "message": "projection: vintage CEPAL Rev. 2024 → ONU WPP 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "NIC",
+  "code": "tier_change",
+  "message": "projection: nivel regional_fallback → international_fallback (un_wpp2024)"
  }
 ]

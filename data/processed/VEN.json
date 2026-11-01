@@ -1,5 +1,5 @@
 {
- "schema_version": "1.5",
+ "schema_version": "2.0",
  "iso3": "VEN",
  "name_es": "Venezuela",
  "name_en": "Venezuela",
@@ -56,8 +56,8 @@
    "retrieved_by": "script",
    "location_in_file": "Hoja Nacional, fila Total",
    "note": {
-    "es": "Calculada en 2013, antes de la emigración masiva. CEPAL da 28,5 M para 2025 frente a 34,4 M. Lectura con cautela. Solo quinquenal.",
-    "en": "Computed in 2013, before mass emigration. ECLAC gives 28.5 M for 2025 against 34.4 M. Read with caution. Five-yearly only."
+    "es": "Calculada en 2013, antes de la emigración masiva. La ONU da 28,5 M para 2025 frente a 34,4 M. Lectura con cautela. Solo quinquenal.",
+    "en": "Computed in 2013, before mass emigration. The UN gives 28.5 M for 2025 against 34.4 M. Read with caution. Five-yearly only."
    },
    "transcription": null
   }

@@ -1,9 +1,9 @@
 {
- "schema_version": "1.5",
- "generated_at": "2026-11-01T19:27:03+00:00",
+ "schema_version": "2.0",
+ "generated_at": "2026-11-01T19:43:20+00:00",
  "review": {
   "reviewed": "2026-11-01",
-  "method": "Se buscó el texto aplicable a cada archivo con agente identificado y, si el sitio rechazaba al script, en navegador. Las verificaciones anti-bots no se eludieron; el texto de CEPAL/CELADE, tras una de ellas, lo aportó Javier Forero.",
+  "method": "Se buscó el texto aplicable a cada archivo con agente identificado y, si el sitio rechazaba al script, en navegador. Las verificaciones anti-bots no se eludieron.",
   "caveat": {
    "es": "Es una lectura de textos publicados, no un dictamen jurídico. Si una licencia específica y unos términos generales difieren, se registra la específica y se anota la diferencia.",
    "en": "This is a reading of published texts, not a legal opinion. Where a specific licence and general terms differ, the specific one is recorded and the difference noted."
@@ -127,25 +127,26 @@
     "en": "The site footer declares CC BY-SA 4.0, next to the phrase \"all rights reserved\". The licence is recorded as the specific statement. According to search excerpts, some PDF publications carry a narrower notice; these Excel files do not."
    }
   },
-  "cepal": {
-   "institution": "CEPAL/CELADE",
+  "un_wpp": {
+   "institution": "ONU · División de Población",
    "countries": [
     "CUB",
     "HND",
     "HTI",
     "NIC"
    ],
-   "status": "restricted",
-   "name": "Acuerdo de uso del sitio web de la CEPAL",
-   "terms_url": "https://www.cepal.org/es/terminos-y-condiciones-sobre-el-uso-del-sitio-web-entre-la-cepal-y-el-usuario",
-   "read_how": "provided_by_owner",
-   "raw_copy": "restricted",
-   "commercial": "not_allowed",
+   "status": "open_license",
+   "name": "CC BY 3.0 IGO",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/igo/",
+   "terms_url": "https://population.un.org/wpp/downloads?folder=Standard%20Projections&group=CSV%20format",
+   "read_how": "browser",
+   "raw_copy": "allowed",
+   "commercial": "allowed",
    "share_alike": false,
-   "attribution": "Fuente: CEPAL/CELADE, Estimaciones y proyecciones de población, Revisión 2024",
+   "attribution": "United Nations, Department of Economic and Social Affairs, Population Division (2024). World Population Prospects 2024, Online Edition.",
    "summary": {
-    "es": "CEPALSTAT enlaza este acuerdo como sus términos. La cláusula 4 permite bajar y copiar para uso personal, sin fines comerciales, sin revender, redistribuir ni crear otros trabajos. La cláusula 20 solo admite excepciones por escrito firmado por un representante autorizado. Esta pieza aún no tiene ese permiso.",
-    "en": "CEPALSTAT links this agreement as its terms. Clause 4 allows downloading and copying for personal, non-commercial use, without reselling, redistributing or creating other works. Clause 20 admits exceptions only in writing signed by an authorized representative. This piece does not have that permission yet."
+    "es": "La página de descargas publica los datos bajo CC BY 3.0 IGO, que permite compartir y adaptar con atribución e indicación de cambios. Son estimaciones y proyecciones de la ONU, no cifras de una institución nacional; se usan solo donde esta no publica la serie.",
+    "en": "The downloads page publishes the data under CC BY 3.0 IGO, which allows sharing and adapting with credit and an indication of changes. These are UN estimates and projections, not figures from a national institution; they are used only where that institution does not publish the series."
    }
   },
   "one_dom": {

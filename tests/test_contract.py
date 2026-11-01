@@ -30,20 +30,20 @@ def test_country_file(iso):
     assert len({r["year"] for r in d["records"]}) == len(d["records"])
 
 
-def test_cepal_only_where_declared():
-    allowed = {(i, k) for i, v in REG.items() for k, e in v.items() if k != "pyramid" and e["source_tier"] == "regional_fallback"}
+def test_fallback_only_where_declared():
+    allowed = {(i, k) for i, v in REG.items() for k, e in v.items() if k != "pyramid" and e["source_tier"] == "international_fallback"}
     assert allowed == {("CUB", "historical"), ("CUB", "projection"), ("HND", "historical"), ("HTI", "historical"), ("HTI", "projection"), ("NIC", "projection")}
     with open(P / "latam.csv", encoding="utf8") as f:
         for r in csv.DictReader(f):
-            if r["source_tier"] == "regional_fallback":
+            if r["source_tier"] == "international_fallback":
                 assert r["iso3"] in {"CUB", "HND", "HTI", "NIC"}
                 assert not (r["iso3"] == "HND" and int(r["year"]) >= 2013)
                 assert not (r["iso3"] == "NIC" and int(r["year"]) <= 2025)
 
 
-def test_cepal_uses_current_revision():
+def test_fallback_uses_current_wpp():
     for i, k in (("CUB", "historical"), ("CUB", "projection"), ("HND", "historical"), ("HTI", "historical"), ("HTI", "projection"), ("NIC", "projection")):
-        assert REG[i][k]["source_id"] == "cepal_celade_rev2024" and REG[i][k]["url"].startswith("https://celade.cepal.org/")
+        assert REG[i][k]["source_id"] == "un_wpp2024" and REG[i][k]["url"].startswith("https://population.un.org/")
 
 
 def test_costa_rica_has_complete_annual_series():
@@ -65,9 +65,9 @@ def test_bolivia_uses_one_revision_without_breaks():
     assert next(r for r in d["records"] if r["year"] == 2023)["population"] == 11872175
 
 
-def test_cuba_is_marked_as_regional():
+def test_cuba_is_marked_as_international():
     d = json.loads((P / "CUB.json").read_text(encoding="utf8"))
-    assert {r["source_tier"] for r in d["records"]} == {"regional_fallback"} and d["segments"][0]["note"]["es"]
+    assert {r["source_tier"] for r in d["records"]} == {"international_fallback"} and d["segments"][0]["note"]["es"]
 
 
 @pytest.mark.parametrize("iso", ISO3)
@@ -94,7 +94,7 @@ def test_status_reports_pyramid_coverage():
 def test_nicaragua_national_figure_prevails_in_2025():
     rows = {r["year"]: r for r in json.loads((P / "NIC.json").read_text(encoding="utf8"))["records"]}
     assert rows[2025]["population"] == 6946351 and rows[2025]["source_tier"] == "national"
-    assert rows[2026]["source_tier"] == "regional_fallback"
+    assert rows[2026]["source_tier"] == "international_fallback"
 
 
 def test_five_yearly_series_have_no_invented_years():
@@ -105,7 +105,7 @@ def test_five_yearly_series_have_no_invented_years():
 
 
 def test_no_excluded_sources():
-    bad = ("worldbank", "population.un.org", "wikipedia", "statista", "datosmacro", "ourworldindata", "oncubanews")
+    bad = ("worldbank", "wikipedia", "statista", "datosmacro", "ourworldindata", "oncubanews")
     for v in REG.values():
         for e in v.values():
             assert not any(b in e["url"] for b in bad)
@@ -160,3 +160,11 @@ def test_published_data_carries_license():
     with open(P / "latam.csv", encoding="utf8") as f:
         for r in csv.DictReader(f):
             assert r["license"] in LICENSES and r["iso3"] in LICENSES[r["license"]]["countries"]
+
+
+def test_no_cepal_material_is_published():
+    """Sus términos no permiten redistribuir ni crear otros trabajos: ni crudos, ni fixtures, ni cifras."""
+    tracked = [p for base in ("data", "tests/fixtures") for p in (ROOT / base).rglob("*") if p.is_file()]
+    assert not [p for p in tracked if "cepal" in p.name.lower() or "cepal" in p.parent.name.lower() or "COMPARATIVO" in p.name]
+    assert "cepal" not in (P / "latam.csv").read_text(encoding="utf8").lower()
+    assert not [k for k, v in LICENSES.items() if "CEPAL" in v["institution"]]

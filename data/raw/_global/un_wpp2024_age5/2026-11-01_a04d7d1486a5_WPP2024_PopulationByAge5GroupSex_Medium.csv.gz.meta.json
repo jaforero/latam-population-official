@@ -1,0 +1,9 @@
+{
+ "file": "2026-11-01_a04d7d1486a5_WPP2024_PopulationByAge5GroupSex_Medium.csv.gz",
+ "sha256": "a04d7d1486a5eb2832cc812d599448f0a71e8ac9e1e7e6fa4066673d6a2487cd",
+ "bytes": 29948947,
+ "retrieved_at": "2026-11-01",
+ "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_PopulationByAge5GroupSex_Medium.csv.gz",
+ "retrieved_by": "script",
+ "seq": 0
+}

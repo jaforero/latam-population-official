@@ -45,11 +45,11 @@ def test_parser_matches_official_total(parser, files, year, total):
     assert y["f"][16] > y["m"][16], "En 80+ hay más mujeres que hombres"
 
 
-@pytest.mark.parametrize("fixture,year,total", [("hti_pais.xlsx", 2025, 11906095.5), ("cub_pais.xlsx", 2025, 10937203.5)])
-def test_cepal_country_file_matches_general_table(fixture, year, total):
-    y = load("cepal_pais", {"x": fixture})[year]
-    assert sum(y["m"]) + sum(y["f"]) == pytest.approx(total, abs=20), "CEPAL redondea por separado; difiere en decenas"
-    assert y["m"][0] > y["f"][0]
+@pytest.mark.parametrize("iso3,year,total", [("HTI", 2025, 11906095), ("CUB", 2025, 10937203), ("HND", 2012, 8715076), ("NIC", 2026, 7097329)])
+def test_wpp_age_file_matches_total_file(iso3, year, total):
+    y = PARSERS["un_wpp"]({"x": FIX / "un_age5.csv.gz"}, iso3=iso3)[year]
+    assert sum(y["m"]) + sum(y["f"]) == pytest.approx(total, abs=10), "La ONU redondea cada grupo; difiere en unidades"
+    assert len(y["m"]) == 17 and y["m"][0] > y["f"][0]
 
 
 def test_argentina_sex_codes_follow_indec_metadata():
@@ -139,11 +139,11 @@ def test_each_year_uses_the_part_of_its_own_source_tier(tmp_path):
     store = fake_store(tmp_path)
     store.save("XXX", "k2", "g.csv", b"y", "u", today="2026-01-01")
     c = cfg()
-    c["extra_parts"] = [dict(parser="fake2", tier="regional_fallback", institution="CEPAL", url="v", files=[dict(raw_key="k2")])]
-    later = Record("XXX", 2026, 642, "projection", "c", "regional_fallback", "v", None, None, "2026-01-01")
+    c["extra_parts"] = [dict(parser="fake2", tier="international_fallback", institution="ONU", url="v", files=[dict(raw_key="k2")])]
+    later = Record("XXX", 2026, 642, "projection", "c", "international_fallback", "v", None, None, "2026-01-01")
     doc, alerts, _ = build_pyramid("XXX", c, {2025: rec(2025, 321), 2026: later}, store, None, None)
     assert doc["years"]["2025"]["part"] == 0 and doc["years"]["2026"]["part"] == 1 and alerts == []
-    assert [p["institution"] for p in doc["parts"]] == ["I", "CEPAL"]
+    assert [p["institution"] for p in doc["parts"]] == ["I", "ONU"]
     del PARSERS["fake"], PARSERS["fake2"]
 
 

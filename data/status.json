@@ -1,6 +1,6 @@
 {
- "schema_version": "1.5",
- "generated_at": "2026-11-01T19:27:03+00:00",
+ "schema_version": "2.0",
+ "generated_at": "2026-11-01T19:43:20+00:00",
  "last_data_update": "2026-11-01",
  "countries": {
   "ARG": {
@@ -303,42 +303,42 @@
    "series": {
     "historical": {
      "status": "ok",
-     "source_tier": "regional_fallback",
-     "institution": "CEPAL/CELADE",
-     "license": "cepal",
-     "source_id": "cepal_celade_rev2024",
-     "vintage": "CEPAL Rev. 2024",
-     "url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
+     "source_tier": "international_fallback",
+     "institution": "ONU · División de Población",
+     "license": "un_wpp",
+     "source_id": "un_wpp2024",
+     "vintage": "ONU WPP 2024",
+     "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
      "last_success": "2026-11-01",
      "retrieved_at": "2026-11-01",
      "error": null,
      "reason": null,
      "note": {
-      "es": "ONEI no se pudo verificar: su certificado venció el 2026-09-02. Según prensa, ONEI reporta una «población efectiva» bastante menor que esta cifra de CEPAL, sin poder confirmarlo aquí.",
-      "en": "ONEI could not be verified: its certificate expired on 2026-09-02. According to press reports, ONEI gives an “effective population” well below this ECLAC figure; this could not be confirmed here."
+      "es": "ONEI no se pudo verificar: su certificado venció el 2026-09-02. Según prensa, ONEI reporta una «población efectiva» bastante menor que esta cifra de la ONU, sin poder confirmarlo aquí.",
+      "en": "ONEI could not be verified: its certificate expired on 2026-09-02. According to press reports, ONEI gives an “effective population” well below this UN figure; this could not be confirmed here."
      },
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "raw_sha256": "bd470d7ed85a5fe0fd47343f8b5dfe56a2986ae3c35e3e43e3f721048d653e0f",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
      "retrieved_by": "script"
     },
     "projection": {
      "status": "ok",
-     "source_tier": "regional_fallback",
-     "institution": "CEPAL/CELADE",
-     "license": "cepal",
-     "source_id": "cepal_celade_rev2024",
-     "vintage": "CEPAL Rev. 2024",
-     "url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
+     "source_tier": "international_fallback",
+     "institution": "ONU · División de Población",
+     "license": "un_wpp",
+     "source_id": "un_wpp2024",
+     "vintage": "ONU WPP 2024",
+     "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
      "last_success": "2026-11-01",
      "retrieved_at": "2026-11-01",
      "error": null,
      "reason": null,
      "note": {
-      "es": "ONEI no se pudo verificar: su certificado venció el 2026-09-02. Según prensa, ONEI reporta una «población efectiva» bastante menor que esta cifra de CEPAL, sin poder confirmarlo aquí.",
-      "en": "ONEI could not be verified: its certificate expired on 2026-09-02. According to press reports, ONEI gives an “effective population” well below this ECLAC figure; this could not be confirmed here."
+      "es": "ONEI no se pudo verificar: su certificado venció el 2026-09-02. Según prensa, ONEI reporta una «población efectiva» bastante menor que esta cifra de la ONU, sin poder confirmarlo aquí.",
+      "en": "ONEI could not be verified: its certificate expired on 2026-09-02. According to press reports, ONEI gives an “effective population” well below this UN figure; this could not be confirmed here."
      },
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "raw_sha256": "bd470d7ed85a5fe0fd47343f8b5dfe56a2986ae3c35e3e43e3f721048d653e0f",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
      "retrieved_by": "script"
     }
    },
@@ -509,22 +509,22 @@
    "series": {
     "historical": {
      "status": "ok",
-     "source_tier": "regional_fallback",
-     "institution": "CEPAL/CELADE",
-     "license": "cepal",
-     "source_id": "cepal_celade_rev2024",
-     "vintage": "CEPAL Rev. 2024",
-     "url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
+     "source_tier": "international_fallback",
+     "institution": "ONU · División de Población",
+     "license": "un_wpp",
+     "source_id": "un_wpp2024",
+     "vintage": "ONU WPP 2024",
+     "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
      "last_success": "2026-11-01",
      "retrieved_at": "2026-11-01",
      "error": null,
      "reason": null,
      "note": {
-      "es": "INE Honduras no publica serie anterior a 2013, CEPAL da 8.72 M para 2012 e INE 8,29 M para 2013: son fuentes distintas, no una caída.",
-      "en": "INE Honduras publishes no series before 2013. ECLAC gives 8.72 M for 2012 and INE 8.29 M for 2013: different sources, not a decline."
+      "es": "INE Honduras no publica serie anterior a 2013, la ONU da 8,72 M para 2012 e INE 8,29 M para 2013: son fuentes distintas, no una caída.",
+      "en": "INE Honduras publishes no series before 2013. The UN gives 8.72 M for 2012 and INE 8.29 M for 2013: different sources, not a decline."
      },
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "raw_sha256": "bd470d7ed85a5fe0fd47343f8b5dfe56a2986ae3c35e3e43e3f721048d653e0f",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
      "retrieved_by": "script"
     },
     "projection": {
@@ -562,39 +562,39 @@
    "series": {
     "historical": {
      "status": "ok",
-     "source_tier": "regional_fallback",
-     "institution": "CEPAL/CELADE",
-     "license": "cepal",
-     "source_id": "cepal_celade_rev2024",
-     "vintage": "CEPAL Rev. 2024",
-     "url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
+     "source_tier": "international_fallback",
+     "institution": "ONU · División de Población",
+     "license": "un_wpp",
+     "source_id": "un_wpp2024",
+     "vintage": "ONU WPP 2024",
+     "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
      "last_success": "2026-11-01",
      "retrieved_at": "2026-11-01",
      "error": null,
      "reason": null,
      "note": null,
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "raw_sha256": "bd470d7ed85a5fe0fd47343f8b5dfe56a2986ae3c35e3e43e3f721048d653e0f",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
      "retrieved_by": "script"
     },
     "projection": {
      "status": "ok",
-     "source_tier": "regional_fallback",
-     "institution": "CEPAL/CELADE",
-     "license": "cepal",
-     "source_id": "cepal_celade_rev2024",
-     "vintage": "CEPAL Rev. 2024",
-     "url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
+     "source_tier": "international_fallback",
+     "institution": "ONU · División de Población",
+     "license": "un_wpp",
+     "source_id": "un_wpp2024",
+     "vintage": "ONU WPP 2024",
+     "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
      "last_success": "2026-11-01",
      "retrieved_at": "2026-11-01",
      "error": null,
      "reason": null,
      "note": {
-      "es": "IHSI solo publica cifras puntuales (2024: 11.867.032; CEPAL da 11.772.557 ese año). No se mezclan.",
-      "en": "IHSI publishes single-year figures only (2024: 11,867,032; ECLAC gives 11,772,557 that year). They are not mixed."
+      "es": "IHSI solo publica cifras puntuales (2024: 11.867.032; la ONU da 11.772.557 ese año). No se mezclan.",
+      "en": "IHSI publishes single-year figures only (2024: 11,867,032; the UN gives 11,772,557 that year). They are not mixed."
      },
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "raw_sha256": "bd470d7ed85a5fe0fd47343f8b5dfe56a2986ae3c35e3e43e3f721048d653e0f",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
      "retrieved_by": "script"
     }
    },
@@ -679,22 +679,22 @@
     },
     "projection": {
      "status": "ok",
-     "source_tier": "regional_fallback",
-     "institution": "CEPAL/CELADE",
-     "license": "cepal",
-     "source_id": "cepal_celade_rev2024",
-     "vintage": "CEPAL Rev. 2024",
-     "url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
+     "source_tier": "international_fallback",
+     "institution": "ONU · División de Población",
+     "license": "un_wpp",
+     "source_id": "un_wpp2024",
+     "vintage": "ONU WPP 2024",
+     "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
      "last_success": "2026-11-01",
      "retrieved_at": "2026-11-01",
      "error": null,
      "reason": null,
      "note": {
-      "es": "INIDE no publica proyección descargable. Salto al pasar a CEPAL: 6,95 M (INIDE 2025) y 7,10 M (CEPAL 2026).",
-      "en": "INIDE publishes no downloadable projection. Jump on switching to ECLAC: 6.95 M (INIDE 2025) and 7.10 M (ECLAC 2026)."
+      "es": "INIDE no publica proyección descargable. Salto al pasar a la ONU: 6,95 M (INIDE 2025) y 7,10 M (ONU 2026).",
+      "en": "INIDE publishes no downloadable projection. Jump on switching to the UN: 6.95 M (INIDE 2025) and 7.10 M (UN 2026)."
      },
-     "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
-     "raw_sha256": "bd470d7ed85a5fe0fd47343f8b5dfe56a2986ae3c35e3e43e3f721048d653e0f",
+     "raw_file": "data/raw/_global/un_wpp2024_total/2026-11-01_66b84489fd78_WPP2024_TotalPopulationBySex.csv.gz",
+     "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
      "retrieved_by": "script"
     }
    },
@@ -984,8 +984,8 @@
      "error": null,
      "reason": null,
      "note": {
-      "es": "Calculada en 2013, antes de la emigración masiva. CEPAL da 28,5 M para 2025 frente a 34,4 M. Lectura con cautela. Solo quinquenal.",
-      "en": "Computed in 2013, before mass emigration. ECLAC gives 28.5 M for 2025 against 34.4 M. Read with caution. Five-yearly only."
+      "es": "Calculada en 2013, antes de la emigración masiva. La ONU da 28,5 M para 2025 frente a 34,4 M. Lectura con cautela. Solo quinquenal.",
+      "en": "Computed in 2013, before mass emigration. The UN gives 28.5 M for 2025 against 34.4 M. Read with caution. Five-yearly only."
      },
      "raw_file": "data/raw/VEN/ven_ine_nacional/2026-11-01_402b2d82fabe_Nacional.xls",
      "raw_sha256": "402b2d82fabed16751fe775e7c764687c982ac501e20e0e3d0bf887785e867a2",

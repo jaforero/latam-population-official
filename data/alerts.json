@@ -2,6 +2,38 @@
  "failures": [],
  "alerts": [
   {
+   "code": "vintage_change",
+   "iso3": "CUB",
+   "message": "historical: vintage CEPAL Rev. 2024 → ONU WPP 2024",
+   "fingerprint": "vintage_change:CUB:historical:ONU WPP 2024",
+   "series": "historical",
+   "to": "ONU WPP 2024"
+  },
+  {
+   "code": "tier_change",
+   "iso3": "CUB",
+   "message": "historical: nivel regional_fallback → international_fallback (un_wpp2024)",
+   "fingerprint": "tier_change:CUB:historical:un_wpp2024",
+   "series": "historical",
+   "to": "un_wpp2024"
+  },
+  {
+   "code": "vintage_change",
+   "iso3": "CUB",
+   "message": "projection: vintage CEPAL Rev. 2024 → ONU WPP 2024",
+   "fingerprint": "vintage_change:CUB:projection:ONU WPP 2024",
+   "series": "projection",
+   "to": "ONU WPP 2024"
+  },
+  {
+   "code": "tier_change",
+   "iso3": "CUB",
+   "message": "projection: nivel regional_fallback → international_fallback (un_wpp2024)",
+   "fingerprint": "tier_change:CUB:projection:un_wpp2024",
+   "series": "projection",
+   "to": "un_wpp2024"
+  },
+  {
    "code": "pyramid_sex_ratio",
    "iso3": "CUB",
    "message": "Revisar sexos: 0-4 con más mujeres o 80+ con más hombres en 3 años ([1955, 1956, 1957])",
@@ -16,11 +48,75 @@
    "years": "1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962"
   },
   {
+   "code": "vintage_change",
+   "iso3": "HND",
+   "message": "historical: vintage CEPAL Rev. 2024 → ONU WPP 2024",
+   "fingerprint": "vintage_change:HND:historical:ONU WPP 2024",
+   "series": "historical",
+   "to": "ONU WPP 2024"
+  },
+  {
+   "code": "tier_change",
+   "iso3": "HND",
+   "message": "historical: nivel regional_fallback → international_fallback (un_wpp2024)",
+   "fingerprint": "tier_change:HND:historical:un_wpp2024",
+   "series": "historical",
+   "to": "un_wpp2024"
+  },
+  {
+   "code": "vintage_change",
+   "iso3": "HTI",
+   "message": "historical: vintage CEPAL Rev. 2024 → ONU WPP 2024",
+   "fingerprint": "vintage_change:HTI:historical:ONU WPP 2024",
+   "series": "historical",
+   "to": "ONU WPP 2024"
+  },
+  {
+   "code": "tier_change",
+   "iso3": "HTI",
+   "message": "historical: nivel regional_fallback → international_fallback (un_wpp2024)",
+   "fingerprint": "tier_change:HTI:historical:un_wpp2024",
+   "series": "historical",
+   "to": "un_wpp2024"
+  },
+  {
+   "code": "vintage_change",
+   "iso3": "HTI",
+   "message": "projection: vintage CEPAL Rev. 2024 → ONU WPP 2024",
+   "fingerprint": "vintage_change:HTI:projection:ONU WPP 2024",
+   "series": "projection",
+   "to": "ONU WPP 2024"
+  },
+  {
+   "code": "tier_change",
+   "iso3": "HTI",
+   "message": "projection: nivel regional_fallback → international_fallback (un_wpp2024)",
+   "fingerprint": "tier_change:HTI:projection:un_wpp2024",
+   "series": "projection",
+   "to": "un_wpp2024"
+  },
+  {
    "code": "pyramid_sex_ratio",
    "iso3": "HTI",
    "message": "Revisar sexos: 0-4 con más mujeres o 80+ con más hombres en 16 años ([1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957])",
    "fingerprint": "pyramid_sex_ratio:HTI:1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965",
    "years": "1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965"
+  },
+  {
+   "code": "vintage_change",
+   "iso3": "NIC",
+   "message": "projection: vintage CEPAL Rev. 2024 → ONU WPP 2024",
+   "fingerprint": "vintage_change:NIC:projection:ONU WPP 2024",
+   "series": "projection",
+   "to": "ONU WPP 2024"
+  },
+  {
+   "code": "tier_change",
+   "iso3": "NIC",
+   "message": "projection: nivel regional_fallback → international_fallback (un_wpp2024)",
+   "fingerprint": "tier_change:NIC:projection:un_wpp2024",
+   "series": "projection",
+   "to": "un_wpp2024"
   },
   {
    "code": "annual_change",

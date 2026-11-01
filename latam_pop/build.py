@@ -31,7 +31,7 @@ NAMES = {
     "SLV": ("El Salvador", "El Salvador"), "URY": ("Uruguay", "Uruguay"), "VEN": ("Venezuela", "Venezuela"),
 }
 VOLATILE = ("generated_at", "last_success", "last_data_update")
-REGION_CSV_FIELDS = ["year", "population", "n_countries", "n_projection", "regional_fallback", "annual_rate_to_next",
+REGION_CSV_FIELDS = ["year", "population", "n_countries", "n_projection", "international_fallback", "annual_rate_to_next",
                      "next_year", "countries_in_rate", "excluded_from_rate"]
 CSV_FIELDS = ["iso3", "year", "population", "series_type", "source_id", "source_tier", "vintage", "scenario",
               "reference_date", "retrieved_at", "interpolated", "growth", "raw_file", "license"]

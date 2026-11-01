@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pypdf
 
-from .parsing import ParseError, num, xls_rows, xlsx_rows, xlsx_sheetnames, year_of
+from .parsing import ParseError, num, wpp_rows, xls_rows, xlsx_rows, xlsx_sheetnames, year_of
 from .validate import alert
 
 AGE_GROUPS = [f"{a}-{a + 4}" for a in range(0, 80, 5)] + ["80+"]
@@ -396,13 +396,14 @@ def bol(paths):
     return finish(store)
 
 
-@parser("cepal_pais")
-def cepal_pais(paths):
-    """Archivo por país de la Revisión 2024. Los rótulos son bilingües: 'Hombres / Men', '100 y más / and over'."""
+@parser("un_wpp")
+def un_wpp(paths, iso3):
+    """World Population Prospects por grupos quinquenales, en miles y hasta 100+. Un mismo archivo sirve a varios países."""
     store: dict = {}
-    path = next(iter(paths.values()))
-    rows = ([c.split("/")[0].strip() if isinstance(c, str) else c for c in r] for r in xlsx_rows(path, "Población a mitad de año"))
-    blocks(rows, store)
+    for r in wpp_rows(next(iter(paths.values())), iso3):
+        age = parse_age(r["AgeGrp"])
+        add(store, int(r["Time"]), "m", age, float(r["PopMale"]) * 1000)
+        add(store, int(r["Time"]), "f", age, float(r["PopFemale"]) * 1000)
     return finish(store)
 
 
@@ -417,22 +418,22 @@ def load_part(iso3, part, store, http, content_check, doc, failures):
     """Descarga o toma los crudos de una parte y la interpreta. Devuelve sus datos o None si no hay archivo o no se pudo leer."""
     paths, files = {}, []
     for f in part["files"]:
-        key, raw = f["raw_key"], None
+        key, scope, raw = f["raw_key"], f.get("raw_scope", iso3), None
         if f.get("url") and http is not None:
             try:
                 content = http.get(f["url"])
                 content_check(content, f["url"])
-                raw = store.save(iso3, key, f["url"].rsplit("/", 1)[-1], content, f["url"])
+                raw = store.save(scope, key, f["url"].rsplit("/", 1)[-1], content, f["url"])
             except Exception as e:  # noqa: BLE001  se conserva el último crudo válido
                 failures.append(dict(iso3=iso3, series="pyramid", error=f"{type(e).__name__}: {str(e)[:180]}"))
                 doc["status"] = "stale"
-        raw = raw or store.latest(iso3, key)
+        raw = raw or store.latest(scope, key)
         if raw is None:
             return None
         paths[key] = raw.path
         files.append(dict(path=raw.path.as_posix(), sha256=raw.sha256, retrieved_at=raw.retrieved_at, retrieved_by=raw.retrieved_by))
     try:
-        data = PARSERS[part["parser"]](paths)
+        data = PARSERS[part["parser"]](paths, **part.get("parser_args", {}))
     except Exception as e:  # noqa: BLE001  un país que falla no detiene a los demás
         failures.append(dict(iso3=iso3, series="pyramid", error=f"parse: {type(e).__name__}: {str(e)[:180]}"))
         return None
@@ -444,7 +445,7 @@ def load_part(iso3, part, store, http, content_check, doc, failures):
 
 def build_pyramid(iso3, cfg, by_year, store, http, content_check) -> tuple[dict, list[dict], list[dict]]:
     """Devuelve el documento del país, sus alertas y sus fallas. Una falla aquí no afecta la serie principal.
-    Cada año usa la parte del mismo nivel de fuente que la serie principal de ese año (`extra_parts`: p. ej. CEPAL donde la serie es CEPAL)."""
+    Cada año usa la parte del mismo nivel de fuente que la serie principal de ese año (`extra_parts`: p. ej. la ONU donde la serie es de la ONU)."""
     alerts, failures = [], []
     doc = dict(status=cfg["status"], institution=cfg.get("institution"), license=cfg.get("license"), source_url=cfg.get("url"), reason=cfg.get("reason"),
                note=cfg.get("note"), age_groups=AGE_GROUPS, parts=[], raw_files=[], years={})

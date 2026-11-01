@@ -1,6 +1,6 @@
 {
- "schema_version": "1.5",
- "generated_at": "2026-11-01T19:27:03+00:00",
+ "schema_version": "2.0",
+ "generated_at": "2026-11-01T19:43:20+00:00",
  "countries": {
   "ARG": {
    "historical": {
@@ -124,21 +124,21 @@
   },
   "CUB": {
    "historical": {
-    "source_id": "cepal_celade_rev2024",
-    "vintage": "CEPAL Rev. 2024",
-    "source_tier": "regional_fallback",
-    "institution": "CEPAL/CELADE",
-    "url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
-    "raw_sha256": "bd470d7ed85a5fe0fd47343f8b5dfe56a2986ae3c35e3e43e3f721048d653e0f",
+    "source_id": "un_wpp2024",
+    "vintage": "ONU WPP 2024",
+    "source_tier": "international_fallback",
+    "institution": "ONU · División de Población",
+    "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
+    "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
     "retrieved_at": "2026-11-01"
    },
    "projection": {
-    "source_id": "cepal_celade_rev2024",
-    "vintage": "CEPAL Rev. 2024",
-    "source_tier": "regional_fallback",
-    "institution": "CEPAL/CELADE",
-    "url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
-    "raw_sha256": "bd470d7ed85a5fe0fd47343f8b5dfe56a2986ae3c35e3e43e3f721048d653e0f",
+    "source_id": "un_wpp2024",
+    "vintage": "ONU WPP 2024",
+    "source_tier": "international_fallback",
+    "institution": "ONU · División de Población",
+    "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
+    "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
     "retrieved_at": "2026-11-01"
    }
   },
@@ -204,12 +204,12 @@
   },
   "HND": {
    "historical": {
-    "source_id": "cepal_celade_rev2024",
-    "vintage": "CEPAL Rev. 2024",
-    "source_tier": "regional_fallback",
-    "institution": "CEPAL/CELADE",
-    "url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
-    "raw_sha256": "bd470d7ed85a5fe0fd47343f8b5dfe56a2986ae3c35e3e43e3f721048d653e0f",
+    "source_id": "un_wpp2024",
+    "vintage": "ONU WPP 2024",
+    "source_tier": "international_fallback",
+    "institution": "ONU · División de Población",
+    "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
+    "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
     "retrieved_at": "2026-11-01"
    },
    "projection": {
@@ -224,21 +224,21 @@
   },
   "HTI": {
    "historical": {
-    "source_id": "cepal_celade_rev2024",
-    "vintage": "CEPAL Rev. 2024",
-    "source_tier": "regional_fallback",
-    "institution": "CEPAL/CELADE",
-    "url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
-    "raw_sha256": "bd470d7ed85a5fe0fd47343f8b5dfe56a2986ae3c35e3e43e3f721048d653e0f",
+    "source_id": "un_wpp2024",
+    "vintage": "ONU WPP 2024",
+    "source_tier": "international_fallback",
+    "institution": "ONU · División de Población",
+    "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
+    "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
     "retrieved_at": "2026-11-01"
    },
    "projection": {
-    "source_id": "cepal_celade_rev2024",
-    "vintage": "CEPAL Rev. 2024",
-    "source_tier": "regional_fallback",
-    "institution": "CEPAL/CELADE",
-    "url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
-    "raw_sha256": "bd470d7ed85a5fe0fd47343f8b5dfe56a2986ae3c35e3e43e3f721048d653e0f",
+    "source_id": "un_wpp2024",
+    "vintage": "ONU WPP 2024",
+    "source_tier": "international_fallback",
+    "institution": "ONU · División de Población",
+    "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
+    "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
     "retrieved_at": "2026-11-01"
    }
   },
@@ -273,12 +273,12 @@
     "retrieved_at": "2026-11-01"
    },
    "projection": {
-    "source_id": "cepal_celade_rev2024",
-    "vintage": "CEPAL Rev. 2024",
-    "source_tier": "regional_fallback",
-    "institution": "CEPAL/CELADE",
-    "url": "https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx",
-    "raw_sha256": "bd470d7ed85a5fe0fd47343f8b5dfe56a2986ae3c35e3e43e3f721048d653e0f",
+    "source_id": "un_wpp2024",
+    "vintage": "ONU WPP 2024",
+    "source_tier": "international_fallback",
+    "institution": "ONU · División de Población",
+    "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
+    "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
     "retrieved_at": "2026-11-01"
    }
   },
@@ -404,9 +404,10 @@
   }
  },
  "decisions": {
-  "D1": "Aprobado 2026-11-01 y actualizado el mismo día: CEPAL/CELADE se acepta como respaldo. Se pasó de la API CEPALSTAT (Revisión 2022) al Excel de la Revisión 2024 aportado por Javier Forero (003_COMPARATIVO.xlsx), que responde a un agente identificado. El Excel cita coproducción con la ONU (WPP 2024).",
-  "D2": "Actualizado 2026-11-01: Cuba pasa a CEPAL como respaldo marcado, tras aportar Javier Forero su archivo. ONEI sigue sin ser verificable (certificado vencido); si vuelve a responder, se abre una alerta para sustituirla por la serie nacional.",
+  "D1": "Sustituida por D5 el 2026-11-01. Antes: CEPAL/CELADE se aceptó como respaldo. Se pasó de la API CEPALSTAT (Revisión 2022) al Excel de la Revisión 2024 aportado por Javier Forero (003_COMPARATIVO.xlsx), que responde a un agente identificado. El Excel cita coproducción con la ONU (WPP 2024).",
+  "D2": "Actualizado 2026-11-01: Cuba usa un respaldo marcado, hoy la ONU (D5). ONEI sigue sin ser verificable (certificado vencido); si vuelve a responder, se abre una alerta para sustituirla por la serie nacional.",
   "D3": "Aprobado 2026-11-01: los años previos a la serie nacional quedan null, salvo Honduras (sin ninguna serie nacional antes de 2013). La cifra IHSI 2024 de Haití es contraste, no se mezcla.",
-  "D4": "Aprobado 2026-11-01: México queda manual; no se falsea el agente de usuario."
+  "D4": "Aprobado 2026-11-01: México queda manual; no se falsea el agente de usuario.",
+  "D5": "Aprobado 2026-11-01 por Javier Forero: ONU World Population Prospects 2024 reemplaza a CEPAL/CELADE como respaldo marcado. La cláusula 4 de los términos de CEPAL no permite redistribuir ni crear otros trabajos; la ONU publica bajo CC BY 3.0 IGO. Se descartó el FMI porque su serie LP no trae a Cuba, empieza en 1980 o después y no tiene edad ni sexo. La institución nacional sigue prevaleciendo."
  }
 }

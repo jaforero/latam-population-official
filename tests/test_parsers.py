@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 FIX = ROOT / "tests" / "fixtures"
 REG = yaml.safe_load((ROOT / "sources.yaml").read_text(encoding="utf8"))["sources"]
 CASES = [("ARG", "historical", "arg_2010.xls"), ("ARG", "projection", "arg_2022.xlsx"), ("BOL", "historical", "bol_anual.xlsx"),
-         ("BOL", "projection", "bol_anual.xlsx"), ("CUB", "historical", "cepal.xlsx"), ("CUB", "projection", "cepal.xlsx"), ("CHL", "historical", "chl.xlsx"), ("CHL", "projection", "chl.xlsx"), ("BRA", "historical", "bra.xlsx"), ("BRA", "projection", "bra.xlsx"),
+         ("BOL", "projection", "bol_anual.xlsx"), ("CUB", "historical", "un_total.csv.gz"), ("CUB", "projection", "un_total.csv.gz"), ("CHL", "historical", "chl.xlsx"), ("CHL", "projection", "chl.xlsx"), ("BRA", "historical", "bra.xlsx"), ("BRA", "projection", "bra.xlsx"),
          ("COL", "historical", "col_hist.xlsx"), ("COL", "projection", "col_proj.xlsx"),
          ("CRI", "historical", "cri.xlsx"), ("CRI", "projection", "cri.xlsx"), ("ECU", "historical", "ecu.xlsx"),
          ("DOM", "historical", "dom.csv"), ("DOM", "projection", "dom.csv"), ("ECU", "projection", "ecu.xlsx"), ("GTM", "historical", "gtm.xlsx"), ("GTM", "projection", "gtm.xlsx"), ("HND", "projection", "hnd.pdf"), ("MEX", "historical", "mex_ind.csv"),
@@ -19,8 +19,8 @@ CASES = [("ARG", "historical", "arg_2010.xls"), ("ARG", "projection", "arg_2022.
          ("PAN", "projection", "pan.xlsx"), ("PER", "historical", "per.pdf"), ("PER", "projection", "per.pdf"),
          ("PRY", "historical", "pry.xlsx"), ("PRY", "projection", "pry.xlsx"), ("SLV", "historical", "slv.xlsx"),
          ("SLV", "projection", "slv.xlsx"), ("URY", "historical", "ury_hist.xlsx"), ("URY", "projection", "ury_proj.xlsx"),
-         ("VEN", "projection", "ven_2011.xls"), ("VEN", "historical", "ven_2001.pdf"), ("HTI", "historical", "cepal.xlsx"),
-         ("HTI", "projection", "cepal.xlsx"), ("HND", "historical", "cepal.xlsx"), ("NIC", "projection", "cepal.xlsx")]
+         ("VEN", "projection", "ven_2011.xls"), ("VEN", "historical", "ven_2001.pdf"), ("HTI", "historical", "un_total.csv.gz"),
+         ("HTI", "projection", "un_total.csv.gz"), ("HND", "historical", "un_total.csv.gz"), ("NIC", "projection", "un_total.csv.gz")]
 
 
 @pytest.mark.parametrize("iso3,kind,fixture", CASES)
@@ -58,10 +58,11 @@ def test_venezuela_transcription_rejects_bad_sum(tmp_path):
     VenIne2001.transcription_root = ROOT
 
 
-def test_cepal_reads_one_country_in_persons():
+def test_wpp_reads_one_country_medium_variant_in_persons():
     e = REG["HTI"]["projection"]
-    rows = REGISTRY[e["adapter"]]("HTI", "projection", e).parse(FIX / "cepal.xlsx")
+    rows = REGISTRY[e["adapter"]]("HTI", "projection", e).parse(FIX / "un_total.csv.gz")
     assert rows[2024] == 11772557 and min(rows) == 1950 and max(rows) == 2100
+    assert rows[2030] == 12552359, "Otras variantes del archivo no pisan la media"
 
 
 def test_mexico_reads_national_row():

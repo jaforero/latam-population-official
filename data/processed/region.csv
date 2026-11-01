@@ -1,8 +1,8 @@
-year,population,n_countries,n_projection,regional_fallback,annual_rate_to_next,next_year,countries_in_rate,excluded_from_rate
+year,population,n_countries,n_projection,international_fallback,annual_rate_to_next,next_year,countries_in_rate,excluded_from_rate
 2010,575997826,20,0,CUB HND HTI,0.01043338,2015,18,HND NIC
-2015,606581872,20,3,CUB HTI,0.01009336,2020,20,
+2015,606581873,20,3,CUB HTI,0.01009336,2020,20,
 2020,637818335,20,7,CUB HTI,0.00703449,2025,19,ARG
-2025,659961517,20,19,CUB HTI,0.00536184,2030,19,NIC
+2025,659961516,20,19,CUB HTI,0.00536184,2030,19,NIC
 2030,678152317,20,20,CUB HTI NIC,0.00417373,2035,20,
 2035,692423069,20,20,CUB HTI NIC,0.00299541,2040,20,
 2040,702855854,20,20,CUB HTI NIC,,,,

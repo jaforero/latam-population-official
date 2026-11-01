@@ -2,6 +2,8 @@
 Uso: python tests/make_fixtures.py"""
 import csv
 import glob
+import gzip
+import io
 import json
 import re
 import shutil
@@ -56,9 +58,23 @@ trim_xlsx(latest("COL", "col_dane_edad_proj"), OUT / "col_edad_proj.xlsx", "PobN
 with open(latest("ARG", "arg_indec_2022_edades"), encoding="latin1", newline="") as f:
     lines = f.readlines()
 (OUT / "arg_edades.csv").write_text(lines[0] + "".join(x for x in lines[1:] if x.rstrip().endswith(";2025")), encoding="latin1")
-trim_xlsx(latest("HTI", "cepal_hti_pais"), OUT / "hti_pais.xlsx", "Población a mitad de año", lambda i, r: True)
-trim_xlsx(latest("CUB", "cepal_cub_pais"), OUT / "cub_pais.xlsx", "Población a mitad de año", lambda i, r: True)
-trim_xlsx(latest("_regional", "cepal_rev2024"), OUT / "cepal.xlsx", "CAD01", lambda i, r: True)
+
+
+def trim_wpp(src, dst, keep):
+    """Filas elegidas de un CSV de la ONU. `mtime=0` deja el gzip igual entre corridas."""
+    with gzip.open(src, "rt", encoding="utf-8-sig", newline="") as f, open(dst, "wb") as raw:
+        rows = csv.DictReader(f)
+        with gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0) as gz, io.TextIOWrapper(gz, "utf8", newline="") as out:
+            w = csv.DictWriter(out, rows.fieldnames, lineterminator="\n")
+            w.writeheader()
+            w.writerows(r for r in rows if keep(r))
+
+
+UN = ("CUB", "HND", "HTI", "NIC")
+trim_wpp(latest("_global", "un_wpp2024_total"), OUT / "un_total.csv.gz",
+         lambda r: r["ISO3_code"] in UN and (r["Variant"] == "Medium" or (r["Variant"] == "High" and r["ISO3_code"] == "HTI" and r["Time"] == "2030")))
+trim_wpp(latest("_global", "un_wpp2024_age5"), OUT / "un_age5.csv.gz",
+         lambda r: r["ISO3_code"] in UN and r["Time"] in ("2012", "2025", "2026", "2030"))
 
 
 def pdf_pages(src, dst, pages):

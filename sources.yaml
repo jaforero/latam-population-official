@@ -10,7 +10,7 @@ status_values:
   pendiente: sin archivo verificado; nunca se rellena
 license_review:
   reviewed: '2026-11-01'
-  method: Se buscó el texto aplicable a cada archivo con agente identificado y, si el sitio rechazaba al script, en navegador. Las verificaciones anti-bots no se eludieron; el texto de CEPAL/CELADE, tras una de ellas, lo aportó Javier Forero.
+  method: Se buscó el texto aplicable a cada archivo con agente identificado y, si el sitio rechazaba al script, en navegador. Las verificaciones anti-bots no se eludieron.
   caveat:
     es: Es una lectura de textos publicados, no un dictamen jurídico. Si una licencia específica y unos términos generales difieren, se registra la específica y se anota la diferencia.
     en: This is a reading of published texts, not a legal opinion. Where a specific licence and general terms differ, the specific one is recorded and the difference noted.
@@ -107,20 +107,21 @@ licenses:
     summary:
       es: El pie del sitio declara CC BY-SA 4.0, junto a la frase «todos los derechos reservados». Se registra la licencia por ser la declaración específica. Según extractos de buscador, algunas publicaciones en PDF traen un aviso más estrecho; estos archivos Excel no lo traen.
       en: The site footer declares CC BY-SA 4.0, next to the phrase "all rights reserved". The licence is recorded as the specific statement. According to search excerpts, some PDF publications carry a narrower notice; these Excel files do not.
-  cepal:
-    institution: CEPAL/CELADE
+  un_wpp:
+    institution: ONU · División de Población
     countries: [CUB, HND, HTI, NIC]
-    status: restricted
-    name: Acuerdo de uso del sitio web de la CEPAL
-    terms_url: https://www.cepal.org/es/terminos-y-condiciones-sobre-el-uso-del-sitio-web-entre-la-cepal-y-el-usuario
-    read_how: provided_by_owner
-    raw_copy: restricted
-    commercial: not_allowed
+    status: open_license
+    name: CC BY 3.0 IGO
+    license_url: https://creativecommons.org/licenses/by/3.0/igo/
+    terms_url: https://population.un.org/wpp/downloads?folder=Standard%20Projections&group=CSV%20format
+    read_how: browser
+    raw_copy: allowed
+    commercial: allowed
     share_alike: false
-    attribution: 'Fuente: CEPAL/CELADE, Estimaciones y proyecciones de población, Revisión 2024'
+    attribution: 'United Nations, Department of Economic and Social Affairs, Population Division (2024). World Population Prospects 2024, Online Edition.'
     summary:
-      es: CEPALSTAT enlaza este acuerdo como sus términos. La cláusula 4 permite bajar y copiar para uso personal, sin fines comerciales, sin revender, redistribuir ni crear otros trabajos. La cláusula 20 solo admite excepciones por escrito firmado por un representante autorizado. Esta pieza aún no tiene ese permiso.
-      en: CEPALSTAT links this agreement as its terms. Clause 4 allows downloading and copying for personal, non-commercial use, without reselling, redistributing or creating other works. Clause 20 admits exceptions only in writing signed by an authorized representative. This piece does not have that permission yet.
+      es: La página de descargas publica los datos bajo CC BY 3.0 IGO, que permite compartir y adaptar con atribución e indicación de cambios. Son estimaciones y proyecciones de la ONU, no cifras de una institución nacional; se usan solo donde esta no publica la serie.
+      en: The downloads page publishes the data under CC BY 3.0 IGO, which allows sharing and adapting with credit and an indication of changes. These are UN estimates and projections, not figures from a national institution; they are used only where that institution does not publish the series.
   one_dom:
     institution: ONE
     countries: [DOM]
@@ -789,43 +790,42 @@ sources:
       - raw_key: cri_inec
   CUB:
     historical:
-      source_tier: regional_fallback
+      source_tier: international_fallback
       status: ok
-      institution: CEPAL/CELADE
-      license: cepal
-      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
-      access_method: XLSX
+      institution: ONU · División de Población
+      license: un_wpp
+      url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz
+      access_method: GZ (CSV comprimido)
       flags:
-      - 'Decisión del 2026-11-01: Javier Forero aportó el archivo de CEPAL para Cuba, lo que modifica D2.'
-      - Prensa cita a ONEI con 9.434.593 de población efectiva al cierre de 2025; CEPAL da 10.937.203,5 a mitad
+      - 'Decisión del 2026-11-01: Cuba usa la ONU como respaldo marcado (D2 y D5).'
+      - Prensa cita a ONEI con 9.434.593 de población efectiva al cierre de 2025; la ONU da 10.937.203 a mitad
         de 2025. Sin verificar y con otra definición.
-      - CELADE y la División de Población de la ONU coproducen la serie.
-      source_id: cepal_celade_rev2024
-      landing_page: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
-      adapter: cepal_excel
-      raw_key: cepal_rev2024
-      raw_scope: _regional
-      cepal_row: Cuba
-      vintage_label: CEPAL Rev. 2024
+      - Variante media de la ONU; estimación hasta 2023 y proyección desde 2024.
+      source_id: un_wpp2024
+      landing_page: https://population.un.org/wpp/downloads?folder=Standard%20Projections&group=CSV%20format
+      adapter: un_wpp
+      raw_key: un_wpp2024_total
+      raw_scope: _global
+      vintage_label: ONU WPP 2024
       vintage:
         base_year: null
         reference_census: null
-        published: Archivo modificado el 2024-07-06
-        revision: Revisión 2024
-      scenario: medio (la Revisión 2024 no publica variantes en este cuadro; por confirmar)
+        published: Archivo modificado el 2024-12-13
+        revision: World Population Prospects 2024
+      scenario: Variante media (Medium)
       scenario_code: medium
-      reference_date: mitad de año
-      reference_code: mid-year
+      reference_date: 1 de julio
+      reference_code: 07-01
       year_from: 1950
       year_to: 2023
       years_covered: 1950-2023
-      update_frequency: Irregular; revisiones de CELADE
-      location_in_file: Hoja CAD01, fila Cuba
+      update_frequency: Cada dos años; revisiones de la División de Población de la ONU
+      location_in_file: Variant Medium, ISO3_code CUB, columna PopTotal
       control:
         year: 2023
-        value: 11019.9305
+        value: 11019.931
         unit: miles de personas
-        location: Hoja CAD01, fila Cuba, 2023
+        location: Variant Medium, ISO3_code CUB, 2023, columna PopTotal
       fallback_justification:
         searched: 'ONEI: www.onei.gob.cu no abre (certificado TLS vencido el 2026-09-02). Copias en terceros no
           son fuente válida.'
@@ -833,47 +833,46 @@ sources:
           con una serie descargable.
       public_note:
         es: 'ONEI no se pudo verificar: su certificado venció el 2026-09-02. Según prensa, ONEI reporta una «población
-          efectiva» bastante menor que esta cifra de CEPAL, sin poder confirmarlo aquí.'
+          efectiva» bastante menor que esta cifra de la ONU, sin poder confirmarlo aquí.'
         en: 'ONEI could not be verified: its certificate expired on 2026-09-02. According to press reports, ONEI
-          gives an “effective population” well below this ECLAC figure; this could not be confirmed here.'
+          gives an “effective population” well below this UN figure; this could not be confirmed here.'
     projection:
-      source_tier: regional_fallback
+      source_tier: international_fallback
       status: ok
-      institution: CEPAL/CELADE
-      license: cepal
-      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
-      access_method: XLSX
+      institution: ONU · División de Población
+      license: un_wpp
+      url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz
+      access_method: GZ (CSV comprimido)
       flags:
-      - 'Decisión del 2026-11-01: Javier Forero aportó el archivo de CEPAL para Cuba, lo que modifica D2.'
-      - Prensa cita a ONEI con 9.434.593 de población efectiva al cierre de 2025; CEPAL da 10.937.203,5 a mitad
+      - 'Decisión del 2026-11-01: Cuba usa la ONU como respaldo marcado (D2 y D5).'
+      - Prensa cita a ONEI con 9.434.593 de población efectiva al cierre de 2025; la ONU da 10.937.203 a mitad
         de 2025. Sin verificar y con otra definición.
-      - CELADE y la División de Población de la ONU coproducen la serie.
-      source_id: cepal_celade_rev2024
-      landing_page: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
-      adapter: cepal_excel
-      raw_key: cepal_rev2024
-      raw_scope: _regional
-      cepal_row: Cuba
-      vintage_label: CEPAL Rev. 2024
+      - Variante media de la ONU; estimación hasta 2023 y proyección desde 2024.
+      source_id: un_wpp2024
+      landing_page: https://population.un.org/wpp/downloads?folder=Standard%20Projections&group=CSV%20format
+      adapter: un_wpp
+      raw_key: un_wpp2024_total
+      raw_scope: _global
+      vintage_label: ONU WPP 2024
       vintage:
         base_year: null
         reference_census: null
-        published: Archivo modificado el 2024-07-06
-        revision: Revisión 2024
-      scenario: medio (la Revisión 2024 no publica variantes en este cuadro; por confirmar)
+        published: Archivo modificado el 2024-12-13
+        revision: World Population Prospects 2024
+      scenario: Variante media (Medium)
       scenario_code: medium
-      reference_date: mitad de año
-      reference_code: mid-year
+      reference_date: 1 de julio
+      reference_code: 07-01
       year_from: 2024
       year_to: 2100
       years_covered: 2024-2100
-      update_frequency: Irregular; revisiones de CELADE
-      location_in_file: Hoja CAD01, fila Cuba
+      update_frequency: Cada dos años; revisiones de la División de Población de la ONU
+      location_in_file: Variant Medium, ISO3_code CUB, columna PopTotal
       control:
         year: 2025
-        value: 10937.2035
+        value: 10937.203
         unit: miles de personas
-        location: Hoja CAD01, fila Cuba, 2025
+        location: Variant Medium, ISO3_code CUB, 2025, columna PopTotal
       fallback_justification:
         searched: 'ONEI: www.onei.gob.cu no abre (certificado TLS vencido el 2026-09-02). Copias en terceros no
           son fuente válida.'
@@ -881,20 +880,23 @@ sources:
           con una serie descargable.
       public_note:
         es: 'ONEI no se pudo verificar: su certificado venció el 2026-09-02. Según prensa, ONEI reporta una «población
-          efectiva» bastante menor que esta cifra de CEPAL, sin poder confirmarlo aquí.'
+          efectiva» bastante menor que esta cifra de la ONU, sin poder confirmarlo aquí.'
         en: 'ONEI could not be verified: its certificate expired on 2026-09-02. According to press reports, ONEI
-          gives an “effective population” well below this ECLAC figure; this could not be confirmed here.'
+          gives an “effective population” well below this UN figure; this could not be confirmed here.'
     pyramid:
       status: ok
-      parser: cepal_pais
-      tier: regional_fallback
-      institution: CEPAL/CELADE
-      license: cepal
-      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/07_CUB.xlsx
-      location_in_file: Hoja 'Población a mitad de año', bloques Hombres y Mujeres
+      parser: un_wpp
+      parser_args:
+        iso3: CUB
+      tier: international_fallback
+      institution: ONU · División de Población
+      license: un_wpp
+      url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_PopulationByAge5GroupSex_Medium.csv.gz
+      location_in_file: Variant Medium, ISO3_code CUB, columnas PopMale y PopFemale; 80+ suma de 80-84 a 100+
       files:
-      - raw_key: cepal_cub_pais
-        url: https://celade.cepal.org/bdcelade/proyecciones/resultados/07_CUB.xlsx
+      - raw_key: un_wpp2024_age5
+        raw_scope: _global
+        url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_PopulationByAge5GroupSex_Medium.csv.gz
   DOM:
     historical:
       source_tier: national
@@ -1159,48 +1161,46 @@ sources:
       - raw_key: gtm_ine
   HND:
     historical:
-      source_tier: regional_fallback
+      source_tier: international_fallback
       status: ok
-      institution: CEPAL/CELADE
-      license: cepal
-      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
-      access_method: XLSX
+      institution: ONU · División de Población
+      license: un_wpp
+      url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz
+      access_method: GZ (CSV comprimido)
       vintage:
         base_year: null
         reference_census: null
-        published: Archivo modificado el 2024-07-06
-        revision: Revisión 2024
-      scenario: medio (la API no publica variantes; por confirmar)
-      reference_date: mitad de año (la API lo declara así; miles de personas)
+        published: Archivo modificado el 2024-12-13
+        revision: World Population Prospects 2024
+      scenario: Variante media (Medium)
+      reference_date: 1 de julio
       years_covered: 1950-2012
-      update_frequency: irregular; revisiones de CELADE
+      update_frequency: Cada dos años; revisiones de la División de Población de la ONU
       fallback_justification:
         searched: 'INE Honduras: portada, sección Censo 2013 y Tomo 9 (Proyecciones 2013-2050).'
         why_not_usable: El Tomo 9 parte de 2013, sin serie anterior.
       control:
         year: 2012
-        value: 8715.0765
+        value: 8715.076
         unit: miles de personas
-        location: Hoja CAD01, fila Honduras, 2012
+        location: Variant Medium, ISO3_code HND, 2012, columna PopTotal
       flags:
-      - CELADE y la División de Población de la ONU coproducen la serie; el archivo cita World Population Prospects
-        2024.
-      source_id: cepal_celade_rev2024
-      adapter: cepal_excel
-      raw_key: cepal_rev2024
+      - Variante media de la ONU; estimación hasta 2023 y proyección desde 2024.
+      source_id: un_wpp2024
+      adapter: un_wpp
+      raw_key: un_wpp2024_total
       year_from: 1950
       year_to: 2012
-      reference_code: mid-year
+      reference_code: 07-01
       scenario_code: medium
-      vintage_label: CEPAL Rev. 2024
-      landing_page: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
-      raw_scope: _regional
-      cepal_row: Honduras
-      location_in_file: Hoja CAD01, fila Honduras
+      vintage_label: ONU WPP 2024
+      landing_page: https://population.un.org/wpp/downloads?folder=Standard%20Projections&group=CSV%20format
+      raw_scope: _global
+      location_in_file: Variant Medium, ISO3_code HND, columna PopTotal
       public_note:
-        es: 'INE Honduras no publica serie anterior a 2013, CEPAL da 8.72 M para 2012 e INE 8,29 M para 2013: son
+        es: 'INE Honduras no publica serie anterior a 2013, la ONU da 8,72 M para 2012 e INE 8,29 M para 2013: son
           fuentes distintas, no una caída.'
-        en: 'INE Honduras publishes no series before 2013. ECLAC gives 8.72 M for 2012 and INE 8.29 M for 2013:
+        en: 'INE Honduras publishes no series before 2013. The UN gives 8.72 M for 2012 and INE 8.29 M for 2013:
           different sources, not a decline.'
     projection:
       source_tier: national
@@ -1250,35 +1250,38 @@ sources:
       files:
       - raw_key: hnd_ine
       extra_parts:
-      - parser: cepal_pais
-        tier: regional_fallback
-        institution: CEPAL/CELADE
-        license: cepal
-        url: https://celade.cepal.org/bdcelade/proyecciones/resultados/12_HND.xlsx
-        location_in_file: Hoja 'Población a mitad de año', bloques Hombres y Mujeres
+      - parser: un_wpp
+        parser_args:
+          iso3: HND
+        tier: international_fallback
+        institution: ONU · División de Población
+        license: un_wpp
+        url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_PopulationByAge5GroupSex_Medium.csv.gz
+        location_in_file: Variant Medium, ISO3_code HND, columnas PopMale y PopFemale; 80+ suma de 80-84 a 100+
         files:
-        - raw_key: cepal_hnd_pais
-          url: https://celade.cepal.org/bdcelade/proyecciones/resultados/12_HND.xlsx
+        - raw_key: un_wpp2024_age5
+          raw_scope: _global
+          url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_PopulationByAge5GroupSex_Medium.csv.gz
       note:
-        es: Antes de 2013 usa CEPAL, igual que la serie. Desde 2030, el INE publica solo cada 5 años.
-        en: Before 2013 it uses ECLAC, like the series. From 2030, INE publishes only every 5 years.
+        es: Antes de 2013 usa la ONU, igual que la serie. Desde 2030, el INE publica solo cada 5 años.
+        en: Before 2013 it uses the UN, like the series. From 2030, INE publishes only every 5 years.
   HTI:
     historical:
-      source_tier: regional_fallback
+      source_tier: international_fallback
       status: ok
-      institution: CEPAL/CELADE
-      license: cepal
-      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
-      access_method: XLSX
+      institution: ONU · División de Población
+      license: un_wpp
+      url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz
+      access_method: GZ (CSV comprimido)
       vintage:
         base_year: null
         reference_census: null
-        published: Archivo modificado el 2024-07-06
-        revision: Revisión 2024
-      scenario: medio (la API no publica variantes; por confirmar)
-      reference_date: mitad de año (la API lo declara así; miles de personas)
+        published: Archivo modificado el 2024-12-13
+        revision: World Population Prospects 2024
+      scenario: Variante media (Medium)
+      reference_date: 1 de julio
       years_covered: 1950-2023
-      update_frequency: irregular; revisiones de CELADE
+      update_frequency: Cada dos años; revisiones de la División de Población de la ONU
       fallback_justification:
         searched: 'IHSI: portada, ''Projections et estimations de la population'' y ''Estimations désagrégées 2024''
           (julio de 2024).'
@@ -1286,78 +1289,77 @@ sources:
           para 2015, cifra no usable.
       control:
         year: 2023
-        value: 11637.3985
+        value: 11637.398
         unit: miles de personas
-        location: Hoja CAD01, fila Haití / Haiti, 2023
+        location: Variant Medium, ISO3_code HTI, 2023, columna PopTotal
       flags:
-      - CELADE y la División de Población de la ONU coproducen la serie; el archivo cita World Population Prospects
-        2024.
-      source_id: cepal_celade_rev2024
-      adapter: cepal_excel
-      raw_key: cepal_rev2024
+      - Variante media de la ONU; estimación hasta 2023 y proyección desde 2024.
+      source_id: un_wpp2024
+      adapter: un_wpp
+      raw_key: un_wpp2024_total
       year_from: 1950
       year_to: 2023
-      reference_code: mid-year
+      reference_code: 07-01
       scenario_code: medium
-      vintage_label: CEPAL Rev. 2024
-      landing_page: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
-      raw_scope: _regional
-      cepal_row: Haití / Haiti
-      location_in_file: Hoja CAD01, fila Haití / Haiti
+      vintage_label: ONU WPP 2024
+      landing_page: https://population.un.org/wpp/downloads?folder=Standard%20Projections&group=CSV%20format
+      raw_scope: _global
+      location_in_file: Variant Medium, ISO3_code HTI, columna PopTotal
     projection:
-      source_tier: regional_fallback
+      source_tier: international_fallback
       status: ok
-      institution: CEPAL/CELADE
-      license: cepal
-      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
-      access_method: XLSX
+      institution: ONU · División de Población
+      license: un_wpp
+      url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz
+      access_method: GZ (CSV comprimido)
       vintage:
         base_year: null
         reference_census: null
-        published: Archivo modificado el 2024-07-06
-        revision: Revisión 2024
-      scenario: medio (la API no publica variantes; por confirmar)
-      reference_date: mitad de año (la API lo declara así; miles de personas)
+        published: Archivo modificado el 2024-12-13
+        revision: World Population Prospects 2024
+      scenario: Variante media (Medium)
+      reference_date: 1 de julio
       years_covered: 2024-2100
-      update_frequency: irregular; revisiones de CELADE
+      update_frequency: Cada dos años; revisiones de la División de Población de la ONU
       fallback_justification:
         searched: 'IHSI: mismas páginas y documento de 509 páginas.'
         why_not_usable: No se localizó tabla anual de proyección descargable.
       control:
         year: 2025
-        value: 11906.0955
+        value: 11906.095
         unit: miles de personas
-        location: Hoja CAD01, fila Haití / Haiti, 2025
+        location: Variant Medium, ISO3_code HTI, 2025, columna PopTotal
       flags:
-      - CELADE y la División de Población de la ONU coproducen la serie; el archivo cita World Population Prospects
-        2024.
-      source_id: cepal_celade_rev2024
-      adapter: cepal_excel
-      raw_key: cepal_rev2024
+      - Variante media de la ONU; estimación hasta 2023 y proyección desde 2024.
+      source_id: un_wpp2024
+      adapter: un_wpp
+      raw_key: un_wpp2024_total
       year_from: 2024
       year_to: 2100
-      reference_code: mid-year
+      reference_code: 07-01
       scenario_code: medium
-      vintage_label: CEPAL Rev. 2024
+      vintage_label: ONU WPP 2024
       public_note:
-        es: 'IHSI solo publica cifras puntuales (2024: 11.867.032; CEPAL da 11.772.557 ese año). No se mezclan.'
-        en: 'IHSI publishes single-year figures only (2024: 11,867,032; ECLAC gives 11,772,557 that year). They
+        es: 'IHSI solo publica cifras puntuales (2024: 11.867.032; la ONU da 11.772.557 ese año). No se mezclan.'
+        en: 'IHSI publishes single-year figures only (2024: 11,867,032; the UN gives 11,772,557 that year). They
           are not mixed.'
-      landing_page: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
-      raw_scope: _regional
-      cepal_row: Haití / Haiti
-      location_in_file: Hoja CAD01, fila Haití / Haiti
+      landing_page: https://population.un.org/wpp/downloads?folder=Standard%20Projections&group=CSV%20format
+      raw_scope: _global
+      location_in_file: Variant Medium, ISO3_code HTI, columna PopTotal
     pyramid:
       status: ok
-      parser: cepal_pais
-      tier: regional_fallback
-      institution: CEPAL/CELADE
-      license: cepal
-      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/11_HTI.xlsx
-      location_in_file: Hoja 'Población a mitad de año', bloques Hombres y Mujeres
+      parser: un_wpp
+      parser_args:
+        iso3: HTI
+      tier: international_fallback
+      institution: ONU · División de Población
+      license: un_wpp
+      url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_PopulationByAge5GroupSex_Medium.csv.gz
+      location_in_file: Variant Medium, ISO3_code HTI, columnas PopMale y PopFemale; 80+ suma de 80-84 a 100+
       files:
-      - raw_key: cepal_hti_pais
-        url: https://celade.cepal.org/bdcelade/proyecciones/resultados/11_HTI.xlsx
+      - raw_key: un_wpp2024_age5
+        raw_scope: _global
+        url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_PopulationByAge5GroupSex_Medium.csv.gz
   MEX:
     historical:
       source_tier: national
@@ -1466,8 +1468,7 @@ sources:
         location: Anuario 2023, cuadro II.1.4, p. 47, La República
       flags:
       - 'El cuadro II.1.2 une tres revisiones: rupturas de serie en 2006 y 2011.'
-      - 2025 viene del cuadro II.1.7 del mismo anuario (6.946.351). Hallado al construir las pirámides; antes se
-        usaba CEPAL para ese año.
+      - 2025 viene del cuadro II.1.7 del mismo anuario (6.946.351). Hallado al construir las pirámides; antes se usaba el respaldo para ese año.
       source_id: nic_inide_rev2012
       adapter: nic_inide
       raw_key: nic_inide
@@ -1494,21 +1495,21 @@ sources:
         en: 'INIDE joins three revisions in one table: breaks in 2006 and 2011.'
       location_in_file: Cuadro II.1.2 (1990-2024) y cuadro II.1.7, La República (2025)
     projection:
-      source_tier: regional_fallback
+      source_tier: international_fallback
       status: ok
-      institution: CEPAL/CELADE
-      license: cepal
-      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
-      access_method: XLSX
+      institution: ONU · División de Población
+      license: un_wpp
+      url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz
+      access_method: GZ (CSV comprimido)
       vintage:
         base_year: null
         reference_census: null
-        published: Archivo modificado el 2024-07-06
-        revision: Revisión 2024
-      scenario: medio (la API no publica variantes; por confirmar)
-      reference_date: mitad de año (la API lo declara así; miles de personas)
+        published: Archivo modificado el 2024-12-13
+        revision: World Population Prospects 2024
+      scenario: Variante media (Medium)
+      reference_date: 1 de julio
       years_covered: 2026-2100
-      update_frequency: irregular; revisiones de CELADE
+      update_frequency: Cada dos años; revisiones de la División de Población de la ONU
       fallback_justification:
         searched: 'INIDE: portada, /Home/Working y Anuario 2023.'
         why_not_usable: El menú 'Estimaciones y Proyecciones de Población' lleva a una página en construcción; el
@@ -1517,27 +1518,23 @@ sources:
         year: 2026
         value: 7097.329
         unit: miles de personas
-        location: Hoja CAD01, fila Nicaragua, 2026
+        location: Variant Medium, ISO3_code NIC, 2026, columna PopTotal
       flags:
-      - CELADE y la División de Población de la ONU coproducen la serie; el archivo cita World Population Prospects
-        2024.
-      source_id: cepal_celade_rev2024
-      adapter: cepal_excel
-      raw_key: cepal_rev2024
+      - Variante media de la ONU; estimación hasta 2023 y proyección desde 2024.
+      source_id: un_wpp2024
+      adapter: un_wpp
+      raw_key: un_wpp2024_total
       year_from: 2026
       year_to: 2100
-      reference_code: mid-year
+      reference_code: 07-01
       scenario_code: medium
-      vintage_label: CEPAL Rev. 2024
+      vintage_label: ONU WPP 2024
       public_note:
-        es: 'INIDE no publica proyección descargable. Salto al pasar a CEPAL: 6,95 M (INIDE 2025) y 7,10 M (CEPAL
-          2026).'
-        en: 'INIDE publishes no downloadable projection. Jump on switching to ECLAC: 6.95 M (INIDE 2025) and 7.10
-          M (ECLAC 2026).'
-      landing_page: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
-      raw_scope: _regional
-      cepal_row: Nicaragua
-      location_in_file: Hoja CAD01, fila Nicaragua
+        es: 'INIDE no publica proyección descargable. Salto al pasar a la ONU: 6,95 M (INIDE 2025) y 7,10 M (ONU 2026).'
+        en: 'INIDE publishes no downloadable projection. Jump on switching to the UN: 6.95 M (INIDE 2025) and 7.10 M (UN 2026).'
+      landing_page: https://population.un.org/wpp/downloads?folder=Standard%20Projections&group=CSV%20format
+      raw_scope: _global
+      location_in_file: Variant Medium, ISO3_code NIC, columna PopTotal
     pyramid:
       status: ok
       parser: nic
@@ -1548,18 +1545,21 @@ sources:
       files:
       - raw_key: nic_inide
       note:
-        es: INIDE publica edad y sexo solo para 2023-2025. Desde 2026 usa CEPAL, igual que la serie.
-        en: INIDE publishes age and sex only for 2023-2025. From 2026 it uses ECLAC, like the series.
+        es: INIDE publica edad y sexo solo para 2023-2025. Desde 2026 usa la ONU, igual que la serie.
+        en: INIDE publishes age and sex only for 2023-2025. From 2026 it uses the UN, like the series.
       extra_parts:
-      - parser: cepal_pais
-        tier: regional_fallback
-        institution: CEPAL/CELADE
-        license: cepal
-        url: https://celade.cepal.org/bdcelade/proyecciones/resultados/14_NIC.xlsx
-        location_in_file: Hoja 'Población a mitad de año', bloques Hombres y Mujeres
+      - parser: un_wpp
+        parser_args:
+          iso3: NIC
+        tier: international_fallback
+        institution: ONU · División de Población
+        license: un_wpp
+        url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_PopulationByAge5GroupSex_Medium.csv.gz
+        location_in_file: Variant Medium, ISO3_code NIC, columnas PopMale y PopFemale; 80+ suma de 80-84 a 100+
         files:
-        - raw_key: cepal_nic_pais
-          url: https://celade.cepal.org/bdcelade/proyecciones/resultados/14_NIC.xlsx
+        - raw_key: un_wpp2024_age5
+          raw_scope: _global
+          url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_PopulationByAge5GroupSex_Medium.csv.gz
   PAN:
     historical:
       source_tier: national
@@ -1998,7 +1998,7 @@ sources:
         unit: personas
         location: Hoja Nacional, fila Total, 2025
       flags:
-      - 'DUDOSO: calculada en 2013, previa a la emigración masiva. CEPAL Rev. 2024 da 28.516,9 mil para 2025. La
+      - 'DUDOSO: calculada en 2013, previa a la emigración masiva. ONU WPP 2024 da 28.516,9 mil para 2025. La
         regla obliga a usar la nacional; la página lo advierte.'
       - 'Datos quinquenales: años intermedios null, sin interpolar.'
       - 'Pasó del archivo de parroquias a la tabla nacional, aportada por Javier Forero el 2026-11-01. Los totales
@@ -2015,9 +2015,9 @@ sources:
       step_after: 5
       estimate_until: 2010
       public_note:
-        es: Calculada en 2013, antes de la emigración masiva. CEPAL da 28,5 M para 2025 frente a 34,4 M. Lectura
+        es: Calculada en 2013, antes de la emigración masiva. La ONU da 28,5 M para 2025 frente a 34,4 M. Lectura
           con cautela. Solo quinquenal.
-        en: Computed in 2013, before mass emigration. ECLAC gives 28.5 M for 2025 against 34.4 M. Read with caution.
+        en: Computed in 2013, before mass emigration. The UN gives 28.5 M for 2025 against 34.4 M. Read with caution.
           Five-yearly only.
       location_in_file: Hoja Nacional, fila Total
     pyramid:
@@ -2030,28 +2030,29 @@ sources:
       files:
       - raw_key: ven_ine_nacional
 decisions:
-  D1: 'Aprobado 2026-11-01 y actualizado el mismo día: CEPAL/CELADE se acepta como respaldo. Se pasó de la API CEPALSTAT
+  D1: 'Sustituida por D5 el 2026-11-01. Antes: CEPAL/CELADE se aceptó como respaldo. Se pasó de la API CEPALSTAT
     (Revisión 2022) al Excel de la Revisión 2024 aportado por Javier Forero (003_COMPARATIVO.xlsx), que responde
     a un agente identificado. El Excel cita coproducción con la ONU (WPP 2024).'
-  D2: 'Actualizado 2026-11-01: Cuba pasa a CEPAL como respaldo marcado, tras aportar Javier Forero su archivo. ONEI
+  D2: 'Actualizado 2026-11-01: Cuba usa un respaldo marcado, hoy la ONU (D5). ONEI
     sigue sin ser verificable (certificado vencido); si vuelve a responder, se abre una alerta para sustituirla
     por la serie nacional.'
   D3: 'Aprobado 2026-11-01: los años previos a la serie nacional quedan null, salvo Honduras (sin ninguna serie
     nacional antes de 2013). La cifra IHSI 2024 de Haití es contraste, no se mezcla.'
   D4: 'Aprobado 2026-11-01: México queda manual; no se falsea el agente de usuario.'
+  D5: 'Aprobado 2026-11-01 por Javier Forero: ONU World Population Prospects 2024 reemplaza a CEPAL/CELADE como respaldo marcado. La cláusula 4 de los términos de CEPAL no permite redistribuir ni crear otros trabajos; la ONU publica bajo CC BY 3.0 IGO. Se descartó el FMI porque su serie LP no trae a Cuba, empieza en 1980 o después y no tiene edad ni sexo. La institución nacional sigue prevaleciendo.'
 watch:
 - iso3: HTI
   url: https://ihsi.gouv.ht/statistiques/statistiques_demographiques_et_sociales/projections_et_estimations_de_la_population
   pattern: projection|estimation
-  reason: Fuente nacional posible donde se usa CEPAL
+  reason: Fuente nacional posible donde se usa la ONU
 - iso3: NIC
   url: https://www.inide.gob.ni/
   pattern: proyecc|estimac
-  reason: Fuente nacional posible donde se usa CEPAL
+  reason: Fuente nacional posible donde se usa la ONU
 - iso3: HND
   url: https://ine.gob.hn/
   pattern: proyecc
-  reason: Fuente nacional posible donde se usa CEPAL; censo 2025 en curso
+  reason: Fuente nacional posible donde se usa la ONU; censo 2025 en curso
 - iso3: SLV
   url: https://www.bcr.gob.sv/documental/Inicio/busqueda/192
   pattern: estimaci|proyecci|rev20
@@ -2071,4 +2072,4 @@ watch:
 - iso3: CUB
   url: https://www.onei.gob.cu/
   pattern: demogr|poblaci|anuario
-  reason: Serie nacional posible donde se usa CEPAL
+  reason: Serie nacional posible donde se usa la ONU

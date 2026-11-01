@@ -18,7 +18,7 @@ class FakeHttp:
                  "hnd_ine": "hnd.pdf", "nic_inide": "nic.pdf", "pan_inec": "pan.xlsx", "per_inei": "per.pdf",
                  "pry_ine": "pry.xlsx", "slv_onec": "slv.xlsx", "ury_ine_hist": "ury_hist.xlsx",
                  "ury_ine_proj": "ury_proj.xlsx", "ven_ine_2001": "ven_2001.pdf", "ven_ine_2011": "ven_2011.xls",
-                 "cepal_hti": "cepal_hti.json", "cepal_hnd": "cepal_hnd.json", "cepal_nic": "cepal_nic.json"}
+                 "cepal_rev2024": "cepal.xlsx", "chl_ine": "chl.xlsx"}
         for v in reg["sources"].values():
             for e in v.values():
                 if e.get("raw_key") in names:
@@ -28,10 +28,7 @@ class FakeHttp:
         from latam_pop.http import FetchError
         if url in self.fail or url not in self.map:
             raise FetchError(f"HTTP 503 en {url}")
-        data = self.map[url].read_bytes()
-        if self.map[url].suffix == ".json":
-            return b'{"header":{"timestamp":1},"footer":{"ip":"x"},"body":' + data + b"}"
-        return data
+        return self.map[url].read_bytes()
 
 
 @pytest.fixture

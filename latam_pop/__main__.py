@@ -22,7 +22,7 @@ def main() -> int:
     a = ap.parse_args()
     if a.cmd == "ingest":
         e = yaml.safe_load(Path("sources.yaml").read_text(encoding="utf8"))["sources"][a.iso3][a.series]
-        saved = RawStore(Path("data/raw")).save(a.iso3, e["raw_key"], a.file.name, a.file.read_bytes(), e["url"], "manual")
+        saved = RawStore(Path("data/raw")).save(e.get("raw_scope", a.iso3), e["raw_key"], a.file.name, a.file.read_bytes(), e["url"], "manual")
         print(f"{saved.path} sha256={saved.sha256}")
         return 0
     rep = run(Path("."), watch=not a.no_watch)

@@ -36,6 +36,7 @@ def clean(population: float) -> int | float:
 def xlsx_rows(path: Path, sheet: str | int = 0):
     wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
     ws = wb[sheet] if isinstance(sheet, str) else wb.worksheets[sheet]
+    ws.reset_dimensions()  # algunos libros declaran dimensión A1 y truncarían la lectura
     for r in ws.iter_rows(values_only=True):
         yield list(r)
     wb.close()

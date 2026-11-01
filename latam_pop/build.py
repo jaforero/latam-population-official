@@ -112,7 +112,7 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
             try:
                 raw = adapter.fetch(store, http)
             except BlockedError as e:
-                raw = store.latest(iso3, entry["raw_key"])
+                raw = store.latest(adapter.scope, entry["raw_key"])
                 if raw is None:
                     st["status"] = "manual_pendiente" if adapter.manual else "error"
                     st["error"] = str(e)
@@ -121,7 +121,7 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
                     continue
                 stale = None if adapter.manual else str(e)
             except FetchError as e:
-                raw = store.latest(iso3, entry["raw_key"])
+                raw = store.latest(adapter.scope, entry["raw_key"])
                 failures.append(dict(iso3=iso3, series=kind, error=str(e)))
                 if raw is None:
                     st.update(status="error", error=str(e))

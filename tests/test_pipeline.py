@@ -29,7 +29,8 @@ def test_end_to_end(workdir):
     assert next(x for x in arg["records"] if x["year"] == 2023)["growth"] is not None
     assert arg["peak"]["status"] == "no_peak_in_horizon"
     st = load(workdir / "data/status.json")["countries"]
-    assert st["CHL"]["series"]["projection"]["status"] == "pendiente"
+    assert st["CUB"]["series"]["projection"]["status"] == "pendiente"
+    assert st["CHL"]["series"]["projection"]["status"] == "ok"
     assert st["BOL"]["series"]["historical"]["status"] == "manual_pendiente"
     assert st["COL"]["series"]["projection"]["source_tier"] == "national"
     assert st["HTI"]["series"]["projection"]["source_tier"] == "regional_fallback"
@@ -37,6 +38,8 @@ def test_end_to_end(workdir):
         rows = list(csv.DictReader(f))
     assert rows and all((workdir / x["raw_file"]).exists() for x in rows)
     assert {"manifest.json", "latam.csv"} <= {p.name for p in (workdir / "data/processed").iterdir()}
+    # CEPAL: un solo crudo compartido por varios países.
+    assert len(list((workdir / "data/raw/_regional/cepal_rev2024").glob("*.xlsx"))) == 1
 
 
 def test_failing_country_keeps_last_data_and_others_continue(workdir):

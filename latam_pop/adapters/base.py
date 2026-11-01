@@ -45,6 +45,11 @@ class Adapter:
         self.iso3, self.kind, self.entry = iso3, kind, entry
 
     @property
+    def scope(self) -> str:
+        """Carpeta de data/raw/: el país, o `raw_scope` si varios países comparten un archivo."""
+        return self.entry.get("raw_scope", self.iso3)
+
+    @property
     def manual(self) -> bool:
         return self.entry.get("status") == "manual"
 
@@ -64,13 +69,13 @@ class Adapter:
 
     def fetch(self, store: RawStore, http: Http) -> RawFile:
         if self.manual:
-            cur = store.latest(self.iso3, self.entry["raw_key"])
+            cur = store.latest(self.scope, self.entry["raw_key"])
             if cur is None:
                 raise BlockedError("Fuente manual sin archivo en data/raw/")
             return cur
         content = http.get(self.entry["url"])
         self.check_content(content)
-        return store.save(self.iso3, self.entry["raw_key"], self.filename(), self.transform(content), self.entry["url"])
+        return store.save(self.scope, self.entry["raw_key"], self.filename(), self.transform(content), self.entry["url"])
 
     def parse(self, raw_path: Path) -> dict[int, float]:
         raise NotImplementedError
@@ -81,13 +86,22 @@ class Adapter:
                 return s["source_id"], s["label"]
         return self.entry["source_id"], self.entry["vintage_label"]
 
+    def series_type_for(self, year: int) -> str:
+        """Sigue el rótulo de la fuente: `observed_until` para censos y `estimate_until` para el corte a proyección."""
+        e = self.entry
+        if year <= e.get("observed_until", 0):
+            return "observed"
+        if "estimate_until" in e:
+            return "estimate" if year <= e["estimate_until"] else "projection"
+        return "estimate" if self.kind == "historical" else "projection"
+
     def normalize(self, rows: dict[int, float], raw: RawFile) -> list[Record]:
         e = self.entry
         out = []
         for y in sorted(rows):
             if not e["year_from"] <= y <= e["year_to"]:
                 continue
-            stype = "estimate" if self.kind == "historical" or y <= e.get("estimate_until", 0) else "projection"
+            stype = self.series_type_for(y)
             sid, label = self.segment_for(y)
             out.append(Record(self.iso3, y, clean(rows[y]), stype, sid, e["source_tier"], label,
                               e.get("scenario_code"), e.get("reference_code"), raw.retrieved_at,

@@ -1,23 +1,45 @@
 {
- "schema_version": "1.0",
+ "schema_version": "1.1",
  "iso3": "CRI",
  "name_es": "Costa Rica",
  "name_en": "Costa Rica",
  "status": {
-  "historical": "manual_pendiente",
+  "historical": "manual",
   "projection": "manual_pendiente"
  },
  "reasons": {
-  "historical": {
-   "es": "El servidor rechaza scripts: falta que una persona deje el archivo.",
-   "en": "The server rejects scripts: a person must add the file."
-  },
   "projection": {
-   "es": "El servidor rechaza scripts: falta que una persona deje el archivo.",
-   "en": "The server rejects scripts: a person must add the file."
+   "es": "INEC publica la proyección 1950-2100 en un cuadro aún no cargado; su servidor rechaza scripts, así que requiere descarga manual.",
+   "en": "INEC publishes the 1950-2100 projection in a table not yet loaded; its server rejects scripts, so a manual download is required."
   }
  },
- "segments": [],
+ "segments": [
+  {
+   "source_id": "cri_inec_estimacion2022",
+   "series": "historical",
+   "source_tier": "national",
+   "institution": "INEC Costa Rica",
+   "source_url": "https://inec.cr/sites/default/files/2025-06/reResultadosEstimacionPoblacionVivienda2022.xlsx",
+   "vintage": "Censos y Estimación 2022",
+   "reference_census": "Estimación de Población y Vivienda 2022",
+   "published": "Archivo modificado el 2025-06-10",
+   "scenario": "single",
+   "reference_date": "census",
+   "year_from": 1950,
+   "year_to": 2022,
+   "access_method": "XLSX (manual)",
+   "raw_file": "data/raw/CRI/cri_inec_estimacion2022/2026-11-01_1da1a8e241e8_costarica-reResultadosEstimacionPoblacionVivienda2022.xlsx",
+   "raw_sha256": "1da1a8e241e89ea45e2ee240b59471fba893a2c24f16f71a8211fb9c5dd3941c",
+   "retrieved_at": "2026-11-01",
+   "retrieved_by": "manual",
+   "location_in_file": "Hoja 1 (Cuadro 1), columna Población total",
+   "note": {
+    "es": "Solo años de censo (1950-2011) y la Estimación de Población y Vivienda 2022: no hay serie anual ni crecimiento interanual. El cuadro anual 1950-2100 de INEC aún no está cargado.",
+    "en": "Census years only (1950-2011) plus the 2022 Population and Housing Estimate: no annual series or year-on-year growth. INEC's 1950-2100 annual table is not yet loaded."
+   },
+   "transcription": null
+  }
+ ],
  "breaks": [],
  "peak": {
   "status": "no_projection",
@@ -26,5 +48,111 @@
   "source_id": null,
   "horizon_end": null
  },
- "records": []
+ "records": [
+  {
+   "iso3": "CRI",
+   "year": 1950,
+   "population": 800875,
+   "series_type": "observed",
+   "source_id": "cri_inec_estimacion2022",
+   "source_tier": "national",
+   "vintage": "Censos y Estimación 2022",
+   "scenario": "single",
+   "reference_date": "census",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": null,
+   "raw_file": "data/raw/CRI/cri_inec_estimacion2022/2026-11-01_1da1a8e241e8_costarica-reResultadosEstimacionPoblacionVivienda2022.xlsx"
+  },
+  {
+   "iso3": "CRI",
+   "year": 1963,
+   "population": 1336274,
+   "series_type": "observed",
+   "source_id": "cri_inec_estimacion2022",
+   "source_tier": "national",
+   "vintage": "Censos y Estimación 2022",
+   "scenario": "single",
+   "reference_date": "census",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": null,
+   "raw_file": "data/raw/CRI/cri_inec_estimacion2022/2026-11-01_1da1a8e241e8_costarica-reResultadosEstimacionPoblacionVivienda2022.xlsx"
+  },
+  {
+   "iso3": "CRI",
+   "year": 1973,
+   "population": 1871780,
+   "series_type": "observed",
+   "source_id": "cri_inec_estimacion2022",
+   "source_tier": "national",
+   "vintage": "Censos y Estimación 2022",
+   "scenario": "single",
+   "reference_date": "census",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": null,
+   "raw_file": "data/raw/CRI/cri_inec_estimacion2022/2026-11-01_1da1a8e241e8_costarica-reResultadosEstimacionPoblacionVivienda2022.xlsx"
+  },
+  {
+   "iso3": "CRI",
+   "year": 1984,
+   "population": 2416809,
+   "series_type": "observed",
+   "source_id": "cri_inec_estimacion2022",
+   "source_tier": "national",
+   "vintage": "Censos y Estimación 2022",
+   "scenario": "single",
+   "reference_date": "census",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": null,
+   "raw_file": "data/raw/CRI/cri_inec_estimacion2022/2026-11-01_1da1a8e241e8_costarica-reResultadosEstimacionPoblacionVivienda2022.xlsx"
+  },
+  {
+   "iso3": "CRI",
+   "year": 2000,
+   "population": 3810179,
+   "series_type": "observed",
+   "source_id": "cri_inec_estimacion2022",
+   "source_tier": "national",
+   "vintage": "Censos y Estimación 2022",
+   "scenario": "single",
+   "reference_date": "census",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": null,
+   "raw_file": "data/raw/CRI/cri_inec_estimacion2022/2026-11-01_1da1a8e241e8_costarica-reResultadosEstimacionPoblacionVivienda2022.xlsx"
+  },
+  {
+   "iso3": "CRI",
+   "year": 2011,
+   "population": 4301712,
+   "series_type": "observed",
+   "source_id": "cri_inec_estimacion2022",
+   "source_tier": "national",
+   "vintage": "Censos y Estimación 2022",
+   "scenario": "single",
+   "reference_date": "census",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": null,
+   "raw_file": "data/raw/CRI/cri_inec_estimacion2022/2026-11-01_1da1a8e241e8_costarica-reResultadosEstimacionPoblacionVivienda2022.xlsx"
+  },
+  {
+   "iso3": "CRI",
+   "year": 2022,
+   "population": 5044197,
+   "series_type": "estimate",
+   "source_id": "cri_inec_estimacion2022",
+   "source_tier": "national",
+   "vintage": "Censos y Estimación 2022",
+   "scenario": "single",
+   "reference_date": "census",
+   "retrieved_at": "2026-11-01",
+   "interpolated": false,
+   "growth": null,
+   "raw_file": "data/raw/CRI/cri_inec_estimacion2022/2026-11-01_1da1a8e241e8_costarica-reResultadosEstimacionPoblacionVivienda2022.xlsx"
+  }
+ ]
 }

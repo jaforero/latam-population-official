@@ -41,6 +41,16 @@ def test_cepal_only_where_declared():
                 assert not (r["iso3"] == "NIC" and int(r["year"]) <= 2024)
 
 
+def test_cepal_uses_current_revision():
+    for i, k in (("HND", "historical"), ("HTI", "historical"), ("HTI", "projection"), ("NIC", "projection")):
+        assert REG[i][k]["source_id"] == "cepal_celade_rev2024" and REG[i][k]["url"].startswith("https://celade.cepal.org/")
+
+
+def test_pending_countries_show_no_figures():
+    for iso in ("CUB", "DOM", "GTM"):
+        assert json.loads((P / f"{iso}.json").read_text(encoding="utf8"))["records"] == []
+
+
 def test_no_excluded_sources():
     bad = ("worldbank", "population.un.org", "wikipedia", "statista", "datosmacro", "ourworldindata", "oncubanews")
     for v in REG.values():

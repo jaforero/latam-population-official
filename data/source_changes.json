@@ -1,1 +1,50 @@
-[]
+[
+ {
+  "date": "2026-11-01",
+  "iso3": "HND",
+  "code": "vintage_change",
+  "message": "historical: vintage CEPAL Rev. 2022 → CEPAL Rev. 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HTI",
+  "code": "vintage_change",
+  "message": "historical: vintage CEPAL Rev. 2022 → CEPAL Rev. 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HTI",
+  "code": "vintage_change",
+  "message": "projection: vintage CEPAL Rev. 2022 → CEPAL Rev. 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "NIC",
+  "code": "vintage_change",
+  "message": "projection: vintage CEPAL Rev. 2022 → CEPAL Rev. 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CHL",
+  "code": "source_added",
+  "message": "pendiente → INE Chile, base 2024 (descarga automática; URL aportada a mano)"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "BOL",
+  "code": "source_added",
+  "message": "manual_pendiente → INE Bolivia: Rev. 2020 (2012-2022) y Rev. 2025 (2024-2034), archivos aportados a mano"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "MEX",
+  "code": "source_added",
+  "message": "manual_pendiente → CONAPO, archivo municipal 1990-2040 aportado a mano"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CRI",
+  "code": "source_added",
+  "message": "manual_pendiente → INEC, años censales 1950-2022 aportados a mano; la proyección sigue pendiente"
+ }
+]

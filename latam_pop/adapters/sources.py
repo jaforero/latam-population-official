@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import csv
 import io
-import json
 import re
 from pathlib import Path
 
@@ -41,8 +40,13 @@ class ArgIndec2022(Adapter):
 
 @register("bol_ine")
 class BolIne(Adapter):
+    """Acepta los dos formatos del INE: tabla por edad (años en columnas) y cuadro anual 2000-2050 (años en filas)."""
+
     def parse(self, raw):
-        return first_two(xlsx_rows(raw))
+        rows = list(xlsx_rows(raw))
+        if any(isinstance(c, str) and c.strip() == "Edad" for r in rows for c in r):
+            return wide_row(rows, "Total", self.entry["year_from"])
+        return first_two(rows)
 
 
 @register("bra_ibge")
@@ -59,6 +63,15 @@ class BraIbge(Adapter):
         if not out:
             raise ParseError("Sin filas de Brasil")
         return out
+
+
+@register("chl_ine")
+class ChlIne(Adapter):
+    def filename(self):
+        return "estimaciones-y-proyecciones-1992-2070_base-2024_tabulados.xlsx"
+
+    def parse(self, raw):
+        return wide_row(xlsx_rows(raw, "Población al 30 de junio"), "Total", 1992)
 
 
 @register("col_dane")
@@ -79,6 +92,14 @@ class ColDane(Adapter):
 class CriInec(Adapter):
     def parse(self, raw):
         return first_two(xlsx_rows(raw, "C1. Población total"))
+
+
+@register("cri_inec_censos")
+class CriInecCensos(Adapter):
+    """Cuadro 1: censos 1864-2011 y Estimación de Población y Vivienda 2022. Solo esos años existen."""
+
+    def parse(self, raw):
+        return first_two(xlsx_rows(raw, "1"))
 
 
 @register("ecu_inec")
@@ -117,16 +138,30 @@ class HndIne(Adapter):
 
 @register("mex_conapo")
 class MexConapo(Adapter):
+    """Acepta la serie nacional (POB_MIT_ANIO) y el archivo municipal (POB_MIT_MUN), que no trae fila nacional.
+    En el municipal el total es una suma: municipios y entidades deben coincidir o el archivo se rechaza."""
+
     def parse(self, raw):
         data = Path(raw).read_bytes()
         try:
             text = data.decode("utf-8-sig")
         except UnicodeDecodeError:
             text = data.decode("latin1")
-        out = {}
-        for r in csv.DictReader(io.StringIO(text)):
-            if r["CVE_GEO"].strip() == "0" or r["ENTIDAD"].lower().startswith("rep"):
-                out[int(r["ANIO"])] = float(r["POB_MIT_ANIO"])
+        reader = csv.DictReader(io.StringIO(text))
+        out: dict[int, float] = {}
+        if "POB_MIT_ANIO" in (reader.fieldnames or []):
+            for r in reader:
+                if r["CVE_GEO"].strip() == "0" or r["ENTIDAD"].lower().startswith("rep"):
+                    out[int(r["ANIO"])] = float(r["POB_MIT_ANIO"])
+            return out
+        states: dict[int, dict[str, float]] = {}
+        for r in reader:
+            y = int(r["ANO"])
+            out[y] = out.get(y, 0.0) + float(r["POB_MIT_MUN"])
+            states.setdefault(y, {})[r["CLAVE_ENT"]] = float(r["POB_MIT_ENT"])
+        for y, s in states.items():
+            if abs(sum(s.values()) - out[y]) > 0.5:
+                raise ParseError(f"México {y}: municipios {out[y]} y entidades {sum(s.values())} no coinciden")
         return out
 
 
@@ -213,22 +248,20 @@ class VenIne2011(Adapter):
         return wide_row(xls_rows(raw), "Total", 2000)
 
 
-@register("cepal")
-class Cepal(Adapter):
-    def filename(self):
-        return f"cepalstat_indicador1_miembro{self.entry['cepal_member']}.json"
+@register("cepal_excel")
+class CepalExcel(Adapter):
+    """Revisión 2024, hoja CAD01: una fila por país, en miles de personas a mitad de año."""
 
-    def transform(self, content):
-        """Quita header y footer: cambian en cada llamada (hora, IP) y no son dato."""
-        doc = json.loads(content)
-        return json.dumps(doc["body"], ensure_ascii=False, sort_keys=True, indent=0).encode("utf8")
+    def filename(self):
+        return "003_COMPARATIVO.xlsx"
 
     def parse(self, raw):
-        body = json.loads(Path(raw).read_text(encoding="utf8"))
-        years = {}
-        for d in body["dimensions"]:
-            if d["name"].startswith("Años"):
-                years = {m["id"]: int(m["name"]) for m in d["members"]}
-        if not years:
-            raise ParseError("La API no trae la dimensión de años")
-        return {years[r["dim_29117"]]: float(r["value"]) * 1000 for r in body["data"]}
+        years, target = None, self.entry["cepal_row"].strip()
+        for r in xlsx_rows(raw, "CAD01"):
+            if years is None:
+                if any(year_of(c) == 1950 for c in r):
+                    years = r
+                continue
+            if any(isinstance(c, str) and c.strip() == target for c in r):
+                return {year_of(y): round(float(v) * 1000, 3) for y, v in zip(years, r) if year_of(y) and num(v) is not None}
+        raise ParseError(f"CAD01 no trae la fila {target}")

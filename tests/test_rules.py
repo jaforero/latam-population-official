@@ -74,6 +74,10 @@ def test_quinquennial_expected_years():
     assert expected_years(dict(year_from=2000, year_to=2010, annual_until=1999, step_after=5)) == [2000, 2005, 2010]
 
 
+def test_census_series_expects_only_published_years():
+    assert expected_years(dict(year_from=1950, year_to=2022, years_published=[1950, 2022])) == [1950, 2022]
+
+
 def test_vintage_and_tier_change_alerts():
     prev = dict(projection=dict(source_id="cepal", vintage="r1", source_tier="regional_fallback"))
     cur = dict(projection=dict(source_id="ine", vintage="r2", source_tier="national"))

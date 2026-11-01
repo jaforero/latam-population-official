@@ -86,44 +86,49 @@ sources:
       source_tier: national
       status: manual
       institution: INE Bolivia
-      url: https://nimbus.ine.gob.bo/index.php/s/kdz7ktspssFz6C4/download
+      url: https://nube.ine.gob.bo/index.php/s/4HGAf9gp5E6k68z/download
       access_method: XLSX (manual)
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
       vintage:
-        base_year: 2024
-        reference_census: Censo 2024
-        published: Archivo modificado el 2026-02-06
-        revision: Revisión 2025
+        base_year: 2012
+        reference_census: Censo 2012
+        published: Archivo modificado el 2026-02-09
+        revision: Revisión 2020
       scenario: 'No aplica: serie única'
-      reference_date: 1 de enero
-      years_covered: 2000-2023
+      reference_date: No declarada en el cuadro
+      years_covered: 2012-2022
       update_frequency: Sin calendario fijo
       control:
-        year: 2023
-        value: 11872175
+        year: 2022
+        value: 12006031
         unit: personas
-        location: Cuadro N°7, año 2023
+        location: Cuadro N.° 1, fila Total, 2022
       flags:
-      - 'robots.txt de nimbus.ine.gob.bo declara ''Disallow: /'': descarga automática no permitida; método manual.'
-      - El corte histórico/proyección (2023/2024) se infiere del censo 2024; el cuadro no lo marca.
-      - Referencia al 1 de enero, distinta de la mayoría de países.
-      source_id: bol_ine_rev2025
+      - Archivo aportado a mano el 2026-11-01 (bolivia-PC2010100.xlsx).
+      - Revisión superada en estos mismos años por la Revisión 2025; se usará PC20107 cuando llegue.
+      - 'Sin 2023: la revisión termina en 2022 y la siguiente empieza en 2024.'
+      source_id: bol_ine_rev2020
       adapter: bol_ine
-      raw_key: bol_ine
-      year_from: 2000
-      year_to: 2023
-      reference_code: 01-01
+      raw_key: bol_ine_rev2020
+      year_from: 2012
+      year_to: 2022
+      reference_code: null
       scenario_code: single
-      vintage_label: Rev. 2025
-      public_reason:
-        es: 'robots.txt prohíbe la descarga automática: falta que una persona deje el archivo.'
-        en: 'robots.txt forbids automated download: a person must add the file.'
+      vintage_label: Rev. 2020
+      landing_page: https://www.ine.gob.bo/index.php/censos-y-proyecciones-de-poblacion-sociales/
+      estimate_until: 2012
+      location_in_file: Cuadro N.° 1, fila Total
+      public_note:
+        es: 'Revisión anterior: la fuente rotula estos años como proyección y no declara fecha de referencia. La
+          Revisión 2025 recalculó el pasado, pero su cuadro 2000-2050 aún no está cargado.'
+        en: 'Earlier revision: the source labels these years as projection and states no reference date. Revision
+          2025 recalculated the past, but its 2000-2050 table is not yet loaded.'
     projection:
       source_tier: national
       status: manual
       institution: INE Bolivia
-      url: https://nimbus.ine.gob.bo/index.php/s/kdz7ktspssFz6C4/download
+      url: https://nimbus.ine.gob.bo/index.php/s/nBq9cK6Mn5L2Q4a/download
       access_method: XLSX (manual)
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
@@ -134,31 +139,31 @@ sources:
         revision: Revisión 2025
       scenario: No indica variantes (por confirmar)
       reference_date: 1 de enero
-      years_covered: 2024-2050
+      years_covered: 2024-2034
       update_frequency: Sin calendario fijo
       control:
         year: 2025
         value: 11945263
         unit: personas
-        location: Cuadro N°7, año 2025
+        location: Cuadro N.° 1, fila Total, 2025
       flags:
-      - 'robots.txt de nimbus.ine.gob.bo declara ''Disallow: /'': descarga automática no permitida; método manual.'
-      - El corte histórico/proyección (2023/2024) se infiere del censo 2024; el cuadro no lo marca.
-      - Referencia al 1 de enero, distinta de la mayoría de países.
+      - Archivo aportado a mano el 2026-11-01 (bolivia-PC20101.xlsx).
+      - robots.txt de nimbus.ine.gob.bo prohíbe la descarga automática.
       source_id: bol_ine_rev2025
       adapter: bol_ine
-      raw_key: bol_ine
+      raw_key: bol_ine_rev2025
       year_from: 2024
-      year_to: 2050
+      year_to: 2034
       reference_code: 01-01
       scenario_code: single
       vintage_label: Rev. 2025
       public_note:
-        es: Cifras al 1 de enero, no a mitad de año.
-        en: Figures as of January 1, not mid-year.
-      public_reason:
-        es: 'robots.txt prohíbe la descarga automática: falta que una persona deje el archivo.'
-        en: 'robots.txt forbids automated download: a person must add the file.'
+        es: Cifras al 1 de enero, no a mitad de año. El cuadro cargado llega a 2034; INE Bolivia publica otro hasta
+          2050, aún sin cargar.
+        en: Figures as of January 1, not mid-year. The loaded table ends in 2034; INE Bolivia publishes another
+          to 2050, not yet loaded.
+      landing_page: https://www.ine.gob.bo/index.php/censos-y-proyecciones-de-poblacion-sociales/
+      location_in_file: Cuadro N.° 1, fila Total
   BRA:
     historical:
       source_tier: national
@@ -231,43 +236,76 @@ sources:
   CHL:
     historical:
       source_tier: national
-      status: pendiente
+      status: ok
       institution: INE Chile
-      url: https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/publicaciones-y-anuarios/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_presentaci%C3%B3n-de-resultados.pdf?sfvrsn=41adcf84_5
-      access_method: PDF (sin serie anual)
+      url: https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/cuadros-estadisticos/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_tabulados.xlsx?sfvrsn=2508a40e_7
+      access_method: XLSX
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
-      pending_reason: INE Chile publicó la base 2024 (1992-2070) el 2026-01-28, pero solo se localizó el PDF de
-        resultados, con gráfico y cifras sueltas. No se encontró el cuadro anual; la página de proyecciones solo
-        enlaza la base 2017.
       flags:
-      - 'Existe serie nacional: CEPAL no se usa mientras se busca el cuadro.'
-      source_id: null
-      public_reason:
-        es: INE Chile publicó la base 2024 (1992-2070), pero solo se halló un PDF sin cuadro anual.
-        en: INE Chile released base 2024 (1992-2070), but only a PDF without an annual table was found.
+      - URL aportada a mano el 2026-11-01; responde a un agente identificado. Lleva parámetro sfvrsn, que puede
+        cambiar al republicar.
+      - 'Contrastado con la base de datos del INE (…_base-de-datos.xlsx): H + M al 30/6 coincide con el total en
+        los 79 años.'
+      source_id: chl_ine_base2024
+      adapter: chl_ine
+      raw_key: chl_ine
+      year_from: 1992
+      year_to: 2024
+      years_covered: 1992-2024
+      reference_code: 06-30
+      reference_date: 30 de junio
+      scenario: Escenario medio
+      scenario_code: single
+      vintage_label: Base 2024
+      vintage:
+        base_year: 2024
+        reference_census: Censo 2024
+        published: '2026-01-28'
+        revision: Base 2024
+      update_frequency: Al menos cada 5 años (según INE)
+      location_in_file: Hoja 'Población al 30 de junio', fila Total
+      control:
+        year: 1992
+        value: 13770793
+        unit: personas
+        location: Hoja 'Población al 30 de junio', fila Total, 1992
     projection:
       source_tier: national
-      status: pendiente
+      status: ok
       institution: INE Chile
-      url: https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/publicaciones-y-anuarios/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_presentaci%C3%B3n-de-resultados.pdf?sfvrsn=41adcf84_5
-      access_method: PDF (sin serie anual)
+      url: https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/cuadros-estadisticos/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_tabulados.xlsx?sfvrsn=2508a40e_7
+      access_method: XLSX
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
-      pending_reason: INE Chile publicó la base 2024 (1992-2070) el 2026-01-28, pero solo se localizó el PDF de
-        resultados, con gráfico y cifras sueltas. No se encontró el cuadro anual; la página de proyecciones solo
-        enlaza la base 2017.
       flags:
-      - 'Pico declarado por INE: 20.643.490 en 2035.'
+      - URL aportada a mano el 2026-11-01; responde a un agente identificado. Lleva parámetro sfvrsn, que puede
+        cambiar al republicar.
+      - 'Contrastado con la base de datos del INE (…_base-de-datos.xlsx): H + M al 30/6 coincide con el total en
+        los 79 años.'
       control:
         year: 2026
         value: 20150948
         unit: personas
-        location: PDF de resultados, p. 16
-      source_id: null
-      public_reason:
-        es: INE Chile publicó la base 2024 (1992-2070), pero solo se halló un PDF sin cuadro anual.
-        en: INE Chile released base 2024 (1992-2070), but only a PDF without an annual table was found.
+        location: Hoja 'Población al 30 de junio', fila Total, 2026
+      source_id: chl_ine_base2024
+      adapter: chl_ine
+      raw_key: chl_ine
+      year_from: 2025
+      year_to: 2070
+      years_covered: 2025-2070
+      reference_code: 06-30
+      reference_date: 30 de junio
+      scenario: Escenario medio
+      scenario_code: medium
+      vintage_label: Base 2024
+      vintage:
+        base_year: 2024
+        reference_census: Censo 2024
+        published: '2026-01-28'
+        revision: Base 2024
+      update_frequency: Al menos cada 5 años (según INE)
+      location_in_file: Hoja 'Población al 30 de junio', fila Total
   COL:
     historical:
       source_tier: national
@@ -334,38 +372,55 @@ sources:
       source_tier: national
       status: manual
       institution: INEC Costa Rica
-      url: https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx
+      url: https://inec.cr/sites/default/files/2025-06/reResultadosEstimacionPoblacionVivienda2022.xlsx
       access_method: XLSX (manual)
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
       vintage:
         base_year: 2022
-        reference_census: Censo 2022
-        published: 2024-07-11 (archivo republicado 2026-06)
-        revision: Estimaciones y proyecciones 1950-2100
+        reference_census: Estimación de Población y Vivienda 2022
+        published: Archivo modificado el 2025-06-10
+        revision: Cuadro 1, 1864-2022
       scenario: 'No aplica: serie única'
-      reference_date: 30 de junio
-      years_covered: 1950-2022
-      update_frequency: Sin calendario fijo
+      reference_date: Fecha de cada censo o estimación
+      years_covered: 1950, 1963, 1973, 1984, 2000, 2011 y 2022
+      update_frequency: Con cada censo
       control:
-        year: 2021
-        value: 5077666.859816892
+        year: 2022
+        value: 5044197
         unit: personas
-        location: Hoja 'C1. Población total', 2021, Total (leído en navegador)
+        location: Hoja 1 (Cuadro 1), 2022, Población total
       flags:
-      - El servidor responde 403 a scripts y a robots.txt; solo abre en navegador. Método manual; no se elude.
-      - El publicador lo llama 'kit de cuadros'; archivo republicado en 2026-06, metodología de 2024-07.
-      source_id: cri_inec_1950_2100
-      adapter: cri_inec
-      raw_key: cri_inec
+      - Archivo aportado a mano el 2026-11-01. El cuadro también trae 1864, 1883, 1892 y 1927, fuera del rango de
+        la pieza.
+      - 'La cifra de 2022 es otra medición que la serie anual del INEC (2021: 5.077.667; 2023: 5.135.912, a 30 de
+        junio). No se mezclan.'
+      - Se reemplaza por repoblaceppnacio1950-2100..xlsx cuando llegue.
+      source_id: cri_inec_estimacion2022
+      adapter: cri_inec_censos
+      raw_key: cri_inec_estimacion2022
       year_from: 1950
       year_to: 2022
-      reference_code: 06-30
+      reference_code: census
       scenario_code: single
-      vintage_label: 1950-2100
-      public_reason:
-        es: 'El servidor rechaza scripts: falta que una persona deje el archivo.'
-        en: 'The server rejects scripts: a person must add the file.'
+      vintage_label: Censos y Estimación 2022
+      landing_page: https://inec.cr/tabulados
+      years_published:
+      - 1950
+      - 1963
+      - 1973
+      - 1984
+      - 2000
+      - 2011
+      - 2022
+      observed_until: 2011
+      estimate_until: 2022
+      location_in_file: Hoja 1 (Cuadro 1), columna Población total
+      public_note:
+        es: 'Solo años de censo (1950-2011) y la Estimación de Población y Vivienda 2022: no hay serie anual ni
+          crecimiento interanual. El cuadro anual 1950-2100 de INEC aún no está cargado.'
+        en: 'Census years only (1950-2011) plus the 2022 Population and Housing Estimate: no annual series or year-on-year
+          growth. INEC''s 1950-2100 annual table is not yet loaded.'
     projection:
       source_tier: national
       status: manual
@@ -376,7 +431,7 @@ sources:
         de la Fase 1.'
       vintage:
         base_year: 2022
-        reference_census: Censo 2022
+        reference_census: Estimación de Población y Vivienda 2022
         published: 2024-07-11 (archivo republicado 2026-06)
         revision: Estimaciones y proyecciones 1950-2100
       scenario: Medio (por confirmar)
@@ -400,8 +455,10 @@ sources:
       scenario_code: medium
       vintage_label: 1950-2100
       public_reason:
-        es: 'El servidor rechaza scripts: falta que una persona deje el archivo.'
-        en: 'The server rejects scripts: a person must add the file.'
+        es: INEC publica la proyección 1950-2100 en un cuadro aún no cargado; su servidor rechaza scripts, así que
+          requiere descarga manual.
+        en: INEC publishes the 1950-2100 projection in a table not yet loaded; its server rejects scripts, so a
+          manual download is required.
   CUB:
     historical:
       source_tier: national
@@ -582,17 +639,16 @@ sources:
     historical:
       source_tier: regional_fallback
       status: ok
-      institution: CEPAL/CELADE (CEPALSTAT, indicador 1)
-      url: https://api-cepalstat.cepal.org/cepalstat/api/v1/indicator/1/data?lang=es&format=json&members=146,239
-      access_method: API
+      institution: CEPAL/CELADE
+      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
+      access_method: XLSX
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
       vintage:
         base_year: null
         reference_census: null
-        published: La API cita CELADE Revisión 2022 y WPP 2022; la página de Excel de CEPAL cita Revisión 2024.
-          Sin resolver.
-        revision: Revisión 2022 (según API)
+        published: Archivo modificado el 2024-07-06
+        revision: Revisión 2024
       scenario: medio (la API no publica variantes; por confirmar)
       reference_date: mitad de año (la API lo declara así; miles de personas)
       years_covered: 1950-2012
@@ -602,20 +658,29 @@ sources:
         why_not_usable: El Tomo 9 parte de 2013, sin serie anterior.
       control:
         year: 2012
-        value: '8792.4'
+        value: 8715.0765
         unit: miles de personas
-        location: campo value de la API
+        location: Hoja CAD01, fila Honduras, 2012
       flags:
-      - CEPALSTAT cita a Naciones Unidas (WPP) como coproductor; véase la nota de decisión D1.
-      source_id: cepal_celade_rev2022
-      adapter: cepal
-      raw_key: cepal_hnd
+      - CELADE y la División de Población de la ONU coproducen la serie; el archivo cita World Population Prospects
+        2024.
+      source_id: cepal_celade_rev2024
+      adapter: cepal_excel
+      raw_key: cepal_rev2024
       year_from: 1950
       year_to: 2012
       reference_code: mid-year
       scenario_code: medium
-      vintage_label: CEPAL Rev. 2022
-      cepal_member: 239
+      vintage_label: CEPAL Rev. 2024
+      landing_page: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
+      raw_scope: _regional
+      cepal_row: Honduras
+      location_in_file: Hoja CAD01, fila Honduras
+      public_note:
+        es: 'INE Honduras no publica serie anterior a 2013, CEPAL da 8.72 M para 2012 e INE 8,29 M para 2013: son
+          fuentes distintas, no una caída.'
+        en: 'INE Honduras publishes no series before 2013. ECLAC gives 8.72 M for 2012 and INE 8.29 M for 2013:
+          different sources, not a decline.'
     projection:
       source_tier: national
       status: ok
@@ -659,17 +724,16 @@ sources:
     historical:
       source_tier: regional_fallback
       status: ok
-      institution: CEPAL/CELADE (CEPALSTAT, indicador 1)
-      url: https://api-cepalstat.cepal.org/cepalstat/api/v1/indicator/1/data?lang=es&format=json&members=146,238
-      access_method: API
+      institution: CEPAL/CELADE
+      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
+      access_method: XLSX
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
       vintage:
         base_year: null
         reference_census: null
-        published: La API cita CELADE Revisión 2022 y WPP 2022; la página de Excel de CEPAL cita Revisión 2024.
-          Sin resolver.
-        revision: Revisión 2022 (según API)
+        published: Archivo modificado el 2024-07-06
+        revision: Revisión 2024
       scenario: medio (la API no publica variantes; por confirmar)
       reference_date: mitad de año (la API lo declara así; miles de personas)
       years_covered: 1950-2023
@@ -681,36 +745,37 @@ sources:
           para 2015, cifra no usable.
       control:
         year: 2023
-        value: '11724.8'
+        value: 11637.3985
         unit: miles de personas
-        location: campo value de la API
+        location: Hoja CAD01, fila Haití / Haiti, 2023
       flags:
-      - CEPALSTAT cita a Naciones Unidas (WPP) como coproductor; véase la nota de decisión D1.
-      - 'Punto nacional IHSI 2024: 11.867.032; CEPAL da 11.867 mil. Sirve de contraste; podría prevalecer para ese
-        año (decisión D3).'
-      source_id: cepal_celade_rev2022
-      adapter: cepal
-      raw_key: cepal_hti
+      - CELADE y la División de Población de la ONU coproducen la serie; el archivo cita World Population Prospects
+        2024.
+      source_id: cepal_celade_rev2024
+      adapter: cepal_excel
+      raw_key: cepal_rev2024
       year_from: 1950
       year_to: 2023
       reference_code: mid-year
       scenario_code: medium
-      vintage_label: CEPAL Rev. 2022
-      cepal_member: 238
+      vintage_label: CEPAL Rev. 2024
+      landing_page: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
+      raw_scope: _regional
+      cepal_row: Haití / Haiti
+      location_in_file: Hoja CAD01, fila Haití / Haiti
     projection:
       source_tier: regional_fallback
       status: ok
-      institution: CEPAL/CELADE (CEPALSTAT, indicador 1)
-      url: https://api-cepalstat.cepal.org/cepalstat/api/v1/indicator/1/data?lang=es&format=json&members=146,238
-      access_method: API
+      institution: CEPAL/CELADE
+      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
+      access_method: XLSX
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
       vintage:
         base_year: null
         reference_census: null
-        published: La API cita CELADE Revisión 2022 y WPP 2022; la página de Excel de CEPAL cita Revisión 2024.
-          Sin resolver.
-        revision: Revisión 2022 (según API)
+        published: Archivo modificado el 2024-07-06
+        revision: Revisión 2024
       scenario: medio (la API no publica variantes; por confirmar)
       reference_date: mitad de año (la API lo declara así; miles de personas)
       years_covered: 2024-2100
@@ -720,29 +785,34 @@ sources:
         why_not_usable: No se localizó tabla anual de proyección descargable.
       control:
         year: 2025
-        value: '12009.5'
+        value: 11906.0955
         unit: miles de personas
-        location: campo value de la API
+        location: Hoja CAD01, fila Haití / Haiti, 2025
       flags:
-      - CEPALSTAT cita a Naciones Unidas (WPP) como coproductor; véase la nota de decisión D1.
-      source_id: cepal_celade_rev2022
-      adapter: cepal
-      raw_key: cepal_hti
+      - CELADE y la División de Población de la ONU coproducen la serie; el archivo cita World Population Prospects
+        2024.
+      source_id: cepal_celade_rev2024
+      adapter: cepal_excel
+      raw_key: cepal_rev2024
       year_from: 2024
       year_to: 2100
       reference_code: mid-year
       scenario_code: medium
-      vintage_label: CEPAL Rev. 2022
-      cepal_member: 238
+      vintage_label: CEPAL Rev. 2024
       public_note:
-        es: 'IHSI solo publica cifras puntuales (2024: 11.867.032).'
-        en: 'IHSI publishes single-year figures only (2024: 11,867,032).'
+        es: 'IHSI solo publica cifras puntuales (2024: 11.867.032; CEPAL da 11.772.557 ese año). No se mezclan.'
+        en: 'IHSI publishes single-year figures only (2024: 11,867,032; ECLAC gives 11,772,557 that year). They
+          are not mixed.'
+      landing_page: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
+      raw_scope: _regional
+      cepal_row: Haití / Haiti
+      location_in_file: Hoja CAD01, fila Haití / Haiti
   MEX:
     historical:
       source_tier: national
       status: manual
       institution: CONAPO
-      url: https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/b4fe49a8-c86a-4c32-8450-8f3c4cc83125/download/05_indicadores_demograficos_proyecciones.csv
+      url: https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/e9160552-769b-41ee-88d1-afc765552608/download/pobproy_inddemo.csv
       access_method: CSV (manual)
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
@@ -753,34 +823,42 @@ sources:
         revision: Conciliación 1950-2019 y proyecciones 2020-2070
       scenario: 'No aplica: serie única'
       reference_date: 1 de julio (mitad de año)
-      years_covered: 1950-2019
+      years_covered: 1990-2019
       update_frequency: Sin calendario fijo
       control:
         year: 2019
         value: 127215666
         unit: personas
-        location: POB_MIT_ANIO, ENTIDAD nacional, 2019
+        location: Suma de POB_MIT_MUN de todos los municipios, 2019
       flags:
-      - 'datos.gob.mx responde 403 a un agente identificado y 200 a uno de navegador. No se falsea el agente: método
-        manual salvo decisión D4.'
-      - Dato verificado el 2026-11-01 con agente de navegador durante la investigación.
-      - 'Pico en el archivo: 147.022.927 en 2052.'
+      - Archivo aportado a mano el 2026-11-01. Suma derivada, no interpolada; el adaptador exige que municipios
+        y entidades den el mismo total.
+      - Cada año 1990-2040 coincidió exactamente con la serie nacional consultada en la verificación inicial, que
+        además sitúa el máximo en 2052.
+      - 'datos.gob.mx responde 403 a un agente identificado: método manual (decisión D4).'
+      - Falta 05_indicadores_demograficos_proyecciones.csv, que extiende la serie a 1950-2070 con fila nacional.
       source_id: mex_conapo_2023
       adapter: mex_conapo
-      raw_key: mex_conapo
-      year_from: 1950
+      raw_key: mex_conapo_municipal
+      year_from: 1990
       year_to: 2019
       reference_code: 07-01
       scenario_code: single
       vintage_label: Conciliación 2023
-      public_reason:
-        es: 'datos.gob.mx rechaza un agente identificado: falta que una persona deje el archivo.'
-        en: 'datos.gob.mx rejects an identified agent: a person must add the file.'
+      landing_page: https://www.datos.gob.mx/dataset/proyecciones-de-poblacion
+      location_in_file: POB_MIT_MUN por municipio; POB_MIT_ENT como verificación cruzada
+      public_note:
+        es: 'Total nacional sumado desde los 2.475 municipios del archivo de CONAPO, que no trae fila nacional.
+          El archivo llega a 2040: la serie nacional de CONAPO, aún sin cargar, llega a 2070, así que el máximo
+          puede quedar fuera de este horizonte.'
+        en: 'National total summed from the 2,475 municipalities in the CONAPO file, which has no national row.
+          The file ends in 2040: CONAPO''s national series, not yet loaded, runs to 2070, so the peak may fall outside
+          this horizon.'
     projection:
       source_tier: national
       status: manual
       institution: CONAPO
-      url: https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/b4fe49a8-c86a-4c32-8450-8f3c4cc83125/download/05_indicadores_demograficos_proyecciones.csv
+      url: https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/e9160552-769b-41ee-88d1-afc765552608/download/pobproy_inddemo.csv
       access_method: CSV (manual)
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
@@ -791,29 +869,37 @@ sources:
         revision: Conciliación 1950-2019 y proyecciones 2020-2070
       scenario: No indica variantes (por confirmar)
       reference_date: 1 de julio (mitad de año)
-      years_covered: 2020-2070
+      years_covered: 2020-2040
       update_frequency: Sin calendario fijo
       control:
         year: 2025
         value: 133367428
         unit: personas
-        location: POB_MIT_ANIO, ENTIDAD nacional, 2025
+        location: Suma de POB_MIT_MUN de todos los municipios, 2025
       flags:
-      - 'datos.gob.mx responde 403 a un agente identificado y 200 a uno de navegador. No se falsea el agente: método
-        manual salvo decisión D4.'
-      - Dato verificado el 2026-11-01 con agente de navegador durante la investigación.
-      - 'Pico en el archivo: 147.022.927 en 2052.'
+      - Archivo aportado a mano el 2026-11-01. Suma derivada, no interpolada; el adaptador exige que municipios
+        y entidades den el mismo total.
+      - Cada año 1990-2040 coincidió exactamente con la serie nacional consultada en la verificación inicial, que
+        además sitúa el máximo en 2052.
+      - 'datos.gob.mx responde 403 a un agente identificado: método manual (decisión D4).'
+      - Falta 05_indicadores_demograficos_proyecciones.csv, que extiende la serie a 1950-2070 con fila nacional.
       source_id: mex_conapo_2023
       adapter: mex_conapo
-      raw_key: mex_conapo
+      raw_key: mex_conapo_municipal
       year_from: 2020
-      year_to: 2070
+      year_to: 2040
       reference_code: 07-01
       scenario_code: single
       vintage_label: Conciliación 2023
-      public_reason:
-        es: 'datos.gob.mx rechaza un agente identificado: falta que una persona deje el archivo.'
-        en: 'datos.gob.mx rejects an identified agent: a person must add the file.'
+      landing_page: https://www.datos.gob.mx/dataset/proyecciones-de-poblacion
+      location_in_file: POB_MIT_MUN por municipio; POB_MIT_ENT como verificación cruzada
+      public_note:
+        es: 'Total nacional sumado desde los 2.475 municipios del archivo de CONAPO, que no trae fila nacional.
+          El archivo llega a 2040: la serie nacional de CONAPO, aún sin cargar, llega a 2070, así que el máximo
+          puede quedar fuera de este horizonte.'
+        en: 'National total summed from the 2,475 municipalities in the CONAPO file, which has no national row.
+          The file ends in 2040: CONAPO''s national series, not yet loaded, runs to 2070, so the peak may fall outside
+          this horizon.'
   NIC:
     historical:
       source_tier: national
@@ -866,17 +952,16 @@ sources:
     projection:
       source_tier: regional_fallback
       status: ok
-      institution: CEPAL/CELADE (CEPALSTAT, indicador 1)
-      url: https://api-cepalstat.cepal.org/cepalstat/api/v1/indicator/1/data?lang=es&format=json&members=146,240
-      access_method: API
+      institution: CEPAL/CELADE
+      url: https://celade.cepal.org/bdcelade/proyecciones/resultados/003_COMPARATIVO.xlsx
+      access_method: XLSX
       license: 'No verificada: no se localizó ni leyó un texto de licencia aplicable a este archivo. Confirmar antes
         de la Fase 1.'
       vintage:
         base_year: null
         reference_census: null
-        published: La API cita CELADE Revisión 2022 y WPP 2022; la página de Excel de CEPAL cita Revisión 2024.
-          Sin resolver.
-        revision: Revisión 2022 (según API)
+        published: Archivo modificado el 2024-07-06
+        revision: Revisión 2024
       scenario: medio (la API no publica variantes; por confirmar)
       reference_date: mitad de año (la API lo declara así; miles de personas)
       years_covered: 2025-2100
@@ -887,26 +972,29 @@ sources:
           anuario solo llega a 2024.
       control:
         year: 2025
-        value: '7237.3'
+        value: 7007.502
         unit: miles de personas
-        location: campo value de la API
+        location: Hoja CAD01, fila Nicaragua, 2025
       flags:
-      - CEPALSTAT cita a Naciones Unidas (WPP) como coproductor; véase la nota de decisión D1.
-      - 'Salto entre fuentes: INIDE 2024 = 6.874.748; CEPAL 2024 = 7.142,5 mil. Se registra ruptura, sin ajuste.'
-      source_id: cepal_celade_rev2022
-      adapter: cepal
-      raw_key: cepal_nic
+      - CELADE y la División de Población de la ONU coproducen la serie; el archivo cita World Population Prospects
+        2024.
+      source_id: cepal_celade_rev2024
+      adapter: cepal_excel
+      raw_key: cepal_rev2024
       year_from: 2025
       year_to: 2100
       reference_code: mid-year
       scenario_code: medium
-      vintage_label: CEPAL Rev. 2022
-      cepal_member: 240
+      vintage_label: CEPAL Rev. 2024
       public_note:
-        es: 'INIDE no publica proyección descargable. Salto al pasar a CEPAL: 6,87 M (INIDE 2024) y 7,24 M (CEPAL
+        es: 'INIDE no publica proyección descargable. Salto al pasar a CEPAL: 6,87 M (INIDE 2024) y 7,01 M (CEPAL
           2025).'
-        en: 'INIDE publishes no downloadable projection. Jump on switching to CEPAL: 6.87 M (INIDE 2024) and 7.24
-          M (CEPAL 2025).'
+        en: 'INIDE publishes no downloadable projection. Jump on switching to ECLAC: 6.87 M (INIDE 2024) and 7.01
+          M (ECLAC 2025).'
+      landing_page: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
+      raw_scope: _regional
+      cepal_row: Nicaragua
+      location_in_file: Hoja CAD01, fila Nicaragua
   PAN:
     historical:
       source_tier: national
@@ -1310,8 +1398,8 @@ sources:
         unit: personas
         location: Hoja 'Parroquias', fila Total, 2025
       flags:
-      - 'DUDOSO: calculada en 2013, previa a la emigración masiva. CEPAL da 29926.4 mil para 2025. La regla obliga
-        a usar la nacional; la página debe advertirlo.'
+      - 'DUDOSO: calculada en 2013, previa a la emigración masiva. CEPAL Rev. 2024 da 28.516,9 mil para 2025. La
+        regla obliga a usar la nacional; la página lo advierte.'
       - 'Datos quinquenales: años intermedios null, sin interpolar.'
       source_id: ven_ine_censo2011
       adapter: ven_ine_2011
@@ -1325,14 +1413,16 @@ sources:
       step_after: 5
       estimate_until: 2010
       public_note:
-        es: Calculada en 2013, antes de la emigración masiva. CEPAL da 29,9 M para 2025 frente a 34,4 M. Lectura
+        es: Calculada en 2013, antes de la emigración masiva. CEPAL da 28,5 M para 2025 frente a 34,4 M. Lectura
           con cautela. Solo quinquenal.
-        en: Computed in 2013, before mass emigration. CEPAL gives 29.9 M for 2025 against 34.4 M. Read with caution.
+        en: Computed in 2013, before mass emigration. ECLAC gives 28.5 M for 2025 against 34.4 M. Read with caution.
           Five-yearly only.
 decisions:
-  D1: 'Aprobado 2026-11-01: CEPAL/CELADE se acepta como respaldo, citando la vintage que declara la API (Revisión
-    2022) y su coproducción con ONU/WPP.'
-  D2: 'Aprobado 2026-11-01: Cuba queda pendiente; no se usa CEPAL provisional porque existe serie nacional.'
+  D1: 'Aprobado 2026-11-01 y actualizado el mismo día: CEPAL/CELADE se acepta como respaldo. Se pasó de la API CEPALSTAT
+    (Revisión 2022) al Excel de la Revisión 2024 aportado por Javier Forero (003_COMPARATIVO.xlsx), que responde
+    a un agente identificado. El Excel cita coproducción con la ONU (WPP 2024).'
+  D2: 'Aprobado 2026-11-01: Cuba queda pendiente; no se usa CEPAL provisional porque existe serie nacional. El mismo
+    criterio aplica a Guatemala y República Dominicana, aunque 003_COMPARATIVO.xlsx también los incluye.'
   D3: 'Aprobado 2026-11-01: los años previos a la serie nacional quedan null, salvo Honduras (sin ninguna serie
     nacional antes de 2013). La cifra IHSI 2024 de Haití es contraste, no se mezcla.'
   D4: 'Aprobado 2026-11-01: México queda manual; no se falsea el agente de usuario.'
@@ -1357,10 +1447,6 @@ watch:
   url: https://www.inei.gob.pe/estadisticas/indice-tematico/population-estimates-and-projections/
   pattern: proy_|proyecc
   reason: Se espera vintage con censo 2025
-- iso3: CHL
-  url: https://www.ine.gob.cl/estadisticas-por-tema/demografia-y-poblacion/estimaciones-y-proyecciones-de-poblacion
-  pattern: base-?.?2024|xlsx?
-  reason: Se espera el cuadro anual base 2024
 - iso3: VEN
   url: https://ine.gob.ve/
   pattern: PROYECCION

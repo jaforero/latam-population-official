@@ -1,5 +1,5 @@
 {
- "schema_version": "1.1",
+ "schema_version": "1.2",
  "iso3": "NIC",
  "name_es": "Nicaragua",
  "name_en": "Nicaragua",
@@ -27,7 +27,7 @@
    "raw_sha256": "47c54be057f94b2a75329c652d7cb7ade630754cd0422cc18e320399c1bcbf7b",
    "retrieved_at": "2026-11-01",
    "retrieved_by": "script",
-   "location_in_file": null,
+   "location_in_file": "Cuadro II.1.2 (1990-2024) y cuadro II.1.7, La República (2025)",
    "note": {
     "es": "INIDE une tres revisiones en un cuadro: rupturas en 2006 y 2011.",
     "en": "INIDE joins three revisions in one table: breaks in 2006 and 2011."
@@ -52,7 +52,7 @@
    "raw_sha256": "47c54be057f94b2a75329c652d7cb7ade630754cd0422cc18e320399c1bcbf7b",
    "retrieved_at": "2026-11-01",
    "retrieved_by": "script",
-   "location_in_file": null,
+   "location_in_file": "Cuadro II.1.2 (1990-2024) y cuadro II.1.7, La República (2025)",
    "note": {
     "es": "INIDE une tres revisiones en un cuadro: rupturas en 2006 y 2011.",
     "en": "INIDE joins three revisions in one table: breaks in 2006 and 2011."
@@ -71,13 +71,13 @@
    "scenario": "single",
    "reference_date": "06-30",
    "year_from": 2011,
-   "year_to": 2024,
+   "year_to": 2025,
    "access_method": "PDF",
    "raw_file": "data/raw/NIC/nic_inide/2026-11-01_47c54be057f9_Anuario_Estadistico_2023.pdf",
    "raw_sha256": "47c54be057f94b2a75329c652d7cb7ade630754cd0422cc18e320399c1bcbf7b",
    "retrieved_at": "2026-11-01",
    "retrieved_by": "script",
-   "location_in_file": null,
+   "location_in_file": "Cuadro II.1.2 (1990-2024) y cuadro II.1.7, La República (2025)",
    "note": {
     "es": "INIDE une tres revisiones en un cuadro: rupturas en 2006 y 2011.",
     "en": "INIDE joins three revisions in one table: breaks in 2006 and 2011."
@@ -95,7 +95,7 @@
    "published": "Archivo modificado el 2024-07-06",
    "scenario": "medium",
    "reference_date": "mid-year",
-   "year_from": 2025,
+   "year_from": 2026,
    "year_to": 2100,
    "access_method": "XLSX",
    "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx",
@@ -104,8 +104,8 @@
    "retrieved_by": "script",
    "location_in_file": "Hoja CAD01, fila Nicaragua",
    "note": {
-    "es": "INIDE no publica proyección descargable. Salto al pasar a CEPAL: 6,87 M (INIDE 2024) y 7,01 M (CEPAL 2025).",
-    "en": "INIDE publishes no downloadable projection. Jump on switching to ECLAC: 6.87 M (INIDE 2024) and 7.01 M (ECLAC 2025)."
+    "es": "INIDE no publica proyección descargable. Salto al pasar a CEPAL: 6,95 M (INIDE 2025) y 7,10 M (CEPAL 2026).",
+    "en": "INIDE publishes no downloadable projection. Jump on switching to ECLAC: 6.95 M (INIDE 2025) and 7.10 M (ECLAC 2026)."
    },
    "transcription": null
   }
@@ -134,15 +134,15 @@
    "first_value": 5996619
   },
   {
-   "year": 2025,
+   "year": 2026,
    "from_source": "nic_inide_rev2012",
    "to_source": "cepal_celade_rev2024",
    "from_vintage": "Rev. 2012",
    "to_vintage": "CEPAL Rev. 2024",
    "from_tier": "national",
    "to_tier": "regional_fallback",
-   "last_value": 6874748,
-   "first_value": 7007502
+   "last_value": 6946351,
+   "first_value": 7097329
   }
  ],
  "peak": {
@@ -681,17 +681,17 @@
   {
    "iso3": "NIC",
    "year": 2025,
-   "population": 7007502,
-   "series_type": "projection",
-   "source_id": "cepal_celade_rev2024",
-   "source_tier": "regional_fallback",
-   "vintage": "CEPAL Rev. 2024",
-   "scenario": "medium",
-   "reference_date": "mid-year",
+   "population": 6946351,
+   "series_type": "estimate",
+   "source_id": "nic_inide_rev2012",
+   "source_tier": "national",
+   "vintage": "Rev. 2012",
+   "scenario": "single",
+   "reference_date": "06-30",
    "retrieved_at": "2026-11-01",
    "interpolated": false,
-   "growth": null,
-   "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx"
+   "growth": 0.010415363588599957,
+   "raw_file": "data/raw/NIC/nic_inide/2026-11-01_47c54be057f9_Anuario_Estadistico_2023.pdf"
   },
   {
    "iso3": "NIC",
@@ -705,7 +705,7 @@
    "reference_date": "mid-year",
    "retrieved_at": "2026-11-01",
    "interpolated": false,
-   "growth": 0.012818690597590887,
+   "growth": null,
    "raw_file": "data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx"
   },
   {

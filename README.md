@@ -25,12 +25,13 @@ data/processed/           salidas de contrato
 tests/fixtures/           crudos reales o recortados, para probar sin red
 ```
 
-## Contrato de datos · `schema_version` 1.1
+## Contrato de datos · `schema_version` 1.2
 Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es un cambio de versión:** campo eliminado, renombrado o con otro significado sube la versión mayor. Los campos nuevos opcionales suben la menor.
 
 | Ruta | Contenido |
 |---|---|
 | `data/processed/<iso3>.json` | Registro, segmentos de fuente, rupturas y año máximo de un país. Existe para los 20, aun sin datos. |
+| `data/processed/pyramids/<iso3>.json` | Pirámide por año: hombres y mujeres en 17 grupos comunes, con su fuente. Existe para los 20, aun sin datos. |
 | `data/processed/latam.csv` | Todos los registros, en formato largo. |
 | `data/processed/manifest.json` | Fuentes, niveles, vintages y fechas vigentes por país y serie. |
 | `data/status.json` | Estado, última actualización, nivel de fuente y error por país y serie. |
@@ -52,7 +53,9 @@ Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es
 | `growth` | número o null | `(P_t / P_{t-1}) − 1`, solo dentro de la misma fuente y vintage |
 | `raw_file` | ruta | Archivo de `data/raw/` del que sale la cifra |
 
-**Cambios:** la 1.1 admite `reference_date: census` (hoy sin uso). Es compatible con la 1.0.
+**Cambios:** la 1.1 admite `reference_date: census` (hoy sin uso). La 1.2 agrega las pirámides y `pyramid` en `status.json`. Ambas son compatibles con la 1.0.
+
+**Pirámides:** `age_groups` lista 0-4 … 75-79 y 80+. `years["2025"]` trae `m` y `f` (17 valores) más `series_type`, `source_id`, `vintage`, `source_tier` y `reference_date`, los mismos del registro de ese año. Además `status`, `reason`, `raw_files` (ruta, hash, fecha) y `location_in_file`. Solo se suman grupos publicados; no se desagrega ni se interpola. Un año se publica únicamente si hombres + mujeres cuadra con el total oficial de ese año (tolerancia de 0,05 %); si no, se excluye y genera una alerta.
 
 **Por país**, además: `segments` (institución, URL, vintage, hash, ubicación en el archivo), `breaks` (ruptura con año de corte y sin ajuste), `peak` (`peak`, `no_peak_in_horizon` o `no_projection`) y `reasons` en español e inglés.
 
@@ -104,7 +107,8 @@ Si un archivo trae una edición anterior útil solo para algunos años, regístr
 2. Escribe el adaptador en `latam_pop/adapters/sources.py` con `@register("nombre")`. Basta implementar `parse`, que devuelve `{año: población}` tal como se publica.
 3. Agrega un fixture en `tests/fixtures/` y el caso en `tests/test_parsers.py`.
 4. Para sustituir CEPAL por una serie nacional, cambia la entrada a `source_tier: national`. El pipeline registra el cambio en `source_changes.json` y abre un issue. Ajusta `test_cepal_only_where_declared`.
-5. Ejecuta `python -m pytest -q` y `python -m latam_pop run`.
+5. Para su pirámide, escribe un parser en `latam_pop/pyramids.py` con `@parser("nombre")`, registra el bloque `pyramid` del país en `sources.yaml` y agrega el caso en `tests/test_pyramids.py`.
+6. Ejecuta `python -m pytest -q` y `python -m latam_pop run`.
 
 ## Cuando una fuente cambia de formato
 Los síntomas son un issue de falla, `status: error` o una alerta `control_mismatch`. Los datos publicados no cambian mientras tanto, salvo que el parser siga leyendo cifras que ya no coinciden: por eso la alerta de control se revisa siempre.

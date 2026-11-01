@@ -31,14 +31,14 @@ def test_country_file(iso):
 
 
 def test_cepal_only_where_declared():
-    allowed = {(i, k) for i, v in REG.items() for k, e in v.items() if e["source_tier"] == "regional_fallback"}
+    allowed = {(i, k) for i, v in REG.items() for k, e in v.items() if k != "pyramid" and e["source_tier"] == "regional_fallback"}
     assert allowed == {("HND", "historical"), ("HTI", "historical"), ("HTI", "projection"), ("NIC", "projection")}
     with open(P / "latam.csv", encoding="utf8") as f:
         for r in csv.DictReader(f):
             if r["source_tier"] == "regional_fallback":
                 assert r["iso3"] in {"HND", "HTI", "NIC"}
                 assert not (r["iso3"] == "HND" and int(r["year"]) >= 2013)
-                assert not (r["iso3"] == "NIC" and int(r["year"]) <= 2024)
+                assert not (r["iso3"] == "NIC" and int(r["year"]) <= 2025)
 
 
 def test_cepal_uses_current_revision():
@@ -69,6 +69,38 @@ def test_guatemala_uses_national_series():
     d = json.loads((P / "GTM.json").read_text(encoding="utf8"))
     assert [r["year"] for r in d["records"]] == list(range(1950, 2051))
     assert {r["source_tier"] for r in d["records"]} == {"national"} and d["breaks"] == []
+
+
+WITH_PYRAMID = {"ARG", "BRA", "CHL", "COL", "CRI", "ECU", "GTM", "HND", "MEX", "NIC", "PAN", "PER", "PRY", "SLV", "URY"}
+
+
+@pytest.mark.parametrize("iso", ISO3)
+def test_pyramid_file(iso):
+    d = json.loads((P / "pyramids" / f"{iso}.json").read_text(encoding="utf8"))
+    assert d["schema_version"] == SCHEMA_VERSION and len(d["age_groups"]) == 17
+    if iso not in WITH_PYRAMID:
+        assert d["years"] == {} and d["reason"]["es"] and d["reason"]["en"]
+        return
+    main = {r["year"]: r for r in json.loads((P / f"{iso}.json").read_text(encoding="utf8"))["records"]}
+    assert d["years"]
+    for y, v in d["years"].items():
+        rec = main[int(y)]
+        assert len(v["m"]) == len(v["f"]) == 17 and all(x >= 0 for x in v["m"] + v["f"])
+        assert sum(v["m"]) + sum(v["f"]) == pytest.approx(rec["population"], abs=1.5), f"{iso} {y} no cuadra con el total oficial"
+        assert v["source_id"] == rec["source_id"] and v["series_type"] == rec["series_type"]
+    for f in d["raw_files"]:
+        assert hashlib.sha256((ROOT / f["path"]).read_bytes()).hexdigest() == f["sha256"]
+
+
+def test_status_reports_pyramid_coverage():
+    st = json.loads((ROOT / "data/status.json").read_text(encoding="utf8"))["countries"]
+    assert {i for i, c in st.items() if c["pyramid"]["years"]} == WITH_PYRAMID
+
+
+def test_nicaragua_national_figure_prevails_in_2025():
+    rows = {r["year"]: r for r in json.loads((P / "NIC.json").read_text(encoding="utf8"))["records"]}
+    assert rows[2025]["population"] == 6946351 and rows[2025]["source_tier"] == "national"
+    assert rows[2026]["source_tier"] == "regional_fallback"
 
 
 def test_pending_countries_show_no_figures():

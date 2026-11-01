@@ -2,6 +2,13 @@
  "failures": [],
  "alerts": [
   {
+   "code": "pyramid_sex_ratio",
+   "iso3": "GTM",
+   "message": "Revisar sexos: 0-4 con más mujeres o 80+ con más hombres en 12 años ([1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958])",
+   "fingerprint": "pyramid_sex_ratio:GTM:1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962",
+   "years": "1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962"
+  },
+  {
    "code": "annual_change",
    "iso3": "VEN",
    "message": "Variación anual de +4.46% en 1951 (ven_ine_censo2001)",

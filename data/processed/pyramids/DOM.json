@@ -1,0 +1,37 @@
+{
+ "schema_version": "1.2",
+ "iso3": "DOM",
+ "name_es": "República Dominicana",
+ "name_en": "Dominican Republic",
+ "status": "pendiente",
+ "parser": null,
+ "institution": "ONE",
+ "source_url": "https://www.one.gob.do/datos-y-estadisticas/temas/estadisticas-demograficas/estimaciones-y-proyecciones-demograficas/",
+ "location_in_file": null,
+ "reason": {
+  "es": "Sin archivo verificado: one.gob.do bloquea el acceso automatizado y aún no hay descarga manual.",
+  "en": "No verified file: one.gob.do blocks automated access and no manual download has been provided yet."
+ },
+ "note": null,
+ "age_groups": [
+  "0-4",
+  "5-9",
+  "10-14",
+  "15-19",
+  "20-24",
+  "25-29",
+  "30-34",
+  "35-39",
+  "40-44",
+  "45-49",
+  "50-54",
+  "55-59",
+  "60-64",
+  "65-69",
+  "70-74",
+  "75-79",
+  "80+"
+ ],
+ "raw_files": [],
+ "years": {}
+}

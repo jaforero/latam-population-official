@@ -1,0 +1,37 @@
+{
+ "schema_version": "1.2",
+ "iso3": "VEN",
+ "name_es": "Venezuela",
+ "name_en": "Venezuela",
+ "status": "pendiente",
+ "parser": null,
+ "institution": "INE Venezuela",
+ "source_url": "https://ine.gob.ve/wp-content/uploads/2026/09/PROYECCION-POBLACION-PARROQUIAS.xls",
+ "location_in_file": null,
+ "reason": {
+  "es": "INE Venezuela publica sus proyecciones por edad solo en un PDF escaneado de 2005, de otra vintage que la serie vigente; el archivo de 2013 no trae edad ni sexo.",
+  "en": "INE Venezuela publishes its age projections only in a scanned 2005 PDF, a different vintage from the current series; the 2013 file has neither age nor sex."
+ },
+ "note": null,
+ "age_groups": [
+  "0-4",
+  "5-9",
+  "10-14",
+  "15-19",
+  "20-24",
+  "25-29",
+  "30-34",
+  "35-39",
+  "40-44",
+  "45-49",
+  "50-54",
+  "55-59",
+  "60-64",
+  "65-69",
+  "70-74",
+  "75-79",
+  "80+"
+ ],
+ "raw_files": [],
+ "years": {}
+}

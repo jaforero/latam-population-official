@@ -18,11 +18,15 @@ class FakeHttp:
                  "hnd_ine": "hnd.pdf", "nic_inide": "nic.pdf", "pan_inec": "pan.xlsx", "per_inei": "per.pdf",
                  "pry_ine": "pry.xlsx", "slv_onec": "slv.xlsx", "ury_ine_hist": "ury_hist.xlsx",
                  "ury_ine_proj": "ury_proj.xlsx", "ven_ine_2001": "ven_2001.pdf", "ven_ine_2011": "ven_2011.xls",
-                 "cepal_rev2024": "cepal.xlsx", "chl_ine": "chl.xlsx"}
+                 "cepal_rev2024": "cepal.xlsx", "chl_ine": "chl.xlsx", "arg_indec_2022_edades": "arg_edades.csv",
+                 "bra_ibge_tab2": "bra_tab2.xlsx", "col_dane_edad_hist": "col_edad_hist.xlsx", "col_dane_edad_proj": "col_edad_proj.xlsx"}
         for v in reg["sources"].values():
             for e in v.values():
                 if e.get("raw_key") in names:
                     self.map[e["url"]] = FIX / names[e["raw_key"]]
+                for f in e.get("files", []):
+                    if f.get("url"):
+                        self.map[f["url"]] = FIX / names[f["raw_key"]]
 
     def get(self, url):
         from latam_pop.http import FetchError

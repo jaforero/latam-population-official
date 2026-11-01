@@ -1060,8 +1060,8 @@ NIC,2021,6664364,estimate,nic_inide_rev2012,national,Rev. 2012,single,06-30,2026
 NIC,2022,6733763,estimate,nic_inide_rev2012,national,Rev. 2012,single,06-30,2026-11-01,False,0.010413446804526272,data/raw/NIC/nic_inide/2026-11-01_47c54be057f9_Anuario_Estadistico_2023.pdf
 NIC,2023,6803886,estimate,nic_inide_rev2012,national,Rev. 2012,single,06-30,2026-11-01,False,0.010413642416580382,data/raw/NIC/nic_inide/2026-11-01_47c54be057f9_Anuario_Estadistico_2023.pdf
 NIC,2024,6874748,estimate,nic_inide_rev2012,national,Rev. 2012,single,06-30,2026-11-01,False,0.010414930526466692,data/raw/NIC/nic_inide/2026-11-01_47c54be057f9_Anuario_Estadistico_2023.pdf
-NIC,2025,7007502,projection,cepal_celade_rev2024,regional_fallback,CEPAL Rev. 2024,medium,mid-year,2026-11-01,False,,data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx
-NIC,2026,7097329,projection,cepal_celade_rev2024,regional_fallback,CEPAL Rev. 2024,medium,mid-year,2026-11-01,False,0.012818690597590887,data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx
+NIC,2025,6946351,estimate,nic_inide_rev2012,national,Rev. 2012,single,06-30,2026-11-01,False,0.010415363588599957,data/raw/NIC/nic_inide/2026-11-01_47c54be057f9_Anuario_Estadistico_2023.pdf
+NIC,2026,7097329,projection,cepal_celade_rev2024,regional_fallback,CEPAL Rev. 2024,medium,mid-year,2026-11-01,False,,data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx
 NIC,2027,7185722,projection,cepal_celade_rev2024,regional_fallback,CEPAL Rev. 2024,medium,mid-year,2026-11-01,False,0.012454403621418697,data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx
 NIC,2028,7272686.5,projection,cepal_celade_rev2024,regional_fallback,CEPAL Rev. 2024,medium,mid-year,2026-11-01,False,0.012102402514319266,data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx
 NIC,2029,7358004.5,projection,cepal_celade_rev2024,regional_fallback,CEPAL Rev. 2024,medium,mid-year,2026-11-01,False,0.011731290768548952,data/raw/_regional/cepal_rev2024/2026-11-01_bd470d7ed85a_003_COMPARATIVO.xlsx

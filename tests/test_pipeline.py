@@ -38,6 +38,11 @@ def test_end_to_end(workdir):
         rows = list(csv.DictReader(f))
     assert rows and all((workdir / x["raw_file"]).exists() for x in rows)
     assert {"manifest.json", "latam.csv"} <= {p.name for p in (workdir / "data/processed").iterdir()}
+    assert load(workdir / "data/processed/pyramids/BOL.json")["status"] == "pendiente"
+    col = load(workdir / "data/processed/pyramids/COL.json")
+    assert col["status"] == "ok" and sum(col["years"]["2025"]["m"]) + sum(col["years"]["2025"]["f"]) == 53057212
+    assert load(workdir / "data/processed/pyramids/CRI.json")["status"] == "manual_pendiente"
+    assert load(workdir / "data/status.json")["countries"]["COL"]["pyramid"]["status"] == "ok"
     # CEPAL: un solo crudo compartido por varios países.
     assert len(list((workdir / "data/raw/_regional/cepal_rev2024").glob("*.xlsx"))) == 1
 

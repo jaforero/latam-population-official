@@ -1,0 +1,37 @@
+{
+ "schema_version": "1.2",
+ "iso3": "BOL",
+ "name_es": "Bolivia",
+ "name_en": "Bolivia",
+ "status": "pendiente",
+ "parser": null,
+ "institution": "INE Bolivia",
+ "source_url": "https://nimbus.ine.gob.bo/index.php/s/g3QPXLGSLmXPEsF/download",
+ "location_in_file": null,
+ "reason": {
+  "es": "Los cuadros cargados traen las edades con ambos sexos juntos. Falta el cuadro del INE por sexo y edad; requiere descarga manual.",
+  "en": "The loaded tables give ages with both sexes combined. INE's table by sex and age is missing; it needs a manual download."
+ },
+ "note": null,
+ "age_groups": [
+  "0-4",
+  "5-9",
+  "10-14",
+  "15-19",
+  "20-24",
+  "25-29",
+  "30-34",
+  "35-39",
+  "40-44",
+  "45-49",
+  "50-54",
+  "55-59",
+  "60-64",
+  "65-69",
+  "70-74",
+  "75-79",
+  "80+"
+ ],
+ "raw_files": [],
+ "years": {}
+}

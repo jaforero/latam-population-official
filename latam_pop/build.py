@@ -15,6 +15,7 @@ from .adapters.sources import VenIne2001
 from .derive import add_growth, find_breaks, peak
 from .http import BlockedError, FetchError, Http
 from .parsing import ParseError
+from .pyramids import build_pyramid
 from .store import RawStore
 from .validate import alert, check_against_previous, check_entry, check_growth
 from .watch import run_watch
@@ -77,6 +78,11 @@ def resolve_overlaps(records: list[Record]) -> tuple[list[Record], list[dict]]:
         else:
             kept += rows
     return kept, dropped
+
+
+def check_pyramid_content(content: bytes, url: str) -> None:
+    if content.lstrip()[:15].lower().startswith((b"<!doctype", b"<html")):
+        raise FetchError(f"Llegó HTML en lugar de datos: {url}")
 
 
 def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, today: str | None = None) -> dict:
@@ -188,6 +194,17 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
         write_stable(processed / f"{iso3}.json", doc)
         all_rows += records
         status[iso3] = dict(name_es=NAMES[iso3][0], name_en=NAMES[iso3][1], series=series_status)
+        pyr, pyr_alerts, pyr_failures = build_pyramid(iso3, sources[iso3]["pyramid"], {r.year: r for r in records}, store, http,
+                                                      check_pyramid_content)
+        alerts += pyr_alerts
+        failures += pyr_failures
+        for f in pyr["raw_files"]:
+            f["path"] = Path(f["path"]).resolve().relative_to(root.resolve()).as_posix()
+        write_stable(processed / "pyramids" / f"{iso3}.json", dict(schema_version=SCHEMA_VERSION, iso3=iso3, name_es=NAMES[iso3][0],
+                                                                  name_en=NAMES[iso3][1], **pyr))
+        pyr_years = sorted(int(y) for y in pyr["years"])
+        status[iso3]["pyramid"] = dict(status=pyr["status"], year_from=pyr_years[0] if pyr_years else None,
+                                       year_to=pyr_years[-1] if pyr_years else None, years=len(pyr_years), reason=pyr["reason"])
         manifest[iso3] = cur
 
     with_csv = processed / "latam.csv"

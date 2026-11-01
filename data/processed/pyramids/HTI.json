@@ -1,0 +1,37 @@
+{
+ "schema_version": "1.2",
+ "iso3": "HTI",
+ "name_es": "Haití",
+ "name_en": "Haiti",
+ "status": "pendiente",
+ "parser": null,
+ "institution": "CEPAL/CELADE",
+ "source_url": "https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel",
+ "location_in_file": null,
+ "reason": {
+  "es": "IHSI no publica edad y sexo en serie. CEPAL los tiene por país en la Revisión 2024, pero falta el archivo de Haití.",
+  "en": "IHSI publishes no series by age and sex. ECLAC has them by country in Revision 2024, but Haiti's file is missing."
+ },
+ "note": null,
+ "age_groups": [
+  "0-4",
+  "5-9",
+  "10-14",
+  "15-19",
+  "20-24",
+  "25-29",
+  "30-34",
+  "35-39",
+  "40-44",
+  "45-49",
+  "50-54",
+  "55-59",
+  "60-64",
+  "65-69",
+  "70-74",
+  "75-79",
+  "80+"
+ ],
+ "raw_files": [],
+ "years": {}
+}

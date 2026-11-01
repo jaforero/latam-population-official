@@ -76,5 +76,17 @@
   "iso3": "GTM",
   "code": "source_added",
   "message": "pendiente → INE Guatemala, Revisión 2019 (1950-2050), archivo aportado a mano"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "NIC",
+  "code": "national_replaces_regional",
+  "message": "2025: INIDE (cuadro II.1.7, 6.946.351) reemplaza a CEPAL; CEPAL queda desde 2026"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "GTM",
+  "code": "source_added",
+  "message": "Pirámides: nuevas salidas data/processed/pyramids/ para 15 países (contrato 1.2)"
  }
 ]

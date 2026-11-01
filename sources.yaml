@@ -81,6 +81,15 @@ sources:
       public_note:
         es: 'Ruptura en 2022: la vintage Censo 2010 daba 1,09 M más para 2025.'
         en: 'Break in 2022: the Census 2010 vintage gave 1.09 M more for 2025.'
+    pyramid:
+      status: ok
+      parser: arg
+      institution: INDEC
+      url: https://www.indec.gob.ar/ftp/cuadros/poblacion/proyecciones_jurisdicciones_2022_2040_base.csv
+      location_in_file: Suma de jurisdicciones por Sexo (1 = Mujer, 2 = Varón) y Edad(q)
+      files:
+      - raw_key: arg_indec_2022_edades
+        url: https://www.indec.gob.ar/ftp/cuadros/poblacion/proyecciones_jurisdicciones_2022_2040_base.csv
   BOL:
     historical:
       source_tier: national
@@ -203,6 +212,16 @@ sources:
           to 2050, not yet loaded.
       landing_page: https://www.ine.gob.bo/index.php/censos-y-proyecciones-de-poblacion-sociales/
       location_in_file: Cuadro N.° 1, fila Total
+    pyramid:
+      status: pendiente
+      parser: null
+      institution: INE Bolivia
+      url: https://nimbus.ine.gob.bo/index.php/s/g3QPXLGSLmXPEsF/download
+      reason:
+        es: Los cuadros cargados traen las edades con ambos sexos juntos. Falta el cuadro del INE por sexo y edad;
+          requiere descarga manual.
+        en: The loaded tables give ages with both sexes combined. INE's table by sex and age is missing; it needs
+          a manual download.
   BRA:
     historical:
       source_tier: national
@@ -272,6 +291,15 @@ sources:
       reference_code: 07-01
       scenario_code: single
       vintage_label: Rev. 2024
+    pyramid:
+      status: ok
+      parser: bra
+      institution: IBGE
+      url: https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab2_grupo_quinquenal.xlsx
+      location_in_file: Hoja '2) POP_GRUPO QUINQUENAL', LOCAL Brasil
+      files:
+      - raw_key: bra_ibge_tab2
+        url: https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab2_grupo_quinquenal.xlsx
   CHL:
     historical:
       source_tier: national
@@ -345,6 +373,14 @@ sources:
         revision: Base 2024
       update_frequency: Al menos cada 5 años (según INE)
       location_in_file: Hoja 'Población al 30 de junio', fila Total
+    pyramid:
+      status: ok
+      parser: chl
+      institution: INE Chile
+      url: https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/cuadros-estadisticos/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_tabulados.xlsx?sfvrsn=2508a40e_7
+      location_in_file: Hoja 'Población al 30 de junio', bloques Hombres y Mujeres
+      files:
+      - raw_key: chl_ine
   COL:
     historical:
       source_tier: national
@@ -406,6 +442,17 @@ sources:
       reference_code: 06-30
       scenario_code: single
       vintage_label: PPED 2025
+    pyramid:
+      status: ok
+      parser: col
+      institution: DANE
+      url: https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion
+      location_in_file: Filas Total, columnas Hombres y Mujeres por edad simple
+      files:
+      - raw_key: col_dane_edad_hist
+        url: https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Nacional/PPED-AreaSexoEdadNac-1950-2017.xlsx
+      - raw_key: col_dane_edad_proj
+        url: https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Nacional/PPED-AreaSexoEdadNac-2018-2070.xlsx
   CRI:
     historical:
       source_tier: national
@@ -488,6 +535,14 @@ sources:
       vintage_label: 1950-2100
       landing_page: https://inec.cr/noticias/poblacion-65-anos-mas-costa-rica-se-duplicara-los-proximos-20-anos
       location_in_file: Hoja 'C1. Población total', columna Total
+    pyramid:
+      status: manual
+      parser: cri
+      institution: INEC Costa Rica
+      url: https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx
+      location_in_file: Hoja 'C2. Edades quinquenales'
+      files:
+      - raw_key: cri_inec
   CUB:
     historical:
       source_tier: national
@@ -527,6 +582,14 @@ sources:
       public_reason:
         es: El certificado TLS de ONEI venció el 2026-09-02; no se pudo verificar ningún archivo.
         en: ONEI's TLS certificate expired on 2026-09-02; no file could be verified.
+    pyramid:
+      status: pendiente
+      parser: null
+      institution: ONEI / CEPDE
+      url: https://www.onei.gob.cu/
+      reason:
+        es: 'Sin archivo verificado: el certificado de ONEI está vencido.'
+        en: 'No verified file: ONEI''s certificate has expired.'
   DOM:
     historical:
       source_tier: national
@@ -562,6 +625,14 @@ sources:
       public_reason:
         es: one.gob.do bloquea el acceso automatizado (Cloudflare); requiere descarga manual.
         en: one.gob.do blocks automated access (Cloudflare); manual download required.
+    pyramid:
+      status: pendiente
+      parser: null
+      institution: ONE
+      url: https://www.one.gob.do/datos-y-estadisticas/temas/estadisticas-demograficas/estimaciones-y-proyecciones-demograficas/
+      reason:
+        es: 'Sin archivo verificado: one.gob.do bloquea el acceso automatizado y aún no hay descarga manual.'
+        en: 'No verified file: one.gob.do blocks automated access and no manual download has been provided yet.'
   ECU:
     historical:
       source_tier: national
@@ -629,6 +700,14 @@ sources:
       reference_code: 06-30
       scenario_code: single
       vintage_label: Rev. 2024
+    pyramid:
+      status: ok
+      parser: ecu
+      institution: INEC Ecuador
+      url: https://www.ecuadorencifras.gob.ec/documentos/web-inec/Poblacion_y_Demografia/Proyecciones_Poblacionales/censo_2022/revision_2024_areas/Tabulados_Estimacion_Proyeccion_v2.xlsx
+      location_in_file: Hoja '1.2', columnas Hombre y Mujer
+      files:
+      - raw_key: ecu_inec
   GTM:
     historical:
       source_tier: national
@@ -710,6 +789,14 @@ sources:
           2018 y 2019 se infiere del censo 2018.'
         en: 'INE Guatemala, with CELADE support. The table does not mark where the estimate ends: the 2018/2019
           cut is inferred from the 2018 census.'
+    pyramid:
+      status: manual
+      parser: gtm
+      institution: INE Guatemala
+      url: https://www.ine.gob.gt/proyecciones/
+      location_in_file: Hoja 'Población total', bloques Hombres y Mujeres
+      files:
+      - raw_key: gtm_ine
   HND:
     historical:
       source_tier: regional_fallback
@@ -795,6 +882,14 @@ sources:
       public_note:
         es: Proyección basada en el censo 2013; desde 2030 solo quinquenal.
         en: Projection based on the 2013 census; five-yearly from 2030.
+    pyramid:
+      status: ok
+      parser: hnd
+      institution: INE Honduras
+      url: https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf
+      location_in_file: Tomo 9, cuadro de cada año; quinquenal desde 2030
+      files:
+      - raw_key: hnd_ine
   HTI:
     historical:
       source_tier: regional_fallback
@@ -882,6 +977,16 @@ sources:
       raw_scope: _regional
       cepal_row: Haití / Haiti
       location_in_file: Hoja CAD01, fila Haití / Haiti
+    pyramid:
+      status: pendiente
+      parser: null
+      institution: CEPAL/CELADE
+      url: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
+      reason:
+        es: IHSI no publica edad y sexo en serie. CEPAL los tiene por país en la Revisión 2024, pero falta el archivo
+          de Haití.
+        en: IHSI publishes no series by age and sex. ECLAC has them by country in Revision 2024, but Haiti's file
+          is missing.
   MEX:
     historical:
       source_tier: national
@@ -973,6 +1078,14 @@ sources:
           las filas nacionales de 1950-1969 no vienen en esta copia.'
         en: 'National total summed by state, age and sex: the file has no national row. It starts in 1970; the national
           rows for 1950-1969 are not in this copy.'
+    pyramid:
+      status: manual
+      parser: mex
+      institution: CONAPO
+      url: https://repodatos.atdt.gob.mx/CONAPO/proyecciones/00_Pob_Mitad_1950_2070.csv
+      location_in_file: POBLACION por ANIO, EDAD y SEXO; suma de 32 entidades
+      files:
+      - raw_key: mex_conapo_mitad
   NIC:
     historical:
       source_tier: national
@@ -989,7 +1102,7 @@ sources:
         revision: Revisiones 2004, 2007 y 2012 (mezcladas en el cuadro)
       scenario: 'No aplica: serie única'
       reference_date: 30 de junio
-      years_covered: 1990-2024
+      years_covered: 1990-2025
       update_frequency: Anual (anuario)
       control:
         year: 2024
@@ -998,11 +1111,13 @@ sources:
         location: Anuario 2023, cuadro II.1.4, p. 47, La República
       flags:
       - 'El cuadro II.1.2 une tres revisiones: rupturas de serie en 2006 y 2011.'
+      - 2025 viene del cuadro II.1.7 del mismo anuario (6.946.351). Hallado al construir las pirámides; antes se
+        usaba CEPAL para ese año.
       source_id: nic_inide_rev2012
       adapter: nic_inide
       raw_key: nic_inide
       year_from: 1990
-      year_to: 2024
+      year_to: 2025
       reference_code: 06-30
       scenario_code: single
       vintage_label: Rev. 2012
@@ -1016,12 +1131,13 @@ sources:
         source_id: nic_inide_rev2007
         label: Rev. 2007
       - year_from: 2011
-        year_to: 2024
+        year_to: 2025
         source_id: nic_inide_rev2012
         label: Rev. 2012
       public_note:
         es: 'INIDE une tres revisiones en un cuadro: rupturas en 2006 y 2011.'
         en: 'INIDE joins three revisions in one table: breaks in 2006 and 2011.'
+      location_in_file: Cuadro II.1.2 (1990-2024) y cuadro II.1.7, La República (2025)
     projection:
       source_tier: regional_fallback
       status: ok
@@ -1037,37 +1153,48 @@ sources:
         revision: Revisión 2024
       scenario: medio (la API no publica variantes; por confirmar)
       reference_date: mitad de año (la API lo declara así; miles de personas)
-      years_covered: 2025-2100
+      years_covered: 2026-2100
       update_frequency: irregular; revisiones de CELADE
       fallback_justification:
         searched: 'INIDE: portada, /Home/Working y Anuario 2023.'
         why_not_usable: El menú 'Estimaciones y Proyecciones de Población' lleva a una página en construcción; el
           anuario solo llega a 2024.
       control:
-        year: 2025
-        value: 7007.502
+        year: 2026
+        value: 7097.329
         unit: miles de personas
-        location: Hoja CAD01, fila Nicaragua, 2025
+        location: Hoja CAD01, fila Nicaragua, 2026
       flags:
       - CELADE y la División de Población de la ONU coproducen la serie; el archivo cita World Population Prospects
         2024.
       source_id: cepal_celade_rev2024
       adapter: cepal_excel
       raw_key: cepal_rev2024
-      year_from: 2025
+      year_from: 2026
       year_to: 2100
       reference_code: mid-year
       scenario_code: medium
       vintage_label: CEPAL Rev. 2024
       public_note:
-        es: 'INIDE no publica proyección descargable. Salto al pasar a CEPAL: 6,87 M (INIDE 2024) y 7,01 M (CEPAL
-          2025).'
-        en: 'INIDE publishes no downloadable projection. Jump on switching to ECLAC: 6.87 M (INIDE 2024) and 7.01
-          M (ECLAC 2025).'
+        es: 'INIDE no publica proyección descargable. Salto al pasar a CEPAL: 6,95 M (INIDE 2025) y 7,10 M (CEPAL
+          2026).'
+        en: 'INIDE publishes no downloadable projection. Jump on switching to ECLAC: 6.95 M (INIDE 2025) and 7.10
+          M (ECLAC 2026).'
       landing_page: https://www.cepal.org/es/pagina/estimaciones-proyecciones-archivos-excel
       raw_scope: _regional
       cepal_row: Nicaragua
       location_in_file: Hoja CAD01, fila Nicaragua
+    pyramid:
+      status: ok
+      parser: nic
+      institution: INIDE
+      url: https://www.inide.gob.ni/docs/Anuarios/Anuario2023/Anuario_Estadistico_2023.pdf
+      location_in_file: Cuadros II.1.5 a II.1.7, La República
+      files:
+      - raw_key: nic_inide
+      note:
+        es: INIDE publica edad y sexo solo para 2023, 2024 y 2025 en este anuario.
+        en: INIDE publishes age and sex only for 2023, 2024 and 2025 in this yearbook.
   PAN:
     historical:
       source_tier: national
@@ -1132,6 +1259,14 @@ sources:
       reference_code: 07-01
       scenario_code: single
       vintage_label: Censo 2023
+    pyramid:
+      status: ok
+      parser: pan
+      institution: INEC Panamá
+      url: https://www.inec.gob.pa/archivos/P0705547520260126142400Cuadro 1.xlsx
+      location_in_file: Cuadro 1, bloques Hombres y Mujeres
+      files:
+      - raw_key: pan_inec
   PER:
     historical:
       source_tier: national
@@ -1205,6 +1340,14 @@ sources:
       public_note:
         es: 'INEI declara provisional la proyección tras el censo 2025 (primer resultado: 34.157.732).'
         en: 'INEI declares the projection provisional after the 2025 census (first result: 34,157,732).'
+    pyramid:
+      status: ok
+      parser: per
+      institution: INEI
+      url: https://www.inei.gob.pe/media/principales_indicadores/libro_bol_esp_24_4.pdf
+      location_in_file: Boletín Especial 24, Cuadro N.° 2
+      files:
+      - raw_key: per_inei
   PRY:
     historical:
       source_tier: national
@@ -1276,6 +1419,15 @@ sources:
       reference_code: 06-30
       scenario_code: single
       vintage_label: Rev. 2024
+    pyramid:
+      status: ok
+      parser: pry
+      institution: INE Paraguay
+      url: https://www.ine.gov.py/Publicaciones/Biblioteca/documento/266/Estimaciones y Proyecciones Nacional por
+        año 1950-2050. Revisión 2024.xlsx
+      location_in_file: Hoja 'Poblac a mitad de año 1950-2050', bloques Hombres y Mujeres
+      files:
+      - raw_key: pry_ine
   SLV:
     historical:
       source_tier: national
@@ -1348,6 +1500,14 @@ sources:
       public_note:
         es: 'Vintage superada: ONEC cita una revisión 2025 que no está disponible para descargar.'
         en: 'Superseded vintage: ONEC cites a 2025 revision that is not available for download.'
+    pyramid:
+      status: ok
+      parser: slv
+      institution: ONEC / BCR (antes DIGESTYC)
+      url: https://www.bcr.gob.sv/documental/Inicio/descarga/El_Salvador_Estimaciones_y_Proyecciones_de_Poblacion_Nacional_2005-2050(rev2021).xlsx
+      location_in_file: Hojas 'Masculina' y 'Femenina'
+      files:
+      - raw_key: slv_onec
   URY:
     historical:
       source_tier: national
@@ -1411,6 +1571,15 @@ sources:
       reference_code: 06-30
       scenario_code: single
       vintage_label: Rev. 2025
+    pyramid:
+      status: ok
+      parser: ury
+      institution: INE Uruguay
+      url: https://www5.ine.gub.uy/documents/DemografíayEESS/SERIES%20Y%20OTROS/Estimaciones%20y%20proyecciones/Revisión%202025/B.1.1%20Uruguay%20(100ymas)2024-2070.xlsx
+      location_in_file: Hoja 'Uruguay', bloques Hombres y Mujeres
+      files:
+      - raw_key: ury_ine_hist
+      - raw_key: ury_ine_proj
   VEN:
     historical:
       source_tier: national
@@ -1490,6 +1659,16 @@ sources:
           con cautela. Solo quinquenal.
         en: Computed in 2013, before mass emigration. ECLAC gives 28.5 M for 2025 against 34.4 M. Read with caution.
           Five-yearly only.
+    pyramid:
+      status: pendiente
+      parser: null
+      institution: INE Venezuela
+      url: https://ine.gob.ve/wp-content/uploads/2026/09/PROYECCION-POBLACION-PARROQUIAS.xls
+      reason:
+        es: INE Venezuela publica sus proyecciones por edad solo en un PDF escaneado de 2005, de otra vintage que
+          la serie vigente; el archivo de 2013 no trae edad ni sexo.
+        en: INE Venezuela publishes its age projections only in a scanned 2005 PDF, a different vintage from the
+          current series; the 2013 file has neither age nor sex.
 decisions:
   D1: 'Aprobado 2026-11-01 y actualizado el mismo día: CEPAL/CELADE se acepta como respaldo. Se pasó de la API CEPALSTAT
     (Revisión 2022) al Excel de la Revisión 2024 aportado por Javier Forero (003_COMPARATIVO.xlsx), que responde

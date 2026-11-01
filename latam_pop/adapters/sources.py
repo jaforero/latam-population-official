@@ -176,13 +176,24 @@ class MexConapo(Adapter):
 
 @register("nic_inide")
 class NicInide(Adapter):
+    """Cuadro II.1.2 (1990-2024) más el total de La República en los cuadros por edad, que llegan a 2025."""
+
     def parse(self, raw):
+        out, totals = {}, {}
         for t in pdf_pages(raw):
             if "II.1.2" in t and re.search(r"POBLACI.N ESTIMADA AL 30 DE JUNIO", t):
-                rows = re.findall(r"\b((?:19|20)\d\d)(?:\s*[a-c]/)?\s+(\d,\d{3},\d{3})\s", t + " ")
-                if rows:
-                    return {int(y): num(v) for y, v in rows}
-        raise ParseError("No se halló el cuadro II.1.2")
+                out = {int(y): num(v) for y, v in re.findall(r"\b((?:19|20)\d\d)(?:\s*[a-c]/)?\s+(\d,\d{3},\d{3})\s", t + " ")}
+            m = re.search(r"GRUPOS\s+DE EDADES QUINQUENALES, (20\d\d)", t)
+            r = re.search(r"La República (\d,\d{3},\d{3})", t)
+            if m and r:
+                totals[int(m.group(1))] = num(r.group(1))
+        if not out:
+            raise ParseError("No se halló el cuadro II.1.2")
+        for y, v in totals.items():
+            if y in out and out[y] != v:
+                raise ParseError(f"Nicaragua {y}: II.1.2 da {out[y]} y el cuadro por edad {v}")
+            out[y] = v
+        return out
 
 
 @register("pan_inec")

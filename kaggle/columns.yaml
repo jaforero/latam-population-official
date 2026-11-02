@@ -1,0 +1,556 @@
+# Diccionario de datos del paquete Kaggle. Fuente única para DATA_DICTIONARY.md y para el `schema` de
+# dataset-metadata.json. scripts/build_kaggle_dataset.py falla si un CSV generado no tiene exactamente estas columnas.
+#
+# origin: original = valor copiado sin cambios del producto procesado del repositorio
+#         derived  = calculado por el repositorio (no lo publica ninguna institución)
+#         added    = agregado por el exportador a partir de archivos canónicos, sin cambiar ningún valor
+# type: tipos de esquema de Kaggle (string, integer, numeric, boolean).
+
+expected_schema_version: "2.1"
+
+# Encabezados exactos de los productos canónicos. Si el pipeline principal cambia uno, la exportación se
+# detiene: hay que revisar el significado y actualizar este archivo a propósito.
+canonical_headers:
+  data/processed/latam.csv: [iso3, year, population, series_type, source_id, source_tier, vintage, scenario,
+                             reference_date, retrieved_at, interpolated, growth, raw_file, license]
+  data/processed/region.csv: [year, population, n_countries, n_projection, international_fallback,
+                              annual_rate_to_next, next_year, countries_in_rate, excluded_from_rate]
+  data/processed/aging.csv: [iso3, year, aging_index, pop_0_14, pop_65_plus, series_type, source_id, source_tier,
+                             vintage, reference_date]
+
+shared:
+  iso3: &iso3
+    type: string
+    unit: null
+    nullable: false
+    origin: original
+    definition: ISO 3166-1 alpha-3 country code.
+    values: ARG, BOL, BRA, CHL, COL, CRI, CUB, DOM, ECU, GTM, HND, HTI, MEX, NIC, PAN, PER, PRY, SLV, URY, VEN
+  country: &country
+    type: string
+    unit: null
+    nullable: false
+    origin: added
+    definition: English country name, from the `name_en` field of `data/processed/<iso3>.json`.
+  year: &year
+    type: integer
+    unit: calendar year
+    nullable: false
+    origin: original
+    definition: Calendar year the figure refers to.
+  series_type: &series_type
+    type: string
+    unit: null
+    nullable: false
+    origin: original
+    definition: >-
+      Type of figure, following the label used by the source. `estimate` = official retrospective estimate anchored
+      in censuses; `projection` = official forward projection. `observed` is allowed by the contract but is not used
+      today: no figure is a raw census count.
+    values: estimate, projection (observed allowed by the contract, currently unused)
+  source_id: &source_id
+    type: string
+    unit: null
+    nullable: false
+    origin: original
+    definition: Identifier of the source series (institution + edition). Join with `sources.csv`.
+  source_tier: &source_tier
+    type: string
+    unit: null
+    nullable: false
+    origin: original
+    definition: >-
+      `national` = national statistics office or agency with a legal mandate. `international_fallback` = UN World
+      Population Prospects 2024 (medium variant), used only for the country and series where the national
+      institution does not publish a verifiable, downloadable series.
+    values: national, international_fallback
+  vintage: &vintage
+    type: string
+    unit: null
+    nullable: false
+    origin: original
+    definition: >-
+      Edition or revision of the source (for example `Rev. 2024`, `Censo 2022`, `ONU WPP 2024`). Two vintages of the
+      same institution are different series and are never chained.
+  reference_date: &reference_date
+    type: string
+    unit: MM-DD
+    nullable: true
+    origin: original
+    definition: >-
+      Reference date of the figure within the year (`07-01`, `06-30`, `01-01`). The contract also allows `mid-year`
+      and `census`. Empty when the source does not declare it.
+    values: 06-30, 07-01, 01-01, mid-year, census, empty
+  license: &license
+    type: string
+    unit: null
+    nullable: true
+    origin: original
+    definition: Key of the source's terms of use. Join with `sources.csv` or read `SOURCES_AND_LICENSES.md`.
+  license_status: &license_status
+    type: string
+    unit: null
+    nullable: true
+    origin: added
+    definition: >-
+      Result of the project's review of the source's terms (`data/processed/licenses.json`). `open_license` = an open
+      licence was found and read; `own_terms` = the institution's own conditions allow reuse with citation;
+      `no_license` = no applicable permission was found (this is NOT a prohibition and NOT a permission);
+      `restricted` = the text limits redistribution or derivatives.
+    values: open_license, own_terms, no_license, restricted
+  institution: &institution
+    type: string
+    unit: null
+    nullable: false
+    origin: added
+    definition: Institution that publishes the figure, from the source segment in `data/processed/<iso3>.json`.
+
+files:
+  population_latam.csv:
+    description: >-
+      Main table. One row per country and year: total population as published by the source, with series type,
+      source, tier, vintage, provenance and terms of use. Long format, 20 countries, 1950-2100 depending on the country.
+    row: one country-year
+    key: [iso3, year]
+    from: data/processed/latam.csv (+ data/processed/<iso3>.json, data/processed/licenses.json)
+    columns:
+      - {name: iso3, <<: *iso3}
+      - {name: year, <<: *year}
+      - name: population
+        type: numeric
+        unit: persons
+        nullable: true
+        origin: original
+        definition: >-
+          Total population as published, not rounded. Some sources publish non-integer values (Costa Rica, Uruguay
+          and single years of Guatemala and El Salvador); they are kept as published. UN figures are published in
+          thousands and multiplied by 1000. The contract allows null; no row is null today.
+      - {name: series_type, <<: *series_type}
+      - {name: source_id, <<: *source_id}
+      - {name: source_tier, <<: *source_tier}
+      - {name: vintage, <<: *vintage}
+      - name: scenario
+        type: string
+        unit: null
+        nullable: true
+        origin: original
+        definition: >-
+          Scenario of the source. `single` = the source publishes one series; `medium` = UN medium variant;
+          `recommended` = the institution's recommended scenario.
+        values: single, medium, recommended, empty
+      - {name: reference_date, <<: *reference_date}
+      - name: retrieved_at
+        type: string
+        unit: YYYY-MM-DD
+        nullable: false
+        origin: original
+        definition: Date of the first download of the raw file (same SHA-256) the figure comes from.
+      - name: interpolated
+        type: boolean
+        unit: null
+        nullable: false
+        origin: original
+        definition: Always `False`. No value is interpolated, smoothed or filled.
+        values: "False"
+      - name: growth
+        type: numeric
+        unit: proportion (0.01 = 1 %)
+        nullable: true
+        origin: derived
+        definition: >-
+          Annual growth `(P_t / P_{t-1}) - 1`, computed by the repository only when both years belong to the same
+          source and vintage. Empty in the first year of each series and at every source break.
+      - name: raw_file
+        type: string
+        unit: null
+        nullable: false
+        origin: original
+        definition: >-
+          Path, inside the GitHub repository, of the raw file the figure was read from. Raw files are NOT included in
+          this Kaggle dataset; open them in https://github.com/jaforero/latam-population-official.
+      - {name: license, <<: *license}
+      - {name: country, <<: *country}
+      - {name: institution, <<: *institution}
+      - {name: license_status, <<: *license_status}
+      - name: source_break
+        type: boolean
+        unit: null
+        nullable: false
+        origin: added
+        definition: >-
+          `True` in the first year of a new source or vintage within a country (from `breaks` in
+          `data/processed/<iso3>.json`). Values on both sides of a break are not comparable as a continuous series.
+        values: "True, False"
+
+  population_region.csv:
+    description: >-
+      DERIVED, NOT OFFICIAL. Our own sum of the 20 countries, only in years where all 20 have a figure (2010-2040,
+      every five years). Mixes national and UN figures, estimates and projections, and different vintages. Taken
+      as-is from the repository's canonical regional product.
+    row: one year
+    key: [year]
+    from: data/processed/region.csv (+ data/processed/region.json)
+    columns:
+      - {name: year, <<: *year}
+      - name: population
+        type: integer
+        unit: persons
+        nullable: false
+        origin: derived
+        definition: Sum of the 20 country figures for that year, rounded to persons. Never published by any institution.
+      - name: n_countries
+        type: integer
+        unit: countries
+        nullable: false
+        origin: derived
+        definition: Countries in the sum. Always 20; a year with fewer countries is not published.
+      - name: n_projection
+        type: integer
+        unit: countries
+        nullable: false
+        origin: derived
+        definition: How many of the 20 figures are projections (`series_type = projection`).
+      - name: international_fallback
+        type: string
+        unit: null
+        nullable: true
+        origin: derived
+        definition: Space-separated ISO3 codes whose figure that year comes from the UN fallback.
+      - name: annual_rate_to_next
+        type: numeric
+        unit: proportion per year
+        nullable: true
+        origin: derived
+        definition: >-
+          Average annual growth rate from `year` to `next_year`, computed only with the countries that keep the same
+          source and vintage in both years. Empty in the last year.
+      - name: next_year
+        type: integer
+        unit: calendar year
+        nullable: true
+        origin: derived
+        definition: End year of the period used by `annual_rate_to_next`.
+      - name: countries_in_rate
+        type: integer
+        unit: countries
+        nullable: true
+        origin: derived
+        definition: Countries used in `annual_rate_to_next`.
+      - name: excluded_from_rate
+        type: string
+        unit: null
+        nullable: true
+        origin: derived
+        definition: Space-separated ISO3 codes excluded from the rate because their source or vintage changes between the two years.
+      - name: projection_share
+        type: numeric
+        unit: proportion of countries
+        nullable: false
+        origin: added
+        definition: Share of the 20 countries whose figure is a projection, copied from `points[].projection_share` of `region.json`.
+      - name: official
+        type: boolean
+        unit: null
+        nullable: false
+        origin: added
+        definition: Always `False`, copied from `region.json`. This aggregate is not an official statistic.
+        values: "False"
+
+  aging_index.csv:
+    description: >-
+      DERIVED, NOT OFFICIAL. Ageing index (people aged 65+ per 100 people aged 0-14) per country and year, computed
+      by the repository from each country's published pyramid. Rows with `iso3 = REG` are the 20-country region
+      (only years with a regional pyramid).
+    row: one country-year (or region-year)
+    key: [iso3, year]
+    from: data/processed/aging.csv (+ data/processed/pyramids/<iso3>.json)
+    columns:
+      - name: iso3
+        <<: *iso3
+        definition: ISO 3166-1 alpha-3 country code, or `REG` for the derived 20-country region.
+        values: the 20 ISO3 codes, REG
+      - {name: year, <<: *year}
+      - name: aging_index
+        type: numeric
+        unit: persons 65+ per 100 persons 0-14
+        nullable: false
+        origin: derived
+        definition: >-
+          `100 * pop_65_plus / pop_0_14`, rounded to 4 decimals. Repository's own calculation. Some institutions
+          publish other definitions (INE Guatemala uses 60+ over 0-15), so it may not match national publications.
+      - name: pop_0_14
+        type: integer
+        unit: persons
+        nullable: false
+        origin: derived
+        definition: Sum of males and females in age groups 0-4, 5-9 and 10-14 of the published pyramid.
+      - name: pop_65_plus
+        type: integer
+        unit: persons
+        nullable: false
+        origin: derived
+        definition: Sum of males and females in age groups 65-69, 70-74, 75-79 and 80+ of the published pyramid.
+      - name: series_type
+        <<: *series_type
+        definition: Series type of the pyramid year (`derived` for REG rows).
+        values: estimate, projection, derived
+      - name: source_id
+        <<: *source_id
+        nullable: true
+        definition: Source of the pyramid year. Empty for REG rows.
+      - name: source_tier
+        <<: *source_tier
+        definition: Tier of the pyramid source (`derived` for REG rows).
+        values: national, international_fallback, derived
+      - name: vintage
+        <<: *vintage
+        nullable: true
+        definition: Vintage of the pyramid source. Empty for REG rows.
+      - {name: reference_date, <<: *reference_date}
+      - name: license
+        <<: *license
+        origin: added
+        definition: Terms-of-use key of the pyramid part used that year (from `parts[].license`). Empty for REG rows.
+
+  population_pyramids.csv:
+    description: >-
+      Population by sex and 5-year age group (17 common groups, 0-4 ... 75-79 and 80+) per country and year, in long
+      format. A year is published only when males + females match the official total of that year within 0.05 %.
+      Rows with `iso3 = REG` are the derived 20-country sum (2025 and 2030 only).
+    row: one country-year-sex-age group
+    key: [iso3, year, sex, age_group]
+    from: data/processed/pyramids/<iso3>.json, data/processed/region.json (pyramid)
+    columns:
+      - name: iso3
+        <<: *iso3
+        definition: ISO 3166-1 alpha-3 country code, or `REG` for the derived 20-country region.
+        values: the 20 ISO3 codes, REG
+      - {name: country, <<: *country, definition: English country name (or `Region (20 countries)`).}
+      - {name: year, <<: *year}
+      - name: sex
+        type: string
+        unit: null
+        nullable: false
+        origin: original
+        definition: Sex as published (`m`/`f` in the source JSON, renamed for readability).
+        values: male, female
+      - name: age_group
+        type: string
+        unit: years
+        nullable: false
+        origin: original
+        definition: >-
+          Five-year age group as defined by the repository contract. `80+` is open-ended and is never split. Groups
+          are only built by adding groups the source publishes; nothing is split or interpolated.
+        values: 0-4, 5-9, 10-14, 15-19, 20-24, 25-29, 30-34, 35-39, 40-44, 45-49, 50-54, 55-59, 60-64, 65-69, 70-74, 75-79, 80+
+      - name: age_order
+        type: integer
+        unit: null
+        nullable: false
+        origin: added
+        definition: Position of `age_group` (0 = 0-4 ... 16 = 80+), for sorting.
+      - name: population
+        type: numeric
+        unit: persons
+        nullable: false
+        origin: original
+        definition: >-
+          Persons in the group as published. Some sources publish non-integer values (UN figures in thousands times
+          1000, or national tables with decimals); they are kept as published.
+      - name: series_type
+        <<: *series_type
+        definition: Series type of the pyramid year (`derived` for REG rows).
+        values: estimate, projection, derived
+      - name: source_id
+        <<: *source_id
+        nullable: true
+        definition: Source of the pyramid year. Empty for REG rows.
+      - name: source_tier
+        <<: *source_tier
+        definition: Tier of the pyramid source (`derived` for REG rows).
+        values: national, international_fallback, derived
+      - name: vintage
+        <<: *vintage
+        nullable: true
+        definition: Vintage of the pyramid source. Empty for REG rows.
+      - {name: reference_date, <<: *reference_date}
+      - name: institution
+        <<: *institution
+        nullable: true
+        definition: Institution of the pyramid part used that year (`parts[].institution`). Empty for REG rows.
+      - name: license
+        <<: *license
+        definition: Terms-of-use key of the pyramid part used that year. Empty for REG rows.
+
+  sources.csv:
+    description: >-
+      One row per source segment: which institution, file, edition and years feed each country and series, with
+      its terms of use. Join with the other tables on `iso3` + `source_id` (+ `vintage`).
+    row: one country-series-source-vintage segment
+    key: [iso3, series, source_id, vintage]
+    from: data/processed/<iso3>.json (segments), data/processed/pyramids/<iso3>.json (parts), data/status.json, data/processed/licenses.json
+    columns:
+      - {name: iso3, <<: *iso3}
+      - {name: country, <<: *country}
+      - name: series
+        type: string
+        unit: null
+        nullable: false
+        origin: original
+        definition: Series fed by the segment. `historical` and `projection` feed `population_latam.csv`; `pyramid` feeds `population_pyramids.csv` and `aging_index.csv`.
+        values: historical, projection, pyramid
+      - {name: institution, <<: *institution, origin: original}
+      - {name: source_id, <<: *source_id}
+      - {name: source_tier, <<: *source_tier}
+      - {name: vintage, <<: *vintage}
+      - name: reference_census
+        type: string
+        unit: null
+        nullable: true
+        origin: original
+        definition: Census the series is anchored in, when the source declares it. Empty for pyramid parts.
+      - name: published_in
+        type: string
+        unit: null
+        nullable: true
+        origin: original
+        definition: Publication that contains the table (`published` in the segment). Empty for pyramid parts.
+      - name: scenario
+        type: string
+        unit: null
+        nullable: true
+        origin: original
+        definition: Scenario of the source. Empty for pyramid parts.
+      - {name: reference_date, <<: *reference_date}
+      - name: year_from
+        type: integer
+        unit: calendar year
+        nullable: false
+        origin: original
+        definition: First year this segment provides (for pyramids, first published year that uses it).
+      - name: year_to
+        type: integer
+        unit: calendar year
+        nullable: false
+        origin: original
+        definition: Last year this segment provides.
+      - name: source_url
+        type: string
+        unit: null
+        nullable: false
+        origin: original
+        definition: Exact URL of the file at the institution.
+      - name: location_in_file
+        type: string
+        unit: null
+        nullable: true
+        origin: original
+        definition: Table, sheet or columns where the figures are located.
+      - name: access_method
+        type: string
+        unit: null
+        nullable: true
+        origin: original
+        definition: File format or access method (`XLSX`, `PDF`, `CSV` ...). Empty for pyramid parts.
+      - name: raw_file
+        type: string
+        unit: null
+        nullable: false
+        origin: original
+        definition: Path of the raw file in the GitHub repository (not included in this dataset). Several files are separated by ` | `.
+      - name: raw_sha256
+        type: string
+        unit: null
+        nullable: false
+        origin: original
+        definition: SHA-256 of the raw file(s), to verify the copy in the repository. Several are separated by ` | `.
+      - name: retrieved_at
+        type: string
+        unit: YYYY-MM-DD
+        nullable: false
+        origin: original
+        definition: Date of first download of the raw file.
+      - name: retrieved_by
+        type: string
+        unit: null
+        nullable: true
+        origin: original
+        definition: '`script` (automatic download) or `manual` (file provided by a person and registered with its URL).'
+      - name: series_status
+        type: string
+        unit: null
+        nullable: true
+        origin: original
+        definition: >-
+          Status of the series in `data/status.json`: `ok`, `manual` (file provided by a person), `stale` (the source
+          failed and the last valid data are kept), `error`, `pendiente`, `manual_pendiente`.
+      - name: note
+        type: string
+        unit: null
+        nullable: true
+        origin: original
+        definition: English note recorded by the project for the segment (breaks, caveats).
+      - {name: license, <<: *license}
+      - {name: license_status, <<: *license_status, origin: original}
+      - name: license_name
+        type: string
+        unit: null
+        nullable: true
+        origin: original
+        definition: Licence or terms found (`name` in licenses.json).
+      - name: license_url
+        type: string
+        unit: null
+        nullable: true
+        origin: original
+        definition: URL of the licence text, when there is a standard licence.
+      - name: terms_url
+        type: string
+        unit: null
+        nullable: true
+        origin: original
+        definition: URL of the page where the terms were read.
+      - name: attribution
+        type: string
+        unit: null
+        nullable: true
+        origin: original
+        definition: Citation the institution requires or the project recommends. Keep it when you reuse the figure.
+
+  source_breaks.csv:
+    description: >-
+      Every point where a country's total-population series changes source, vintage or tier. Values across a break
+      are not a continuous series: the repository never chains or adjusts them.
+    row: one break
+    key: [iso3, year]
+    from: data/processed/<iso3>.json (breaks)
+    columns:
+      - {name: iso3, <<: *iso3}
+      - {name: country, <<: *country}
+      - name: year
+        <<: *year
+        definition: First year of the new series.
+      - {name: from_source, type: string, unit: null, nullable: false, origin: original, definition: source_id before the break.}
+      - {name: to_source, type: string, unit: null, nullable: false, origin: original, definition: source_id from the break on.}
+      - {name: from_vintage, type: string, unit: null, nullable: false, origin: original, definition: Vintage before the break.}
+      - {name: to_vintage, type: string, unit: null, nullable: false, origin: original, definition: Vintage from the break on.}
+      - {name: from_tier, type: string, unit: null, nullable: false, origin: original, definition: source_tier before the break., values: "national, international_fallback"}
+      - {name: to_tier, type: string, unit: null, nullable: false, origin: original, definition: source_tier from the break on., values: "national, international_fallback"}
+      - {name: last_value, type: integer, unit: persons, nullable: true, origin: original, definition: Last population of the old series (year - 1).}
+      - {name: first_value, type: integer, unit: persons, nullable: true, origin: original, definition: First population of the new series (year).}
+
+  quality_alerts.csv:
+    description: >-
+      Validation alerts raised by the repository's pipeline (for example annual change beyond +-4 % or unusual sex
+      ratios). Alerts never change the data: they flag figures worth a closer look. Messages are in Spanish.
+    row: one alert
+    key: [fingerprint]
+    from: data/alerts.json
+    columns:
+      - {name: code, type: string, unit: null, nullable: false, origin: original, definition: Alert type., values: "annual_change, pyramid_sex_ratio, control_mismatch, ... (see repository README)"}
+      - {name: iso3, <<: *iso3}
+      - {name: year, type: integer, unit: calendar year, nullable: true, origin: original, definition: Year concerned, when the alert is about one year.}
+      - {name: years, type: string, unit: null, nullable: true, origin: original, definition: Comma-separated years, when the alert covers several.}
+      - {name: source, type: string, unit: null, nullable: true, origin: original, definition: source_id concerned, when stated.}
+      - {name: message, type: string, unit: null, nullable: false, origin: original, definition: Alert text (Spanish).}
+      - {name: fingerprint, type: string, unit: null, nullable: false, origin: original, definition: Stable identifier of the alert.}

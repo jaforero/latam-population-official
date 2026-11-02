@@ -91,7 +91,18 @@ python -m latam_pop run
 
 **Respaldo en jsDelivr:** jsDelivr rechaza los paquetes de más de 50 MB, cachea las rutas de una rama hasta 12 horas y limita las purgas por ruta, así que no puede servir `main`, ni una rama archivo por archivo, de forma fiable. La rama `respaldo-cdn` contiene `data/` sin `data/raw/` y `respaldo.json`, que nombra el commit de la última publicación completa. Si falla raw.githubusercontent.com, la página lee ese puntero y pide cada archivo por commit: `https://cdn.jsdelivr.net/gh/jaforero/latam-population-official@<commit>/data/status.json`. Esas rutas son inmutables, así que nunca se mezclan dos publicaciones. La rama no se edita a mano. La mantiene `.github/workflows/respaldo-cdn.yml` con `scripts/publish_cdn.py`, en cada push a `main` que toque `data/`, después de cada corrida semanal y una vez al día como comprobación. Publica todo lo que haya bajo `data/`, así que un archivo nuevo del contrato no requiere cambios. Después compara el hash de cada archivo servido con el de `main` y purga solo el puntero; si algo sigue atrasado tras los reintentos, el workflow queda en rojo y abre un issue `pipeline`.
 
-**Secrets:** ninguna fuente actual requiere token. Si alguna lo exige, léelo con `os.environ` desde un secret llamado `<ISO3>_API_TOKEN`, documenta el nombre aquí y nunca lo escribas en el código.
+**Secrets:** `KAGGLE_API_TOKEN` solo para `kaggle.yml`. Ninguna fuente actual requiere token. Si alguna lo exige, léelo con `os.environ` desde un secret llamado `<ISO3>_API_TOKEN`, documenta el nombre aquí y nunca lo escribas en el código.
+
+## Dataset en Kaggle
+`scripts/build_kaggle_dataset.py` reconstruye `dist/kaggle/` (no versionado) desde `data/processed/`, `data/status.json` y `data/alerts.json`. No incluye `data/raw/` ni cambia cifras: añade nombres de país, institución, estado de licencia y la marca `source_break`, y comprueba que cada tabla reproduzca su producto canónico. Lo versionado está en `kaggle/`: `columns.yaml` (diccionario y encabezados esperados; si el contrato cambia, la exportación se detiene), plantillas de README y metadata, y `license_policy.yaml`.
+
+La puerta de licencias bloquea la publicación pública mientras haya fuentes sin licencia localizada, con términos propios que no declaran redistribución o uso comercial, o share-alike incompatibles entre sí, salvo que el dueño registre su decisión en `license_policy.yaml`. El informe queda en `dist/PUBLICATION_BLOCKERS.md`. La licencia de Kaggle es `other`: cada cifra conserva la de su fuente.
+```bash
+python scripts/build_kaggle_dataset.py
+python -m pytest -q tests/test_kaggle_export.py
+python scripts/publish_kaggle.py status
+```
+`publish_kaggle.py create` sube una primera versión privada (`--public` exige la puerta en PASS) y `publish_kaggle.py version` crea una versión nueva solo si cambió el contenido, con commit, esquema y series cambiadas en la nota. Nunca borra versiones. `.github/workflows/kaggle.yml` hace lo mismo por disparo manual con el secret `KAGGLE_API_TOKEN`.
 
 ## Cargar una fuente manual
 Para fuentes que no admiten descarga automática:

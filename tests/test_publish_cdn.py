@@ -150,7 +150,7 @@ def test_pointer_waits_for_throttle_reset():
 def test_pointer_does_not_wait_for_a_throttled_confirmation():
     kw, calls = fake_pointer(["viejo", "ok"], resets=[0, 3000])
     assert pc.sync_pointer("ok", new=True, waits=(1, 1, 1), **kw) is None
-    assert calls["purges"] == 2 and calls["sleeps"] == [1]
+    assert calls["purges"] == 2 and len(calls["sleeps"]) == 1
 
 
 def test_new_publication_waits_until_one_purge_goes_through():

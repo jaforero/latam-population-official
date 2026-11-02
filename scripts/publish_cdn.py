@@ -144,6 +144,7 @@ def sync_pointer(expected: str, new: bool, waits=POINTER_WAITS, limit=MAX_POINTE
     verlo al día se purga una vez más, porque una purga anterior pudo llegar antes de que jsDelivr viera el commit.
     """
     pending_purge = new
+    purged = False
     last = state(BRANCH, POINTER)
     elapsed = 0
     for wait in (*waits, None):
@@ -152,6 +153,10 @@ def sync_pointer(expected: str, new: bool, waits=POINTER_WAITS, limit=MAX_POINTE
             print("Puntero al día.")
             return None
         reset = purge_one()
+        if current and purged and reset:
+            print("Puntero al día; jsDelivr limitó solo la purga de confirmación.")
+            return None
+        purged = purged or not reset
         pending_purge = not current or reset > 0
         if wait is None:
             break

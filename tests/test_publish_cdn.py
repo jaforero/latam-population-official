@@ -147,6 +147,18 @@ def test_pointer_waits_for_throttle_reset():
     assert calls["sleeps"][0] == 105
 
 
+def test_pointer_does_not_wait_for_a_throttled_confirmation():
+    kw, calls = fake_pointer(["viejo", "ok"], resets=[0, 3000])
+    assert pc.sync_pointer("ok", new=True, waits=(1, 1, 1), **kw) is None
+    assert calls["purges"] == 2 and calls["sleeps"] == [1]
+
+
+def test_new_publication_waits_until_one_purge_goes_through():
+    kw, calls = fake_pointer(["ok", "ok", "ok"], resets=[100, 0])
+    assert pc.sync_pointer("ok", new=True, waits=(1, 1, 1), **kw) is None
+    assert calls["purges"] == 2 and calls["sleeps"][0] == 105
+
+
 def test_pointer_gives_up_when_throttle_exceeds_limit():
     kw, calls = fake_pointer(["viejo"], resets=[9999])
     assert pc.sync_pointer("ok", new=True, waits=(1,), limit=600, **kw) == "viejo"

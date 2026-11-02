@@ -16,6 +16,14 @@
 # (CC0, CC-BY, ODbL...) mientras haya fuentes sin licencia abierta o con share-alike incompatibles entre sí.
 kaggle_license: other
 
+# Visibilidad que se declara al actualizar la ficha (`publish_kaggle.py metadata`). `public` solo surte efecto con
+# la puerta en PASS; en cualquier otro caso se escribe isPrivate: true.
+visibility: private
+
+# Frecuencia esperada de nuevas versiones. El pipeline revisa las fuentes cada semana, pero las cifras cambian
+# cuando una institución publica una edición nueva: varias veces al año.
+expected_update_frequency: quarterly
+
 # Reconocimientos explícitos del dueño del dataset. Vacío por defecto: nadie decide en silencio.
 # Formato:
 #   ibge:

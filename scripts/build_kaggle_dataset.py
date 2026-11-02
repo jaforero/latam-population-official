@@ -43,6 +43,7 @@ KAGGLE_LICENSES = {"CC0-1.0", "CC-BY-SA-3.0", "CC-BY-SA-4.0", "CC-BY-NC-SA-4.0",
                    "CC-BY-3.0-IGO", "US-Government-Works", "CC-BY-NC-SA-3.0-IGO", "CDLA-Permissive-1.0",
                    "CDLA-Sharing-1.0", "CC-BY-ND-4.0", "CC-BY-NC-ND-4.0", "ODC-BY-1.0", "LGPL-3.0", "AGPL-3.0",
                    "FDL-1.3", "EU-ODP-Legal-Notice", "apache-2.0", "GPL-3.0"}
+UPDATE_FREQUENCIES = {"not specified", "never", "annually", "quarterly", "monthly", "weekly", "daily", "hourly"}
 # Límites de dataset-metadata.json (docs/datasets_metadata.md del Kaggle CLI).
 LIMITS = dict(title=(6, 50), subtitle=(20, 80), slug=(3, 50))
 
@@ -529,11 +530,20 @@ def readme_values(tables: dict, src: dict, commit: str, gate: dict) -> dict:
     )
 
 
+DOC_DESCRIPTIONS = {
+    "README.md": "Overview: contents, the 20 countries, methodology, source hierarchy, citation and limitations.",
+    "DATA_DICTIONARY.md": "Every column of every CSV: type, unit, nullability, origin (original, derived or added) and definition.",
+    "SOURCES_AND_LICENSES.md": "Terms of use of each institution, required attribution and which files each source feeds.",
+    "manifest.json": "Package manifest: source repository commit, data-contract version, rows and SHA-256 of each CSV.",
+    "SOURCE_COMMIT.txt": "Repository commit, data-contract version and last data update this version was built from.",
+}
+
+
 def resources(spec: dict) -> list[dict]:
     return [dict(path=n, description=" ".join(f["description"].split()),
                  schema=dict(fields=[dict(name=c["name"], description=" ".join(str(c["definition"]).split()), type=c["type"])
                                      for c in f["columns"]]))
-            for n, f in spec["files"].items()]
+            for n, f in spec["files"].items()] + [dict(path=n, description=d) for n, d in DOC_DESCRIPTIONS.items()]
 
 
 def check_metadata(meta: dict) -> list[str]:
@@ -634,7 +644,42 @@ def build(root: Path = ROOT, out: Path | None = None, today: str | None = None) 
     unexpected = sorted(p.name for p in out.iterdir()) != sorted(CSV_FILES + DOC_FILES)
     if unexpected:
         raise ExportError(f"dist/kaggle contiene archivos no previstos: {sorted(p.name for p in out.iterdir())}")
-    return dict(out=out, stats=stats, gate=gate, manifest=manifest, meta=meta)
+    settings = metadata_settings(root, out.parent / "kaggle_metadata", meta, gate, src["policy"], tables)
+    return dict(out=out, stats=stats, gate=gate, manifest=manifest, meta=meta, settings=settings)
+
+
+def user_sources(tables: dict) -> str:
+    """Procedencia para la ficha de Kaggle: cada institución con sus archivos de origen."""
+    by = defaultdict(lambda: dict(countries=set(), urls=set(), attribution=""))
+    for r in tables["sources.csv"]:
+        b = by[r["institution"]]
+        b["countries"].add(r["iso3"])
+        b["urls"].add(r["source_url"])
+        b["attribution"] = r["attribution"]
+    lines = [f"Built from {REPO_URL}, which records the file, SHA-256 and table of every figure.", ""]
+    for inst, b in sorted(by.items()):
+        lines.append(f"- **{inst}** ({', '.join(sorted(b['countries']))}): {b['attribution']}")
+        lines += [f"  - {u}" for u in sorted(b["urls"])]
+    return "\n".join(lines)
+
+
+def metadata_settings(root: Path, out: Path, meta: dict, gate: dict, policy: dict, tables: dict) -> dict:
+    """Carpeta para `kaggle datasets metadata --update`, separada del paquete para no subir la portada como dato.
+
+    Ese comando toma isPrivate del archivo y, si falta, deja el dataset público: aquí se escribe siempre y solo es
+    false con la puerta de licencias en PASS y `visibility: public` en license_policy.yaml.
+    """
+    public = policy.get("visibility") == "public" and gate["status"] == "PASS"
+    settings = dict(meta, isPrivate=not public, userSpecifiedSources=user_sources(tables),
+                    expectedUpdateFrequency=policy.get("expected_update_frequency", "not specified"))
+    if settings["expectedUpdateFrequency"] not in UPDATE_FREQUENCIES:
+        raise ExportError(f"expected_update_frequency inválida: {settings['expectedUpdateFrequency']}")
+    safe_reset(out, root)
+    cover = root / "kaggle" / "dataset-cover-image.png"
+    if cover.exists():
+        shutil.copy(cover, out / cover.name)
+    (out / "dataset-metadata.json").write_text(json.dumps(settings, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
+    return settings
 
 
 def main() -> int:

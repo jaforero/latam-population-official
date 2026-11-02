@@ -18,7 +18,7 @@ kaggle_license: other
 
 # Visibilidad que se declara al actualizar la ficha (`publish_kaggle.py metadata`). `public` solo surte efecto con
 # la puerta en PASS; en cualquier otro caso se escribe isPrivate: true.
-visibility: private
+visibility: public
 
 # Frecuencia esperada de nuevas versiones. El pipeline revisa las fuentes cada semana, pero las cifras cambian
 # cuando una institución publica una edición nueva: varias veces al año.
@@ -32,4 +32,59 @@ expected_update_frequency: quarterly
 #     decision: publish | exclude | permission_obtained
 #     rationale: "Texto breve con la evidencia (correo de la institución, URL de la licencia nueva...)"
 # `exclude` no está implementado: excluir un país exige cambiar el alcance del dataset a propósito.
-acknowledgements: {}
+acknowledgements:
+  ibge:
+    decided_by: Javier Forero
+    date: "2026-11-02"
+    decision: publish
+    rationale: "Riesgo alto aceptado: no se localizó licencia ni permiso de redistribución, lo que no equivale a permiso. Se publica con atribución, sin los archivos crudos, sin presentar la cifra como obra propia y con sus términos en SOURCES_AND_LICENSES.md. Retirar o pedir permiso si la institución lo objeta."
+  ine_gtm:
+    decided_by: Javier Forero
+    date: "2026-11-02"
+    decision: publish
+    rationale: "Riesgo alto aceptado: no se localizó licencia ni permiso de redistribución, lo que no equivale a permiso. Se publica con atribución, sin los archivos crudos, sin presentar la cifra como obra propia y con sus términos en SOURCES_AND_LICENSES.md. Retirar o pedir permiso si la institución lo objeta."
+  ine_hnd:
+    decided_by: Javier Forero
+    date: "2026-11-02"
+    decision: publish
+    rationale: "Riesgo alto aceptado: no se localizó licencia ni permiso de redistribución, lo que no equivale a permiso. Se publica con atribución, sin los archivos crudos, sin presentar la cifra como obra propia y con sus términos en SOURCES_AND_LICENSES.md. Retirar o pedir permiso si la institución lo objeta."
+  inide:
+    decided_by: Javier Forero
+    date: "2026-11-02"
+    decision: publish
+    rationale: "Riesgo alto aceptado: no se localizó licencia ni permiso de redistribución, lo que no equivale a permiso. Se publica con atribución, sin los archivos crudos, sin presentar la cifra como obra propia y con sus términos en SOURCES_AND_LICENSES.md. Retirar o pedir permiso si la institución lo objeta."
+  onec:
+    decided_by: Javier Forero
+    date: "2026-11-02"
+    decision: publish
+    rationale: "Riesgo alto aceptado: no se localizó licencia ni permiso de redistribución, lo que no equivale a permiso. Se publica con atribución, sin los archivos crudos, sin presentar la cifra como obra propia y con sus términos en SOURCES_AND_LICENSES.md. Retirar o pedir permiso si la institución lo objeta."
+  ine_ven:
+    decided_by: Javier Forero
+    date: "2026-11-02"
+    decision: publish
+    rationale: "Riesgo alto aceptado: no se localizó licencia ni permiso de redistribución, lo que no equivale a permiso. Se publica con atribución, sin los archivos crudos, sin presentar la cifra como obra propia y con sus términos en SOURCES_AND_LICENSES.md. Retirar o pedir permiso si la institución lo objeta."
+  dane:
+    decided_by: Javier Forero
+    date: "2026-11-02"
+    decision: publish
+    rationale: "Riesgo medio aceptado: las condiciones del DANE autorizan uso, transformación y análisis con cita textual, pero no mencionan redistribución ni uso comercial. Se publican tablas transformadas con la cita exigida."
+  ine_bol:
+    decided_by: Javier Forero
+    date: "2026-11-02"
+    decision: publish
+    rationale: "Riesgo medio aceptado: el INE permite reproducir y redistribuir citando, pero limita el uso comercial sin autorización. La licencia 'other' no otorga uso comercial; la advertencia queda en SOURCES_AND_LICENSES.md."
+  inei:
+    decided_by: Javier Forero
+    date: "2026-11-02"
+    decision: publish
+    rationale: "Riesgo medio aceptado: el aviso del INEI permite reproducir citando; no declara el uso comercial. Se publica con la cita y la advertencia en SOURCES_AND_LICENSES.md."
+  ine_ury:
+    decided_by: Javier Forero
+    date: "2026-11-02"
+    decision: publish
+    rationale: "Riesgo medio aceptado: el INE Uruguay considera pública la información sin regular su reutilización. Se publica con atribución y la advertencia en SOURCES_AND_LICENSES.md."
+  share_alike_mix:
+    decided_by: Javier Forero
+    date: "2026-11-02"
+    decision: publish
+    rationale: "Riesgo medio aceptado: CC BY-SA 4.0 (ARG, CHL, CRI) y ODbL (DOM) piden compartir lo derivado bajo la misma licencia, incompatible entre sí en los agregados regionales. Se mantiene la licencia 'other' y cada fila conserva la licencia de su fuente."

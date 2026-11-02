@@ -1,0 +1,60 @@
+name: Publicar versión en Kaggle
+
+# Solo manual. No se encadena a update.yml hasta que el dueño lo apruebe: la publicación pública exige la puerta de
+# licencias en PASS (kaggle/license_policy.yaml) y el dataset ya creado a mano con `publish_kaggle.py create`.
+on:
+  workflow_dispatch:
+    inputs:
+      private_dataset:
+        description: "El dataset en Kaggle es privado (permite versionar con la puerta de licencias bloqueada)"
+        type: boolean
+        default: false
+      dry_run:
+        description: "Solo construir, probar e informar; no subir"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kaggle
+  cancel-in-progress: false
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      # Sin data/raw/: el paquete se construye con los productos procesados ya validados por el pipeline principal.
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            /*
+            !/data/raw/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt "kaggle>=2.2,<3" six  # six: kaggle 2.2.5 lo importa sin declararlo
+      - name: Pruebas de la exportación
+        run: python -m pytest -q tests/test_kaggle_export.py
+      - name: Construir paquete e informe de preparación
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        run: python scripts/publish_kaggle.py status
+      - name: Nueva versión solo si cambió el contenido
+        if: ${{ !inputs.dry_run }}
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        run: python scripts/publish_kaggle.py version ${{ inputs.private_dataset && '--private-dataset' || '' }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kaggle-package
+          path: dist/
+          retention-days: 14

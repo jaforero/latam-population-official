@@ -1,0 +1,27 @@
+# Puerta de licencias para Kaggle. La lee scripts/build_kaggle_dataset.py y la aplica scripts/publish_kaggle.py.
+#
+# Reglas (conservadoras; ausencia de licencia NO es permiso):
+#   restricted                          → bloquea siempre. No admite reconocimiento.
+#   no_license                          → bloquea la publicación pública hasta que el dueño la reconozca aquí.
+#   own_terms con redistribución o uso
+#   comercial sin declarar o condicionado → bloquea hasta que el dueño la reconozca aquí.
+#   share-alike de familias distintas   → bloquea hasta que el dueño la reconozca (clave `share_alike_mix`).
+#   open_license sin share-alike        → pasa; se exige la atribución registrada.
+#
+# Una versión privada en Kaggle no es redistribución pública: publish_kaggle.py la permite aunque la puerta
+# esté bloqueada. La pública exige la puerta en PASS.
+
+# Licencia de nivel Dataset declarada en Kaggle. "other" no otorga una licencia nueva: remite a los términos
+# de cada fuente (SOURCES_AND_LICENSES.md y la columna license de cada fila). No usar una licencia estándar
+# (CC0, CC-BY, ODbL...) mientras haya fuentes sin licencia abierta o con share-alike incompatibles entre sí.
+kaggle_license: other
+
+# Reconocimientos explícitos del dueño del dataset. Vacío por defecto: nadie decide en silencio.
+# Formato:
+#   ibge:
+#     decided_by: Javier Forero
+#     date: "2026-11-15"
+#     decision: publish | exclude | permission_obtained
+#     rationale: "Texto breve con la evidencia (correo de la institución, URL de la licencia nueva...)"
+# `exclude` no está implementado: excluir un país exige cambiar el alcance del dataset a propósito.
+acknowledgements: {}

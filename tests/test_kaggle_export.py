@@ -246,7 +246,8 @@ def test_kaggle_metadata_is_valid(pkg):
     assert bk.check_metadata(meta) == []
     assert meta["id"] == "jaforero/latin-america-population-20-countries"
     assert meta["licenses"] == [{"name": pkg["gate"]["kaggle_license"]}]
-    assert {r["path"] for r in meta["resources"]} == set(bk.CSV_FILES)
+    assert {r["path"] for r in meta["resources"]} == set(bk.CSV_FILES) | set(bk.DOC_DESCRIPTIONS)
+    assert set(bk.DOC_DESCRIPTIONS) == set(bk.DOC_FILES) - {"dataset-metadata.json"}
     text = json.dumps(meta).lower()
     for secret in ("token", "api_key", "password", "kaggle.json"):
         assert secret not in text

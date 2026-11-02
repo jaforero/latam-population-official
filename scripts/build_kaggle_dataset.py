@@ -530,11 +530,20 @@ def readme_values(tables: dict, src: dict, commit: str, gate: dict) -> dict:
     )
 
 
+DOC_DESCRIPTIONS = {
+    "README.md": "Overview: contents, the 20 countries, methodology, source hierarchy, citation and limitations.",
+    "DATA_DICTIONARY.md": "Every column of every CSV: type, unit, nullability, origin (original, derived or added) and definition.",
+    "SOURCES_AND_LICENSES.md": "Terms of use of each institution, required attribution and which files each source feeds.",
+    "manifest.json": "Package manifest: source repository commit, data-contract version, rows and SHA-256 of each CSV.",
+    "SOURCE_COMMIT.txt": "Repository commit, data-contract version and last data update this version was built from.",
+}
+
+
 def resources(spec: dict) -> list[dict]:
     return [dict(path=n, description=" ".join(f["description"].split()),
                  schema=dict(fields=[dict(name=c["name"], description=" ".join(str(c["definition"]).split()), type=c["type"])
                                      for c in f["columns"]]))
-            for n, f in spec["files"].items()]
+            for n, f in spec["files"].items()] + [dict(path=n, description=d) for n, d in DOC_DESCRIPTIONS.items()]
 
 
 def check_metadata(meta: dict) -> list[str]:

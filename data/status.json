@@ -1,6 +1,6 @@
 {
  "schema_version": "2.1",
- "generated_at": "2026-11-02T05:07:56+00:00",
+ "generated_at": "2026-11-02T19:32:03+00:00",
  "last_data_update": "2026-11-02",
  "countries": {
   "ARG": {
@@ -528,7 +528,7 @@
      "retrieved_by": "script"
     },
     "projection": {
-     "status": "ok",
+     "status": "stale",
      "source_tier": "national",
      "institution": "INE Honduras",
      "license": "ine_hnd",
@@ -537,7 +537,7 @@
      "url": "https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
      "last_success": "2026-11-02",
      "retrieved_at": "2026-11-01",
-     "error": null,
+     "error": "HTTP 403 en https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
      "reason": null,
      "note": {
       "es": "Proyección basada en el censo 2013; desde 2030 solo quinquenal.",

@@ -1,6 +1,6 @@
 {
- "schema_version": "2.0",
- "generated_at": "2026-11-01T19:43:20+00:00",
+ "schema_version": "2.1",
+ "generated_at": "2026-11-02T05:07:56+00:00",
  "review": {
   "reviewed": "2026-11-01",
   "method": "Se buscó el texto aplicable a cada archivo con agente identificado y, si el sitio rechazaba al script, en navegador. Las verificaciones anti-bots no se eludieron.",

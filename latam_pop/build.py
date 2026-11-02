@@ -12,6 +12,7 @@ import yaml
 from . import ISO3, SCHEMA_VERSION
 from .adapters import REGISTRY, Record
 from .adapters.sources import VenIne2001
+from .aging import CSV_FIELDS as AGING_CSV_FIELDS, aging_csv_rows, build_aging
 from .derive import add_growth, find_breaks, peak
 from .http import BlockedError, FetchError, Http
 from .parsing import ParseError
@@ -228,6 +229,9 @@ def run(root: Path = Path("."), http: Http | None = None, watch: bool = True, to
     region, region_issues = build_region(country_rows, pyramid_docs, license_by_source)
     write_stable(processed / "region.json", dict(schema_version=SCHEMA_VERSION, **region))
     write_csv_stable(processed / "region.csv", REGION_CSV_FIELDS, region_csv_rows(region))
+    aging = build_aging(pyramid_docs, region["pyramid"])
+    write_stable(processed / "aging.json", dict(schema_version=SCHEMA_VERSION, **aging))
+    write_csv_stable(processed / "aging.csv", AGING_CSV_FIELDS, aging_csv_rows(aging))
     lost = sorted(set(prev_region_years) - set(region["years"]))
     if lost:
         alerts.append(alert("region_coverage_lost", "REG", f"El total regional dejó de existir en {lost}: algún país perdió esos años", years=lost))

@@ -26,7 +26,7 @@ data/processed/           salidas de contrato
 tests/fixtures/           crudos reales o recortados, para probar sin red
 ```
 
-## Contrato de datos · `schema_version` 2.0
+## Contrato de datos · `schema_version` 2.1
 Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es un cambio de versión:** campo eliminado, renombrado o con otro significado sube la versión mayor. Los campos nuevos opcionales suben la menor.
 
 | Ruta | Contenido |
@@ -35,6 +35,7 @@ Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es
 | `data/processed/pyramids/<iso3>.json` | Pirámide por año: hombres y mujeres en 17 grupos comunes, con su fuente. Existe para los 20, aun sin datos. |
 | `data/processed/latam.csv` | Todos los registros, en formato largo. |
 | `data/processed/region.json` · `region.csv` | Agregado propio de los 20 países: total, crecimiento, índice y pirámide. No es una cifra oficial. |
+| `data/processed/aging.json` · `aging.csv` | Índice de envejecimiento por país y región, calculado con las pirámides. No es una cifra oficial. |
 | `data/processed/manifest.json` | Fuentes, niveles, vintages y fechas vigentes por país y serie. |
 | `data/processed/licenses.json` | Revisión de términos por institución: estado, texto leído, cita exigida y condiciones. |
 | `data/status.json` | Estado, última actualización, nivel de fuente y error por país y serie. |
@@ -56,11 +57,13 @@ Las rutas son estables y el frontend depende de ellas. **Un cambio de esquema es
 | `growth` | número o null | `(P_t / P_{t-1}) − 1`, solo dentro de la misma fuente y vintage |
 | `raw_file` | ruta | Archivo de `data/raw/` del que sale la cifra |
 
-**Cambios:** la 1.1 admite `reference_date: census` (hoy sin uso). La 1.2 agrega las pirámides y `pyramid` en `status.json`. La 1.3 agrega `parts` y `part`, porque una pirámide puede combinar dos fuentes. La 1.4 agrega `licenses.json` y el campo `license` en segmentos, `status.json`, `parts` y `latam.csv`. La 1.5 agrega `region.json`, `region.csv` y `region` en `status.json`. Hasta la 1.5 son compatibles con la 1.0. La 2.0 reemplaza el valor `regional_fallback` por `international_fallback`, en `source_tier` y en `region.json` y `region.csv`, porque el respaldo ya no es regional.
+**Cambios:** la 1.1 admite `reference_date: census` (hoy sin uso). La 1.2 agrega las pirámides y `pyramid` en `status.json`. La 1.3 agrega `parts` y `part`, porque una pirámide puede combinar dos fuentes. La 1.4 agrega `licenses.json` y el campo `license` en segmentos, `status.json`, `parts` y `latam.csv`. La 1.5 agrega `region.json`, `region.csv` y `region` en `status.json`. Hasta la 1.5 son compatibles con la 1.0. La 2.0 reemplaza el valor `regional_fallback` por `international_fallback`, en `source_tier` y en `region.json` y `region.csv`, porque el respaldo ya no es regional. La 2.1 agrega `aging.json` y `aging.csv`.
 
 **Pirámides:** `age_groups` lista 0-4 … 75-79 y 80+. `years["2025"]` trae `m` y `f` (17 valores) más `series_type`, `source_id`, `vintage`, `source_tier` y `reference_date`, los mismos del registro de ese año, y `part`, el índice de `parts`. Cada elemento de `parts` da `institution`, `source_url`, `source_tier`, `location_in_file` y `raw_files` (ruta, hash, fecha). Además `status`, `reason`, `note` y `raw_files` con todos los crudos. Cada año usa la parte del mismo nivel de fuente que la serie de ese año. Solo se suman grupos publicados; no se desagrega ni se interpola. Un año se publica únicamente si hombres + mujeres cuadra con el total oficial de ese año (tolerancia de 0,05 %); si no, se excluye y genera una alerta.
 
 **Región (`region.json`):** agregado propio, con `official: false` y `derived: true`; `note` declara en español e inglés qué mezcla y de qué depende. `years` lista los años con dato de los 20 países. `points` trae por año `population` (suma redondeada a personas), `n_projection`, `international_fallback` (países con CEPAL/CELADE), `reference_dates`, `shares` y `components`, con fuente, vintage, `license` y `raw_file` de cada país. `periods` trae la tasa anual media entre años consecutivos (`rate`), `country_rates`, `n_countries`, `covers_share` y `excluded`. `index["2025"]` trae el índice de cada año contra esa base. `pyramid` suma las 20 pirámides en `years` y lista en `missing_by_year` qué países faltan en los demás años.
+
+**Envejecimiento (`aging.json`):** `100 × población de 65 años y más / población de 0 a 14`, sumando hombres y mujeres de la pirámide publicada de cada año. `countries[<iso3>].rows` trae `year`, `aging_index`, `pop_0_14`, `pop_65_plus`, `series_type`, `source_id`, `vintage`, `source_tier` y `reference_date`, los mismos de la pirámide de ese año, y `breaks` lista los cambios de fuente o edición. `region` existe solo en los años con pirámide regional. Un año sin pirámide queda sin índice: nada se interpola. Es un cálculo propio que coincide con lo publicado por Costa Rica, Paraguay y Chile (este último, con un decimal), y las pruebas lo comprueban contra sus archivos. INE Guatemala publica otra definición (60 años y más sobre 15 y menos), así que su cifra no es comparable con esta.
 
 **Por país**, además: `segments` (institución, URL, vintage, hash, ubicación en el archivo), `breaks` (ruptura con año de corte y sin ajuste), `peak` (`peak`, `no_peak_in_horizon` o `no_projection`) y `reasons` en español e inglés.
 

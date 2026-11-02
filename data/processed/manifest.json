@@ -1,0 +1,413 @@
+{
+ "schema_version": "2.0",
+ "generated_at": "2026-11-01T19:43:20+00:00",
+ "countries": {
+  "ARG": {
+   "historical": {
+    "source_id": "arg_indec_censo2010",
+    "vintage": "Censo 2010",
+    "source_tier": "national",
+    "institution": "INDEC",
+    "url": "https://www.indec.gob.ar/ftp/cuadros/poblacion/c1_proyecciones_nac_2010_2040.xls",
+    "raw_sha256": "61d36046a63c14253554ca98d98f29df46fc022e3b3fac15f8a7c22c0e5f4565",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "arg_indec_censo2022",
+    "vintage": "Censo 2022",
+    "source_tier": "national",
+    "institution": "INDEC",
+    "url": "https://www.indec.gob.ar/ftp/cuadros/poblacion/proyecciones_jurisdicciones_2022_2040_c1.xlsx",
+    "raw_sha256": "7dd84165fe90415793f6788338ed3273ed1d2fe9ea25cbe355110805e1cc89f3",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "BOL": {
+   "historical": {
+    "source_id": "bol_ine_rev2025",
+    "vintage": "Rev. 2025",
+    "source_tier": "national",
+    "institution": "INE Bolivia",
+    "url": "https://nimbus.ine.gob.bo/index.php/s/kdz7ktspssFz6C4/download",
+    "raw_sha256": "12c6e4091e294c26e863e4f92d595c7c625460b2546acaeb9e092777de629022",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "bol_ine_rev2025",
+    "vintage": "Rev. 2025",
+    "source_tier": "national",
+    "institution": "INE Bolivia",
+    "url": "https://nimbus.ine.gob.bo/index.php/s/kdz7ktspssFz6C4/download",
+    "raw_sha256": "12c6e4091e294c26e863e4f92d595c7c625460b2546acaeb9e092777de629022",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "BRA": {
+   "historical": {
+    "source_id": "bra_ibge_rev2024",
+    "vintage": "Rev. 2024",
+    "source_tier": "national",
+    "institution": "IBGE",
+    "url": "https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab4_indicadores.xlsx",
+    "raw_sha256": "0169644992d15a122bc14e42b07d40a3e01fe27303ed2d87cf54fa1f64f00fbc",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "bra_ibge_rev2024",
+    "vintage": "Rev. 2024",
+    "source_tier": "national",
+    "institution": "IBGE",
+    "url": "https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/projecoes_2024_tab4_indicadores.xlsx",
+    "raw_sha256": "0169644992d15a122bc14e42b07d40a3e01fe27303ed2d87cf54fa1f64f00fbc",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "CHL": {
+   "historical": {
+    "source_id": "chl_ine_base2024",
+    "vintage": "Base 2024",
+    "source_tier": "national",
+    "institution": "INE Chile",
+    "url": "https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/cuadros-estadisticos/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_tabulados.xlsx?sfvrsn=2508a40e_7",
+    "raw_sha256": "81bfc9a8393f8631e7fd73f8fb5d9bdb36471864b18e05ad4832f2636b6d33ec",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "chl_ine_base2024",
+    "vintage": "Base 2024",
+    "source_tier": "national",
+    "institution": "INE Chile",
+    "url": "https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/cuadros-estadisticos/proyecci%C3%B3n-base-2024/estimaciones-y-proyecciones-de-poblaci%C3%B3n-1992-2070_base-2024_tabulados.xlsx?sfvrsn=2508a40e_7",
+    "raw_sha256": "81bfc9a8393f8631e7fd73f8fb5d9bdb36471864b18e05ad4832f2636b6d33ec",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "COL": {
+   "historical": {
+    "source_id": "col_dane_pped2025",
+    "vintage": "PPED 2025",
+    "source_tier": "national",
+    "institution": "DANE",
+    "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Nacional/PPED-AreaNac-1950-2017.xlsx",
+    "raw_sha256": "43cccbd8c33e3085b5d52fa9cd5da3706c1e9c1ed42eefb905d2e99b27f7b76b",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "col_dane_pped2025",
+    "vintage": "PPED 2025",
+    "source_tier": "national",
+    "institution": "DANE",
+    "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Nacional/PPED-AreaNac-2018-2070.xlsx",
+    "raw_sha256": "957239f522f79adaf49a2106d620b0083292297949a637aa2d4a82f4cc05bc60",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "CRI": {
+   "historical": {
+    "source_id": "cri_inec_1950_2100",
+    "vintage": "1950-2100",
+    "source_tier": "national",
+    "institution": "INEC Costa Rica",
+    "url": "https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx",
+    "raw_sha256": "6657e66c97f12d9fbee29f1a83180e43eec3a2ce0de30c366b981cd64836a915",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "cri_inec_1950_2100",
+    "vintage": "1950-2100",
+    "source_tier": "national",
+    "institution": "INEC Costa Rica",
+    "url": "https://inec.cr/sites/default/files/2026-06/repoblaceppnacio1950-2100..xlsx",
+    "raw_sha256": "6657e66c97f12d9fbee29f1a83180e43eec3a2ce0de30c366b981cd64836a915",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "CUB": {
+   "historical": {
+    "source_id": "un_wpp2024",
+    "vintage": "ONU WPP 2024",
+    "source_tier": "international_fallback",
+    "institution": "ONU · División de Población",
+    "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
+    "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "un_wpp2024",
+    "vintage": "ONU WPP 2024",
+    "source_tier": "international_fallback",
+    "institution": "ONU · División de Población",
+    "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
+    "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "DOM": {
+   "historical": {
+    "source_id": "dom_one_1950_2050",
+    "vintage": "ONE 1950-2050",
+    "source_tier": "national",
+    "institution": "ONE",
+    "url": "https://descargas.one.gob.do/download/OGTIC/Estimaciones_y_Proyecciones_de_la_Poblaci%C3%B3n_Total_seg%C3%BAn_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+    "raw_sha256": "be23d746702990cd2cdfe52771241a79fe57d6b04e67347909adf094da9d6971",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "dom_one_1950_2050",
+    "vintage": "ONE 1950-2050",
+    "source_tier": "national",
+    "institution": "ONE",
+    "url": "https://descargas.one.gob.do/download/OGTIC/Estimaciones_y_Proyecciones_de_la_Poblaci%C3%B3n_Total_seg%C3%BAn_Sexo_y_Grupos_Quinquenales_de_Edad_1950-2050.csv",
+    "raw_sha256": "be23d746702990cd2cdfe52771241a79fe57d6b04e67347909adf094da9d6971",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "ECU": {
+   "historical": {
+    "source_id": "ecu_inec_rev2024",
+    "vintage": "Rev. 2024",
+    "source_tier": "national",
+    "institution": "INEC Ecuador",
+    "url": "https://www.ecuadorencifras.gob.ec/documentos/web-inec/Poblacion_y_Demografia/Proyecciones_Poblacionales/censo_2022/revision_2024_areas/Tabulados_Estimacion_Proyeccion_v2.xlsx",
+    "raw_sha256": "35dba440e116cad9e606d58960c1c27affc690392f6a29eacf651309bc5e01cd",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "ecu_inec_rev2024",
+    "vintage": "Rev. 2024",
+    "source_tier": "national",
+    "institution": "INEC Ecuador",
+    "url": "https://www.ecuadorencifras.gob.ec/documentos/web-inec/Poblacion_y_Demografia/Proyecciones_Poblacionales/censo_2022/revision_2024_areas/Tabulados_Estimacion_Proyeccion_v2.xlsx",
+    "raw_sha256": "35dba440e116cad9e606d58960c1c27affc690392f6a29eacf651309bc5e01cd",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "GTM": {
+   "historical": {
+    "source_id": "gtm_ine_rev2019",
+    "vintage": "Rev. 2019",
+    "source_tier": "national",
+    "institution": "INE Guatemala",
+    "url": "https://www.ine.gob.gt/proyecciones/",
+    "raw_sha256": "b8d0502b199467eac3a18c06f0f563b4e1550277eee8e8b4c492f463f2c0fa9d",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "gtm_ine_rev2019",
+    "vintage": "Rev. 2019",
+    "source_tier": "national",
+    "institution": "INE Guatemala",
+    "url": "https://www.ine.gob.gt/proyecciones/",
+    "raw_sha256": "b8d0502b199467eac3a18c06f0f563b4e1550277eee8e8b4c492f463f2c0fa9d",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "HND": {
+   "historical": {
+    "source_id": "un_wpp2024",
+    "vintage": "ONU WPP 2024",
+    "source_tier": "international_fallback",
+    "institution": "ONU · División de Población",
+    "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
+    "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "hnd_ine_censo2013",
+    "vintage": "Censo 2013",
+    "source_tier": "national",
+    "institution": "INE Honduras",
+    "url": "https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf",
+    "raw_sha256": "53eb3d72c9ce9b09095b5f3d7854845303cf1197d5fa223c6c5e1bd43c5858a6",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "HTI": {
+   "historical": {
+    "source_id": "un_wpp2024",
+    "vintage": "ONU WPP 2024",
+    "source_tier": "international_fallback",
+    "institution": "ONU · División de Población",
+    "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
+    "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "un_wpp2024",
+    "vintage": "ONU WPP 2024",
+    "source_tier": "international_fallback",
+    "institution": "ONU · División de Población",
+    "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
+    "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "MEX": {
+   "historical": {
+    "source_id": "mex_conapo_2023",
+    "vintage": "Conciliación 2023",
+    "source_tier": "national",
+    "institution": "CONAPO",
+    "url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/b4fe49a8-c86a-4c32-8450-8f3c4cc83125/download/05_indicadores_demograficos_proyecciones.csv",
+    "raw_sha256": "e0407d1640f38232023cf97656a0cb7be46049b1cb2344198c7e4aaec7cae6cd",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "mex_conapo_2023",
+    "vintage": "Conciliación 2023",
+    "source_tier": "national",
+    "institution": "CONAPO",
+    "url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/b4fe49a8-c86a-4c32-8450-8f3c4cc83125/download/05_indicadores_demograficos_proyecciones.csv",
+    "raw_sha256": "e0407d1640f38232023cf97656a0cb7be46049b1cb2344198c7e4aaec7cae6cd",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "NIC": {
+   "historical": {
+    "source_id": "nic_inide_rev2012",
+    "vintage": "Rev. 2012",
+    "source_tier": "national",
+    "institution": "INIDE",
+    "url": "https://www.inide.gob.ni/docs/Anuarios/Anuario2023/Anuario_Estadistico_2023.pdf",
+    "raw_sha256": "47c54be057f94b2a75329c652d7cb7ade630754cd0422cc18e320399c1bcbf7b",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "un_wpp2024",
+    "vintage": "ONU WPP 2024",
+    "source_tier": "international_fallback",
+    "institution": "ONU · División de Población",
+    "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz",
+    "raw_sha256": "66b84489fd7875b62de9b40d960b803b8c8439367c98deab89c2f770970925b9",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "PAN": {
+   "historical": {
+    "source_id": "pan_inec_censo2023",
+    "vintage": "Censo 2023",
+    "source_tier": "national",
+    "institution": "INEC Panamá",
+    "url": "https://www.inec.gob.pa/archivos/P0705547520260126142400Cuadro 1.xlsx",
+    "raw_sha256": "1c832db124d7ac1eab011f0d0830d696570d2414068be929debc391749b492b2",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "pan_inec_censo2023",
+    "vintage": "Censo 2023",
+    "source_tier": "national",
+    "institution": "INEC Panamá",
+    "url": "https://www.inec.gob.pa/archivos/P0705547520260126142400Cuadro 1.xlsx",
+    "raw_sha256": "1c832db124d7ac1eab011f0d0830d696570d2414068be929debc391749b492b2",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "PER": {
+   "historical": {
+    "source_id": "per_inei_be24",
+    "vintage": "Boletín Especial 24",
+    "source_tier": "national",
+    "institution": "INEI",
+    "url": "https://www.inei.gob.pe/media/principales_indicadores/libro_bol_esp_24_4.pdf",
+    "raw_sha256": "50671ed795339fcf63c0e577c0725a7222df6619a87d7947fb4f2e493817f87f",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "per_inei_be24",
+    "vintage": "Boletín Especial 24",
+    "source_tier": "national",
+    "institution": "INEI",
+    "url": "https://www.inei.gob.pe/media/principales_indicadores/libro_bol_esp_24_4.pdf",
+    "raw_sha256": "50671ed795339fcf63c0e577c0725a7222df6619a87d7947fb4f2e493817f87f",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "PRY": {
+   "historical": {
+    "source_id": "pry_ine_rev2024",
+    "vintage": "Rev. 2024",
+    "source_tier": "national",
+    "institution": "INE Paraguay",
+    "url": "https://www.ine.gov.py/Publicaciones/Biblioteca/documento/266/Estimaciones y Proyecciones Nacional por año 1950-2050. Revisión 2024.xlsx",
+    "raw_sha256": "342c4f6617602cb190b0681a07af24f1215e34976d5eba09a14a0f27216235ce",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "pry_ine_rev2024",
+    "vintage": "Rev. 2024",
+    "source_tier": "national",
+    "institution": "INE Paraguay",
+    "url": "https://www.ine.gov.py/Publicaciones/Biblioteca/documento/266/Estimaciones y Proyecciones Nacional por año 1950-2050. Revisión 2024.xlsx",
+    "raw_sha256": "342c4f6617602cb190b0681a07af24f1215e34976d5eba09a14a0f27216235ce",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "SLV": {
+   "historical": {
+    "source_id": "slv_onec_rev2021",
+    "vintage": "Rev. 2021",
+    "source_tier": "national",
+    "institution": "ONEC / BCR (antes DIGESTYC)",
+    "url": "https://www.bcr.gob.sv/documental/Inicio/descarga/El_Salvador_Estimaciones_y_Proyecciones_de_Poblacion_Nacional_2005-2050(rev2021).xlsx",
+    "raw_sha256": "2c419f432e9d3024ee2e37e97267bbde080bb6c8edcacaa9a98c90eb6050ebf2",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "slv_onec_rev2021",
+    "vintage": "Rev. 2021",
+    "source_tier": "national",
+    "institution": "ONEC / BCR (antes DIGESTYC)",
+    "url": "https://www.bcr.gob.sv/documental/Inicio/descarga/El_Salvador_Estimaciones_y_Proyecciones_de_Poblacion_Nacional_2005-2050(rev2021).xlsx",
+    "raw_sha256": "2c419f432e9d3024ee2e37e97267bbde080bb6c8edcacaa9a98c90eb6050ebf2",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "URY": {
+   "historical": {
+    "source_id": "ury_ine_rev2025",
+    "vintage": "Rev. 2025",
+    "source_tier": "national",
+    "institution": "INE Uruguay",
+    "url": "https://www5.ine.gub.uy/documents/DemografíayEESS/SERIES%20Y%20OTROS/Estimaciones%20y%20proyecciones/Revisión%202025/A.1.1%20Uruguay.xlsx",
+    "raw_sha256": "4460b64d0d3283a520b6a9d3ca8bc601f30b39b5417e5e955902213cf2a81452",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "ury_ine_rev2025",
+    "vintage": "Rev. 2025",
+    "source_tier": "national",
+    "institution": "INE Uruguay",
+    "url": "https://www5.ine.gub.uy/documents/DemografíayEESS/SERIES%20Y%20OTROS/Estimaciones%20y%20proyecciones/Revisión%202025/B.1.1%20Uruguay%20(100ymas)2024-2070.xlsx",
+    "raw_sha256": "def36b35c130a86c2591c74d2443078b172d903fca582f292d06a6472d0274df",
+    "retrieved_at": "2026-11-01"
+   }
+  },
+  "VEN": {
+   "historical": {
+    "source_id": "ven_ine_censo2001",
+    "vintage": "Censo 2001",
+    "source_tier": "national",
+    "institution": "INE Venezuela",
+    "url": "https://ine.gob.ve/wp-content/uploads/2026/03/1950-2050-REP.-BOL.-VENEZUELA-PROYECCION-POBLACION.pdf",
+    "raw_sha256": "d912ae93e91c279ffd73b7ea4ea6f6fbf5d6548ea16429e55a7fc053f9dba74f",
+    "retrieved_at": "2026-11-01"
+   },
+   "projection": {
+    "source_id": "ven_ine_censo2011",
+    "vintage": "Censo 2011",
+    "source_tier": "national",
+    "institution": "INE Venezuela",
+    "url": "https://ine.gob.ve/wp-content/uploads/2026/04/Nacional.xls",
+    "raw_sha256": "402b2d82fabed16751fe775e7c764687c982ac501e20e0e3d0bf887785e867a2",
+    "retrieved_at": "2026-11-01"
+   }
+  }
+ },
+ "decisions": {
+  "D1": "Sustituida por D5 el 2026-11-01. Antes: CEPAL/CELADE se aceptó como respaldo. Se pasó de la API CEPALSTAT (Revisión 2022) al Excel de la Revisión 2024 aportado por Javier Forero (003_COMPARATIVO.xlsx), que responde a un agente identificado. El Excel cita coproducción con la ONU (WPP 2024).",
+  "D2": "Actualizado 2026-11-01: Cuba usa un respaldo marcado, hoy la ONU (D5). ONEI sigue sin ser verificable (certificado vencido); si vuelve a responder, se abre una alerta para sustituirla por la serie nacional.",
+  "D3": "Aprobado 2026-11-01: los años previos a la serie nacional quedan null, salvo Honduras (sin ninguna serie nacional antes de 2013). La cifra IHSI 2024 de Haití es contraste, no se mezcla.",
+  "D4": "Aprobado 2026-11-01: México queda manual; no se falsea el agente de usuario.",
+  "D5": "Aprobado 2026-11-01 por Javier Forero: ONU World Population Prospects 2024 reemplaza a CEPAL/CELADE como respaldo marcado. La cláusula 4 de los términos de CEPAL no permite redistribuir ni crear otros trabajos; la ONU publica bajo CC BY 3.0 IGO. Se descartó el FMI porque su serie LP no trae a Cuba, empieza en 1980 o después y no tiene edad ni sexo. La institución nacional sigue prevaleciendo."
+ }
+}

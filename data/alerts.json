@@ -1,0 +1,72 @@
+{
+ "failures": [
+  {
+   "iso3": "HND",
+   "series": "projection",
+   "error": "HTTP 403 en https://ine.gob.hn/wp-content/uploads/2025/02/Tomo-9-Proyecciones-poblacion-2013-2050.pdf"
+  }
+ ],
+ "alerts": [
+  {
+   "code": "pyramid_sex_ratio",
+   "iso3": "CUB",
+   "message": "Revisar sexos: 0-4 con más mujeres o 80+ con más hombres en 3 años ([1955, 1956, 1957])",
+   "fingerprint": "pyramid_sex_ratio:CUB:1955,1956,1957",
+   "years": "1955,1956,1957"
+  },
+  {
+   "code": "pyramid_sex_ratio",
+   "iso3": "GTM",
+   "message": "Revisar sexos: 0-4 con más mujeres o 80+ con más hombres en 12 años ([1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958])",
+   "fingerprint": "pyramid_sex_ratio:GTM:1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962",
+   "years": "1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962"
+  },
+  {
+   "code": "pyramid_sex_ratio",
+   "iso3": "HTI",
+   "message": "Revisar sexos: 0-4 con más mujeres o 80+ con más hombres en 16 años ([1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957])",
+   "fingerprint": "pyramid_sex_ratio:HTI:1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965",
+   "years": "1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965"
+  },
+  {
+   "code": "annual_change",
+   "iso3": "VEN",
+   "message": "Variación anual de +4.46% en 1951 (ven_ine_censo2001)",
+   "fingerprint": "annual_change:VEN:ven_ine_censo2001:1951",
+   "year": 1951,
+   "source": "ven_ine_censo2001"
+  },
+  {
+   "code": "annual_change",
+   "iso3": "VEN",
+   "message": "Variación anual de +4.27% en 1952 (ven_ine_censo2001)",
+   "fingerprint": "annual_change:VEN:ven_ine_censo2001:1952",
+   "year": 1952,
+   "source": "ven_ine_censo2001"
+  },
+  {
+   "code": "annual_change",
+   "iso3": "VEN",
+   "message": "Variación anual de +4.09% en 1953 (ven_ine_censo2001)",
+   "fingerprint": "annual_change:VEN:ven_ine_censo2001:1953",
+   "year": 1953,
+   "source": "ven_ine_censo2001"
+  },
+  {
+   "code": "annual_change",
+   "iso3": "VEN",
+   "message": "Variación anual de +4.33% en 1956 (ven_ine_censo2001)",
+   "fingerprint": "annual_change:VEN:ven_ine_censo2001:1956",
+   "year": 1956,
+   "source": "ven_ine_censo2001"
+  },
+  {
+   "code": "annual_change",
+   "iso3": "VEN",
+   "message": "Variación anual de +4.15% en 1957 (ven_ine_censo2001)",
+   "fingerprint": "annual_change:VEN:ven_ine_censo2001:1957",
+   "year": 1957,
+   "source": "ven_ine_censo2001"
+  }
+ ]
+}

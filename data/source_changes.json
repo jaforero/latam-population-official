@@ -1,0 +1,218 @@
+[
+ {
+  "date": "2026-11-01",
+  "iso3": "HND",
+  "code": "vintage_change",
+  "message": "historical: vintage CEPAL Rev. 2022 → CEPAL Rev. 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HTI",
+  "code": "vintage_change",
+  "message": "historical: vintage CEPAL Rev. 2022 → CEPAL Rev. 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HTI",
+  "code": "vintage_change",
+  "message": "projection: vintage CEPAL Rev. 2022 → CEPAL Rev. 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "NIC",
+  "code": "vintage_change",
+  "message": "projection: vintage CEPAL Rev. 2022 → CEPAL Rev. 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CHL",
+  "code": "source_added",
+  "message": "pendiente → INE Chile, base 2024 (descarga automática; URL aportada a mano)"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "BOL",
+  "code": "source_added",
+  "message": "manual_pendiente → INE Bolivia: Rev. 2020 (2012-2022) y Rev. 2025 (2024-2034), archivos aportados a mano"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "MEX",
+  "code": "source_added",
+  "message": "manual_pendiente → CONAPO, archivo municipal 1990-2040 aportado a mano"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CRI",
+  "code": "source_added",
+  "message": "manual_pendiente → INEC, años censales 1950-2022 aportados a mano; la proyección sigue pendiente"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CRI",
+  "code": "vintage_change",
+  "message": "historical: vintage Censos y Estimación 2022 → 1950-2100"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CRI",
+  "code": "source_added",
+  "message": "projection: manual_pendiente → INEC, serie 1950-2100 aportada a mano"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "MEX",
+  "code": "source_added",
+  "message": "Archivo municipal 1990-2040 → base por edad y sexo 1970-2070, sumada por entidad; misma vintage CONAPO, cifras iguales en los años comunes"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "BOL",
+  "code": "source_added",
+  "message": "Se agrega Revisión 2014 solo para 2000-2011; sus años posteriores no se usan"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "GTM",
+  "code": "source_added",
+  "message": "pendiente → INE Guatemala, Revisión 2019 (1950-2050), archivo aportado a mano"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "NIC",
+  "code": "national_replaces_regional",
+  "message": "2025: INIDE (cuadro II.1.7, 6.946.351) reemplaza a CEPAL; CEPAL queda desde 2026"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "GTM",
+  "code": "source_added",
+  "message": "Pirámides: nuevas salidas data/processed/pyramids/ para 15 países (contrato 1.2)"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "DOM",
+  "code": "source_added",
+  "message": "pendiente → ONE vía datos.gob.do, serie quinquenal 1950-2050 y pirámide; descarga automática"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "VEN",
+  "code": "source_added",
+  "message": "Proyección: archivo de parroquias → tabla nacional por edad y sexo, misma vintage Censo 2011; se agrega pirámide"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "BOL",
+  "code": "vintage_change",
+  "message": "Revisiones 2014 y 2020 → Revisión 2025 única, 2000-2050, sin rupturas; se agrega pirámide 2024-2034"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "MEX",
+  "code": "source_added",
+  "message": "Serie 1970-2070 sumada → fila nacional de 05_indicadores, 1950-2070; mismas cifras en los años comunes"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CUB",
+  "code": "source_added",
+  "message": "pendiente → CEPAL Rev. 2024 como respaldo marcado, tras aportar Javier Forero su archivo; ONEI sigue sin ser verificable"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HTI",
+  "code": "source_added",
+  "message": "Pirámide desde el archivo por país de CEPAL Rev. 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "NIC",
+  "code": "source_added",
+  "message": "Pirámide: desde 2026 usa CEPAL Rev. 2024, igual que la serie"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HND",
+  "code": "source_added",
+  "message": "Pirámide: antes de 2013 usa CEPAL Rev. 2024, igual que la serie"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "BOL",
+  "code": "vintage_change",
+  "message": "historical: vintage Rev. 2020 → Rev. 2025"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CUB",
+  "code": "vintage_change",
+  "message": "historical: vintage CEPAL Rev. 2024 → ONU WPP 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CUB",
+  "code": "tier_change",
+  "message": "historical: nivel regional_fallback → international_fallback (un_wpp2024)"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CUB",
+  "code": "vintage_change",
+  "message": "projection: vintage CEPAL Rev. 2024 → ONU WPP 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "CUB",
+  "code": "tier_change",
+  "message": "projection: nivel regional_fallback → international_fallback (un_wpp2024)"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HND",
+  "code": "vintage_change",
+  "message": "historical: vintage CEPAL Rev. 2024 → ONU WPP 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HND",
+  "code": "tier_change",
+  "message": "historical: nivel regional_fallback → international_fallback (un_wpp2024)"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HTI",
+  "code": "vintage_change",
+  "message": "historical: vintage CEPAL Rev. 2024 → ONU WPP 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HTI",
+  "code": "tier_change",
+  "message": "historical: nivel regional_fallback → international_fallback (un_wpp2024)"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HTI",
+  "code": "vintage_change",
+  "message": "projection: vintage CEPAL Rev. 2024 → ONU WPP 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "HTI",
+  "code": "tier_change",
+  "message": "projection: nivel regional_fallback → international_fallback (un_wpp2024)"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "NIC",
+  "code": "vintage_change",
+  "message": "projection: vintage CEPAL Rev. 2024 → ONU WPP 2024"
+ },
+ {
+  "date": "2026-11-01",
+  "iso3": "NIC",
+  "code": "tier_change",
+  "message": "projection: nivel regional_fallback → international_fallback (un_wpp2024)"
+ }
+]

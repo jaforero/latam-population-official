@@ -4,6 +4,7 @@
     python scripts/publish_kaggle.py create                 # primera publicación, PRIVADA
     python scripts/publish_kaggle.py create --public        # primera publicación pública (exige licencias en PASS)
     python scripts/publish_kaggle.py version                # nueva versión solo si cambió el contenido
+    python scripts/publish_kaggle.py metadata               # actualiza ficha: fuentes, frecuencia, portada, columnas
 
 Siempre reconstruye el paquete antes de subir. Nunca borra versiones anteriores (no usa --delete-old-versions).
 Las credenciales las resuelve el Kaggle CLI (`kaggle auth login`, KAGGLE_API_TOKEN o ~/.kaggle/access_token);
@@ -106,7 +107,7 @@ def readiness(res: dict | None, err: str | None, auth: str, public: bool) -> tup
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("action", choices=["status", "create", "version"])
+    ap.add_argument("action", choices=["status", "create", "version", "metadata"])
     ap.add_argument("--public", action="store_true", help="create: publicar como público (exige la puerta en PASS)")
     ap.add_argument("--private-dataset", action="store_true",
                     help="version: confirma que el dataset en Kaggle es privado; permite versionar con la puerta bloqueada")
@@ -130,7 +131,7 @@ def main() -> int:
         print("\nNo se sube nada: falta autenticación con Kaggle.", file=sys.stderr)
         return 2
     m, gate = res["manifest"], res["gate"]["status"]
-    if not m["source_tree_clean"] and (a.public or not a.allow_dirty or a.action == "version"):
+    if not m["source_tree_clean"] and (a.public or not a.allow_dirty or a.action != "create"):
         print("\nNo se sube nada: hay cambios sin commit; la versión no sería trazable a un commit.", file=sys.stderr)
         return 2
     path = str(res["out"])
@@ -143,6 +144,16 @@ def main() -> int:
             print("\nNo se publica públicamente: la puerta de licencias está bloqueada.", file=sys.stderr)
             return 2
         args = ["datasets", "create", "-p", path] + (["--public"] if a.public else [])
+    elif a.action == "metadata":
+        if auth != "exists":
+            print(f"\n{dataset_id} no existe o no es visible con estas credenciales: usa `create`.", file=sys.stderr)
+            return 2
+        s = res["settings"]
+        if s.get("isPrivate") is not True and gate != "PASS":
+            print("\nNo se actualiza: la ficha dejaría el dataset público con la puerta bloqueada.", file=sys.stderr)
+            return 2
+        print(f"\nFicha: isPrivate={s['isPrivate']} · frecuencia {s['expectedUpdateFrequency']} · {len(s['keywords'])} etiquetas")
+        args = ["datasets", "metadata", dataset_id, "--update", "-p", str(res["out"].parent / "kaggle_metadata")]
     else:
         if auth != "exists":
             print(f"\n{dataset_id} no existe o no es visible con estas credenciales: usa `create`.", file=sys.stderr)

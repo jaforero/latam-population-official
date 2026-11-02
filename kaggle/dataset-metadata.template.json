@@ -2,8 +2,24 @@
  "title": "Latin America Population: 20 Countries",
  "subtitle": "Traceable official population series, projections and age pyramids, 1950-2100",
  "id": "jaforero/latin-america-population-20-countries",
- "licenses": [{"name": "set by scripts/build_kaggle_dataset.py from kaggle/license_policy.yaml"}],
- "keywords": ["demographics", "population", "latin america", "census", "aging", "government", "south america"],
+ "licenses": [
+  {
+   "name": "set by scripts/build_kaggle_dataset.py from kaggle/license_policy.yaml"
+  }
+ ],
+ "keywords": [
+  "demographics",
+  "government",
+  "south america",
+  "north america",
+  "geography",
+  "social science",
+  "countries",
+  "time series analysis",
+  "tabular",
+  "exploratory data analysis",
+  "data visualization"
+ ],
  "description": "set by scripts/build_kaggle_dataset.py from kaggle/README.template.md",
  "resources": []
 }

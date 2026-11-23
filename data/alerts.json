@@ -67,6 +67,20 @@
    "fingerprint": "annual_change:VEN:ven_ine_censo2001:1957",
    "year": 1957,
    "source": "ven_ine_censo2001"
+  },
+  {
+   "code": "watch_change",
+   "iso3": "VEN",
+   "message": "Cambió el portal https://ine.gob.ve/: Se espera proyección actualizada",
+   "fingerprint": "watch_change:VEN:ee830d0d61ea1e140c7e177b5fceeea430be00a2a104327813419e6e9b277117",
+   "digest": "ee830d0d61ea1e140c7e177b5fceeea430be00a2a104327813419e6e9b277117"
+  },
+  {
+   "code": "watch_change",
+   "iso3": "DOM",
+   "message": "Cambió el portal https://datos.gob.do/dataset/estimaciones-y-proyecciones-de-la-poblacion-total-segun-sexo-y-grupos-quinquenales-de-edad-1950-2050: La ONE anunció una edición 1950-2100 con el censo 2022",
+   "fingerprint": "watch_change:DOM:f7a33783b9160b4762b57c83f1ccfd26242f06d13c91898db18c1670a4330137",
+   "digest": "f7a33783b9160b4762b57c83f1ccfd26242f06d13c91898db18c1670a4330137"
   }
  ]
 }
